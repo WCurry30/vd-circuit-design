@@ -1,0 +1,430 @@
+[
+  {
+    "id": "test_1",
+    "user_requirement": "请设计一款由 LY2EN 提出的兼容 MicroModem 的扩展板(Shield)电路。系统的核心控制板必须采用 Arduino Nano Every。该电路需要一个用于对外通信或外设连接的 5针单排插接件 (1x5 Header/Connector)。在信号处理方面，需要加入一个基础滤波电容以滤除高频噪声，以及一个限流电阻配合发光二极管 (LED) 用于状态指示。此外，需要使用一个 N沟道 MOSFET(指定型号 2N7000)作为低功率的逻辑电平开关或信号隔离，所有组件需共用标准的全局地线网络 (GND)。",
+    "golden_components": [
+      "Conn_01x05",
+      "C",
+      "LED",
+      "R",
+      "Arduino_Nano_Every",
+      "2N7000",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_2",
+    "user_requirement": "请为我的 'Hackpad' 宏键盘（Macropad）项目设计一款基础的输入扩展电路。系统的核心微控制器必须指定使用 XIAO-RP2040-DIP 开发板。在人机交互方面，需要配置 4 个用于触发基础功能的轻触按键开关 (Push Switch)。为了提供按键状态的视觉反馈，电路中需集成一颗可寻址智能 RGB LED 灯珠（指定型号：SK6812）。在电源分配上，所有组件需统一由标准的 +5V 供电网络驱动，并共用全局的地线网络 (GND)。",
+    "golden_components": [
+      "SK6812",
+      "XIAO-RP2040-DIP",
+      "SW_Push",
+      "+5V",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_3",
+    "user_requirement": "请帮我规划一款专为静电耳机打造的 DAC 与耳放一体机电路。外部接口方面，我们需要布置一个支持 USB 2.0 规范的 Type-C 母座来搞定数据和初始供电输入。数字音频部分的时钟精度很关键，记得配一颗带接地引脚的四脚无源晶振。因为驱动静电耳机需要极高的偏置电压，这部分的电源拓扑我决定直接用 LT3757EMSE 这颗高效率控制器来做升压电路。至于最核心的模拟驱动级，为了保证绝对的音质，我打算选用 OPA1622 这颗高保真音频运放。最后，在辅助的静音或控制逻辑那里，顺便安排一个常规的 NPN 三极管（标准 BEC 引脚）做信号开关就可以了。",
+    "golden_components": [
+      "OPA1622",
+      "USB_C_Receptacle_USB2.0",
+      "Crystal_GND24",
+      "Q_NPN_BEC",
+      "LT3757EMSE"
+    ]
+  },
+  {
+    "id": "test_4",
+    "user_requirement": "请为我的 SlimeVR 开源追踪器项目设计一块核心的传感器子板。 为了实现最高精度的姿态捕捉，这块板子必须使用 BNO08X 系列九轴传感器芯片。 板子需要通过一个带固定引脚的 6 针单排排针 （1x6 Header with Mounting Pins） 与主控板进行通信并提供物理支撑。 在电源处理上，统一使用标准的 +3V3 网络和 GND 网络，并为传感器芯片配置必要的滤波电容和 I2C 上拉电阻。 为了方便后续的地址配置，需要在电路上预留一组默认断开的双焊盘跳线 （Open Solder Jumper），并且在关键的信号线上引出几个独立的测试点 （Test Point） 方便示波器抓包调试。",
+    "golden_components": [
+      "TestPoint",
+      "Conn_01x06_MountingPin",
+      "C",
+      "R",
+      "SolderJumper_2_Open",
+      "BNO08X",
+      "+3V3",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_5",
+    "user_requirement": "请帮我规划一款专为静电耳机打造的 DAC 与耳放一体机电路。外部接口方面，我们需要布置一个支持 USB 2.0 规范的 Type-C 母座来搞定数据和初始供电输入。数字音频部分的时钟精度很关键，记得配一颗带接地引脚的四脚无源晶振。因为驱动静电耳机需要极高的偏置电压，这部分的电源拓扑我决定直接用 LT3757EMSE 这颗高效率控制器来做升压电路。至于最核心的模拟驱动级，为了保证绝对的音质，我打算选用 OPA1622 这颗高保真音频运放。最后，在辅助的静音或控制逻辑那里，顺便安排一个常规的 NPN 三极管（标准 BEC 引脚）做信号开关就可以了。",
+    "golden_components": [
+      "Conn_01x02_Pin",
+      "Conn_01x03_Pin",
+      "Conn_01x06_Pin",
+      "LED",
+      "R",
+      "WeMos_D1_mini",
+      "BSS138",
+      "+24V",
+      "+3.3V",
+      "+5V",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_6",
+    "user_requirement": "请使用 TPS63030DSK 这款高效升降压转换器（Buck-Boost Converter）作为核心电源芯片。 为了保证电源纹波满足高品质音频系统的需求，必须为其配置充足的输入输出滤波电容，并根据芯片数据手册选择合适的储能电感。 同时，电路中需要包含反馈分压电阻网络来设定目标电压。 最后，请在输入输出端配备一个 3 针的单排连接器 （1x3 Connector），方便与主板上的其他高功率模块（如 Wi-Fi 和音频功放）进行电源分配和地线连接。",
+    "golden_components": [
+      "Conn_01x03",
+      "C",
+      "L",
+      "R",
+      "TPS63030DSK"
+    ]
+  },
+  {
+    "id": "test_7",
+    "user_requirement": "请为我的桌面定时器设计核心主板。 主控必须使用 MDBT50Q-1MV2 蓝牙模块，并配备一颗无源晶振 （Crystal）。 电源和接口方面，需要一个 Micro-USB （USB_B_Micro） 接口引入 VBUS 电源，并在板内建立 VCC 和 GND 全局网络。 电路中需配置必要的滤波电容 （C）、电感 （L） 和匹配电阻 （R）。 最后，为了量产与调试，请务必集成TC2050-IDC刻录接口，并在信号线上预留测试点（TestPoint）。",
+    "golden_components": [
+      "TestPoint",
+      "USB_B_Micro",
+      "C",
+      "Crystal",
+      "L",
+      "R",
+      "MDBT50Q-1MV2",
+      "TC2050-IDC",
+      "GND",
+      "VBUS",
+      "VCC"
+    ]
+  },
+  {
+    "id": "test_8",
+    "user_requirement": "请为我的远距离物联网遥测节点设计射频子系统。 核心通信必须采用支持 915MHz 频段的 RFM95W-915S2 LoRa 模块。 为了确保天线的阻抗匹配，接口处请严格使用同轴连接器 （Conn_Coaxial）。 电源配置方面，请将模块统一接入VDD供电轨与全局地线 （GND），并务必在电源引脚旁布置小容量去耦电容 （C_Small），以过滤高频噪声并确保射频发射时的稳定性。",
+    "golden_components": [
+      "Conn_Coaxial",
+      "C_Small",
+      "RFM95W-915S2",
+      "GND",
+      "VDD"
+    ]
+  },
+  {
+    "id": "test_9",
+    "user_requirement": "请为我的 WLED 派对灯塔项目设计最小系统控制板。 核心 Wi-Fi 模块请指定使用 ESP-12F。 电源方面，模组需接入标准的 3V3 供电轨，并共享全局地线 （GND）。 为了确保主控稳定启动与运行，请务必在电源输入端配置基础滤波电容 （C），并在关键的控制引脚上配置必要的上拉或下拉电阻 （R）。",
+    "golden_components": [
+      "3V3",
+      "C",
+      "GND",
+      "R",
+      "ESP-12F"
+    ]
+  },
+  {
+    "id": "test_10",
+    "user_requirement": "请为我的开源贴片机飞达（Feeder）设计 RS-485 差分通信子电路。 核心收发器必须使用具备高抗干扰能力的MAX3078E芯片。 电源方面，芯片需接入标准的 +3.3V 供电轨，并与系统共享地线 （GND）。 为了确保差分信号在总线上的传输质量与稳定性，请务必在A、B数据线上配置合适的小尺寸终端匹配与偏置电阻（R_Small）",
+    "golden_components": [
+      "R_Small",
+      "MAX3078E",
+      "+3.3V",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_11",
+    "user_requirement": "请为我的 RF 输入 FMC 扩展板设计 FRU 信息存储子电路。 核心必须指定使用 AT24CS01-SSHM 这颗带有唯一序列号的 I2C EEPROM。 为了方便外部总线接入或硬件地址配置，请预留一个 2 针的单排连接器 （Conn_01x02）。 系统需统一接入全局地线 （GND），并为电路配置必要的美标小尺寸上拉电阻 （R_Small_US） 以及小容量去耦电容 （C_Small）。 最后，请在关键信号线上放置测试点 （TestPoint） 以方便后续的生产调试。",
+    "golden_components": [
+      "TestPoint",
+      "Conn_01x02",
+      "C_Small",
+      "R_Small_US",
+      "AT24CS01-SSHM",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_12",
+    "user_requirement": "请为我的印刷电路板设计课程专案规划蓝牙最小系统。 核心微控制器请务必指定使用 nRF54L05_1。 为了确保系统时钟精度，请为其配置一颗32MHz的2016封装晶振（XTAL_2016_32MHz_1）。 电源网络需统一接入VDD供电轨与全局地线（GND），并在电源输入路径上串接铁氧体磁珠（FerriteBead）进行高频滤波。 此外，电路中需配置常规的匹配电感（L） 与电阻 （R），为了区分不同功能的去耦与射频匹配电容，请在常规电容 （C） 之外，特别列出三个具有特定编号的电容节点（请严格命名为 C_1， C_2， C_3）。",
+    "golden_components": [
+      "C_1",
+      "C_2",
+      "C_3",
+      "C",
+      "FerriteBead",
+      "L",
+      "R",
+      "XTAL_2016_32MHz_1",
+      "nRF54L05_1",
+      "GND",
+      "VDD"
+    ]
+  },
+  {
+    "id": "test_13",
+    "user_requirement": "请为我的控制系统设计一个 RS-485 隔离或通信扩展接口。 核心收发器请指定使用 MAX3485。 为实现UART的自动收发方向控制，请加入一颗SS8050 NPN三极管及配合的1N4148W开关二极管。 电源网络统一采用 +3.3V和 GND。 为了满足大电流或散热需求，所有的基础被动元件请强制使用 1206 贴片封装，包含去耦电容 （C_1206） 和限流匹配电阻 （R_1206）。 外部接口方面，请提供三种不同规格的接头：一个 2 针单排针 （Conn_01x02） 可能用于终端电阻跳线、一个 5 针单排针 （Conn_01x05） 用于信号输入，以及一个 4 针的 JST 座 （JST_04） 用于连接外部 RS485 总线设备。",
+    "golden_components": [
+      "Conn_01x02",
+      "Conn_01x05",
+      "MAX3485",
+      "C_1206",
+      "1N4148W",
+      "R_1206",
+      "JST_04",
+      "SS8050",
+      "+3.3V",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_14",
+    "user_requirement": "请为我设计一个加热器控制与电流监测子电路。 核心功率开关请指定使用标准 GDS 引脚排列的 N 沟道 MOSFET （Q_NMOS_GDS），用来控制负载加热器 （Heater）。 为了实时监控加热电流，请在回路中串接一个ACS712_module电流感测模块。 电源网络需包含供加热器使用的 +12V、供感测器使用的 +5V，以及全局地线 （GND）。 外部接口方面，请配置一个 2 针螺丝端子 （Screw_Terminal_01x02） 用于大电流电源接入，以及一个 2 针单排针 （Conn_01x02） 和一个 3 针单排针 （Conn_01x03） 用于控制与传感信号对接。 最后，请为电路配置必要的小容量去耦电容 （C_Small） 及美标电阻 （R_US） 以完善驱动与测量信号。",
+    "golden_components": [
+      "Screw_Terminal_01x02",
+      "Conn_01x02",
+      "Conn_01x03",
+      "C_Small",
+      "Heater",
+      "Q_NMOS_GDS",
+      "R_US",
+      "ACS712_module",
+      "+12V",
+      "+5V",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_15",
+    "user_requirement": "请为我的物联网健康监测系统设计硬件架构。 为了实现Wi-Fi连网与数据处理，核心控制板请务必使用ESP32-DEVKITC-32D开发板。 在生理特征采集方面，请配置一个脉搏/心率传感器模块（请指定使用 Pulse Sensor 型号 SEN-11574），以及一个模拟温度传感器（请指定使用 TO-92 封装的 LM35-LP）来测量人体体温。 这些传感器将直接与主板的 GPIO 及 ADC 引脚相连。",
+    "golden_components": [
+      "ESP32-DEVKITC-32D",
+      "SEN-11574",
+      "LM35-LP"
+    ]
+  },
+  {
+    "id": "test_16",
+    "user_requirement": "请为我的机器学习机器人专案设计双直流电机驱动子电路。 核心驱动芯片请指定使用高效的 TB6612FNG。 为了方便接入外部电池提供动力电源，请在电源输入端配置一个 2 针单排连接器 （Conn_01x02）。 电路中需配置必要的旁路与滤波电容（C）以吸收电机运转产生的噪声。 最后，电源网络需统一接入全局地线 （GND），且为了确保原理图能顺利通过 EDA 软件的电气规则检查（ERC），请务必在动力电源输入节点上放置电源旗标 （PWR_FLAG）。",
+    "golden_components": [
+      "Conn_01x02",
+      "C",
+      "TB6612FNG",
+      "GND",
+      "PWR_FLAG"
+    ]
+  },
+  {
+    "id": "test_17",
+    "user_requirement": "请帮我设计一个带有全彩背光的小型宏键盘（Macropad）电路。 核心控制器请指定使用 XIAO-RP2040-DIP。 按键矩阵需要使用标准的轻触按键或机械轴（SW_Push），并为每个按键串接一个防鬼键二极管（D）。 每个按键下方需要配置一颗贴片的 SK6812MINI 可寻址 RGB 灯珠以提供独立背光。 电源网络方面，灯珠与主控需统一接入标准的 +5V 供电轨，并共享全局地线 （GND）。",
+    "golden_components": [
+      "D",
+      "SK6812MINI",
+      "SW_Push",
+      "+5V",
+      "GND",
+      "XIAO-RP2040-DIP"
+    ]
+  },
+  {
+    "id": "test_18",
+    "user_requirement": "请为我的 MicroModem 扩展板设计信号处理与指示子电路。 控制板请指定使用 Arduino_Nano_Every。 为了驱动无线电设备的 PTT（Push-To-Talk）或其他控制信号，请使用一颗 2N7000 N 沟道 MOSFET。 在接口方面，请提供一个 5 针单排针 （Conn_01x05） 作为主要的信号对接端口。 为了提供工作状态的反馈，请在电路中加入指示用的LED，并为其及其他逻辑信号配置配套的限流与分压电阻（R）。 最后，请配置必要的滤波电容 （C），并确保所有模块统一连接到全局地线 （GND）。",
+    "golden_components": [
+      "Conn_01x05",
+      "C",
+      "LED",
+      "R",
+      "Arduino_Nano_Every",
+      "2N7000",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_19",
+    "user_requirement": "请为我的 USB MicroSD 读卡器项目设计核心电路。 主控芯片请指定使用高集成度的GL823K控制器。 为了与计算机主机和存储卡进行物理连接，请配置一个标准的USB_A 公头接口以及一个Micro_SD_Card插槽。 电源网络需包含来自 USB 的 +5V 供电、芯片内部 LDO 输出的 +3.3V，以及全局的地线（请在此项目中标记为 Earth）。 为了提供数据传输状态的反馈，请加入一颗指示用的LED及其限流电阻（R），并在电源线上配置必要的去耦电容（C）以确保数据读写的稳定性。",
+    "golden_components": [
+      "Micro_SD_Card",
+      "USB_A",
+      "C",
+      "LED",
+      "R",
+      "GL823K",
+      "+3.3V",
+      "+5V",
+      "Earth"
+    ]
+  },
+  {
+    "id": "test_20",
+    "user_requirement": "请为我的 Wiimote USB 转接器项目设计核心电路。 为了实现与 Wii 手把的最佳兼容性，核心蓝牙模块请指定使用从原厂主机拆机的 J27H002。 电源方面，请配置一个标准的USB_A公头与一个支持 USB 2.0 规范的 Type-C 母座 （USB_C_Receptacle_USB2.0） 以引入 VBUS 电源（+5V）。 由于蓝牙模块需要 3.3V，请使用 LM1117-3.3 线性稳压器降压产生 +3V3 网络，并将所有模块共享地线 （GND）。 为了保护 USB 端口，请在 VBUS 输入端串接保险丝 （Fuse）。 此外，请加入一个轻触按键 （SW_Push） 用于蓝牙配对（Sync），一个状态指示 LED 及配套电阻 （R），以及必要的去耦小电容 （C_Small）。 在机构设计上，请预留固定的安装孔（MountingHole），并配置一个 2 针排针 （Conn_01x02_Male） 用于额外的电源或信号跳线测试。",
+    "golden_components": [
+      "Conn_01x02_Male",
+      "USB_A",
+      "USB_C_Receptacle_USB2.0",
+      "C_Small",
+      "Fuse",
+      "LED",
+      "R",
+      "J27H002",
+      "MountingHole",
+      "LM1117-3.3",
+      "SW_Push",
+      "+3V3",
+      "+5V",
+      "GND",
+      "VBUS"
+    ]
+  },
+  {
+    "id": "test_21",
+    "user_requirement": "请为我的 PWM 生成器项目设计核心电路。 核心定时器芯片请指定使用SOIC-8封装的NE555DR。 为了能够手动调整输出的工作周期（Duty Cycle），请在电路中配置一个旋钮电位器 （R_Potentiometer），并搭配两颗 1N4148WT 开关二极管来控制充放电路径。 为了增加驱动能力或反向信号，请使用一颗 PNP 三极管。 在接口与人机交互方面，请配置一个电池或电源接口（型号1061），一个单刀双掷开关（SW_SPDT）用于控制电源或模式切换，以及一颗指示工作状态的LED。 为了确保时序精准，请配备必要的定时与去耦电容（C），并在输出或关键信号在线预留测试点（TestPoint）以利后续测量。",
+    "golden_components": [
+      "TestPoint",
+      "1061",
+      "NE555DR",
+      "C",
+      "LED",
+      "R_Potentiometer",
+      "1N4148WT",
+      "PNP",
+      "SW_SPDT"
+    ]
+  },
+  {
+    "id": "test_22",
+    "user_requirement": "请为我的入门级硬体项目设计一个基础的 USB 通讯与感测接口电路。 核心的USB转UART桥接芯片请指定使用Holtek的HT42B534-2。 为了确保芯片与USB总线的稳定运作，请在电源与信号线上配置必要的无极性去耦电容（C）以及极性电容（C_Polarized），并搭配配套的电阻（R）。 电路中需包含一个特定的元件或模组 （AM90）。 外部连接方面，请提供一个 3 针排针 （Conn_01x03） 和一个 4 针排针 （Conn_01x04） 用于序列信号输出或其他周边扩展。 最后，请确保所有组件统一连接至系统的全局地线 （GND）。",
+    "golden_components": [
+      "Conn_01x03",
+      "Conn_01x04",
+      "C",
+      "C_Polarized",
+      "R",
+      "AM90",
+      "HT42B534-2",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_23",
+    "user_requirement": "请为我的谷仓温度监测系统设计主控与通信转换电路。 核心控制器请指定使用 WeMos_D1_mini。 为了与长距离的 1-Wire 温度传感器阵列可靠通信，请配置一个 I2C 转 1-Wire 桥接芯片或模组（请指定型号 AK-DS2482）。 电源方面，请配置一个标准 DC 电源插座 （Barrel_Jack） 引入外部电源，并预留一个降压模块接口 （BuckHeader）。 外部传感器与信号接口请采用螺丝端子，包含一个 2 针 （Screw_Terminal_01x02） 和一个 5 针 （Screw_Terminal_01x05）。 为了电路保护与稳定，请在电源入口加入防反接的 1N4007 二极管，配置必要的有极性设备/电容 （CP-Device） 与配套电阻 （R）。 最后，全系统需共享地线 （GND），并请在电路图中加入电源旗标 （PWR_FLAG） 以通过软件的电气规则检查。",
+    "golden_components": [
+      "Barrel_Jack",
+      "Screw_Terminal_01x02",
+      "Screw_Terminal_01x05",
+      "R",
+      "1N4007",
+      "AK-DS2482",
+      "BuckHeader",
+      "WeMos_D1_mini",
+      "CP-Device",
+      "GND",
+      "PWR_FLAG"
+    ]
+  },
+  {
+    "id": "test_24",
+    "user_requirement": "请为 Neumann N194A/V 绘制电源原理图。市电输入采用 IEC_60320_C14_Receptacle，串联 Fuse 与 SW_SPST_LED。交流电经 Transformer_1P_1S 降压，通过 D_Bridge_+-AA 及 D 整流，由 C_Polarized 和 C_Polarized_Small 滤波后，交由 LM7812_TO220 稳压输出 +12V。地线网络需严格区分 Earth、GNDPWR 与 0。最后，请在电路中配置以下测试与接线端子：普通的 Conn_01x01_Pin 与 Conn_01x01_Socket，以及带编号的插针（Conn_01x01_Pin_1, Conn_01x01_Pin_2, Conn_01x01_Pin_3）和插孔（Conn_01x01_Socket_1, Conn_01x01_Socket_2, Conn_01x01_Socket_3, Conn_01x01_Socket_4）",
+    "golden_components": [
+      "Conn_01x01_Pin_1",
+      "Conn_01x01_Pin_2",
+      "Conn_01x01_Pin_3",
+      "Conn_01x01_Socket_1",
+      "Conn_01x01_Socket_2",
+      "Conn_01x01_Socket_3",
+      "Conn_01x01_Socket_4",
+      "Conn_01x01_Pin",
+      "Conn_01x01_Socket",
+      "IEC_60320_C14_Receptacle",
+      "C_Polarized",
+      "C_Polarized_Small",
+      "D",
+      "D_Bridge_+-AA",
+      "Fuse",
+      "Transformer_1P_1S",
+      "LM7812_TO220",
+      "0",
+      "SW_SPST_LED",
+      "+12V",
+      "Earth",
+      "GNDPWR"
+    ]
+  },
+  {
+    "id": "test_25",
+    "user_requirement": "请为我的复古计算机鼠标转接器项目设计核心电路。 核心微控制器请指定使用SOIC封装的ATtiny1604-SS。 为了接入现代或兼容 PS/2 的鼠标，请配置一个标准的 USB Type-A 母座（请严格命名为 USB_A-Connector）。 输出端请使用一个标准的 9 针 D-Sub 母头 （DB9_Female） 以连接复古电脑的串行端口。 电源网络需包含 +5V 供电与全局地线 （GND），并配置必要的小容量去耦电容 （C_Small）。 在电路图中，请务必放置电源标志 （PWR_FLAG） 以满足设计软件的检查要求，并为可能需要的单一测试或跳线接点预留一个单针连接器 （Conn_01x01）。",
+    "golden_components": [
+      "DB9_Female",
+      "Conn_01x01",
+      "C_Small",
+      "ATtiny1604-SS",
+      "USB_A-Connector",
+      "+5V",
+      "GND",
+      "PWR_FLAG"
+    ]
+  },
+  {
+    "id": "test_26",
+    "user_requirement": "请为我的微控制器专案设计一个基础的 NPN 三极管驱动子电路，用于控制感性负载。核心的开关器件请指定使用通用的 NPN 三极管 PN2222A。为了保护三极管免受感性负载断电时产生的反向电压尖峰损坏，请务必在负载端反向并联一颗续流二极管 (1N4007)。控制信号需要通过一颗限流电阻 (R) 连接至三极管的基极。电源网络方面，控制逻辑采用 +3V3 供电并共用全局地线 (GND)。最后，请配置一个两针排针 (Conn_01x02_Pin) 作为负载接入点，并配置一个三针排针 (Conn_01x03_Pin) 作为电源和控制信号的输入接口。",
+    "golden_components": [
+      "Conn_01x02_Pin",
+      "Conn_01x03_Pin",
+      "R",
+      "1N4007",
+      "PN2222A",
+      "+3V3",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_27",
+    "user_requirement": "请为我的电动阀门控制专案设计核心驱动电路。主控板请务必指定使用高性能的 Teensy4.1，并通过其预留的 USB_B_Micro 接口供电或通信。为了驱动大功率的球阀执行机构（请在电路中用标准的直流电机 Motor_DC 符号代替），请配置一个 L298N 双 H 桥驱动模块或芯片。电源系统需要为驱动级提供 +12V 动力电源，为主控逻辑提供 +5V 电源，并共用系统地线 (GND)。最后，在 L298N 的逻辑使能（Enable）引脚或 5V 稳压使能位置，请配置一个默认短接的微型跳线帽（请严格命名为 Jumper_2_Small_Bridged）以便于硬件配置。",
+    "golden_components": [
+      "USB_B_Micro",
+      "L298N",
+      "Jumper_2_Small_Bridged",
+      "Motor_DC",
+      "+12V",
+      "+5V",
+      "GND",
+      "Teensy4.1"
+    ]
+  },
+  {
+    "id": "test_28",
+    "user_requirement": "请为我的自动控制专案设计传感器子电路。核心的运动检测请务必指定使用 LSM6DS3 六轴惯性测量单元。电路中还需要配置一个 DS1602 模块以处理特定的时序或外设功能。电源网络需统一采用 +3V3 供电轨，并共用全局地线 (GND)。为了保证信号稳定与芯片正常工作，请在关键的 I2C/SPI 通信总线或控制引脚上配置小尺寸的上拉/下拉电阻 (R_Small)，并在电源引脚旁布置小容量去耦电容 (C_Small) 进行高频滤波。",
+    "golden_components": [
+      "C_Small",
+      "R_Small",
+      "LSM6DS3",
+      "DS1602",
+      "+3V3",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_29",
+    "user_requirement": "请为我的压电传感器触发 LED 灯带专案设计核心控制电路。核心定时器请指定使用低功耗的 TLC555xD。为了驱动大电流的 LED 灯带，请在定时器输出端配置一颗 DMG1012T N 沟道 MOSFET。电源输入端请使用带定位引脚的 DC 插座 (Barrel_Jack_MountingPin)，并透过 SOT-89 封装的 L78L33_SOT89 线性稳压器降压供电。为了方便调整 LED 的点亮时长与触发灵敏度，请在电路中配置旋钮电位器 (R_Potentiometer)，并搭配必要的固定电阻 (R) 与电容 (C)。外部连接方面，请配置两个两针排针 (Conn_01x02_Pin) 分别用于连接压电传感器和 LED 灯带负载。最后，请加入指示状态的 LED，将系统共用全局地线 (GND)，并预留一个单针连接器 (Conn_01x01) 作为测试点。",
+    "golden_components": [
+      "Barrel_Jack_MountingPin",
+      "Conn_01x02_Pin",
+      "Conn_01x01",
+      "C",
+      "LED",
+      "R",
+      "R_Potentiometer",
+      "L78L33_SOT89",
+      "TLC555xD",
+      "DMG1012T",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_30",
+    "user_requirement": "请为我的兼容 VESC FOC 电机驱动器专案设计多级降压电源子系统。为了处理高压电池输入，第一级降压请指定使用同步降压稳压器 LM5164DDA。第二级降压请配置 TPS54202DDC 以产生中间电压，最后通过低压差线性稳压器 AMS1117-3.3 产生供逻辑控制使用的 3.3V 网络。请为这些核心芯片搭配必要的无源器件，包括常规功率电感 (L)、小尺寸电感 (L_Small)、小容量电容 (C_Small) 与小尺寸电阻 (R_Small)。系统需统一连接至全局地线 (GND)，并在关键电源输入节点加入电源旗标 (PWR_FLAG) 以通过设计软件的规则检查。",
+    "golden_components": [
+      "C_Small",
+      "L",
+      "L_Small",
+      "R_Small",
+      "AMS1117-3.3",
+      "LM5164DDA",
+      "TPS54202DDC",
+      "GND",
+      "PWR_FLAG"
+    ]
+  }
+]

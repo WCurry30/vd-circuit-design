@@ -1,0 +1,985 @@
+{
+  "model_name": "GLM-32B",
+  "model_full_name": "glm-4-32b",
+  "num_runs": 1,
+  "num_test_cases": 10,
+  "final_results": {
+    "fpr": 100.0,
+    "rhr": 100.0,
+    "recall": 57.333333333333336,
+    "json_quality": 66.66666666666667,
+    "retrieval_quality": 0.8618178742773509
+  },
+  "all_runs": [
+    {
+      "run_idx": 1,
+      "results": [
+        {
+          "test_id": "test_1",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6666666666666666,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.9332402859415326,
+          "plan": {
+            "circuit_name": "555_1Hz_LED_Blink",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "NE555",
+                "parameters": {
+                  "value": "NE555"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "47k"
+                }
+              },
+              {
+                "uid": "R3",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "220"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100uF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10nF"
+                }
+              },
+              {
+                "uid": "LED1",
+                "search_query": "LED",
+                "parameters": {
+                  "value": "LED"
+                }
+              }
+            ],
+            "elaborated_requirement": "本设计方案旨在使用经典的555定时器构建一个1Hz频率的LED闪烁电路，适用于KiCad 8平台。电路核心采用NE555定时器（如Texas Instruments SN72555或类似型号），通过配置为非稳态多谐振荡器模式实现LED的周期性闪烁。\n\n**元器件选择与功能分工**：\n1. **定时器芯片**：NE555（8引脚DIP封装），负责产生1Hz方波信号。其内部比较器和RS触发器构成振荡核心。\n2. **电阻**：\n   - R1（10kΩ，1/4W碳膜电阻）：与R2共同决定充电时间常数，设置高电平持续时间。\n   - R2（47kΩ，1/4W碳膜电阻）：与R1、C1共同决定振荡频率，同时影响高低电平持续时间比。\n   - R3（220Ω，1/4W碳膜电阻）：限流电阻，保护LED，限制最大电流至约20mA（假设LED正向压降为2V，电源为5V）。\n3. **电容**：\n   - C1（100μF，16V铝电解电容）：主定时电容，与R1、R2共同决定振荡周期。需并联一个0.01μF（104）瓷片电容（C2）以滤除高频噪声，提高稳定性。\n4. **LED**：标准红色LED（如Kingbright WP7103ASD），正向压降约2V，用于视觉指示。\n5. **电源**：5V直流稳压电源（如LM7805稳压芯片输出的标准电压），为整个电路提供稳定供电。\n\n**电路功能描述**：\nNE555的引脚8（VCC）和引脚1（GND）接5V电源。引脚6（THRESH）和引脚2（TRIG）短接后通过R1、R2接地，同时连接C1。引脚7（DISCH）连接R1与R2的节点。当电源接通后，C1通过R1和R2充电至2/3VCC时，NE555输出（引脚3）翻转为低电平，同时DISCH引脚导通使C1放电；当C1电压降至1/3VCC时，输出翻转为高电平，C1重新充电。通过R1=10kΩ、R2=47kΩ、C1=100μF的参数组合，可精确实现T≈1.1×(R1+R2)×C1≈1秒的周期（实际频率约0.91Hz，可通过微调R2补偿至1Hz）。引脚3的方波信号经R3限流后驱动LED，实现每秒一次的闪烁。\n\n该设计采用全离散元件，无复杂集成模块，符合KiCad 8的通用设计需求，且所有元件均为市场常见型号，易于采购和调试。",
+            "circuit_type": "led_blinker"
+          }
+        },
+        {
+          "test_id": "test_2",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.5,
+          "json_quality": 0.6666666666666666,
+          "retrieval_quality": 1.0,
+          "plan": {
+            "circuit_name": "Audio_Amplifier",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "LM2904",
+                "parameters": {
+                  "value": "LM2904"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100nF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10nF"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R3",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R4",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "R5",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "100k"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10nF"
+                }
+              },
+              {
+                "uid": "R6",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "C4",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "C5",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100nF"
+                }
+              },
+              {
+                "uid": "R7",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "100"
+                }
+              },
+              {
+                "uid": "C6",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100pF"
+                }
+              },
+              {
+                "uid": "C7",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "1nF"
+                }
+              },
+              {
+                "uid": "C8",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100uF"
+                }
+              },
+              {
+                "uid": "C9",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.1uF"
+                }
+              }
+            ],
+            "elaborated_requirement": "设计一个基于通用运放的音频放大器电路，适用于 KiCad 8 平台，采用经典元器件以确保兼容性和易用性。核心运放选用 LM2904 双运算放大器，因其低功耗、宽电源电压范围（3V-32V）和良好的音频频响特性。电路采用单电源供电（如 9V），需通过分压网络和耦合电容实现交流信号偏置至中点电压。\n\n输入级设计：音频信号通过 10kΩ 电阻 R1 从输入端引入，串联 100nF 陶瓷电容 C1 作为输入耦合电容，隔离直流偏置并滤除低频噪声。输入端并联 10nF 陶瓷电容 C2 和 10kΩ 电阻 R2 构成高频滤波网络，抑制射频干扰。LM2904 的第一运放（U1A）配置为非反相放大器，增益由 10kΩ 电阻 R3（反馈电阻）和 1kΩ 电阻 R4（输入电阻）决定，理论增益为 1 + R3/R4 = 11倍。同相输入端通过 100kΩ 电阻 R5 和 10nF 电容 C3 构成的 RC网络偏置至电源中点（4.5V），由 10kΩ 电阻 R6 和 10μF 电解电容 C4 分压网络提供。反相输入端直接连接信号输入点。\n\n输出级设计：LM2904 的输出端 U1A 通过 100nF 陶瓷电容 C5 耦合至输出端，隔离直流分量。输出端连接 8Ω 扬声器，串联 100Ω 电阻 R7 作为限流保护，防止短路或过载损坏运放。为改善高频响应和稳定性，输出端并联 100pF 陶瓷电容 C6 和 1nF 陶瓷电容 C7 构成补偿网络。电源滤波部分包括 100μF 电解电容 C8 和 0.1μF 陶瓷电容 C9 并联在电源引脚，滤除电源噪声。\n\n元器件选择：所有电阻选用 1/4W 金属膜电阻，电容中电解电容选用 25V 耐压，陶瓷电容选用 X7R 耐温等级。运放 LM2904 采用 SOIC-8 封装，便于 KiCad 库调用。电路整体结构简洁，适合初学者实现，同时满足基本的音频放大需求，适用于耳机驱动或小型扬声器。",
+            "circuit_type": "opamp_amplifier"
+          }
+        },
+        {
+          "test_id": "test_3",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.5,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.8143944923694317,
+          "plan": {
+            "circuit_name": "5V_Regulated_Power_Supply",
+            "components": [
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "1000uF/25V"
+                }
+              },
+              {
+                "uid": "D1",
+                "search_query": "1N4007",
+                "parameters": {
+                  "value": "1N4007"
+                }
+              },
+              {
+                "uid": "U1",
+                "search_query": "LM7805",
+                "parameters": {
+                  "value": "LM7805"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.33uF"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.1uF"
+                }
+              },
+              {
+                "uid": "C4",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100uF/10V"
+                }
+              },
+              {
+                "uid": "Q1",
+                "search_query": "2N3904",
+                "parameters": {
+                  "value": "2N3904"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "0.22"
+                }
+              },
+              {
+                "uid": "D2",
+                "search_query": "1N4148",
+                "parameters": {
+                  "value": "1N4148"
+                }
+              },
+              {
+                "uid": "U2",
+                "search_query": "LM2904",
+                "parameters": {
+                  "value": "LM2904"
+                }
+              },
+              {
+                "uid": "R3",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R4",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "7.5k"
+                }
+              }
+            ],
+            "elaborated_requirement": "本设计方案旨在实现一个基于经典元器件的5V稳压电源电路，适用于KiCad 8平台。电路核心采用线性稳压器LM7805，配合基础无源元件和辅助电路确保稳定性和可靠性。\n\n**输入部分**：电路输入为未经稳压的直流电压，建议范围9-12V直流（或通过桥式整流后的交流适配器输出）。输入端接入1000μF/25V电解电容（C1）用于初级滤波，抑制输入电压纹波。为防止反向电压，在输入端并联1N4007二极管（D1），其阳极接地。\n\n**稳压核心**：采用LM7805三端稳压器作为主稳压器件，其输入引脚连接C1滤波后的电压，输出引脚提供稳定的5V直流。在LM7805的输入端与输出端分别并联0.33μF陶瓷电容（C2）和0.1μF陶瓷电容（C3），用于高频噪声抑制和环路稳定性补偿。输出端再串联100μF/10V电解电容（C4）进一步平滑输出纹波。\n\n**过流保护**：为防止负载短路或过载，设计简单的过流保护电路。采用2N3904 NPN晶体管（Q1）作为开关，基极通过10kΩ电阻（R1）上拉至5V。在负载回路中串联0.22Ω/2W功率电阻（R2）作为电流检测电阻，其两端电压经1N4148二极管（D2）和10kΩ电阻（R2）分压后连接至Q1基极。当负载电流超过约1A时，R2两端压降超过0.7V，Q1导通将LM7805的GND引脚拉低，触发限流保护。\n\n**输出监控**：为监测输出电压是否正常，采用LM2904双运放（仅使用其中一个运放）作为电压比较器。运放的同相输入端通过分压电阻（R3=10kΩ，R4=7.5kΩ）连接至5V输出，设定参考电压约为3.75V。反相输入端连接可调基准电压（如TL431可调稳压器的2.5V输出，或直接使用2.5V齐纳二极管）。当输出电压低于4.9V时，运放输出低电平，可用于驱动LED或微控制器报警。\n\n**其他元件**：所有运放和晶体管的工作电压均由LM7805的5V输出供电。电路中所有电解电容均为铝电解电容，陶瓷电容为X7R介质类型。所有电阻均为1/4W碳膜电阻，关键电阻（如R3、R4）选用1%精度。输出端可预留USB Type-A母座作为标准5V输出接口，输入端预留DC Barrel Jack接口用于外部电源输入。\n\n该设计方案通过经典元器件组合，实现了输入滤波、稳压输出、过流保护和电压监控等功能，适用于大多数低功耗电子设备的供电需求。",
+            "circuit_type": "power_supply"
+          }
+        },
+        {
+          "test_id": "test_4",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6666666666666666,
+          "json_quality": 0.6666666666666666,
+          "retrieval_quality": 0.8156724677366369,
+          "plan": {
+            "circuit_name": "STC89C52_Minimal_System",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "STC89C52",
+                "parameters": {
+                  "value": "STC89C52"
+                }
+              },
+              {
+                "uid": "U2",
+                "search_query": "LM7805",
+                "parameters": {
+                  "value": "LM7805"
+                }
+              },
+              {
+                "uid": "X1",
+                "search_query": "Crystal_Oscillator",
+                "parameters": {
+                  "value": "12MHz"
+                }
+              },
+              {
+                "uid": "D1",
+                "search_query": "Diode",
+                "parameters": {
+                  "value": "1N4007"
+                }
+              },
+              {
+                "uid": "D2",
+                "search_query": "Diode",
+                "parameters": {
+                  "value": "1N4148"
+                }
+              },
+              {
+                "uid": "Q1",
+                "search_query": "2N3904",
+                "parameters": {
+                  "value": "2N3904"
+                }
+              },
+              {
+                "uid": "U3",
+                "search_query": "LM2904",
+                "parameters": {
+                  "value": "LM2904"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "R3",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "1μF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.1μF"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.1μF"
+                }
+              },
+              {
+                "uid": "C4",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10μF"
+                }
+              },
+              {
+                "uid": "C5",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "22pF"
+                }
+              },
+              {
+                "uid": "C6",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "22pF"
+                }
+              },
+              {
+                "uid": "SW1",
+                "search_query": "Switch",
+                "parameters": {
+                  "value": "SPST-NO"
+                }
+              }
+            ],
+            "elaborated_requirement": "基于STC89C52单片机的最小系统电路设计方案如下：  \n\n该最小系统电路以STC89C52为核心，包含电源模块、时钟模块、复位模块以及基本的外设接口。所有元器件均选用通用、基础型号，以适应KiCad 8的电路设计需求。  \n\n**1. 电源模块**  \n采用线性稳压器LM7805（5V输出）为系统提供稳定的电源。输入端使用1μF电解电容（如ECA-1J104）和0.1μF陶瓷电容（如CC0603KRX7R1BB104）进行滤波，输出端同样使用0.1μF陶瓷电容（CC0603KRX7R1BB104）以抑制高频噪声。电源输入端接入1N4007二极管（如1N4007）作为防反接保护。  \n\n**2. 时钟模块**  \n使用12MHz晶振（如HC49/US-12.000MHz）与两个22pF陶瓷电容（CC0603KRX7R1BB220）构成外部时钟电路，为STC89C52提供时钟信号。晶振两端分别连接至单片机的XTAL1和XTAL2引脚。  \n\n**3. 复位模块**  \n复位电路由10kΩ上拉电阻（如RC0603JR-0710KL）和10μF电解电容（如ECA-1J107）组成。上拉电阻连接至VCC，电容连接至复位引脚（RST），实现上电复位功能。为便于手动复位，增加一个按键（如SPST-NO）并联在电容两端，按下时强制复位。  \n\n**4. 外设接口**  \n- **输入接口**：使用2N3904 NPN三极管（如2N3904）和1kΩ电阻（RC0603JR-071KL）构成光电隔离输入电路，用于连接外部开关或传感器信号。三极管基极通过电阻限流，集电极连接至单片机I/O口，发射极接地。  \n- **输出接口**：采用LM2904双运放（如LM2904）中的一个运放作为电平转换缓冲器，驱动LED或继电器等负载。运放的同相输入端接固定电压（如3.3V），反相输入端连接单片机I/O口，输出端驱动负载。  \n\n**5. 其他辅助元件**  \n- 单片机所有I/O口均接10kΩ上拉电阻（RC0603JR-0710KL），防止悬空干扰。  \n- 使用1N4148二极管（如1N4148）对电源输入端进行瞬态抑制保护。  \n\n该最小系统电路结构简洁，元器件通用易购，适用于STC89C52的基本运行需求，并预留了扩展接口以连接外部设备。",
+            "circuit_type": "filter"
+          }
+        },
+        {
+          "test_id": "test_5",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.9357785636728461,
+          "plan": {
+            "circuit_name": "NPN_Common_Emitter_Amplifier",
+            "components": [
+              {
+                "uid": "Q1",
+                "search_query": "2N3904",
+                "parameters": {
+                  "value": "2N3904"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "4.7k"
+                }
+              },
+              {
+                "uid": "Rc",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "Re",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "470"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "Ce",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "47uF"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100uF"
+                }
+              },
+              {
+                "uid": "C4",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "D1",
+                "search_query": "1N4148",
+                "parameters": {
+                  "value": "1N4148"
+                }
+              }
+            ],
+            "elaborated_requirement": "设计一个NPN三极管共射极放大电路，采用经典的2N3904 NPN三极管作为核心放大元件，适用于KiCad 8平台。电路设计需满足以下详细要求：\n\n**1. 核心放大元件**：\n- 使用2N3904 NPN三极管作为放大管，其集电极电流范围为100μA至200mA，适合小信号放大应用。\n- 三极管的基极通过偏置电阻网络提供稳定的静态工作点，确保放大电路工作在放大区。\n\n**2. 偏置电路设计**：\n- 采用分压偏置电路，由两个电阻R1和R2组成基极偏置网络。R1（上拉电阻，典型值10kΩ）连接电源Vcc，R2（下拉电阻，典型值4.7kΩ）接地，通过分压为基极提供约0.7V的偏置电压。\n- 基极旁路电容C1（典型值10μF，电解电容）用于滤除直流偏置，仅允许交流信号进入基极。\n\n**3. 集电极电路**：\n- 集电极电阻Rc（典型值1kΩ）连接Vcc，用于将集电极电流转换为电压信号，提供电压增益。其阻值需根据所需的电压增益和电源电压调整。\n- 集电极输出端通过耦合电容C2（典型值10μF，电解电容）隔离直流分量，仅输出交流放大信号。\n\n**4. 发射极电路**：\n- 发射极电阻Re（典型值470Ω）用于稳定静态工作点，提供负反馈，提高温度稳定性。\n- 发射极旁路电容Ce（典型值47μF，电解电容）用于短路交流信号，避免信号在Re上产生负反馈，从而提高交流增益。\n\n**5. 电源与接地**：\n- 电源Vcc（典型值12V）为电路提供工作电压，通过滤波电容C3（典型值100μF，电解电容）和C4（10μF，电解电容）进行去耦，减少电源噪声。\n- 所有接地端通过低阻抗路径连接至公共地，确保信号完整性。\n\n**6. 输入输出外设**：\n- 输入信号通过耦合电容C1（10μF）进入基极，信号源可以是音频信号发生器或其他小信号源。\n- 输出信号从集电极通过耦合电容C2（10μF）输出，可连接至负载电阻（如8Ω扬声器）或后续放大级。\n- 可选的输入保护二极管（如1N4148）并联在输入端，防止过压损坏三极管。\n\n**7. 元器件选择说明**：\n- 所有电阻采用1/4W碳膜电阻，电容采用电解电容（极性需正确连接）或陶瓷电容（如0.1μF用于高频滤波）。\n- 无需专用运放（如LM2904），但若需更高增益或低噪声，可考虑在输出端增加LM2904构成的缓冲级。\n\n该设计确保电路具有稳定的静态工作点、良好的线性度和较高的电压增益，适用于音频放大或传感器信号调理等应用。所有元器件均为通用型号，便于在KiCad 8中实现和仿真。",
+            "circuit_type": "bjt_amplifier"
+          }
+        },
+        {
+          "test_id": "test_6",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.4,
+          "json_quality": 0.6666666666666666,
+          "retrieval_quality": 0.6471292535463969,
+          "plan": {
+            "circuit_name": "Diode_Rectifier_Filter",
+            "components": [
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "D1",
+                "search_query": "1N4007",
+                "parameters": {
+                  "value": "1N4007"
+                }
+              },
+              {
+                "uid": "D2",
+                "search_query": "1N4007",
+                "parameters": {
+                  "value": "1N4007"
+                }
+              },
+              {
+                "uid": "D3",
+                "search_query": "1N4007",
+                "parameters": {
+                  "value": "1N4007"
+                }
+              },
+              {
+                "uid": "D4",
+                "search_query": "1N4007",
+                "parameters": {
+                  "value": "1N4007"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "470uF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.1uF"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.01uF"
+                }
+              },
+              {
+                "uid": "C4",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "C5",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10nF"
+                }
+              },
+              {
+                "uid": "U1",
+                "search_query": "7805",
+                "parameters": {
+                  "value": "7805"
+                }
+              },
+              {
+                "uid": "Z1",
+                "search_query": "Zener",
+                "parameters": {
+                  "value": "5.1V"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "470"
+                }
+              },
+              {
+                "uid": "R3",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "100"
+                }
+              },
+              {
+                "uid": "LED1",
+                "search_query": "LED",
+                "parameters": {
+                  "value": "LED"
+                }
+              }
+            ],
+            "elaborated_requirement": "设计一个二极管整流滤波电路，目标平台为 KiCad 8，采用经典通用元器件实现。该电路的核心功能是将交流输入信号转换为平滑的直流输出，适用于低功耗、基础电源转换场景。\n\n**输入部分**：交流输入信号（如市电降压后的低电压交流信号）通过一个输入保护电阻（如 1kΩ 碳膜电阻）限流，随后接入由四个 1N4007 整流二极管组成的桥式整流电路。1N4007 具备 1A 额定电流和 1000V 耐压，适合处理中小功率整流需求。桥式整流将双向交流信号转换为单向脉动直流。\n\n**滤波部分**：整流后的脉动直流信号进入两级滤波电路。第一级为电解电容滤波（如 470μF/25V 铝电解电容），用于初步平滑大纹波，其等效串联电阻（ESR）需控制在合理范围以避免过热。第二级为高频滤波（如 0.1μF 陶瓷电容），并联在输出端，用于抑制高频噪声，电容类型选用 X7R 贴片电容以保证稳定性。\n\n**稳压与输出**：为提升输出稳定性，可在滤波后接入一个 7805 线性稳压器（若输入电压范围允许），或采用 Zener 二极管（如 5.1V/500mW）配合限流电阻（如 470Ω）实现简易稳压。输出端通过一个 100Ω 电阻和 LED 指示灯并联，用于电源状态指示，同时限流保护 LED。\n\n**辅助元件**：电路中需加入 0.01μF 陶瓷电容跨接在整流桥输入端，用于滤除高频干扰；输出端并联一个 10μF 铝电解电容和 10nF 陶瓷电容，进一步优化动态响应。所有电阻选用 1/4W 金属膜电阻，电容极性需正确连接，电解电容正极接输出高电位。\n\n该设计采用基础元器件，无需复杂控制逻辑，适合在 KiCad 8 中快速实现原理图绘制和 PCB 布局。整体电路结构经典，适用于教学演示或小型电子项目中的电源转换需求。",
+            "circuit_type": "rectifier"
+          }
+        },
+        {
+          "test_id": "test_7",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.744583751474108,
+          "plan": {
+            "circuit_name": "LM317_Adjustable_Regulator",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "LM317",
+                "parameters": {
+                  "value": "LM317"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "240"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.1uF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "1uF"
+                }
+              },
+              {
+                "uid": "D1",
+                "search_query": "1N4001",
+                "parameters": {
+                  "value": "1N4001"
+                }
+              },
+              {
+                "uid": "D2",
+                "search_query": "1N4001",
+                "parameters": {
+                  "value": "1N4001"
+                }
+              }
+            ],
+            "elaborated_requirement": "基于LM317的可调稳压电路设计方案如下：\n\n本设计采用经典的LM317三端可调稳压IC为核心，适用于需要灵活输出电压调节的电源应用。电路设计遵循通用性原则，所有元器件均为基础元件，兼容KiCad 8平台。  \n\n**核心元件**：  \n- **LM317**：主稳压芯片，通过调整外部电阻分压实现输出电压可调，典型工作电流范围0.1mA至1.5A。  \n- **电阻R1（240Ω）**：固定电阻，与R2组成分压网络，提供LM317的基准电流（约0.1mA），确保稳定工作。  \n- **电阻R2（1kΩ可调电位器）**：可调电阻，与R1配合调节输出电压，通过改变分压比实现1.25V至37V的连续可调输出（公式：Vout=1.25×(1+R2/R1)）。  \n- **电容C1（0.1μF，陶瓷电容）**：输入滤波电容，抑制高频噪声，推荐X7R介质，耐压值不低于输入电压的1.5倍。  \n- **电容C2（1μF，钽电容）**：输出滤波电容，增强负载瞬态响应，推荐固体钽电容，耐压值不低于输出电压的1.5倍。  \n- **二极管D1（1N4001）**：输入保护二极管，防止输入端短路时电容C1反向放电损坏LM317。  \n- **二极管D2（1N4001）**：输出保护二极管，防止输出端短路时电容C2反向放电损坏LM317。  \n\n**外设接口**：  \n- **输入端**：连接未稳压的直流电源（如7-40V直流输入），需确保输入电压比输出电压至少高3V以维持稳压裕量。  \n- **输出端**：提供稳定的直流电压，可直接驱动低功耗设备或作为其他电路的电源。  \n- **调节接口**：通过R2的旋转轴或数字电位器接口（若扩展）实现电压调节，输出电压实时反馈至负载。  \n\n**功能分工**：  \n- LM317负责核心稳压功能，通过内部误差放大器和调整管维持输出电压恒定。  \n- R1和R2构成反馈网络，决定输出电压范围，R2的可调性实现用户自定义输出。  \n- C1和C2提供滤波功能，确保输出电压纹波小于50mV（典型值）。  \n- D1和D2提供反向保护，增强电路鲁棒性，适用于可能发生短路的工业环境。  \n\n本设计采用经典拓扑，无复杂控制逻辑，适合初学者及批量生产，所有元件均为市面常见型号，易于采购和替换。",
+            "circuit_type": "power_supply"
+          }
+        },
+        {
+          "test_id": "test_8",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.8695829113324484,
+          "plan": {
+            "circuit_name": "LED_Constant_Current",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "LM2904",
+                "parameters": {
+                  "value": "LM2904"
+                }
+              },
+              {
+                "uid": "Q1",
+                "search_query": "2N3904",
+                "parameters": {
+                  "value": "2N3904"
+                }
+              },
+              {
+                "uid": "LED1",
+                "search_query": "LED",
+                "parameters": {
+                  "value": "LED"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R3",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "0.1"
+                }
+              },
+              {
+                "uid": "R4",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100nF"
+                }
+              },
+              {
+                "uid": "D1",
+                "search_query": "1N4148",
+                "parameters": {
+                  "value": "1N4148"
+                }
+              }
+            ],
+            "elaborated_requirement": "本设计方案旨在实现一个基于通用元器件的LED恒流驱动电路，目标驱动电流为20mA，适用于KiCad 8平台。电路核心采用电流反馈控制架构，确保LED电流稳定且不受其正向压降变化影响。\n\n**核心元器件选择与功能分工：**\n1. **运算放大器（LM2904）**：作为误差放大器，用于比较参考电压与采样电压。LM2904为双通道、低功耗运放，工作电压范围宽（3V-36V），适合本设计。其一个通道用于构成电流控制环路。\n2. **功率晶体管（2N3904）**：作为电流控制开关，通过运放输出驱动其基极，控制流经LED的电流。2N3904为NPN小信号晶体管，集电极电流可达200mA，满足20mA需求。\n3. **采样电阻（0.1Ω/1W金属膜电阻）**：串联在LED负极与地之间，用于采样电流。根据欧姆定律，20mA电流在0.1Ω电阻上产生2mV电压降，作为反馈信号输入运放反相输入端。\n4. **参考电压源（分压电阻网络）**：由两个精密金属膜电阻（如1%精度，10kΩ）分压电源电压产生稳定的参考电压（约2.0V），通过10kΩ电阻分压至2mV，与采样电阻电压比较。\n5. **输入滤波电容（100nF陶瓷电容）**：并联在电源输入端，滤除高频噪声，稳定电源电压。\n6. **输出保护二极管（1N4148）**：反向并联在LED两端，防止反向电压损坏LED，尤其适用于交流或瞬态电压环境。\n7. **基极限流电阻（1kΩ碳膜电阻）**：串联在2N3904基极，限制基极电流，防止运放输出过载。\n\n**电路工作原理：**\n电路采用经典的电流镜反馈结构。LM2904运放的同相输入端接参考电压（2mV），反相输入端接采样电阻上的电压。当LED电流偏离20mA时，采样电阻电压变化，运放输出调整2N3904基极电流，进而调节集电极电流，迫使采样电阻电压恢复至2mV，实现恒流控制。该设计具有高稳定性，且对LED正向压降变化不敏感。\n\n**输入输出外设：**\n- **输入**：直流电源（3V-12V），通过100nF电容滤波后供给电路。\n- **输出**：LED正极连接电源正端，负极通过采样电阻、2N3904发射极接地。1N4148二极管保护LED。\n\n本方案选用全通用元器件，无需复杂配置，可直接在KiCad 8中完成原理图绘制与PCB布局，适合低成本、高可靠性的LED驱动应用。",
+            "circuit_type": "led_constant_current"
+          }
+        },
+        {
+          "test_id": "test_9",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 1.0,
+          "plan": {
+            "circuit_name": "Sallen_Key_LPF_1kHz",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "LM2904",
+                "parameters": {
+                  "value": "LM2904"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "15nF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "15nF"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100nF"
+                }
+              }
+            ],
+            "elaborated_requirement": "设计一个Sallen-Key低通滤波器，截止频率为1kHz，采用通用元器件实现，适用于KiCad 8平台。电路核心采用LM2904双运算放大器中的一路作为有源器件，因其低功耗、宽电源电压范围（3V至36V）和通用性。滤波器采用二阶巴特沃斯响应，通过两个电阻和两个电容实现。具体元器件选择如下：\n\n1. **运算放大器**：选用LM2904，其输入偏置电流低（50nA），输出驱动能力适中，适合驱动后续的模拟信号处理电路。运放工作在单位增益缓冲模式下，确保高输入阻抗和低输出阻抗。\n\n2. **电阻**：采用1%精度的金属膜电阻，确保滤波器频率响应的准确性。两个电阻R1和R2的阻值均为10kΩ，用于设置滤波器的增益和截止频率。R1连接在运放的反相输入端与输出端之间，R2连接在输入信号与反相输入端之间。\n\n3. **电容**：选用聚酯薄膜电容（如WIMA MKP10系列），其频率特性稳定，适用于音频频段。两个电容C1和C2的容值均为15nF，通过公式 \\( f_c = \\frac{1}{2\\pi\\sqrt{R1 \\cdot R2 \\cdot C1 \\cdot C2}} \\) 计算得到1kHz的截止频率。\n\n4. **输入输出外设**：输入端通过一个10kΩ电阻与信号源隔离，防止信号源内阻影响滤波器性能。输出端直接连接运放的输出引脚，可驱动后续的模拟电路或ADC输入。为防止高频噪声干扰，输入端并联一个0.1μF的陶瓷电容到地，形成低通滤波器的预滤波。\n\n电路功能分工：LM2904作为有源滤波器件，通过R1、R2、C1、C2构成二阶低通网络，实现1kHz的截止频率。输入信号经过电阻分压和电容滤波后，由运放进行缓冲放大，输出端提供稳定的低频信号。该设计避免使用复杂元器件，确保在KiCad 8中易于实现和调试。",
+            "circuit_type": "filter"
+          }
+        },
+        {
+          "test_id": "test_10",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.8577970167001089,
+          "plan": {
+            "circuit_name": "Zener_5V_Regulator",
+            "components": [
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100uF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.1uF"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "U1",
+                "search_query": "LM2904",
+                "parameters": {
+                  "value": "LM2904"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "2k"
+                }
+              },
+              {
+                "uid": "R3",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "C4",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.1uF"
+                }
+              },
+              {
+                "uid": "D1",
+                "search_query": "1N4733A",
+                "parameters": {
+                  "value": "1N4733A"
+                }
+              },
+              {
+                "uid": "D2",
+                "search_query": "1N5817",
+                "parameters": {
+                  "value": "1N5817"
+                }
+              },
+              {
+                "uid": "F1",
+                "search_query": "Fuse",
+                "parameters": {
+                  "value": "100mA"
+                }
+              },
+              {
+                "uid": "R4",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1"
+                }
+              }
+            ],
+            "elaborated_requirement": "设计一个基于稳压二极管的5V稳压电路，需满足目标平台为KiCad 8，并选用通用基础元器件。以下是详细设计方案：\n\n该电路核心采用稳压二极管（如1N4733A，5.1V/1W）配合分压电阻和运算放大器（LM2904）实现精密稳压。输入电压需为9V至12V直流电源，输出为稳定的5V直流电压，最大输出电流为100mA。电路主要由以下部分组成：\n\n1. **输入滤波与限流**：在输入端并联一个100μF电解电容（如Panasonic EEC-FH系列）和0.1μF陶瓷电容（如Murata GRM1555C1H104KA01D）以滤除高频噪声和低频纹波。串联一个1Ω/1W电阻（如Yageo CFR-25JB系列）用于限流和抑制输入电压突变。\n\n2. **稳压二极管稳压**：稳压二极管1N4733A（5.1V）与一个1kΩ电阻（R1）串联，构成基准电压源。电阻R1用于限制稳压二极管的电流，典型值为15mA（计算公式：R1 = (Vin_min - Vz) / Iz，其中Vin_min=9V，Vz=5.1V，Iz=15mA）。\n\n3. **运放反馈控制**：采用LM2904双运放中的一个通道，配置为电压跟随器模式。运放的同相输入端连接稳压二极管的阴极（5.1V基准），反相输入端连接输出端。输出端通过一个2kΩ电阻（R2）和1kΩ电阻（R3）的分压网络反馈至反相输入端，分压比为R3/(R2+R3)=1/3，将5.1V基准电压分压为约1.7V，运放通过调整输出电压使反馈电压等于基准电压，最终实现5V输出。\n\n4. **输出滤波与保护**：输出端并联一个10μF电解电容（如Panasonic EEC-FH系列）和0.1μF陶瓷电容（Murata GRM1555C1H104KA01D）以滤除输出纹波。串联一个肖特基二极管1N5817（正向压降0.3V）用于防止负载反向供电，并增加一个100mA自恢复保险丝（如Bussmann MEC100）实现过流保护。\n\n5. **辅助元件**：LM2904的电源引脚需外接0.1μF去耦电容（Murata GRM1555C1H104KA01D）以稳定供电。所有电阻均选用1%精度的金属膜电阻（如Vishay RN60D系列）以确保分压精度。\n\n该设计通过稳压二极管提供基准电压，运放实现精密反馈控制，结合多级滤波和保护元件，能够在9-12V输入范围内稳定输出5V电压，适用于大多数通用电子项目。元器件均为常见型号，可直接在KiCad 8的官方库中找到对应封装。",
+            "circuit_type": "zener_regulator"
+          }
+        }
+      ],
+      "averages": {
+        "fpr": 1.0,
+        "rhr": 1.0,
+        "recall": 0.5733333333333334,
+        "json_quality": 0.6666666666666667,
+        "retrieval_quality": 0.8618178742773509
+      }
+    }
+  ]
+}

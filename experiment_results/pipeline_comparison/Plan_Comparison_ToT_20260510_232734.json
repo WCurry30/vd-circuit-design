@@ -1,0 +1,299 @@
+{
+  "experiment": "Plan_Comparison_ToT",
+  "timestamp": "20260510_232734",
+  "results": [
+    {
+      "experiment": "Plan_Comparison",
+      "method": "ToT",
+      "num_test_cases": 10,
+      "num_runs": 3,
+      "spr": {
+        "mean": 0.8333,
+        "std": 0.36
+      },
+      "target_deviation": {
+        "mean": 0.1945,
+        "std": 0.288
+      },
+      "model_match": {
+        "mean": 0.9726,
+        "std": 0.0408
+      },
+      "golden_recall": {
+        "mean": 0.9417,
+        "std": 0.0966
+      },
+      "first_pass": {
+        "mean": 0.7778,
+        "std": 0.441
+      },
+      "schematic_pass": {
+        "mean": 0.8333,
+        "std": 0.36
+      },
+      "per_case": {
+        "test_1": {
+          "spr": {
+            "mean": 1,
+            "std": 0.0
+          },
+          "target_deviation": {
+            "mean": 0.0601,
+            "std": 0.038
+          },
+          "model_match": {
+            "mean": 1.0,
+            "std": 0.0
+          },
+          "golden_recall": {
+            "mean": 1.0,
+            "std": 0.0
+          },
+          "first_pass": {
+            "mean": 0.0,
+            "std": 0.0
+          },
+          "schematic_pass": {
+            "mean": 1,
+            "std": 0.0
+          }
+        },
+        "test_2": {
+          "spr": {
+            "mean": 1,
+            "std": 0.0
+          },
+          "target_deviation": {
+            "mean": 0.1824,
+            "std": 0.0289
+          },
+          "model_match": {
+            "mean": 1.0,
+            "std": 0.0
+          },
+          "golden_recall": {
+            "mean": 0.75,
+            "std": 0.0
+          },
+          "first_pass": {
+            "mean": 0.0,
+            "std": 0.0
+          },
+          "schematic_pass": {
+            "mean": 1,
+            "std": 0.0
+          }
+        },
+        "test_3": {
+          "spr": {
+            "mean": 1,
+            "std": 0.0
+          },
+          "target_deviation": {
+            "mean": 0.0739,
+            "std": 0.0327
+          },
+          "model_match": {
+            "mean": 0.8953,
+            "std": 0.0427
+          },
+          "golden_recall": {
+            "mean": 1.0,
+            "std": 0.0
+          },
+          "first_pass": {
+            "mean": 1.0,
+            "std": 0.0
+          },
+          "schematic_pass": {
+            "mean": 1,
+            "std": 0.0
+          }
+        },
+        "test_4": {
+          "spr": {
+            "mean": 0,
+            "std": 0.0
+          },
+          "target_deviation": {
+            "mean": null,
+            "std": null
+          },
+          "model_match": {
+            "mean": 1.0,
+            "std": 0.0
+          },
+          "golden_recall": {
+            "mean": 1.0,
+            "std": 0.0
+          },
+          "first_pass": {
+            "mean": null,
+            "std": 0.0
+          },
+          "schematic_pass": {
+            "mean": 0,
+            "std": 0.0
+          }
+        },
+        "test_5": {
+          "spr": {
+            "mean": 0.3333,
+            "std": 0.5774
+          },
+          "target_deviation": {
+            "mean": 0.0025,
+            "std": 0.0
+          },
+          "model_match": {
+            "mean": 1.0,
+            "std": 0.0
+          },
+          "golden_recall": {
+            "mean": 0.8333,
+            "std": 0.0
+          },
+          "first_pass": {
+            "mean": 1.0,
+            "std": 0.0
+          },
+          "schematic_pass": {
+            "mean": 0.3333,
+            "std": 0.5774
+          }
+        },
+        "test_6": {
+          "spr": {
+            "mean": 1,
+            "std": 0.0
+          },
+          "target_deviation": {
+            "mean": 0.0118,
+            "std": 0.0001
+          },
+          "model_match": {
+            "mean": 0.9524,
+            "std": 0.0825
+          },
+          "golden_recall": {
+            "mean": 1.0,
+            "std": 0.0
+          },
+          "first_pass": {
+            "mean": 1.0,
+            "std": 0.0
+          },
+          "schematic_pass": {
+            "mean": 1,
+            "std": 0.0
+          }
+        },
+        "test_7": {
+          "spr": {
+            "mean": 1,
+            "std": 0.0
+          },
+          "target_deviation": {
+            "mean": 0.5,
+            "std": 0.0
+          },
+          "model_match": {
+            "mean": 1.0,
+            "std": 0.0
+          },
+          "golden_recall": {
+            "mean": 1.0,
+            "std": 0.0
+          },
+          "first_pass": {
+            "mean": 1.0,
+            "std": 0.0
+          },
+          "schematic_pass": {
+            "mean": 1,
+            "std": 0.0
+          }
+        },
+        "test_8": {
+          "spr": {
+            "mean": 1,
+            "std": 0.0
+          },
+          "target_deviation": {
+            "mean": 0.0,
+            "std": 0.0
+          },
+          "model_match": {
+            "mean": 0.9697,
+            "std": 0.0525
+          },
+          "golden_recall": {
+            "mean": 1.0,
+            "std": 0.0
+          },
+          "first_pass": {
+            "mean": 1.0,
+            "std": 0.0
+          },
+          "schematic_pass": {
+            "mean": 1,
+            "std": 0.0
+          }
+        },
+        "test_9": {
+          "spr": {
+            "mean": 1,
+            "std": 0.0
+          },
+          "target_deviation": {
+            "mean": 0.0802,
+            "std": 0.0
+          },
+          "model_match": {
+            "mean": 0.9086,
+            "std": 0.0083
+          },
+          "golden_recall": {
+            "mean": 0.8333,
+            "std": 0.0
+          },
+          "first_pass": {
+            "mean": 1.0,
+            "std": 0.0
+          },
+          "schematic_pass": {
+            "mean": 1,
+            "std": 0.0
+          }
+        },
+        "test_10": {
+          "spr": {
+            "mean": 1,
+            "std": 0.0
+          },
+          "target_deviation": {
+            "mean": 0.8397,
+            "std": 0.0
+          },
+          "model_match": {
+            "mean": 1.0,
+            "std": 0.0
+          },
+          "golden_recall": {
+            "mean": 1.0,
+            "std": 0.0
+          },
+          "first_pass": {
+            "mean": 1.0,
+            "std": 0.0
+          },
+          "schematic_pass": {
+            "mean": 1,
+            "std": 0.0
+          }
+        }
+      },
+      "runtime_seconds": 3572.9
+    }
+  ]
+}

@@ -1,0 +1,656 @@
+{
+  "model_name": "Qwen-32B",
+  "model_full_name": "Qwen/Qwen2.5-32B-Instruct",
+  "num_runs": 1,
+  "num_test_cases": 10,
+  "final_results": {
+    "fpr": 100.0,
+    "rhr": 100.0,
+    "recall": 53.333333333333336,
+    "json_quality": 66.66666666666667,
+    "retrieval_quality": 0.9021286173093885
+  },
+  "all_runs": [
+    {
+      "run_idx": 1,
+      "results": [
+        {
+          "test_id": "test_1",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6666666666666666,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.9221136669317881,
+          "plan": {
+            "circuit_name": "LED_Flash_Circuit",
+            "components": [
+              {
+                "uid": "IC1",
+                "search_query": "NE555",
+                "parameters": {
+                  "value": "NE555"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R3",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "220"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "LED1",
+                "search_query": "LED",
+                "parameters": {
+                  "value": "LED"
+                }
+              }
+            ],
+            "elaborated_requirement": "为了设计一个简单的LED闪烁电路，使用555定时器控制LED以1Hz频率闪烁，可以采用经典的NE555定时器芯片作为核心控制元件。电路设计将包括NE555定时器、电阻、电容和LED等基础元件。以下是对该电路设计的详细描述：\n\n1. **核心元件选择**：\n   - NE555定时器：用于产生周期性的脉冲信号，控制LED的闪烁。\n   - 电阻：用于设定定时器的充放电时间，以及限流保护LED。\n   - 电容：与电阻配合，设定定时器的充放电时间，从而控制LED的闪烁频率。\n   - LED：闪烁的光源，需要一个限流电阻来保护LED不被过大的电流损坏。\n\n2. **电路设计**：\n   - 使用NE555定时器配置为无稳态多谐振荡器模式，以产生周期性的脉冲信号。这种模式下，NE555定时器的输出会在高电平和低电平之间切换，从而控制LED的亮灭。\n   - 选择两个电阻（R1和R2）和一个电容（C1）来设定定时器的充放电时间。为了实现1Hz的闪烁频率，可以设定R1为10kΩ，R2为10kΩ，C1为10μF。根据公式f = 1.44 / ((R1 + 2R2) * C1)，这些值可以大致满足1Hz的频率要求。\n   - LED连接在NE555定时器的输出端和地之间，通过一个限流电阻（R3）连接，以保护LED不被过大的电流损坏。R3的值可以根据LED的规格选择，一般为220Ω到1kΩ之间，以确保LED在点亮时不会过热。\n\n3. **输入输出外设**：\n   - 输入：电源，提供电路运行所需的电压。对于NE555定时器，推荐使用5V直流电源。\n   - 输出：LED，作为闪烁的光源，通过定时器的输出控制其亮灭。\n\n4. **功能分工**：\n   - NE555定时器负责产生周期性的脉冲信号。\n   - 电阻和电容共同设定定时器的充放电时间，从而控制LED的闪烁频率。\n   - LED作为输出设备，根据定时器的输出信号闪烁。\n\n此电路设计简单且可靠，利用了基础的电子元件，易于在KiCad 8中实现。通过调整电阻和电容的值，可以灵活地改变LED的闪烁频率。",
+            "circuit_type": "led_blinker"
+          }
+        },
+        {
+          "test_id": "test_2",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.5,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 1.0,
+          "plan": {
+            "circuit_name": "Audio_Amplifier",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "LM2904",
+                "parameters": {
+                  "value": "LM2904"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100nF"
+                }
+              },
+              {
+                "uid": "C4",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              }
+            ],
+            "elaborated_requirement": "为了设计一个音频放大器电路，我们将使用LM2904双运放芯片作为放大核心，该芯片具有低噪声和高增益的特点，非常适合音频信号的放大。电路将包括输入耦合电容、增益设定电阻、输出耦合电容以及可能的负反馈网络，以确保稳定的放大效果。\n\n【电路设计方案】\n\n1. **输入耦合电容**：使用一个10μF的电解电容（C1）作为输入耦合电容，连接音频信号源与运放的反相输入端。此电容的作用是阻止直流成分进入运放，同时允许交流音频信号通过。\n\n2. **运放选择**：采用LM2904双运放芯片，选择其中一个运放作为音频信号的放大器。LM2904具有良好的音频性能，适用于本设计。\n\n3. **增益设定**：为了设定放大器的增益，我们将使用两个电阻，R1和R2。R1连接运放的反相输入端与输出端，形成负反馈路径；R2连接反相输入端与输入耦合电容。假设R1为10kΩ，R2为1kΩ，这样可以得到一个增益为11的放大器。增益可以根据实际需求调整。\n\n4. **输出耦合电容**：在运放的输出端与负载之间放置一个10μF的电解电容（C2），作为输出耦合电容。此电容的作用是阻止运放输出的直流成分进入负载，同时允许放大后的音频信号通过。\n\n5. **电源与接地**：运放需要正负电源供电，通常使用±12V电源。确保运放的电源端与地之间连接一个100nF的陶瓷电容（C3）和一个10μF的电解电容（C4），以滤除电源中的高频噪声。\n\n6. **负载**：负载可以是一个扬声器或耳机，直接连接到输出耦合电容的另一端。根据负载的阻抗，可能需要调整输出耦合电容的值以优化音频信号的传输。\n\n以上设计提供了一个基本的音频放大器电路，适用于大多数音频信号的放大需求。通过选择合适的元器件和调整增益设定电阻的值，可以进一步优化电路性能，以满足特定的应用需求。",
+            "circuit_type": "opamp_amplifier"
+          }
+        },
+        {
+          "test_id": "test_3",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.5,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.6587128400802612,
+          "plan": {
+            "circuit_name": "5V_Regulated_Power_Supply",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "LM7805",
+                "parameters": {
+                  "value": "LM7805"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100uF 25V"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100uF 10V"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "100"
+                }
+              },
+              {
+                "uid": "D1",
+                "search_query": "1N4148",
+                "parameters": {
+                  "value": "1N4148"
+                }
+              }
+            ],
+            "elaborated_requirement": "为了设计一个5V稳压电源电路，我们可以采用经典的线性稳压器方案，使用LM7805稳压器作为核心元件，因为它简单可靠且广泛使用。以下是详细的电路设计方案描述：\n\n电路主要由输入滤波、稳压和输出滤波三部分组成。输入滤波部分使用一个电解电容（C1，推荐容量为100μF，耐压至少为25V）来平滑输入电压的波动。稳压部分采用LM7805三端稳压器，它能够将输入电压稳定在5V。输出滤波部分同样使用一个电解电容（C2，推荐容量为100μF，耐压至少为10V）来进一步平滑输出电压。\n\n具体元器件选择如下：\n- LM7805：作为稳压器，提供稳定的5V输出。\n- C1：输入滤波电容，型号为电解电容，容量100μF，耐压25V。\n- C2：输出滤波电容，型号为电解电容，容量100μF，耐压10V。\n- R1：输入端的保护电阻，用于限制输入电流，选择100Ω的碳膜电阻。\n- D1：输入保护二极管，用于防止反向电压，选择1N4148。\n\n电路工作时，输入电压首先通过R1和D1，R1用于限制电流，防止输入电压过高时损坏电路，D1则防止输入电压反接时损坏电路。输入电压经过C1滤波后，送入LM7805的输入端，LM7805将输入电压稳定在5V，然后通过C2进一步滤波，输出稳定的5V电压。\n\n输入电压范围应根据LM7805的数据手册选择，通常建议输入电压至少比输出电压高出2V，以确保LM7805正常工作。输出端的负载能力根据LM7805的规格，一般可以提供1A的输出电流。\n\n以上是基于KiCad 8设计环境，使用通用、基础、经典元器件设计的5V稳压电源电路方案。",
+            "circuit_type": "power_supply"
+          }
+        },
+        {
+          "test_id": "test_4",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6666666666666666,
+          "json_quality": 0.6666666666666666,
+          "retrieval_quality": 0.854132370154063,
+          "plan": {
+            "circuit_name": "STC89C52_Minimal_System",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "STC89C52",
+                "parameters": {
+                  "value": "STC89C52"
+                }
+              },
+              {
+                "uid": "U2",
+                "search_query": "7805",
+                "parameters": {
+                  "value": "7805"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100uF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.1uF"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100uF"
+                }
+              },
+              {
+                "uid": "C4",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.1uF"
+                }
+              },
+              {
+                "uid": "X1",
+                "search_query": "Crystal",
+                "parameters": {
+                  "value": "12MHz"
+                }
+              },
+              {
+                "uid": "C5",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "30pF"
+                }
+              },
+              {
+                "uid": "C6",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "30pF"
+                }
+              },
+              {
+                "uid": "U3",
+                "search_query": "NE555",
+                "parameters": {
+                  "value": "NE555"
+                }
+              },
+              {
+                "uid": "C7",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "220"
+                }
+              },
+              {
+                "uid": "SW1",
+                "search_query": "Switch",
+                "parameters": {
+                  "value": "Switch"
+                }
+              },
+              {
+                "uid": "LED1",
+                "search_query": "LED",
+                "parameters": {
+                  "value": "LED"
+                }
+              }
+            ],
+            "elaborated_requirement": "设计一个基于STC89C52单片机的最小系统电路，该电路将包括电源电路、时钟电路、复位电路、编程接口以及基本的输入输出外设。以下是详细的电路设计方案描述：\n\n**电源电路**：\n电源电路将使用一个7805稳压器来提供稳定的5V电源。输入电源可以是9V到12V的直流电源。为了减少输入电源的波动，电路中将使用一个100uF的电解电容和一个0.1uF的陶瓷电容并联在电源输入端，以提供高频和低频的滤波。输出端同样需要一个100uF的电解电容和一个0.1uF的陶瓷电容来稳定输出电压。\n\n**时钟电路**：\n时钟电路将使用一个12MHz的晶体振荡器，配合两个30pF的瓷片电容，连接到STC89C52的XTAL1和XTAL2引脚，为单片机提供稳定的时钟信号。\n\n**复位电路**：\n复位电路将使用一个NE555定时器构成的复位电路，通过一个10uF的电解电容和一个10kΩ的电阻来产生复位信号。当电源接通时，电容充电，产生一个持续时间较长的复位信号，确保单片机在上电时能够正确复位。\n\n**编程接口**：\n编程接口将通过一个6针的编程接口连接到STC89C52的编程引脚，包括VCC、GND、RST、P1.0、P1.1和P1.2。这些引脚用于通过编程器对单片机进行编程和调试。\n\n**输入输出外设**：\n- **输入外设**：设计中将包括一个简单的按键输入电路，通过一个10kΩ的上拉电阻连接到单片机的一个I/O引脚，用于检测按键状态。\n- **输出外设**：设计中将包括一个LED输出电路，通过一个220Ω的限流电阻连接到单片机的一个I/O引脚，用于显示状态或作为调试输出。\n\n以上电路设计中使用的元器件均为通用、基础、经典的类型，适用于KiCad 8的设计环境。该设计确保了STC89C52单片机能够稳定运行，并具备基本的输入输出功能，为后续的开发和扩展提供了基础。",
+            "circuit_type": "filter"
+          }
+        },
+        {
+          "test_id": "test_5",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 1.0,
+          "plan": {
+            "circuit_name": "Common_Emitter_Amplifier",
+            "components": [
+              {
+                "uid": "Q1",
+                "search_query": "2N3904",
+                "parameters": {
+                  "value": "2N3904"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100nF"
+                }
+              },
+              {
+                "uid": "C4",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100uF"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "R3",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              }
+            ],
+            "elaborated_requirement": "为了设计一个基于NPN三极管的共射极放大电路，我们可以选择2N3904作为放大管，这是一种常用的NPN型三极管，适用于多种通用放大电路。电路设计将包括输入耦合电容、偏置电阻、集电极负载电阻和输出耦合电容等基本元件，以确保电路能够正常工作并实现放大功能。\n\n首先，输入信号通过一个10uF的电解电容耦合到2N3904的基极，该电容用于隔直流通交流，保证输入信号的交流成分能够传递到放大管的基极。基极偏置电路由两个电阻组成：一个10kΩ的电阻连接到电源正极，另一个1kΩ的电阻连接到地，这两个电阻共同作用形成分压，为基极提供适当的偏置电压，确保三极管工作在放大区。\n\n集电极通过一个1kΩ的电阻连接到电源正极，这个电阻作为集电极负载电阻，用于将集电极电流的变化转换为电压变化，从而实现信号的放大。输出信号通过一个10uF的电解电容耦合到负载，该电容同样用于隔直流通交流，确保输出信号的交流成分能够传递到负载上。\n\n为了确保电路的稳定性和可靠性，电路中还应包括一个100nF的旁路电容，连接在2N3904的发射极和地之间，用于旁路交流信号，减少交流反馈，提高电路的稳定性。此外，电源端应连接一个100uF的电解电容，用于滤除电源中的纹波，确保电源的稳定性。\n\n综上所述，该共射极放大电路使用了2N3904 NPN三极管作为放大元件，通过合理配置输入耦合电容、偏置电阻、集电极负载电阻、输出耦合电容以及旁路电容，实现了对输入信号的放大功能。此设计方案适用于KiCad 8平台，采用了通用、基础的元器件，确保了电路的实用性和可实现性。",
+            "circuit_type": "bjt_amplifier"
+          }
+        },
+        {
+          "test_id": "test_6",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.0,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 1.0,
+          "plan": {
+            "circuit_name": "Diode_Full_Wave_Rectifier_Filter",
+            "components": [
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              }
+            ],
+            "elaborated_requirement": "为了设计一个二极管整流滤波电路，我们可以采用经典的全波桥式整流电路，结合电容滤波器来实现。该电路将交流输入信号转换为相对平滑的直流输出。以下是详细的电路设计方案描述：\n\n电路中使用的基本元器件包括：\n- 4个1N4148二极管，用于构成全波桥式整流电路，实现对交流输入信号的整流。\n- 一个电解电容（例如4700μF/25V），用于滤波，平滑整流后的直流信号。\n- 两个电阻，一个用于限流（例如1kΩ），另一个用于负载（例如10kΩ）。\n\n电路的具体设计如下：\n- 输入端接入交流信号源，通过全波桥式整流电路，将交流信号转换为脉动的直流信号。全波桥式整流电路由4个1N4148二极管构成，每个二极管在交流信号的正半周和负半周中轮流导通，确保输出端总是得到正向的电压。\n- 整流后的脉动直流信号通过一个大容量的电解电容进行滤波。电容在电压上升时充电，在电压下降时放电，从而平滑输出电压的波动，减少纹波。\n- 输出端通过一个10kΩ的电阻作为负载，模拟实际应用中的负载情况。1kΩ的限流电阻连接在交流信号源与整流电路之间，用于保护电路中的二极管不受过大的电流冲击。\n\n该电路设计简单且通用，适用于基础的直流电源应用，如简单的电子设备供电。电路中的元器件选择均基于通用性和经典性，易于获取和替换，符合KiCad 8平台的设计要求。",
+            "circuit_type": "rectifier"
+          }
+        },
+        {
+          "test_id": "test_7",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.8197536766529083,
+          "plan": {
+            "circuit_name": "LM317_Adjustable_Regulator",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "LM317",
+                "parameters": {
+                  "value": "LM317"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "240"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Potentiometer",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100uF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100uF"
+                }
+              },
+              {
+                "uid": "D1",
+                "search_query": "Diode",
+                "parameters": {
+                  "value": "1N4148"
+                }
+              }
+            ],
+            "elaborated_requirement": "为了设计一个基于LM317的可调稳压电路，我们将采用LM317作为核心稳压器，结合适当的电阻和电容来实现输出电压的调节和稳定。此设计方案将适用于KiCad 8平台，确保使用通用、基础和经典的元器件。\n\n### 元器件选择\n- **LM317**：作为可调稳压器，用于提供稳定的输出电压。\n- **电阻**：R1和R2用于设定输出电压，R1为固定电阻，R2为可调电阻（电位器）。\n- **电容**：C1和C2用于滤波，C1连接在输入端，C2连接在输出端，以减少纹波和噪声。\n- **二极管**：D1，用于防止电容器在断电时反向放电，保护LM317。\n\n### 电路设计描述\n电路设计基于LM317的典型应用电路。LM317的调整端通过一个可调电阻R2和一个固定电阻R1连接到输出端，形成一个简单的分压器网络，用于设定输出电压。R1和R2的值决定了输出电压的大小，根据公式Vout = 1.25 * (1 + R2/R1) + Iadj * R2，其中Iadj是调整端的电流，通常可以忽略不计。为了提供足够的调整范围，R2可以选用一个电位器。\n\n在输入端，C1用于滤除输入电压中的纹波和噪声，确保LM317的输入电压稳定。C2则用于滤除输出电压中的纹波，提高输出电压的稳定性。C1和C2推荐使用电解电容，容量根据具体应用需求选择，通常在100μF到1000μF之间。\n\nD1连接在输入电源与地之间，用于防止电容器在电源断开时反向放电，保护LM317免受反向电压的影响。D1推荐使用1N4148或类似的通用二极管。\n\n### 输入输出外设\n- **输入**：电源输入端，连接到LM317的输入端，通过C1滤波。\n- **输出**：稳压后的输出电压，通过C2滤波后输出。\n\n此设计方案通过使用LM317、适当的电阻和电容，以及一个保护二极管，构建了一个基础但功能齐全的可调稳压电路，适用于多种应用场景。",
+            "circuit_type": "power_supply"
+          }
+        },
+        {
+          "test_id": "test_8",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.9332402859415326,
+          "plan": {
+            "circuit_name": "LED_Constant_Current_with_OpAmp",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "LM2904",
+                "parameters": {
+                  "value": "LM2904"
+                }
+              },
+              {
+                "uid": "Q1",
+                "search_query": "2N3904",
+                "parameters": {
+                  "value": "2N3904"
+                }
+              },
+              {
+                "uid": "LED1",
+                "search_query": "LED",
+                "parameters": {
+                  "value": "LED"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "R3",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100uF"
+                }
+              }
+            ],
+            "elaborated_requirement": "为了设计一个LED恒流驱动电路，驱动电流设定为20mA，我们可以采用一个基于运放的简单恒流源电路。该电路利用运放的高增益特性来维持流过LED的电流恒定。以下是详细的电路设计方案描述：\n\n电路的核心组件包括一个运放（LM2904）、一个NPN晶体管（2N3904）以及一些基础的电阻和电容。运放用于比较参考电压和反馈电压，从而控制晶体管的导通状态，以维持流过LED的电流恒定。\n\n首先，选择一个LM2904作为运放，它是一款双运放芯片，但我们的设计只需要其中一个运放。运放的同相输入端连接一个分压器，该分压器由两个电阻（R1和R2）组成，用于产生一个稳定的参考电压。参考电压的值应根据所需电流和反馈电阻（R3）的值来计算，以确保流过LED的电流为20mA。假设R3的值为1kΩ，参考电压应设置为20mA * 1kΩ = 20mV。\n\n运放的反相输入端连接到LED和晶体管集电极之间的反馈电阻（R3）。这样，当流过LED的电流发生变化时，反馈电压也会相应变化，运放会调整其输出电压，进而改变晶体管的基极电压，以维持流过LED的电流恒定。\n\n晶体管（2N3904）的发射极接地，集电极连接到LED的阳极。LED的阴极连接到电源正极。晶体管的作用是根据运放的输出电压调整其导通状态，从而控制流过LED的电流。\n\n为了稳定电路的工作，可以加入一个旁路电容（C1）连接在运放的电源引脚和地之间，以滤除电源噪声。电容C1的值可以根据实际电源噪声的频率和幅度来选择，通常在10μF到100μF之间。\n\n电路的输入端为电源输入，输出端为LED的阴极。电源输入端需要提供足够的电压以驱动LED和电路工作。LED的阴极连接到电源正极，阳极通过晶体管和反馈电阻连接到运放的反相输入端。\n\n通过上述设计，可以构建一个简单的LED恒流驱动电路，能够稳定地提供20mA的驱动电流。",
+            "circuit_type": "led_constant_current"
+          }
+        },
+        {
+          "test_id": "test_9",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 1.0,
+          "plan": {
+            "circuit_name": "Sallen_Key_LPF_1kHz",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "LM2904",
+                "parameters": {
+                  "value": "LM2904"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "15nF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "15nF"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100nF"
+                }
+              }
+            ],
+            "elaborated_requirement": "为了设计一个Sallen-Key低通滤波器，截止频率设定为1kHz，我们首先需要选择合适的运放和无源元件。考虑到目标平台是KiCad 8，我们将使用LM2904作为运放，这是一种双通道运算放大器，适合用于模拟电路设计。对于电容，我们将使用聚丙烯电容，因为它们具有良好的稳定性和低损耗因子，适合用于滤波器设计。电阻方面，我们将使用碳膜电阻，因为它们成本低且性能稳定。\n\n### 设计方案描述\n\n**运放选择**：LM2904，这是一种双通道运算放大器，具有高增益带宽和低输入偏置电流，非常适合用于构建Sallen-Key滤波器。我们将使用其中一个通道来实现所需的低通滤波功能。\n\n**电容选择**：聚丙烯电容，电容值分别为C1和C2，用于设定滤波器的截止频率。根据Sallen-Key低通滤波器的设计公式，假设我们选择C1 = C2 = 10nF，可以计算出所需的电阻值。\n\n**电阻选择**：碳膜电阻，电阻值分别为R1, R2, R3和R4，用于设定滤波器的增益和截止频率。根据Sallen-Key滤波器的设计，假设我们选择R1 = R3 = 10kΩ，R2 = R4 = 10kΩ，这样可以确保滤波器具有单位增益。\n\n**输入输出外设**：\n- 输入端连接到运放的反相输入端，通过一个10kΩ的电阻（R1）连接，同时通过10nF的电容（C1）接地，以提供交流耦合。\n- 输出端直接从运放的输出引脚取出，通过一个10nF的电容（C2）接地，以确保直流偏置点的稳定性。\n- 反相输入端通过10kΩ的电阻（R2）连接到输出端，形成负反馈路径。\n- 同相输入端接地。\n\n通过上述元件的选择和配置，可以构建一个Sallen-Key低通滤波器，其截止频率大约为1kHz。这样的设计不仅满足了用户的需求，同时也保证了电路的稳定性和实用性。",
+            "circuit_type": "filter"
+          }
+        },
+        {
+          "test_id": "test_10",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.8333333333333334,
+          "plan": {
+            "circuit_name": "5V_Regulator_Circuit",
+            "components": [
+              {
+                "uid": "D1",
+                "search_query": "1N4733A",
+                "parameters": {
+                  "value": "1N4733A"
+                }
+              },
+              {
+                "uid": "Q1",
+                "search_query": "2N3904",
+                "parameters": {
+                  "value": "2N3904"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "100"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100uF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100uF"
+                }
+              }
+            ],
+            "elaborated_requirement": "为了设计一个基于稳压二极管的5V稳压电路，我们可以采用一个简单且经典的电路结构，主要利用稳压二极管来实现电压的稳定输出。在这个电路设计中，我们将使用1N4733A型稳压二极管，其标准稳压值为5.1V，非常接近所需的5V输出。此外，我们将使用一个2N3904型NPN晶体管作为电流放大器，以确保稳压二极管在适当的电流下工作，从而提供稳定的输出电压。电路中的电阻将用于设定晶体管的基极电流和稳压二极管的工作电流。\n\n### 元器件选择与功能\n- **稳压二极管（1N4733A）**：用于设定输出电压为5.1V，接近所需的5V输出。\n- **NPN晶体管（2N3904）**：作为电流放大器，确保稳压二极管在适当的电流下工作。\n- **电阻（R1, R2）**：R1用于设定晶体管基极的电流，R2用于设定流过稳压二极管的电流。\n- **电容（C1, C2）**：C1用于输入端的滤波，C2用于输出端的滤波，以提高输出电压的稳定性。\n\n### 电路设计描述\n电路设计中，输入电压将首先通过电容C1进行滤波，以减少输入电压中的噪声。滤波后的电压被送入2N3904晶体管的基极，通过电阻R1来设定基极电流。晶体管的集电极连接到稳压二极管1N4733A的阳极，而稳压二极管的阴极则连接到输出端。电阻R2连接在稳压二极管的阴极和晶体管的发射极之间，用于设定流过稳压二极管的电流，从而确保输出电压稳定在5.1V左右。输出端通过电容C2进行滤波，以进一步提高输出电压的稳定性。\n\n### 输入输出外设\n- **输入端**：连接到电路的输入电压，建议输入电压范围为7V至15V，以确保电路正常工作。\n- **输出端**：提供稳定的5V输出电压，适用于需要精确电压的电子设备。\n\n通过上述设计，我们可以构建一个基于稳压二极管的简单而有效的5V稳压电路。此电路适用于需要稳定5V电源的多种应用场景，如小型电子设备的电源供应等。",
+            "circuit_type": "zener_regulator"
+          }
+        }
+      ],
+      "averages": {
+        "fpr": 1.0,
+        "rhr": 1.0,
+        "recall": 0.5333333333333333,
+        "json_quality": 0.6666666666666667,
+        "retrieval_quality": 0.9021286173093885
+      }
+    }
+  ]
+}

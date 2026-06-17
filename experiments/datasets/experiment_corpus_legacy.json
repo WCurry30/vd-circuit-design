@@ -1,0 +1,138 @@
+{
+  "ablation_spice": {
+    "purpose": "量化框架各模块（专家/护盾/度量/迭代）对生成可仿真 SPICE 的贡献",
+    "script": "experiment/仿真实验/run_ablation_spice.py",
+    "prompts": [
+      "设计一个滤波电路，截止频率为600hz",
+      "设计一个单管共射极放大电路，交流增益为40db",
+      "设计一个基于稳压二极管的并联稳压电路，输出5V",
+      "设计一个LED恒流驱动电路，电流为20mA"
+    ],
+    "groups": {
+      "G0_Ours": "完整系统",
+      "G1_No_Expert": "移除领域专家",
+      "G2_No_Shield": "移除拓扑护盾（不清洗 LLM 输出）",
+      "G3_No_Metric": "使用硬阈值判决（不调用 LLM 判决）",
+      "G4_No_Iter": "禁用迭代（单轮）"
+    },
+    "metrics": [
+      "success (是否通过仿真)",
+      "iterations_used (收敛轮次)",
+      "fatal_errors (致命仿真/环境错误计数)",
+      "csv: ablation_results.csv"
+    ],
+    "method_flow": [
+      "1) Planner 生成 planning.json",
+      "2) inspect_components -> retrieved.json",
+      "3) netlist_engine.generate_spice -> 生成 SPICE",
+      "4) spice_engine.evaluate -> 运行 Ngspice 并判决",
+      "5) 若未通过，则基于反馈迭代（最多 8 轮，G4 设为 1 轮）"
+    ],
+    "key_code_snippets": [
+      {
+        "name": "核心运行循环（伪代码）",
+        "code": "plan = planner.generate_plan(prompt) -> inspect_components(plan) -> for iter in 1..max: spice = netlist_engine.generate_spice(...); passed, feedback = spice_engine.evaluate(...); if passed: break; else continue"
+      },
+      {
+        "name": "NoShieldNetlistEngine (要点)",
+        "code": "跳过 expert.clean_spice_code() 与全局重复元件名清洗，直接将 LLM 原始 SPICE 送入 Ngspice，用于测试拓扑幻觉影响。"
+      }
+    ],
+    "example_result_placeholders": {
+      "task": "滤波 1kHz",
+      "G0_Ours": {"success": "✅", "iterations": 2},
+      "G2_No_Shield": {"success": "❌", "fatal_errors": 3}
+    }
+  },
+
+  "ablation_real": {
+    "purpose": "在真实 planner + retriever 框架下消融 CoT/JSON/PRM/Exact-match 的效果",
+    "script": "experiment/run_ablation_study_real.py",
+    "test_cases": "见脚本 TEST_CASES (10 个用例，包含 LED, 音频放大, LM7805, STC89C52 等)",
+    "groups": ["Group_2 (w/o Constraint)", "Group_3 (w/o PRM)", "Group_4 (w/o Exact Match)"],
+    "metrics": ["FPR (Format Pass Rate)", "RHR (Retrieval Hit Rate)", "Recall (元器件召回率)", "JSON 质量", "检索质量 (match_score 平均)"] ,
+    "method_flow": [
+      "对每个 test_case 重复 NUM_RUNS 次 (脚本默认 NUM_RUNS=3)",
+      "每次调用 CircuitPlannerFinal.generate_plan（受 prompt 模板／CoT 影响）",
+      "用 IntelligentRetriever 对 components.search_query 检索并计算指标",
+      "按组统计均值与方差，输出 Markdown 报告和结果 JSON/MD"
+    ],
+    "key_code_snippets": [
+      {
+        "name": "calculate_all_metrics",
+        "code": "对 components 一次性检索，计算 rhr, recall, retrieval_quality，避免重复检索。脚本内实现用于结果统计。"
+      },
+      {
+        "name": "AblationPlanner.generate_plan",
+        "code": "封装 CircuitPlannerFinal，并可切换 use_prm_selection / system_prompt（用于消融）。"
+      }
+    ]
+  },
+
+  "model_comparison": {
+    "purpose": "比较多个大模型在电路规划任务上的表现（Qwen, DeepSeek, Kimi, GPT, Gemini, GLM 等）",
+    "script": "experiment/run_model_comparison.py",
+    "models": "见脚本 MODELS 列表（包含 model_name, API key, base_url）",
+    "test_cases": "同 ablation_real 的 TEST_CASES",
+    "metrics": ["FPR", "RHR", "Recall", "JSON Quality", "Retrieval Quality"],
+    "method_flow": [
+      "为每个模型注入模型配置（修改 planner_module.MODEL_NAME/API_KEY/BASE_URL）",
+      "对 TEST_CASES 运行若干次，计算平均指标并保存 result.json",
+      "汇总生成 summary.md"
+    ],
+    "key_code_snippets": [
+      {
+        "name": "ModelComparisonPlanner (要点)",
+        "code": "通过 monkey-patch planner_module 全局变量切换模型，再创建 CircuitPlannerFinal 实例进行评测。"
+      }
+    ]
+  },
+
+  "orchestrator_end2end": {
+    "purpose": "展示端到端工作流：需求->规划->检索->网表->仿真迭代->JSON->KiCad 原理图",
+    "script": "orchestrator.py",
+    "flow_summary": [
+      "1. planner.generate_plan",
+      "2. inspect_components -> retrieved.json",
+      "3. NetlistEngine + Expert -> SPICE",
+      "4. SpiceEngine.evaluate -> 判决与迭代",
+      "5. translate_to_json -> SchematicGenerator 生成 KiCad 文件"
+    ],
+    "notes": "MAX_ITERATIONS=8; 若通过则调用 translate_to_json 并生成 KiCad 原理图。"
+  },
+
+  "netlist_generator": {
+    "purpose": "约束 LLM 生成满足拓扑/模板的 SPICE，并对 LLM 输出做自动清洗",
+    "script": "netlist_generator.py",
+    "key_strategies": [
+      "提供 uid_hint（必须使用的元件 UID）和明确的 SPICE 模板",
+      "第一轮给严格模板，后续轮只允许调整参数，不改变拓扑",
+      "后处理移除禁止元件（例如 R3, R_feedback）、去重去耦电容等"
+    ],
+    "example_snippet": "系统提示中包含模板和禁止列表：\n'只使用 R1, R2, C1, C2，不要添加 R3'；后处理会移除匹配的禁止模式。"
+  },
+
+  "spice_engine_and_critic": {
+    "purpose": "构建 Ngspice 测试台、注入模型、运行仿真并解析输出，同步调用 LLM 判决或使用硬阈值",
+    "scripts": ["core/spice_engine.py", "ngspice_critic.py"],
+    "key_behaviors": [
+      "动态注入模型（TIER2 .model, TIER3 .include）",
+      "根据 circuit_type 选择分析类型（AC/TRAN/MIXED）并写 control block",
+      "读取 wrdata 文件并解析 x/y 数据，专家解析为指标（cutoff_freq, max_gain, output_voltage, ripple 等）",
+      "判决：调用 LLM 返回 JSON {passed, reason, feedback}；G3 可替换为硬阈值判断"
+    ],
+    "control_block_examples": "AC: .control\nac dec 50 f_start f_end\nwrdata out.txt vdb(OUT)\nquit\n.endc",
+    "metric_parsing_notes": "截止频率通过 -3dB 搜索（线性插值）计算；若超出仿真范围以上限代替。"
+  },
+
+  "common_prompts_and_templates": {
+    "llm_netlist_template": "系统提示示例：强制模板 + 禁止表（示例见 netlist_generator.py），并在 user_prompt 中列出 uid_hint。",
+    "llm_judge_template": "系统提示示例：要求输出 JSON: {\"passed\": true/false, \"reason\": \"...\", \"feedback\": \"...\"}"
+  },
+
+  "usage_instructions": {
+    "how_to_use_with_gpt": "将本 JSON 作为 context 供 GPT: 对每个实验条目，直接用 'purpose','method_flow','metrics','key_code_snippets' 生成论文的 方法 与 结果 段落；把 example_result_placeholders 填入表格占位符；用 scripts 字段定位源码以提取更多代码片段。",
+    "file_location": "experiment/experiment_corpus.json",
+    "notes": "若需要展开某文件的完整函数体或增加真实运行结果（CSV/JSON 中的数值），请告知要展开的文件或提供运行结果路径。"
+  }
+}

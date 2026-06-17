@@ -1,0 +1,157 @@
+[
+  {
+    "id": "test_1",
+    "user_requirement": "我需要一个低通滤波器，用来过滤掉高频杂讯，截止频率大概在600Hz左右。想法是用Sallen-Key结构，这样滤波效果会好一些。运放随便用一个普通的双极型就行，比如LM2904这种常见的。输入端加个电容隔直，输出端加几个去耦电容保证工作稳定。电路接地都接一起就行。",
+    "golden_components": [
+      "LM2904",
+      "R",
+      "C",
+      "GND"
+    ],
+    "targets": {
+      "metric": "cutoff_freq_hz",
+      "value": 600,
+      "tolerance": 0.5
+    }
+  },
+  {
+    "id": "test_2",
+    "user_requirement": "帮我做个1000Hz的低通滤波器，音频信号处理用的。打算用运放搭一个简单的一阶滤波器，LM358应该够用了。电阻用10kΩ左右，电容用0.1μF，这样刚好能覆盖到1kHz。单电源5V供电就行，记得加耦合电容隔直。",
+    "golden_components": [
+      "LM358",
+      "R",
+      "C",
+      "GND"
+    ],
+    "targets": {
+      "metric": "cutoff_freq_hz",
+      "value": 1000,
+      "tolerance": 0.5
+    }
+  },
+  {
+    "id": "test_3",
+    "user_requirement": "想做个共射极放大电路，电压增益大概40dB，用来放大麦克风信号。核心用一个NPN管，2N3904就很常见。电路搞成经典的分压偏置结构，基极偏置电阻和集电极负载电阻决定增益大小。输入输出都要隔直电容，射极加个旁路电容提升增益。供电12V，地线统一接。",
+    "golden_components": [
+      "2N3904",
+      "R",
+      "C",
+      "GND"
+    ],
+    "targets": {
+      "metric": "max_gain_db",
+      "value": 40,
+      "tolerance": 0.3
+    }
+  },
+  {
+    "id": "test_4",
+    "user_requirement": "需要一个30dB增益的放大器，用来放大传感器的微弱信号。用NPN晶体管做共射极放大，2N3904或者类似的就行。这次用射极串联电阻的方式来调节增益，不用旁路电容，这样稳定性会更好一些。输入输出各加耦合电容，9V供电。",
+    "golden_components": [
+      "2N3904",
+      "R",
+      "C",
+      "GND"
+    ],
+    "targets": {
+      "metric": "max_gain_db",
+      "value": 30,
+      "tolerance": 0.3
+    }
+  },
+  {
+    "id": "test_5",
+    "user_requirement": "帮我设计个稳压电源，输入15V左右，输出想要个稳定的直流电压。打算用稳压二极管方案，加个晶体管做缓冲可以增强驱动能力。稳压管用1N4733A（5.1V），晶体管用2N3904。输入输出都加上滤波电容，把纹波降到最低。地线都接到一起。",
+    "golden_components": [
+      "1N4007",
+      "1N4733A",
+      "R",
+      "2N3904",
+      "C",
+      "GND"
+    ],
+    "targets": {
+      "metric": "v_out_avg_v",
+      "value": 5.1,
+      "tolerance": 0.2
+    }
+  },
+  {
+    "id": "test_6",
+    "user_requirement": "简单做个5V的基准电源，不用太大电流，能给数字电路供参考就行。用最基础的稳压管方案：一个稳压二极管1N4733A加上限流电阻就够用了。输入12V，电阻选择让稳压管工作电流在5-10mA之间。输出加个电容滤波。",
+    "golden_components": [
+      "1N4733A",
+      "R",
+      "C",
+      "GND"
+    ],
+    "targets": {
+      "metric": "v_out_avg_v",
+      "value": 5.0,
+      "tolerance": 0.2
+    }
+  },
+  {
+    "id": "test_7",
+    "user_requirement": "需要做一个反相放大电路，增益40dB，用来放大热电偶的输出信号。核心用运算放大器，LM2904就可以。输入电阻1kΩ，反馈电阻100kΩ，这样增益就是-100倍。反相端要加匹配电阻减少偏置电流误差。输入输出都用电容耦合，±12V供电。",
+    "golden_components": [
+      "LM2904",
+      "R",
+      "C",
+      "GND"
+    ],
+    "targets": {
+      "metric": "midband_gain_db",
+      "value": 40,
+      "tolerance": 0.3
+    }
+  },
+  {
+    "id": "test_8",
+    "user_requirement": "帮我做个20dB的同相放大器，用来缓冲信号。运放选LM2904，同相放大拓扑，输入阻抗高。用10kΩ和100kΩ的电阻设定10倍增益，这样刚好是20dB。输出端串联一个小电阻防止意外短路。输入输出同样加耦合电容，供电±5V就行。",
+    "golden_components": [
+      "LM2904",
+      "R",
+      "C",
+      "GND"
+    ],
+    "targets": {
+      "metric": "midband_gain_db",
+      "value": 20,
+      "tolerance": 0.3
+    }
+  },
+  {
+    "id": "test_9",
+    "user_requirement": "设计一个LED恒流驱动，电流控制在20mA左右。用运放LM2904做控制核心，加上一个大功率MOSFET或者晶体管驱动LED。检测电阻用几十欧姆的，通过运放负反馈保持电流恒定。LED那路供电可以高一些，比如12V或者24V，整个电路要接地。",
+    "golden_components": [
+      "LM2904",
+      "2N3904",
+      "LED",
+      "R",
+      "C",
+      "GND"
+    ],
+    "targets": {
+      "metric": "led_current_ma",
+      "value": 20,
+      "tolerance": 0.3
+    }
+  },
+  {
+    "id": "test_10",
+    "user_requirement": "再做一个LED驱动，电流做小一点，10mA就够了，给指示灯用。用三极管加电阻的简单方案就能实现，不用那么复杂。一个小功率三极管2N3904，加上基极电阻和LED限流电阻，让集电极电流维持在10mA左右。5V供电就可以。",
+    "golden_components": [
+      "2N3904",
+      "LED",
+      "R",
+      "C",
+      "GND"
+    ],
+    "targets": {
+      "metric": "led_current_ma",
+      "value": 10,
+      "tolerance": 0.3
+    }
+  }
+]
