@@ -1,0 +1,740 @@
+{
+  "model_name": "GPT-128k",
+  "model_full_name": "gpt-4o-mini",
+  "num_runs": 1,
+  "num_test_cases": 10,
+  "final_results": {
+    "fpr": 100.0,
+    "rhr": 100.0,
+    "recall": 55.666666666666664,
+    "json_quality": 66.66666666666667,
+    "retrieval_quality": 0.8399615472598827
+  },
+  "all_runs": [
+    {
+      "run_idx": 1,
+      "results": [
+        {
+          "test_id": "test_1",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6666666666666666,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.9221136669317881,
+          "plan": {
+            "circuit_name": "LED_Blink_Circuit",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "NE555",
+                "parameters": {
+                  "value": "NE555"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R3",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "330"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "1000uF"
+                }
+              },
+              {
+                "uid": "LED1",
+                "search_query": "LED",
+                "parameters": {
+                  "value": "LED"
+                }
+              }
+            ],
+            "elaborated_requirement": "This circuit design aims to implement a simple LED blinking circuit using a 555 timer to control LED blinking at a frequency of 1 Hz. The circuit will adopt the classic NE555 timer chip, operating in monostable or astable multivibrator mode, combined with basic resistor and capacitor components to ensure design versatility and ease of implementation.\n\nFirst, the NE555 timer is selected as the core control element. This chip offers excellent stability and broad applicability, making it suitable for generating timing pulse signals. To achieve the 1 Hz blinking frequency, we need to configure the 555 timer in astable mode. In this mode, the output frequency is determined by the values of the external resistors and capacitor.\n\nSpecific component selection is as follows:\n\n1. **Resistors**: Choose two resistors R1 and R2, with R1 having a resistance of 1 kΩ and R2 having a resistance of 10 kΩ. R1 controls the charging time, while R2 controls the discharging time. By adjusting the values of these two resistors, the output frequency can be precisely tuned.\n\n2. **Capacitor**: Choose a capacitor C1 with a capacitance of 1000 μF. This capacitor, together with R1 and R2, determines the charge and discharge timing of the 555 timer, thereby influencing the LED blinking frequency. The 1000 μF capacitor provides a sufficient time constant to achieve the 1 Hz blinking effect.\n\n3. **LED**: Choose a standard light-emitting diode (such as a red LED). The LED's anode is connected to the output of the 555 timer, and its cathode is connected to ground through a current-limiting resistor (approximately 330 Ω) to limit the current flowing through the LED and protect it from damage.\n\n4. **Current-limiting resistor**: Choose a 330 Ω resistor as the LED's current-limiting resistor to ensure that the LED does not exceed its maximum rated current (typically 20 mA) during operation.\n\nThe working principle of the circuit is as follows: When power is applied, the NE555 timer begins operating. Through the combination of R1, R2, and C1, it generates a periodically varying output signal. This signal controls the on/off state of the LED, causing it to blink at a frequency of 1 Hz. During the charging and discharging process, capacitor C1 forms a stable time delay, thereby achieving periodic blinking of the LED.\n\nIn the circuit design, it is recommended to use a standard power supply, such as a 5 V to 15 V DC power source, to ensure proper operation of the NE555. The choice of power supply should take into account both the LED's operating voltage and the 555 timer's supply requirements.\n\nIn summary, this LED blinking circuit design is simple and practical, uses commonly available components, and is suitable for schematic drawing and simulation on the KiCad 8 platform. By adjusting the resistor and capacitor values, the LED blinking frequency can be flexibly changed to meet different application requirements.",
+            "circuit_type": "led_blinker"
+          }
+        },
+        {
+          "test_id": "test_2",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.5,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.8430142667558458,
+          "plan": {
+            "circuit_name": "Audio_Amplifier",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "LM2904",
+                "parameters": {
+                  "value": "LM2904"
+                }
+              },
+              {
+                "uid": "C_in",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "1μF"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "100k"
+                }
+              },
+              {
+                "uid": "C_out",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10μF"
+                }
+              },
+              {
+                "uid": "C_dec1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.1μF"
+                }
+              },
+              {
+                "uid": "C_dec2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10μF"
+                }
+              },
+              {
+                "uid": "D1",
+                "search_query": "1N4148",
+                "parameters": {
+                  "value": "1N4148"
+                }
+              },
+              {
+                "uid": "D2",
+                "search_query": "1N4148",
+                "parameters": {
+                  "value": "1N4148"
+                }
+              }
+            ],
+            "elaborated_requirement": "To meet the design requirements for an audio amplifier, we will use a general-purpose operational amplifier (op-amp) LM2904 as the core amplification element. The LM2904 is a dual operational amplifier suitable for audio signal processing, featuring low noise and good linearity. The detailed circuit design description is provided below.\n\nFirst, the input section will use a capacitor (such as a 1 μF electrolytic capacitor) as a coupling capacitor, connected to the op-amp's non-inverting input (+). The purpose of this capacitor is to block DC components from entering the amplifier while allowing AC audio signals to pass through. To ensure input signal stability, we can place a resistor (such as 10 kΩ) in parallel at the input, which will form a voltage divider network with the input signal source and provide a reference level.\n\nThe op-amp's inverting input (-) will be connected to a feedback network to set the gain. We will use two resistors (R1 and R2), where R1 is 10 kΩ and R2 is 100 kΩ. By choosing the ratio of these two resistors, we can set the op-amp gain to 11 (i.e., 1 + R2/R1). Feedback resistor R2 will connect from the op-amp output to the inverting input, while R1 will connect the inverting input to ground.\n\nThe op-amp output will connect to a coupling capacitor (such as a 10 μF electrolytic capacitor) to isolate DC components and deliver the amplified audio signal to the subsequent circuit or speaker. The other end of the output capacitor will connect to the load (such as a speaker or subsequent audio processing circuit).\n\nTo ensure power supply stability, we will provide the LM2904 with an appropriate supply voltage, typically ±15 V. Two power adapters can be used to provide positive and negative voltages respectively, or a single-supply configuration can be used with an appropriate voltage divider circuit. To improve power supply stability, we can parallel some decoupling capacitors near the power pins (such as a 0.1 μF ceramic capacitor and a 10 μF electrolytic capacitor) to filter high-frequency noise and provide transient current.\n\nFinally, to protect the circuit, we can add a diode (such as 1N4148) at both the input and output to prevent reverse current from damaging the op-amp. These diodes will be placed in parallel at the input and output, ensuring that excessive current can be safely shunted to ground during signal overload conditions.\n\nIn summary, this audio amplifier circuit design uses the LM2904 op-amp, coupling capacitors, feedback resistors, and protection diodes as basic components, and is capable of effectively amplifying audio signals while providing a stable output, suitable for circuit design and simulation on the KiCad 8 platform.",
+            "circuit_type": "opamp_amplifier"
+          }
+        },
+        {
+          "test_id": "test_3",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.5,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.7155940334002177,
+          "plan": {
+            "circuit_name": "5V_Regulator",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "LM7805",
+                "parameters": {
+                  "value": "LM7805"
+                }
+              },
+              {
+                "uid": "D1",
+                "search_query": "1N4001",
+                "parameters": {
+                  "value": "1N4001"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.33uF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.1uF"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "F1",
+                "search_query": "Fuse",
+                "parameters": {
+                  "value": "1A"
+                }
+              }
+            ],
+            "elaborated_requirement": "To design a 5V regulated power supply circuit, we can adopt the classic linear regulator LM7805 as the core component. This regulator can step down an input voltage (typically between 7V and 35V) to a stable 5V, suitable for powering various low-power electronic devices.\n\nFirst, the input side of the circuit needs to be connected to an appropriate power adapter or battery providing at least 7V DC. To protect the regulator and subsequent circuitry, we place a 1N4001 rectifier diode in parallel at the input to prevent damage from reverse current to the power supply.\n\nAt the LM7805 input, we need to parallel a 0.33μF ceramic capacitor (C1) to improve input stability and reduce high-frequency noise. The regulator output requires a 0.1μF ceramic capacitor (C2) to ensure output voltage stability and response speed.\n\nAt the LM7805 output, we will obtain a stable 5V voltage, which can be directly connected to the load. To further improve power supply reliability, we can parallel a 10μF electrolytic capacitor (C3) at the output to provide additional filtering and energy storage, ensuring voltage stability during load transients.\n\nAdditionally, to protect the circuit from overload and short-circuit conditions, we can place an appropriately rated fuse in series at the input to prevent overcurrent situations. The fuse rating should be selected based on the power supply's maximum output current, typically 1A to 2A.\n\nFinally, the entire circuit layout should be kept compact to ensure good heat dissipation. The LM7805 generates a certain amount of heat during operation, so a small heat sink can be attached to its package to improve thermal dissipation and ensure it does not overheat during extended operation.\n\nIn summary, the main components of this 5V regulated power supply circuit include: an LM7805 regulator, a 1N4001 rectifier diode, 0.33μF and 0.1μF ceramic capacitors, a 10μF electrolytic capacitor, and an appropriately rated fuse. This design is simple, reliable, and suitable for use in various electronic projects.",
+            "circuit_type": "power_supply"
+          }
+        },
+        {
+          "test_id": "test_4",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.5,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.8582800672604487,
+          "plan": {
+            "circuit_name": "STC89C52_Minimal_System",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "7805",
+                "parameters": {
+                  "value": "7805"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "470uF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.1uF"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "Y1",
+                "search_query": "Crystal",
+                "parameters": {
+                  "value": "11.0592MHz"
+                }
+              },
+              {
+                "uid": "C4",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "22pF"
+                }
+              },
+              {
+                "uid": "C5",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "22pF"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "C6",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "D1",
+                "search_query": "LED",
+                "parameters": {
+                  "value": "LED"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "330"
+                }
+              },
+              {
+                "uid": "SW1",
+                "search_query": "Switch",
+                "parameters": {
+                  "value": "Button"
+                }
+              },
+              {
+                "uid": "BZ1",
+                "search_query": "Buzzer",
+                "parameters": {
+                  "value": "Buzzer"
+                }
+              }
+            ],
+            "elaborated_requirement": "To meet the circuit design requirements for a minimal system based on the STC89C52 microcontroller, the detailed circuit design description is provided below.\n\nFirst, the STC89C52 microcontroller is a commonly used 8-bit MCU with rich I/O ports and multiple functions. To build a minimal system, we need to include the following basic components:\n\n1. **Power Supply Circuit**: Use a 7805 regulator to step down the input 9V DC power supply to 5V, supplying power to the STC89C52 microcontroller and other peripheral circuits. Connect a 470μF electrolytic capacitor (C1) at the input for filtering, and a 0.1μF ceramic capacitor (C2) at the output to improve regulator stability.\n\n2. **MCU Connections**: The VCC pin of the STC89C52 connects to the 5V supply, and the GND pin connects to ground. To ensure proper MCU operation, place a 10μF electrolytic capacitor (C3) between VCC and GND for decoupling.\n\n3. **Crystal Oscillator Circuit**: The MCU requires an external crystal oscillator to provide a clock signal. Select an 11.0592MHz crystal (Y1) and parallel two 22pF capacitors (C4 and C5) at its two terminals to ensure crystal stability and accuracy.\n\n4. **Reset Circuit**: To ensure the MCU can reset properly at power-on, use a 10kΩ pull-up resistor (R1) connected between the reset pin (RESET) and VCC, while placing a 10μF electrolytic capacitor (C6) between the reset pin and ground. This generates a brief low-level pulse at power-on to ensure MCU reset.\n\n5. **I/O Interfaces**: Select several general-purpose I/O peripherals such as an LED and a button. Connect an LED (D1) and a 330Ω current-limiting resistor (R2) to port P1 to indicate the MCU's operating status. At the same time, connect a button switch (SW1) to port P3 for input signals, with one terminal of the button connected to P3 and the other to ground.\n\n6. **Other Peripherals**: To expand functionality, connect a buzzer (BZ1) to port P2 for audible alerts, with one terminal of the buzzer connected to P2 and the other terminal to ground.\n\nThrough the above design, a minimal system circuit based on the STC89C52 microcontroller has been constructed, featuring basic power management, clock signal, reset functionality, and simple I/O interfaces. This circuit design uses commonly available components and is suitable for layout and fabrication in KiCad 8.",
+            "circuit_type": "filter"
+          }
+        },
+        {
+          "test_id": "test_5",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.9215071333779229,
+          "plan": {
+            "circuit_name": "Common_Emitter_Amplifier",
+            "components": [
+              {
+                "uid": "Q1",
+                "search_query": "2N3904",
+                "parameters": {
+                  "value": "2N3904"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "1uF"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "R3",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "R4",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "4.7k"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100nF"
+                }
+              },
+              {
+                "uid": "D1",
+                "search_query": "1N4148",
+                "parameters": {
+                  "value": "1N4148"
+                }
+              }
+            ],
+            "elaborated_requirement": "This design aims to implement a common-emitter amplifier circuit based on an NPN transistor, suitable for signal amplification applications. The circuit design will use commonly available components to ensure compatibility and ease of procurement.\n\nFirst, the 2N3904 is selected as the NPN transistor, which offers good gain characteristics and frequency response, making it suitable for low-frequency signal amplification. The circuit input will connect to a signal source such as an audio signal generator, and the output will connect to a load such as a small speaker or subsequent audio processing circuit.\n\nIn the circuit design, the input signal is connected to the transistor's base through a coupling capacitor (a 1μF electrolytic capacitor is chosen) to isolate DC bias from the AC signal. To ensure the transistor operates in the active region, an appropriate DC bias voltage must be set. This can be achieved by connecting a resistor (10kΩ is chosen) between the base and emitter, along with a smaller resistor (1kΩ is chosen) between the base and ground to stabilize the operating point.\n\nThe emitter will be connected to ground through an emitter resistor (1kΩ is chosen), which not only provides negative feedback to improve linearity but also reduces gain. To achieve higher gain, the collector will be connected to a higher supply voltage (e.g., +9V) through a collector resistor (4.7kΩ is chosen). The choice of collector resistor will affect the circuit's gain and output impedance.\n\nThe output signal is taken from the transistor's collector and, after passing through a coupling capacitor (a 10μF electrolytic capacitor is chosen), is connected to the load. This coupling capacitor serves to block DC components from entering the load while allowing AC signals to pass through.\n\nTo improve circuit stability and noise immunity, a decoupling capacitor (a 100nF ceramic capacitor is chosen) can be added at the power supply to filter high-frequency noise. Additionally, a small protection diode (a 1N4148 is chosen) can be placed between the input signal source and the base to prevent damage to the transistor from excessive input signals.\n\nIn summary, this common-emitter amplifier circuit design uses a classic combination of components, ensuring circuit stability and good amplification performance suitable for a variety of signal amplification applications. Once the design is complete, schematic capture and PCB layout can be performed in KiCad 8 for subsequent fabrication and testing.",
+            "circuit_type": "bjt_amplifier"
+          }
+        },
+        {
+          "test_id": "test_6",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.4,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.7174256801605224,
+          "plan": {
+            "circuit_name": "Diode_Rectifier_Filter",
+            "components": [
+              {
+                "uid": "D1",
+                "search_query": "1N4148",
+                "parameters": {
+                  "value": "1N4148"
+                }
+              },
+              {
+                "uid": "D2",
+                "search_query": "1N4148",
+                "parameters": {
+                  "value": "1N4148"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Electrolytic_Capacitor",
+                "parameters": {
+                  "value": "1000uF_25V"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.1uF"
+                }
+              },
+              {
+                "uid": "F1",
+                "search_query": "Fuse",
+                "parameters": {
+                  "value": "Fuse"
+                }
+              }
+            ],
+            "elaborated_requirement": "This circuit design aims to implement a diode rectifier filter circuit suitable for converting AC power to DC power. The circuit will use classic components to ensure compatibility and realizability on the KiCad 8 platform.\n\nFirst, the input side of the circuit will connect to an AC power source, assumed to be 12V AC. To achieve rectification, we will use two 1N4148 diodes. They will be configured as a full-wave rectifier circuit, forming a bridge rectifier. Specifically, two diodes will be connected between the positive and negative terminals of the AC source, and the other two diodes will be connected to the output, ensuring effective rectification during both positive and negative half-cycles of the AC current.\n\nThe rectified output voltage will be a pulsating DC voltage, which then needs filtering. For this purpose, we will use an electrolytic capacitor with a rated voltage of 25V and a capacitance of 1000μF. This capacitor will be connected at the output of the rectifier circuit to smooth the pulsating DC voltage and reduce output voltage ripple.\n\nTo further stabilize the output voltage, we can add a 0.1μF ceramic capacitor after the electrolytic capacitor to filter high-frequency noise. This combination will effectively improve the stability and quality of the output voltage.\n\nFinally, the output will connect to a load, such as a small DC motor or LED light, to test the rectification and filtering performance of the circuit. To protect the circuit, we can place a fuse in parallel at the input to ensure that power can be disconnected under overload conditions, preventing component damage.\n\nIn summary, this circuit design includes: a 12V AC input, a bridge rectifier formed by two 1N4148 diodes, followed by a 1000μF electrolytic capacitor and a 0.1μF ceramic capacitor for filtering, ultimately outputting a stable DC voltage to drive the load. This design is simple and reliable, suitable for implementation on the KiCad 8 platform.",
+            "circuit_type": "rectifier"
+          }
+        },
+        {
+          "test_id": "test_7",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.9249915719032288,
+          "plan": {
+            "circuit_name": "LM317_Adjustable_Regulator",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "LM317",
+                "parameters": {
+                  "value": "LM317"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "1uF"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "5k"
+                }
+              }
+            ],
+            "elaborated_requirement": "This design aims to build an adjustable voltage regulator circuit based on the LM317, suitable for the power supply needs of various electronic devices. The LM317 is a classic adjustable linear regulator capable of providing an output voltage from 1.25V to 37V with a maximum output current of 1.5A, featuring good load regulation and temperature stability.\n\nThe basic circuit consists of an LM317 regulator, an input capacitor, an output capacitor, an adjustable resistor, and a fixed resistor. Specific component selection is as follows:\n\n1. **LM317 Regulator**: As the core component of the circuit, the LM317 is responsible for regulating the input voltage to the desired output voltage. Its input voltage should be between 3V and 40V, with the output voltage set by an external resistor network.\n\n2. **Input Capacitor**: Select a 10μF electrolytic capacitor (with a rated voltage of at least 1.5 times the input voltage) to filter high-frequency noise from the input supply and ensure stable operation of the LM317.\n\n3. **Output Capacitor**: Select a 1μF ceramic capacitor, connected at the LM317 output, to improve output stability and response speed and reduce output voltage ripple.\n\n4. **Adjustable Resistor**: Use an adjustable resistor (such as a linear potentiometer with a range of 0Ω to 5kΩ), connected in series with a fixed resistor (such as 1kΩ), to form a voltage divider for setting the desired output voltage. By adjusting the resistance of the variable resistor, precise regulation of the output voltage can be achieved.\n\n5. **Fixed Resistor**: Select a 1kΩ resistor, which together with the adjustable resistor forms the divider network to set the LM317 output voltage. According to the formula Vout = Vref * (1 + R2/R1) + Iadj * R2, Vref is 1.25V, R1 is 1kΩ, and R2 is the resistance of the adjustable resistor.\n\n6. **Heat Sink**: Since the LM317 may generate significant heat under high load, it is recommended to equip the LM317 with an appropriate heat sink to prevent performance degradation or damage due to overheating.\n\n7. **Input/Output Ports**: The input port of the circuit connects to an external power supply (such as an AC-DC adapter), and the output port connects to the load device requiring power.\n\nIn the circuit design, ensure that all component ratings meet the actual application requirements, especially the power ratings of capacitors and resistors. The circuit layout should minimize signal interference and maintain good grounding design to improve circuit stability and reliability.\n\nThrough the above design, users will be able to realize a flexible and reliable adjustable regulated power supply suitable for various electronic projects and experiments.",
+            "circuit_type": "power_supply"
+          }
+        },
+        {
+          "test_id": "test_8",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.9332402859415326,
+          "plan": {
+            "circuit_name": "LED_Constant_Current",
+            "components": [
+              {
+                "uid": "Q1",
+                "search_query": "2N3904",
+                "parameters": {
+                  "value": "2N3904"
+                }
+              },
+              {
+                "uid": "LED1",
+                "search_query": "LED",
+                "parameters": {
+                  "value": "LED"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R3",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10μF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.1μF"
+                }
+              }
+            ],
+            "elaborated_requirement": "To design an LED constant current driver circuit that can provide a constant drive current of 20mA, we can adopt the classic combination of an operational amplifier and a shunt resistor. The detailed circuit design description is as follows:\n\nFirst, select a general-purpose operational amplifier, such as the LM2904, as the core element for current control. The LM2904 is a dual operational amplifier with good linearity and stability, suitable for constant current source design.\n\nThe basic idea of the circuit is to control the current flowing through the LED via the operational amplifier. We need to set a reference voltage, which can typically be generated using a simple voltage divider circuit. A resistor R1 (e.g., 10kΩ) and a potentiometer R2 (e.g., 10kΩ) can be selected and connected to Vcc (e.g., 5V) to form a voltage divider, allowing adjustment of the reference voltage.\n\nNext, select an appropriate shunt resistor Rs (e.g., 1Ω), which will be placed in series with the LED. According to Ohm's law, the current flowing through Rs can be monitored via the voltage drop across it. To ensure the LED current is 20mA, the value of Rs can be calculated: V = I * R. Assuming we want a 20mV voltage drop across Rs (corresponding to 20mA current), Rs can be chosen as 1Ω.\n\nThe inverting input of the operational amplifier is connected across the shunt resistor Rs to monitor the current. The output of the operational amplifier is connected to an NPN transistor (e.g., 2N3904), which is used to control the LED's switching. The op-amp output drives the transistor's base, thereby controlling its conduction state and regulating the current flowing through the LED.\n\nThe LED's anode is connected to Vcc, and its cathode is connected to ground through the transistor. When the LED current falls below 20mA, the op-amp output increases, causing the transistor to conduct more and increasing the LED current; vice versa. This forms a negative feedback loop that ensures the LED current is maintained at 20mA.\n\nTo protect the circuit, a diode (e.g., 1N4148) can be placed in parallel between the LED and the transistor to prevent reverse current from damaging the transistor. Additionally, appropriate decoupling capacitors (e.g., a combination of 10μF and 0.1μF) should be added at the op-amp's power supply pins to improve power supply stability and noise immunity.\n\nIn summary, the main components of this LED constant current driver circuit include: an LM2904 operational amplifier, a 2N3904 NPN transistor, a 1Ω shunt resistor, a 10kΩ voltage divider resistor and potentiometer, a 1N4148 diode, and appropriate decoupling capacitors. Through this design, we can realize a simple yet effective LED constant current driver circuit that ensures the LED maintains a constant current of 20mA under varying operating conditions.",
+            "circuit_type": "led_constant_current"
+          }
+        },
+        {
+          "test_id": "test_9",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 1.0,
+          "plan": {
+            "circuit_name": "Sallen_Key_LPF_1kHz",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "LM2904",
+                "parameters": {
+                  "value": "LM2904"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "15.9nF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "15.9nF"
+                }
+              },
+              {
+                "uid": "C_in",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "1uF"
+                }
+              },
+              {
+                "uid": "C_dec",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100nF"
+                }
+              }
+            ],
+            "elaborated_requirement": "To meet the user's requirements, we will design a Sallen-Key low-pass filter with a cutoff frequency of 1kHz. The circuit will use the general-purpose operational amplifier LM2904, with resistors and capacitors selected from commonly available components to ensure design feasibility and ease of procurement.\n\nFirst, the basic structure of a Sallen-Key low-pass filter includes two resistors and two capacitors. We set the cutoff frequency to 1kHz, using the formula:\n\nf_c = 1 / (2πRC)\n\nwhere R is the resistance value and C is the capacitance value. To simplify the design, we can choose equal resistor and capacitor values such that R1 = R2 = R, C1 = C2 = C. Based on our design requirements, we set R = 10kΩ and C = 15.9nF, which yields a cutoff frequency close to 1kHz.\n\nThe specific circuit design is as follows:\n\n1. **Operational Amplifier**: Use the LM2904 as the primary signal processing unit. The LM2904 is a dual operational amplifier suitable for low-pass filter design. We will use one of the op-amps to build the filter circuit.\n\n2. **Resistors**: Select two 10kΩ resistors (R1 and R2), which will be connected in the op-amp's non-inverting input path and feedback loop to set the gain and influence the filter characteristics.\n\n3. **Capacitors**: Select two capacitors, both 15.9nF (C1 and C2), which together with the resistors determine the filter's cutoff frequency. C1 is connected between R1 and the op-amp's non-inverting input, and C2 is connected between R2 and the op-amp's output.\n\n4. **Input/Output**: The input signal will be connected to the op-amp's non-inverting input through a coupling capacitor (e.g., a 1μF capacitor) to block DC components. The output signal is taken from the op-amp's output pin directly as the filtered signal output.\n\n5. **Power Supply**: The LM2904's power supply pins need to be connected to an appropriate supply voltage (e.g., ±15V) to ensure proper op-amp operation.\n\n6. **PCB Design**: When performing PCB design in KiCad 8, ensure reasonable layout of power and signal traces to reduce noise interference. Keep input and output signal traces short and consider proper grounding design.\n\nThrough the above design, we can realize a Sallen-Key low-pass filter with a cutoff frequency of 1kHz, capable of effectively filtering signals above 1kHz while preserving low-frequency signals. This circuit design is simple, uses widely available components, and is suitable for implementation in various applications.",
+            "circuit_type": "filter"
+          }
+        },
+        {
+          "test_id": "test_10",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.5634487668673197,
+          "plan": {
+            "circuit_name": "5V_Regulator_Circuit",
+            "components": [
+              {
+                "uid": "D1",
+                "search_query": "1N4001",
+                "parameters": {
+                  "value": "1N4001"
+                }
+              },
+              {
+                "uid": "D2",
+                "search_query": "1N4001",
+                "parameters": {
+                  "value": "1N4001"
+                }
+              },
+              {
+                "uid": "D3",
+                "search_query": "1N4001",
+                "parameters": {
+                  "value": "1N4001"
+                }
+              },
+              {
+                "uid": "D4",
+                "search_query": "1N4001",
+                "parameters": {
+                  "value": "1N4001"
+                }
+              },
+              {
+                "uid": "D5",
+                "search_query": "1N4733A",
+                "parameters": {
+                  "value": "1N4733A"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "330"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "1000μF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10μF"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100μF"
+                }
+              },
+              {
+                "uid": "F1",
+                "search_query": "Fuse",
+                "parameters": {
+                  "value": "500mA"
+                }
+              },
+              {
+                "uid": "D6",
+                "search_query": "1N4148",
+                "parameters": {
+                  "value": "1N4148"
+                }
+              },
+              {
+                "uid": "D7",
+                "search_query": "1N4148",
+                "parameters": {
+                  "value": "1N4148"
+                }
+              }
+            ],
+            "elaborated_requirement": "To design a 5V voltage regulator circuit based on a Zener diode, we will use a classic Zener diode (such as the 1N4733A) as the main regulating element, combined with other basic components to ensure circuit stability and reliability.\n\nFirst, the circuit input will connect to an AC or DC power source with a voltage range between 7V and 12V to ensure the Zener diode can operate properly. We will use a rectifier bridge (such as four 1N4001 diodes) to rectify the AC supply into DC, followed by a filter capacitor (such as a 1000μF electrolytic capacitor) for smoothing to reduce ripple voltage.\n\nNext, the Zener diode 1N4733A will be used to provide a stable 5V output. This Zener diode has a reverse breakdown voltage of 5.1V, making it suitable for this circuit. To ensure the Zener diode operates properly, we need to place a current-limiting resistor (such as 330Ω) in series before it, which serves to limit the current through the Zener diode and prevent overload damage. The resistor value can be calculated based on the input voltage and the Zener diode's maximum operating current.\n\nAt the output of the Zener diode, we will place a small-value capacitor (such as a 10μF ceramic capacitor) in parallel to improve output stability and response speed and reduce transient voltage fluctuations. Additionally, it is recommended to place a larger electrolytic capacitor (such as a 100μF electrolytic capacitor) in parallel at the output to further filter and stabilize the output voltage, ensuring the output voltage remains near 5V when the load changes.\n\nTo protect the circuit, we can add a fuse (such as 500mA) at the input to prevent overcurrent conditions. It is also recommended to add a small-signal diode (such as 1N4148) at both the input and output to prevent reverse current from damaging the circuit.\n\nTo summarize, the working principle of the entire circuit is: the input power is rectified through the rectifier bridge, smoothed, fed into the current-limiting resistor, and then passed through the Zener diode to provide a stable 5V output. The capacitors at the output further stabilize the voltage, ensuring the circuit maintains good performance under load variations. This design is simple, reliable, and suitable for use in various basic electronic projects.",
+            "circuit_type": "zener_regulator"
+          }
+        }
+      ],
+      "averages": {
+        "fpr": 1.0,
+        "rhr": 1.0,
+        "recall": 0.5566666666666666,
+        "json_quality": 0.6666666666666667,
+        "retrieval_quality": 0.8399615472598827
+      }
+    }
+  ]
+}

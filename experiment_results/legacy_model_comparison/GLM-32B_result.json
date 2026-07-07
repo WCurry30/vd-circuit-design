@@ -1,0 +1,985 @@
+{
+  "model_name": "GLM-32B",
+  "model_full_name": "glm-4-32b",
+  "num_runs": 1,
+  "num_test_cases": 10,
+  "final_results": {
+    "fpr": 100.0,
+    "rhr": 100.0,
+    "recall": 57.333333333333336,
+    "json_quality": 66.66666666666667,
+    "retrieval_quality": 0.8618178742773509
+  },
+  "all_runs": [
+    {
+      "run_idx": 1,
+      "results": [
+        {
+          "test_id": "test_1",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6666666666666666,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.9332402859415326,
+          "plan": {
+            "circuit_name": "555_1Hz_LED_Blink",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "NE555",
+                "parameters": {
+                  "value": "NE555"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "47k"
+                }
+              },
+              {
+                "uid": "R3",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "220"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100uF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10nF"
+                }
+              },
+              {
+                "uid": "LED1",
+                "search_query": "LED",
+                "parameters": {
+                  "value": "LED"
+                }
+              }
+            ],
+            "elaborated_requirement": "This design aims to build a 1 Hz LED blinking circuit using the classic 555 timer, suitable for the KiCad 8 platform. The circuit core adopts the NE555 timer (such as Texas Instruments SN72555 or similar models), configured in astable multivibrator mode to achieve periodic blinking of the LED.\n\n**Component Selection and Functional Assignment**:\n1. **Timer Chip**: NE555 (8-pin DIP package), responsible for generating a 1 Hz square wave signal. Its internal comparators and RS flip-flop form the oscillation core.\n2. **Resistors**:\n   - R1 (10 kΩ, 1/4W carbon film resistor): Together with R2 determines the charging time constant, setting the high-level duration.\n   - R2 (47 kΩ, 1/4W carbon film resistor): Together with R1 and C1 determines the oscillation frequency, while also affecting the high/low level duration ratio.\n   - R3 (220 Ω, 1/4W carbon film resistor): Current-limiting resistor that protects the LED and limits the maximum current to approximately 20 mA (assuming LED forward voltage drop of 2V, supply of 5V).\n3. **Capacitors**:\n   - C1 (100 μF, 16V aluminum electrolytic capacitor): Main timing capacitor, together with R1 and R2 determines the oscillation period. A 0.01 μF (104) ceramic disc capacitor (C2) must be connected in parallel to filter high-frequency noise and improve stability.\n4. **LED**: Standard red LED (such as Kingbright WP7103ASD), with a forward voltage drop of approximately 2V, used for visual indication.\n5. **Power Supply**: 5V DC regulated power supply (such as the standard voltage output from an LM7805 regulator chip), providing stable power to the entire circuit.\n\n**Circuit Functional Description**:\nPins 8 (VCC) and 1 (GND) of the NE555 are connected to the 5V supply. Pins 6 (THRESH) and 2 (TRIG) are shorted together and connected to ground through R1 and R2, while also connected to C1. Pin 7 (DISCH) is connected to the junction of R1 and R2. When power is applied, C1 charges through R1 and R2; once it reaches 2/3 VCC, the NE555 output (pin 3) flips to low level, and the DISCH pin turns on to discharge C1. When the C1 voltage drops to 1/3 VCC, the output flips to high, and C1 begins charging again. With the parameter combination of R1 = 10 kΩ, R2 = 47 kΩ, and C1 = 100 μF, a period of T ≈ 1.1 × (R1 + R2) × C1 ≈ 1 second can be precisely achieved (actual frequency is approximately 0.91 Hz, which can be compensated to 1 Hz by fine-tuning R2). The square wave signal from pin 3 passes through R3 for current limiting and then drives the LED, achieving one blink per second.\n\nThis design uses entirely discrete components without complex integrated modules, meeting the general design requirements of KiCad 8. All components are common market models, easy to procure and debug.",
+            "circuit_type": "led_blinker"
+          }
+        },
+        {
+          "test_id": "test_2",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.5,
+          "json_quality": 0.6666666666666666,
+          "retrieval_quality": 1.0,
+          "plan": {
+            "circuit_name": "Audio_Amplifier",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "LM2904",
+                "parameters": {
+                  "value": "LM2904"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100nF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10nF"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R3",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R4",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "R5",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "100k"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10nF"
+                }
+              },
+              {
+                "uid": "R6",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "C4",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "C5",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100nF"
+                }
+              },
+              {
+                "uid": "R7",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "100"
+                }
+              },
+              {
+                "uid": "C6",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100pF"
+                }
+              },
+              {
+                "uid": "C7",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "1nF"
+                }
+              },
+              {
+                "uid": "C8",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100uF"
+                }
+              },
+              {
+                "uid": "C9",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.1uF"
+                }
+              }
+            ],
+            "elaborated_requirement": "Design an audio amplifier circuit based on a general-purpose op-amp, suitable for the KiCad 8 platform, using classic components to ensure compatibility and ease of use. The core op-amp chosen is the LM2904 dual operational amplifier due to its low power consumption, wide supply voltage range (3V-32V), and good audio frequency response characteristics. The circuit uses a single power supply (e.g., 9V) and requires a voltage divider network and coupling capacitors to bias the AC signal to the midpoint voltage.\n\nInput stage design: The audio signal is introduced from the input through a 10 kΩ resistor R1, with a 100 nF ceramic capacitor C1 connected in series as an input coupling capacitor to isolate DC bias and filter low-frequency noise. A 10 nF ceramic capacitor C2 and a 10 kΩ resistor R2 are placed in parallel at the input to form a high-frequency filtering network that suppresses RF interference. The first op-amp of the LM2904 (U1A) is configured as a non-inverting amplifier, with gain determined by a 10 kΩ resistor R3 (feedback resistor) and a 1 kΩ resistor R4 (input resistor), yielding a theoretical gain of 1 + R3/R4 = 11. The non-inverting input is biased to the supply midpoint (4.5V) through an RC network consisting of a 100 kΩ resistor R5 and a 10 nF capacitor C3, provided by a voltage divider network of a 10 kΩ resistor R6 and a 10 μF electrolytic capacitor C4. The inverting input is directly connected to the signal input point.\n\nOutput stage design: The LM2904 output U1A is coupled to the output through a 100 nF ceramic capacitor C5 to isolate DC components. The output is connected to an 8 Ω speaker, with a 100 Ω resistor R7 in series as current-limiting protection to prevent damage to the op-amp from short circuits or overload. To improve high-frequency response and stability, a 100 pF ceramic capacitor C6 and a 1 nF ceramic capacitor C7 are placed in parallel at the output to form a compensation network. The power supply filtering section includes a 100 μF electrolytic capacitor C8 and a 0.1 μF ceramic capacitor C9 in parallel at the power supply pins to filter power supply noise.\n\nComponent selection: All resistors are 1/4W metal film resistors. Among capacitors, electrolytic capacitors are rated at 25V, and ceramic capacitors use the X7R temperature rating. The LM2904 op-amp uses an SOIC-8 package for easy access from the KiCad library. The overall circuit structure is concise and suitable for beginners to implement, while meeting basic audio amplification requirements, suitable for headphone driving or small speakers.",
+            "circuit_type": "opamp_amplifier"
+          }
+        },
+        {
+          "test_id": "test_3",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.5,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.8143944923694317,
+          "plan": {
+            "circuit_name": "5V_Regulated_Power_Supply",
+            "components": [
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "1000uF/25V"
+                }
+              },
+              {
+                "uid": "D1",
+                "search_query": "1N4007",
+                "parameters": {
+                  "value": "1N4007"
+                }
+              },
+              {
+                "uid": "U1",
+                "search_query": "LM7805",
+                "parameters": {
+                  "value": "LM7805"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.33uF"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.1uF"
+                }
+              },
+              {
+                "uid": "C4",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100uF/10V"
+                }
+              },
+              {
+                "uid": "Q1",
+                "search_query": "2N3904",
+                "parameters": {
+                  "value": "2N3904"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "0.22"
+                }
+              },
+              {
+                "uid": "D2",
+                "search_query": "1N4148",
+                "parameters": {
+                  "value": "1N4148"
+                }
+              },
+              {
+                "uid": "U2",
+                "search_query": "LM2904",
+                "parameters": {
+                  "value": "LM2904"
+                }
+              },
+              {
+                "uid": "R3",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R4",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "7.5k"
+                }
+              }
+            ],
+            "elaborated_requirement": "This design aims to implement a 5V regulated power supply circuit based on classic components, suitable for the KiCad 8 platform. The circuit core uses the linear regulator LM7805, combined with basic passive components and auxiliary circuits to ensure stability and reliability.\n\n**Input Section**: The circuit input is an unregulated DC voltage, with a recommended range of 9-12V DC (or the output from an AC adapter after bridge rectification). A 1000μF/25V electrolytic capacitor (C1) is connected at the input for primary filtering to suppress input voltage ripple. To prevent reverse voltage, a 1N4007 diode (D1) is placed in parallel at the input with its anode connected to ground.\n\n**Regulation Core**: The LM7805 three-terminal regulator is used as the main regulating device, with its input pin connected to the voltage filtered by C1, and its output pin providing a stable 5V DC. A 0.33μF ceramic capacitor (C2) and a 0.1μF ceramic capacitor (C3) are placed in parallel at the input and output of the LM7805 respectively, for high-frequency noise suppression and loop stability compensation. A 100μF/10V electrolytic capacitor (C4) is further connected in series at the output to smooth output ripple.\n\n**Overcurrent Protection**: To prevent load short circuits or overload, a simple overcurrent protection circuit is designed. A 2N3904 NPN transistor (Q1) is used as a switch, with its base pulled up to 5V through a 10kΩ resistor (R1). A 0.22Ω/2W power resistor (R2) is placed in series in the load path as a current-sense resistor, and the voltage across it is divided by a 1N4148 diode (D2) and a 10kΩ resistor before being connected to the Q1 base. When the load current exceeds approximately 1A, the voltage drop across R2 exceeds 0.7V, causing Q1 to turn on and pull the LM7805 GND pin low, triggering current-limiting protection.\n\n**Output Monitoring**: To monitor whether the output voltage is normal, one channel of the LM2904 dual op-amp is used as a voltage comparator. The op-amp's non-inverting input is connected to the 5V output through divider resistors (R3 = 10kΩ, R4 = 7.5kΩ), setting the reference voltage to approximately 3.75V. The inverting input is connected to an adjustable reference voltage (such as the 2.5V output of a TL431 adjustable regulator, or directly using a 2.5V Zener diode). When the output voltage drops below 4.9V, the op-amp outputs a low level, which can be used to drive an LED or trigger a microcontroller alarm.\n\n**Other Components**: All op-amps and transistors are powered by the 5V output of the LM7805. All electrolytic capacitors in the circuit are aluminum electrolytic, and ceramic capacitors are of X7R dielectric type. All resistors are 1/4W carbon film resistors, with critical resistors (such as R3, R4) selected at 1% precision. A USB Type-A female connector can be reserved at the output as a standard 5V output interface, and a DC barrel jack connector can be reserved at the input for external power input.\n\nThrough the combination of classic components, this design achieves functions including input filtering, regulated output, overcurrent protection, and voltage monitoring, suitable for the power supply needs of most low-power electronic devices.",
+            "circuit_type": "power_supply"
+          }
+        },
+        {
+          "test_id": "test_4",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6666666666666666,
+          "json_quality": 0.6666666666666666,
+          "retrieval_quality": 0.8156724677366369,
+          "plan": {
+            "circuit_name": "STC89C52_Minimal_System",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "STC89C52",
+                "parameters": {
+                  "value": "STC89C52"
+                }
+              },
+              {
+                "uid": "U2",
+                "search_query": "LM7805",
+                "parameters": {
+                  "value": "LM7805"
+                }
+              },
+              {
+                "uid": "X1",
+                "search_query": "Crystal_Oscillator",
+                "parameters": {
+                  "value": "12MHz"
+                }
+              },
+              {
+                "uid": "D1",
+                "search_query": "Diode",
+                "parameters": {
+                  "value": "1N4007"
+                }
+              },
+              {
+                "uid": "D2",
+                "search_query": "Diode",
+                "parameters": {
+                  "value": "1N4148"
+                }
+              },
+              {
+                "uid": "Q1",
+                "search_query": "2N3904",
+                "parameters": {
+                  "value": "2N3904"
+                }
+              },
+              {
+                "uid": "U3",
+                "search_query": "LM2904",
+                "parameters": {
+                  "value": "LM2904"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "R3",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "1μF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.1μF"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.1μF"
+                }
+              },
+              {
+                "uid": "C4",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10μF"
+                }
+              },
+              {
+                "uid": "C5",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "22pF"
+                }
+              },
+              {
+                "uid": "C6",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "22pF"
+                }
+              },
+              {
+                "uid": "SW1",
+                "search_query": "Switch",
+                "parameters": {
+                  "value": "SPST-NO"
+                }
+              }
+            ],
+            "elaborated_requirement": "The minimal system circuit design based on the STC89C52 microcontroller is as follows:\n\nThis minimal system circuit takes the STC89C52 as its core and includes a power supply module, clock module, reset module, and basic peripheral interfaces. All components are selected from general-purpose, basic models to meet the circuit design requirements of KiCad 8.\n\n**1. Power Supply Module**\nA linear regulator LM7805 (5V output) is used to provide a stable power supply for the system. The input side uses a 1μF electrolytic capacitor (e.g., ECA-1J104) and a 0.1μF ceramic capacitor (e.g., CC0603KRX7R1BB104) for filtering, and the output side also uses a 0.1μF ceramic capacitor (CC0603KRX7R1BB104) to suppress high-frequency noise. A 1N4007 diode (e.g., 1N4007) is placed at the power input as reverse-polarity protection.\n\n**2. Clock Module**\nA 12MHz crystal (e.g., HC49/US-12.000MHz) and two 22pF ceramic capacitors (CC0603KRX7R1BB220) form the external clock circuit, providing the clock signal for the STC89C52. The two ends of the crystal are connected to the microcontroller's XTAL1 and XTAL2 pins respectively.\n\n**3. Reset Module**\nThe reset circuit consists of a 10kΩ pull-up resistor (e.g., RC0603JR-0710KL) and a 10μF electrolytic capacitor (e.g., ECA-1J107). The pull-up resistor is connected to VCC, and the capacitor is connected to the reset pin (RST), implementing power-on reset functionality. For convenient manual reset, a push button (e.g., SPST-NO) is added in parallel across the capacitor terminals; when pressed, it forces a reset.\n\n**4. Peripheral Interfaces**\n- **Input Interface**: A 2N3904 NPN transistor (e.g., 2N3904) and a 1kΩ resistor (RC0603JR-071KL) form an opto-isolated input circuit for connecting external switches or sensor signals. The transistor base is current-limited by the resistor, the collector connects to a microcontroller I/O pin, and the emitter connects to ground.\n- **Output Interface**: One op-amp channel of the LM2904 dual op-amp (e.g., LM2904) is used as a level-shifting buffer to drive loads such as LEDs or relays. The op-amp's non-inverting input is connected to a fixed voltage (e.g., 3.3V), the inverting input connects to a microcontroller I/O pin, and the output drives the load.\n\n**5. Other Auxiliary Components**\n- All microcontroller I/O pins are connected to 10kΩ pull-up resistors (RC0603JR-0710KL) to prevent floating interference.\n- A 1N4148 diode (e.g., 1N4148) is used for transient suppression protection at the power input.\n\nThis minimal system circuit has a concise structure with commonly available and easily purchasable components, suitable for the basic operational requirements of the STC89C52, and reserves expansion interfaces for connecting external devices.",
+            "circuit_type": "filter"
+          }
+        },
+        {
+          "test_id": "test_5",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.9357785636728461,
+          "plan": {
+            "circuit_name": "NPN_Common_Emitter_Amplifier",
+            "components": [
+              {
+                "uid": "Q1",
+                "search_query": "2N3904",
+                "parameters": {
+                  "value": "2N3904"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "4.7k"
+                }
+              },
+              {
+                "uid": "Rc",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "Re",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "470"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "Ce",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "47uF"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100uF"
+                }
+              },
+              {
+                "uid": "C4",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "D1",
+                "search_query": "1N4148",
+                "parameters": {
+                  "value": "1N4148"
+                }
+              }
+            ],
+            "elaborated_requirement": "Design an NPN transistor common-emitter amplifier circuit using the classic 2N3904 NPN transistor as the core amplification element, suitable for the KiCad 8 platform. The circuit design must meet the following detailed requirements:\n\n**1. Core Amplification Element**:\n- Use the 2N3904 NPN transistor as the amplifier, with a collector current range of 100 μA to 200 mA, suitable for small-signal amplification applications.\n- The transistor base is provided with a stable quiescent operating point through a bias resistor network, ensuring the amplifier operates in the active region.\n\n**2. Bias Circuit Design**:\n- A voltage divider bias circuit is adopted, consisting of two resistors R1 and R2 forming the base bias network. R1 (pull-up resistor, typical value 10 kΩ) is connected to supply Vcc, and R2 (pull-down resistor, typical value 4.7 kΩ) is connected to ground, providing a bias voltage of approximately 0.7V at the base through voltage division.\n- Base bypass capacitor C1 (typical value 10 μF, electrolytic capacitor) is used to filter out the DC bias and allow only the AC signal to enter the base.\n\n**3. Collector Circuit**:\n- Collector resistor Rc (typical value 1 kΩ) is connected to Vcc, converting the collector current into a voltage signal and providing voltage gain. Its resistance should be adjusted based on the desired voltage gain and supply voltage.\n- The collector output is coupled through capacitor C2 (typical value 10 μF, electrolytic capacitor) to isolate the DC component, outputting only the amplified AC signal.\n\n**4. Emitter Circuit**:\n- Emitter resistor Re (typical value 470 Ω) stabilizes the quiescent operating point, provides negative feedback, and improves temperature stability.\n- Emitter bypass capacitor Ce (typical value 47 μF, electrolytic capacitor) is used to short-circuit the AC signal, preventing the signal from generating negative feedback across Re, thereby increasing AC gain.\n\n**5. Power Supply and Grounding**:\n- Supply Vcc (typical value 12V) provides the operating voltage for the circuit, with decoupling provided by filter capacitors C3 (typical value 100 μF, electrolytic capacitor) and C4 (10 μF, electrolytic capacitor) to reduce power supply noise.\n- All ground terminals are connected to a common ground through low-impedance paths to ensure signal integrity.\n\n**6. Input/Output Peripherals**:\n- The input signal enters the base through coupling capacitor C1 (10 μF); the signal source can be an audio signal generator or other small-signal source.\n- The output signal is taken from the collector through coupling capacitor C2 (10 μF) and can be connected to a load resistor (such as an 8 Ω speaker) or a subsequent amplifier stage.\n- An optional input protection diode (such as 1N4148) is placed in parallel at the input to prevent overvoltage damage to the transistor.\n\n**7. Component Selection Notes**:\n- All resistors use 1/4W carbon film resistors; capacitors use electrolytic capacitors (polarity must be connected correctly) or ceramic capacitors (such as 0.1 μF for high-frequency filtering).\n- A dedicated op-amp (such as LM2904) is not required, but if higher gain or lower noise is desired, a buffer stage built with an LM2904 may be considered at the output.\n\nThis design ensures the circuit has a stable quiescent operating point, good linearity, and relatively high voltage gain, suitable for applications such as audio amplification or sensor signal conditioning. All components are general-purpose models, facilitating implementation and simulation in KiCad 8.",
+            "circuit_type": "bjt_amplifier"
+          }
+        },
+        {
+          "test_id": "test_6",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.4,
+          "json_quality": 0.6666666666666666,
+          "retrieval_quality": 0.6471292535463969,
+          "plan": {
+            "circuit_name": "Diode_Rectifier_Filter",
+            "components": [
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "D1",
+                "search_query": "1N4007",
+                "parameters": {
+                  "value": "1N4007"
+                }
+              },
+              {
+                "uid": "D2",
+                "search_query": "1N4007",
+                "parameters": {
+                  "value": "1N4007"
+                }
+              },
+              {
+                "uid": "D3",
+                "search_query": "1N4007",
+                "parameters": {
+                  "value": "1N4007"
+                }
+              },
+              {
+                "uid": "D4",
+                "search_query": "1N4007",
+                "parameters": {
+                  "value": "1N4007"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "470uF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.1uF"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.01uF"
+                }
+              },
+              {
+                "uid": "C4",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "C5",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10nF"
+                }
+              },
+              {
+                "uid": "U1",
+                "search_query": "7805",
+                "parameters": {
+                  "value": "7805"
+                }
+              },
+              {
+                "uid": "Z1",
+                "search_query": "Zener",
+                "parameters": {
+                  "value": "5.1V"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "470"
+                }
+              },
+              {
+                "uid": "R3",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "100"
+                }
+              },
+              {
+                "uid": "LED1",
+                "search_query": "LED",
+                "parameters": {
+                  "value": "LED"
+                }
+              }
+            ],
+            "elaborated_requirement": "Design a diode rectifier filter circuit for the KiCad 8 target platform, implemented with classic general-purpose components. The core function of this circuit is to convert an AC input signal into a smooth DC output, suitable for low-power, basic power conversion scenarios.\n\n**Input Section**: The AC input signal (such as a low-voltage AC signal after mains step-down) is current-limited through an input protection resistor (e.g., a 1 kΩ carbon film resistor), then fed into a bridge rectifier circuit composed of four 1N4007 rectifier diodes. The 1N4007 features a 1A rated current and 1000V withstand voltage, suitable for handling small to medium power rectification requirements. The bridge rectifier converts the bidirectional AC signal into unidirectional pulsating DC.\n\n**Filtering Section**: The rectified pulsating DC signal enters a two-stage filtering circuit. The first stage is electrolytic capacitor filtering (e.g., a 470 μF/25V aluminum electrolytic capacitor) for preliminary smoothing of large ripple, with its equivalent series resistance (ESR) to be kept within a reasonable range to avoid overheating. The second stage is high-frequency filtering (e.g., a 0.1 μF ceramic capacitor), placed in parallel at the output to suppress high-frequency noise, with the capacitor type selected as X7R SMD capacitor to ensure stability.\n\n**Regulation and Output**: To enhance output stability, a 7805 linear regulator can be connected after filtering (if the input voltage range permits), or a Zener diode (e.g., 5.1V/500mW) combined with a current-limiting resistor (e.g., 470 Ω) can be used for simple regulation. The output side has an LED indicator in parallel with a 100 Ω resistor for power status indication while also current-limiting and protecting the LED.\n\n**Auxiliary Components**: A 0.01 μF ceramic capacitor should be placed across the rectifier bridge input to filter high-frequency interference; a 10 μF aluminum electrolytic capacitor and a 10 nF ceramic capacitor should be placed in parallel at the output to further optimize dynamic response. All resistors are 1/4W metal film resistors; capacitor polarity must be connected correctly, with the positive terminal of electrolytic capacitors connected to the output high potential.\n\nThis design uses basic components without complex control logic, suitable for rapid schematic capture and PCB layout in KiCad 8. The overall circuit structure is classic and suitable for instructional demonstrations or power conversion needs in small electronic projects.",
+            "circuit_type": "rectifier"
+          }
+        },
+        {
+          "test_id": "test_7",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.744583751474108,
+          "plan": {
+            "circuit_name": "LM317_Adjustable_Regulator",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "LM317",
+                "parameters": {
+                  "value": "LM317"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "240"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.1uF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "1uF"
+                }
+              },
+              {
+                "uid": "D1",
+                "search_query": "1N4001",
+                "parameters": {
+                  "value": "1N4001"
+                }
+              },
+              {
+                "uid": "D2",
+                "search_query": "1N4001",
+                "parameters": {
+                  "value": "1N4001"
+                }
+              }
+            ],
+            "elaborated_requirement": "The adjustable voltage regulator circuit design based on the LM317 is as follows:\n\nThis design uses the classic LM317 three-terminal adjustable regulator IC as its core, suitable for power supply applications requiring flexible output voltage adjustment. The circuit design follows the principle of universality, with all components being basic elements compatible with the KiCad 8 platform.\n\n**Core Components**:\n- **LM317**: Main regulator chip that achieves adjustable output voltage by adjusting the external resistor divider; typical operating current range is 0.1 mA to 1.5 A.\n- **Resistor R1 (240 Ω)**: Fixed resistor that forms a divider network with R2, providing the LM317's reference current (approximately 0.1 mA) to ensure stable operation.\n- **Resistor R2 (1 kΩ adjustable potentiometer)**: Variable resistor that works with R1 to adjust the output voltage, achieving a continuously adjustable output from 1.25V to 37V by changing the divider ratio (formula: Vout = 1.25 x (1 + R2/R1)).\n- **Capacitor C1 (0.1 μF, ceramic capacitor)**: Input filter capacitor for suppressing high-frequency noise; X7R dielectric is recommended, with a withstand voltage not less than 1.5 times the input voltage.\n- **Capacitor C2 (1 μF, tantalum capacitor)**: Output filter capacitor for enhancing load transient response; solid tantalum capacitor is recommended, with a withstand voltage not less than 1.5 times the output voltage.\n- **Diode D1 (1N4001)**: Input protection diode that prevents capacitor C1 from reverse-discharging and damaging the LM317 when the input is short-circuited.\n- **Diode D2 (1N4001)**: Output protection diode that prevents capacitor C2 from reverse-discharging and damaging the LM317 when the output is short-circuited.\n\n**Peripheral Interfaces**:\n- **Input**: Connects to an unregulated DC power supply (such as 7-40V DC input); the input voltage must be at least 3V higher than the output voltage to maintain regulation headroom.\n- **Output**: Provides a stable DC voltage that can directly drive low-power devices or serve as a power supply for other circuits.\n- **Adjustment Interface**: Voltage adjustment is achieved through the rotating shaft of R2 or a digital potentiometer interface (if expanded), with the output voltage fed back to the load in real time.\n\n**Functional Division**:\n- The LM317 is responsible for the core regulation function, maintaining a constant output voltage through its internal error amplifier and pass transistor.\n- R1 and R2 form the feedback network, determining the output voltage range; the adjustability of R2 enables user-defined output.\n- C1 and C2 provide filtering functions, ensuring output voltage ripple is less than 50 mV (typical value).\n- D1 and D2 provide reverse protection, enhancing circuit robustness for industrial environments where short circuits may occur.\n\nThis design uses a classic topology without complex control logic, suitable for beginners and mass production. All components are common market models, easy to procure and replace.",
+            "circuit_type": "power_supply"
+          }
+        },
+        {
+          "test_id": "test_8",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.8695829113324484,
+          "plan": {
+            "circuit_name": "LED_Constant_Current",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "LM2904",
+                "parameters": {
+                  "value": "LM2904"
+                }
+              },
+              {
+                "uid": "Q1",
+                "search_query": "2N3904",
+                "parameters": {
+                  "value": "2N3904"
+                }
+              },
+              {
+                "uid": "LED1",
+                "search_query": "LED",
+                "parameters": {
+                  "value": "LED"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R3",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "0.1"
+                }
+              },
+              {
+                "uid": "R4",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100nF"
+                }
+              },
+              {
+                "uid": "D1",
+                "search_query": "1N4148",
+                "parameters": {
+                  "value": "1N4148"
+                }
+              }
+            ],
+            "elaborated_requirement": "This design aims to implement an LED constant current driver circuit based on general-purpose components with a target drive current of 20 mA, suitable for the KiCad 8 platform. The circuit core adopts a current feedback control architecture to ensure the LED current remains stable and unaffected by changes in its forward voltage drop.\n\n**Core Component Selection and Functional Assignment:**\n1. **Operational Amplifier (LM2904)**: Serves as an error amplifier for comparing the reference voltage with the sampled voltage. The LM2904 is a dual-channel, low-power op-amp with a wide operating voltage range (3V-36V), suitable for this design. One of its channels is used to form the current control loop.\n2. **Power Transistor (2N3904)**: Acts as a current control switch, with its base driven by the op-amp output to control the current flowing through the LED. The 2N3904 is an NPN small-signal transistor with a collector current of up to 200 mA, meeting the 20 mA requirement.\n3. **Sense Resistor (0.1 Ω / 1W metal film resistor)**: Placed in series between the LED cathode and ground to sample the current. According to Ohm's law, a 20 mA current produces a 2 mV voltage drop across the 0.1 Ω resistor, which serves as the feedback signal input to the op-amp's inverting input.\n4. **Reference Voltage Source (Resistive Divider Network)**: Two precision metal film resistors (e.g., 1% accuracy, 10 kΩ) divide the supply voltage to generate a stable reference voltage (approximately 2.0V), which is further divided to 2 mV through additional 10 kΩ resistors for comparison with the sense resistor voltage.\n5. **Input Filter Capacitor (100 nF ceramic capacitor)**: Placed in parallel at the power supply input to filter high-frequency noise and stabilize the supply voltage.\n6. **Output Protection Diode (1N4148)**: Placed in reverse parallel across the LED to prevent reverse voltage from damaging the LED, especially suitable for AC or transient voltage environments.\n7. **Base Current-Limiting Resistor (1 kΩ carbon film resistor)**: Placed in series with the 2N3904 base to limit the base current and prevent op-amp output overload.\n\n**Circuit Working Principle:**\nThe circuit adopts a classic current-mirror feedback structure. The non-inverting input of the LM2904 op-amp receives the reference voltage (2 mV), and the inverting input receives the voltage across the sense resistor. When the LED current deviates from 20 mA, the sense resistor voltage changes, the op-amp output adjusts the 2N3904 base current, which in turn regulates the collector current, forcing the sense resistor voltage back to 2 mV and achieving constant current control. This design features high stability and is insensitive to changes in the LED forward voltage drop.\n\n**Input/Output Peripherals:**\n- **Input**: DC power supply (3V-12V), filtered through a 100 nF capacitor before being supplied to the circuit.\n- **Output**: The LED anode is connected to the positive supply rail, and the cathode goes through the sense resistor and the 2N3904 emitter to ground. The 1N4148 diode protects the LED.\n\nThis design uses entirely general-purpose components without complex configuration, allowing schematic capture and PCB layout to be completed directly in KiCad 8, suitable for low-cost, high-reliability LED driver applications.",
+            "circuit_type": "led_constant_current"
+          }
+        },
+        {
+          "test_id": "test_9",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 1.0,
+          "plan": {
+            "circuit_name": "Sallen_Key_LPF_1kHz",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "LM2904",
+                "parameters": {
+                  "value": "LM2904"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "15nF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "15nF"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100nF"
+                }
+              }
+            ],
+            "elaborated_requirement": "Design a Sallen-Key low-pass filter with a cutoff frequency of 1 kHz, implemented with general-purpose components, suitable for the KiCad 8 platform. The circuit core uses one channel of the LM2904 dual operational amplifier as the active device due to its low power consumption, wide supply voltage range (3V to 36V), and versatility. The filter employs a second-order Butterworth response, implemented with two resistors and two capacitors. Specific component selection is as follows:\n\n1. **Operational Amplifier**: The LM2904 is selected for its low input bias current (50 nA) and moderate output drive capability, suitable for driving subsequent analog signal processing circuits. The op-amp operates in unity-gain buffer mode, ensuring high input impedance and low output impedance.\n\n2. **Resistors**: 1% precision metal film resistors are used to ensure the accuracy of the filter's frequency response. Two resistors R1 and R2 each have a value of 10 kΩ and are used to set the filter's gain and cutoff frequency. R1 is connected between the op-amp's inverting input and output, and R2 is connected between the input signal and the inverting input.\n\n3. **Capacitors**: Polyester film capacitors (such as the WIMA MKP10 series) are selected for their stable frequency characteristics, suitable for the audio frequency band. Both capacitors C1 and C2 have a value of 15 nF, yielding a cutoff frequency of 1 kHz as calculated by the formula \\( f_c = \\frac{1}{2\\pi\\sqrt{R1 \\cdot R2 \\cdot C1 \\cdot C2}} \\).\n\n4. **Input/Output Peripherals**: The input is isolated from the signal source through a 10 kΩ resistor to prevent the source impedance from affecting filter performance. The output is directly connected to the op-amp's output pin, capable of driving subsequent analog circuits or ADC inputs. To prevent high-frequency noise interference, a 0.1 μF ceramic capacitor is placed in parallel at the input to ground, forming a pre-filter for the low-pass filter.\n\nCircuit functional division: The LM2904 serves as the active filtering device, with R1, R2, C1, and C2 forming a second-order low-pass network to achieve the 1 kHz cutoff frequency. The input signal passes through resistive voltage division and capacitive filtering, is buffered and amplified by the op-amp, and the output provides a stable low-frequency signal. This design avoids the use of complex components, ensuring easy implementation and debugging in KiCad 8.",
+            "circuit_type": "filter"
+          }
+        },
+        {
+          "test_id": "test_10",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.8577970167001089,
+          "plan": {
+            "circuit_name": "Zener_5V_Regulator",
+            "components": [
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100uF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.1uF"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "U1",
+                "search_query": "LM2904",
+                "parameters": {
+                  "value": "LM2904"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "2k"
+                }
+              },
+              {
+                "uid": "R3",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "C4",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "0.1uF"
+                }
+              },
+              {
+                "uid": "D1",
+                "search_query": "1N4733A",
+                "parameters": {
+                  "value": "1N4733A"
+                }
+              },
+              {
+                "uid": "D2",
+                "search_query": "1N5817",
+                "parameters": {
+                  "value": "1N5817"
+                }
+              },
+              {
+                "uid": "F1",
+                "search_query": "Fuse",
+                "parameters": {
+                  "value": "100mA"
+                }
+              },
+              {
+                "uid": "R4",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1"
+                }
+              }
+            ],
+            "elaborated_requirement": "Design a 5V voltage regulator circuit based on a Zener diode, targeting the KiCad 8 platform and using general-purpose basic components. The detailed design is as follows:\n\nThe circuit core uses a Zener diode (such as 1N4733A, 5.1V/1W) combined with a voltage divider resistor and an operational amplifier (LM2904) to achieve precision regulation. The input voltage must be a 9V to 12V DC power supply, with the output being a stable 5V DC voltage and a maximum output current of 100 mA. The circuit mainly consists of the following sections:\n\n1. **Input Filtering and Current Limiting**: A 100 μF electrolytic capacitor (such as Panasonic EEC-FH series) and a 0.1 μF ceramic capacitor (such as Murata GRM1555C1H104KA01D) are placed in parallel at the input to filter high-frequency noise and low-frequency ripple. A 1 Ω / 1W resistor (such as Yageo CFR-25JB series) is placed in series for current limiting and suppressing input voltage transients.\n\n2. **Zener Diode Regulation**: The Zener diode 1N4733A (5.1V) is connected in series with a 1 kΩ resistor (R1) to form the reference voltage source. Resistor R1 limits the Zener diode current, with a typical value of 15 mA (calculation formula: R1 = (Vin_min - Vz) / Iz, where Vin_min = 9V, Vz = 5.1V, Iz = 15 mA).\n\n3. **Op-Amp Feedback Control**: One channel of the LM2904 dual op-amp is used, configured in voltage follower mode. The non-inverting input of the op-amp is connected to the Zener diode cathode (5.1V reference), and the inverting input is connected to the output. The output is fed back to the inverting input through a divider network consisting of a 2 kΩ resistor (R2) and a 1 kΩ resistor (R3), with a divider ratio of R3/(R2+R3) = 1/3, dividing the 5.1V reference to approximately 1.7V. The op-amp adjusts the output voltage so that the feedback voltage equals the reference voltage, ultimately achieving a 5V output.\n\n4. **Output Filtering and Protection**: A 10 μF electrolytic capacitor (such as Panasonic EEC-FH series) and a 0.1 μF ceramic capacitor (Murata GRM1555C1H104KA01D) are placed in parallel at the output to filter output ripple. A Schottky diode 1N5817 (forward voltage drop 0.3V) is placed in series to prevent reverse powering from the load, and a 100 mA self-resetting fuse (such as Bussmann MEC100) is added for overcurrent protection.\n\n5. **Auxiliary Components**: The LM2904 power supply pins require an external 0.1 μF decoupling capacitor (Murata GRM1555C1H104KA01D) for supply stability. All resistors use 1% precision metal film resistors (such as Vishay RN60D series) to ensure divider accuracy.\n\nThis design provides a reference voltage via the Zener diode and achieves precision feedback control through the op-amp, combined with multi-stage filtering and protection components, capable of stably outputting 5V across a 9-12V input range, suitable for most general-purpose electronic projects. All components are common models, and their corresponding footprints can be found directly in the official KiCad 8 library.",
+            "circuit_type": "zener_regulator"
+          }
+        }
+      ],
+      "averages": {
+        "fpr": 1.0,
+        "rhr": 1.0,
+        "recall": 0.5733333333333334,
+        "json_quality": 0.6666666666666667,
+        "retrieval_quality": 0.8618178742773509
+      }
+    }
+  ]
+}

@@ -1,0 +1,810 @@
+{
+  "model_name": "Gemini-128k",
+  "model_full_name": "gemini-3-pro-all",
+  "num_runs": 1,
+  "num_test_cases": 10,
+  "final_results": {
+    "fpr": 80.0,
+    "rhr": 79.44444444444446,
+    "recall": 45.83333333333333,
+    "json_quality": 53.33333333333334,
+    "retrieval_quality": 0.7143023063339079
+  },
+  "all_runs": [
+    {
+      "run_idx": 1,
+      "results": [
+        {
+          "test_id": "test_1",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6666666666666666,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.9332402859415326,
+          "plan": {
+            "circuit_name": "555_LED_Blinker_1Hz",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "NE555",
+                "parameters": {
+                  "value": "NE555"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "68k"
+                }
+              },
+              {
+                "uid": "R3",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "330"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10nF"
+                }
+              },
+              {
+                "uid": "LED1",
+                "search_query": "LED",
+                "parameters": {
+                  "value": "LED"
+                }
+              }
+            ],
+            "elaborated_requirement": "Design a simple LED blinking circuit using a 555 timer to control the LED to blink at a frequency of 1 Hz",
+            "circuit_type": "led_blinker"
+          }
+        },
+        {
+          "test_id": "test_2",
+          "success": false,
+          "fpr": 0,
+          "rhr": 0,
+          "recall": 0,
+          "json_quality": 0,
+          "retrieval_quality": 0
+        },
+        {
+          "test_id": "test_3",
+          "success": true,
+          "fpr": 1,
+          "rhr": 0.9444444444444444,
+          "recall": 0.25,
+          "json_quality": 0.6666666666666666,
+          "retrieval_quality": 0.8721321295289433,
+          "plan": {
+            "circuit_name": "Discrete_5V_Linear_Regulator",
+            "components": [
+              {
+                "uid": "J1",
+                "search_query": "Connector",
+                "parameters": {
+                  "value": "DC_Jack"
+                }
+              },
+              {
+                "uid": "D1",
+                "search_query": "1N4148",
+                "parameters": {
+                  "value": "1N4148"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "470uF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100nF"
+                }
+              },
+              {
+                "uid": "D2",
+                "search_query": "Zener_Diode",
+                "parameters": {
+                  "value": "2.5V"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "U1",
+                "search_query": "LM2904",
+                "parameters": {
+                  "value": "LM2904"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R3",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "Q1",
+                "search_query": "2N3904",
+                "parameters": {
+                  "value": "2N3904"
+                }
+              },
+              {
+                "uid": "Q2",
+                "search_query": "BJT",
+                "parameters": {
+                  "value": "TIP41"
+                }
+              },
+              {
+                "uid": "R4",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "0.1R"
+                }
+              },
+              {
+                "uid": "Q3",
+                "search_query": "2N3904",
+                "parameters": {
+                  "value": "2N3904"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100uF"
+                }
+              },
+              {
+                "uid": "C4",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100nF"
+                }
+              },
+              {
+                "uid": "J2",
+                "search_query": "Connector",
+                "parameters": {
+                  "value": "Pin_Header_1x02"
+                }
+              },
+              {
+                "uid": "LED1",
+                "search_query": "LED",
+                "parameters": {
+                  "value": "LED"
+                }
+              },
+              {
+                "uid": "R5",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "330"
+                }
+              }
+            ],
+            "elaborated_requirement": "<think>**Developing Design Details**\n**Refining Regulation Approach**\n**Exploring Regulator Architectures**\n**Building Discrete Regulator**\n**Developing Regulator Scheme**\n**Developing Regulator Scheme**\n**Developing Regulator Scheme**\n**Developing Regulator Scheme**\n**Filtering Input Signals**\n**Establishing Voltage Reference**\n**Configuring Error Amplification**\n**Driving the Pass Transistor**\n**Implementing Output Filtering**\n**Adding Status Indication**\n**Testing Load Regulation**\n</think>\nThis design provides you with a highly reliable, low-cost discrete 5V regulated power supply circuit based on the KiCad 8 standard component library. To ensure component versatility and ease of procurement, this design abandons dedicated highly integrated power management chips and instead builds a classic linear regulation feedback control system entirely from basic general-purpose components. The entire circuit can be functionally divided into five core modules: input filtering and protection, precision voltage reference, error amplification and dynamic regulation, overcurrent protection monitoring, and output filtering and indication.\n\nAt the power input, the system uses a standard DC power jack as the input peripheral, accepting 9V to 12V of unregulated DC power. In the input path, a 1N4148 switching diode or similar small-signal diode is first used with supporting logic to build a basic reverse-polarity protection circuit, preventing damage to downstream components from reversed external power polarity. The power then passes through a hybrid filtering network composed of a large aluminum electrolytic capacitor and a 0.1μF multilayer ceramic capacitor; the electrolytic capacitor is responsible for smoothing low-frequency voltage fluctuations and providing transient energy reserves, while the ceramic capacitor is dedicated to filtering high-frequency noise on the supply line.\n\nThe core regulation control loop employs a classic LM2904 dual operational amplifier. The circuit uses a basic Zener diode in series with a current-limiting resistor to generate a stable reference voltage, which is fed to the non-inverting input of one of the LM2904 op-amp channels as the reference source. The final output of the power supply is proportionally sampled through a feedback divider network composed of high-precision metal film resistors and sent to the inverting input of the same op-amp. The op-amp serves as an error amplifier, comparing these two voltage signals in real time, and its output directly drives a pass transistor module formed by cascading a general-purpose 2N3904 small-signal NPN transistor with a medium-power NPN transistor. When the output voltage experiences minor fluctuations due to load changes, the op-amp rapidly adjusts the base drive current of the 2N3904 through a deep negative feedback mechanism, thereby dynamically regulating the conduction voltage drop of the main pass transistor and tightly clamping the final output voltage at a precise 5V level.\n\nTo enhance the safety level of the power supply, the design also fully utilizes the remaining second op-amp channel inside the LM2904, combined with a low-value current-sense resistor placed in series in the main path, to build a sensitive overcurrent monitoring module. Should the load experience a short circuit or the current exceed the safety threshold, this op-amp will rapidly flip its output and forcibly pull down the control level of the main pass transistor through another 2N3904 transistor, implementing current limiting and cutoff protection.\n\nAt the power supply output, the system uses standard 2.54mm pitch terminal blocks or pin headers as output peripherals for convenient connection to subsequent load circuits. The output side is also paralleled with aluminum electrolytic capacitors and ceramic capacitors for secondary decoupling and filtering to improve load step transient response characteristics. Additionally, a light-emitting diode with a corresponding current-limiting resistor is placed in parallel on the output path as the most intuitive indicator of normal 5V power supply operation. The entire design can complete schematic capture and PCB footprint matching entirely based on the classic component library built into KiCad 8, without the need to import complex third-party component models, making it highly suitable as a reference design for higher education experiments, industrial auxiliary power supplies, or basic electronic prototypes.",
+            "circuit_type": "power_supply"
+          }
+        },
+        {
+          "test_id": "test_4",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6666666666666666,
+          "json_quality": 0.6666666666666665,
+          "retrieval_quality": 0.8809661775827408,
+          "plan": {
+            "circuit_name": "STC89C52_Minimum_System",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "STC89C52",
+                "parameters": {
+                  "value": "STC89C52"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100nF"
+                }
+              },
+              {
+                "uid": "LED1",
+                "search_query": "LED",
+                "parameters": {
+                  "value": "Red"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "Y1",
+                "search_query": "Crystal",
+                "parameters": {
+                  "value": "11.0592MHz"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "30pF"
+                }
+              },
+              {
+                "uid": "C4",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "30pF"
+                }
+              },
+              {
+                "uid": "C5",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "SW1",
+                "search_query": "Switch",
+                "parameters": {
+                  "value": "Push Button"
+                }
+              },
+              {
+                "uid": "R3",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "RN1",
+                "search_query": "Resistor Network",
+                "parameters": {
+                  "value": "10k SIP-9"
+                }
+              },
+              {
+                "uid": "J1",
+                "search_query": "Connector",
+                "parameters": {
+                  "value": "1x04 Male"
+                }
+              },
+              {
+                "uid": "LED2",
+                "search_query": "LED",
+                "parameters": {
+                  "value": "Test"
+                }
+              },
+              {
+                "uid": "R4",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "BZ1",
+                "search_query": "Buzzer",
+                "parameters": {
+                  "value": "Electromagnetic"
+                }
+              },
+              {
+                "uid": "Q1",
+                "search_query": "2N3904",
+                "parameters": {
+                  "value": "2N3904"
+                }
+              },
+              {
+                "uid": "R5",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "D1",
+                "search_query": "1N4148",
+                "parameters": {
+                  "value": "1N4148"
+                }
+              }
+            ],
+            “elaborated_requirement”: “<think>\n\n**Defining the Scope**\n\nI have successfully defined the scope of the project and user's goal, considering the target platform.\n\n\n**Refining the Output**\n\nI've decided to prioritize readability within the \”pure text\” constraint, employing plain text paragraphs.\n\n\n**Outlining the Components**\n\nI've outlined crucial peripherals including a UART interface, LED indicator, a button, and buzzer circuitry, all using classic components.\n\n\n**Detailing the Circuit**\n\nI'm now detailing circuit components, like transistors and diodes, for user's I/O and audio indicators.\n\n\n**Describing the System**\n\nI'm describing the power indicator, crystal oscillator, reset, and crucial configuration pins of my minimum system.\n\n\n\n\n</think>\n\nThis design aims to provide a standard, reliable, and easy-to-implement design plan on the KiCad 8 platform for a minimum system board based on the STC89C52 microcontroller. The system design adheres closely to industrial fundamental specifications, selecting only easy-to-procure classic through-hole or basic SMD components while avoiding any obscure specialized chips. The entire circuit is organized around four dimensions: power supply and decoupling, core timing and reset, bus configuration, and basic interactive peripherals.\n\nIn the power management subsystem, the mainboard uses a standard 5V DC supply. To effectively suppress high-frequency noise and provide transient current response, a decoupling capacitor network must be configured at the power inlet and the microcontroller's supply pins, specifically a combination of a 10μF aluminum electrolytic capacitor (for low-frequency energy storage) and a 0.1μF ceramic capacitor (104, for high-frequency decoupling). Additionally, a power indicator circuit composed of a standard red LED and a 1kΩ metal film resistor is placed in parallel to intuitively display the system's power-on status.\n\nThe clock reference circuit is the system's core metronome. The design selects a classic 11.0592MHz passive quartz crystal oscillator, paired with two 30pF low-dielectric-loss ceramic capacitors as startup loading to ground. This specific frequency choice not only ensures the stable execution of the microcontroller's internal logic but also perfectly divides into standard UART serial communication baud rates, eliminating baud rate errors in asynchronous communication at the physical level.\n\nThe reset circuit strictly follows the \”active-high reset\” topology unique to the 8051 architecture. The circuit consists of a 10μF electrolytic capacitor connected to the power supply and a 10kΩ pull-down resistor to ground, forming an RC network that implements automatic power-on reset. At the same time, a miniature tactile switch is placed in parallel across the capacitor terminals; when pressed, the power supply bypasses the capacitor and directly applies a high level to the reset pin, providing a reliable manual reset function.\n\nIn terms of core configuration and bus, to ensure the program boots correctly from the chip's internal Flash memory, the microcontroller's EA/VPP pin must be reliably pulled up to 5V through a 10kΩ resistor. To address the open-drain output characteristic of the STC89C52's P0 port, the design specifically equips it with a 10kΩ 9-pin single-in-line resistor network (SIP-9) as a global pull-up, thereby giving this port standard high-level drive capability.\n\nTo accommodate both development debugging and basic function demonstration, the system integrates a series of basic peripherals. First is the standard 4-pin ISP download and communication interface, directly bringing out serial receive, transmit, and power/ground lines for easy connection to common serial converter modules. For audiovisual interaction, in addition to a test LED driven directly by an I/O pin through a current-limiting resistor, a dedicated buzzer power driver module is also designed. This module uses the classic 2N3904 NPN transistor as a current amplifier switch, connected to the microcontroller's control pin through a 1kΩ base resistor. Crucially, a 1N4148 high-speed switching diode is placed in reverse parallel across the electromagnetic buzzer terminals as a freewheeling protection diode, responsible for absorbing the reverse spike electromotive force generated at the moment the buzzer is de-energized, thereby thoroughly eliminating the risk of transistor breakdown and ensuring long-term stability of the minimum system.”,
+            "circuit_type": "filter"
+          }
+        },
+        {
+          "test_id": "test_5",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 1.0,
+          "plan": {
+            "circuit_name": "NPN_Common_Emitter_Amplifier",
+            "components": [
+              {
+                "uid": "Q1",
+                "search_query": "2N3904",
+                "parameters": {
+                  "value": "2N3904"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "47k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R3",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "4.7k"
+                }
+              },
+              {
+                "uid": "R4",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "47uF"
+                }
+              },
+              {
+                "uid": "C4",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100nF"
+                }
+              }
+            ],
+            "elaborated_requirement": "Design an NPN transistor common-emitter amplifier circuit",
+            "circuit_type": "bjt_amplifier"
+          }
+        },
+        {
+          "test_id": "test_6",
+          "success": false,
+          "fpr": 0,
+          "rhr": 0,
+          "recall": 0,
+          "json_quality": 0,
+          "retrieval_quality": 0
+        },
+        {
+          "test_id": "test_7",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.8389120187078204,
+          "plan": {
+            "circuit_name": "LM317_Adjustable_Power_Supply",
+            "components": [
+              {
+                "uid": "J1",
+                "search_query": "Connector",
+                "parameters": {
+                  "value": "DC Power Jack"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "470uF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100nF"
+                }
+              },
+              {
+                "uid": "U1",
+                "search_query": "LM317",
+                "parameters": {
+                  "value": "LM317"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "240"
+                }
+              },
+              {
+                "uid": "RV1",
+                "search_query": "Potentiometer",
+                "parameters": {
+                  "value": "5k"
+                }
+              },
+              {
+                "uid": "D1",
+                "search_query": "1N4007",
+                "parameters": {
+                  "value": "1N4007"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "D2",
+                "search_query": "1N4007",
+                "parameters": {
+                  "value": "1N4007"
+                }
+              },
+              {
+                "uid": "C4",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "220uF"
+                }
+              },
+              {
+                "uid": "C5",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100nF"
+                }
+              },
+              {
+                "uid": "LED1",
+                "search_query": "LED",
+                "parameters": {
+                  "value": "LED"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "1k"
+                }
+              },
+              {
+                "uid": "J2",
+                "search_query": "Connector",
+                "parameters": {
+                  "value": "Terminal Block"
+                }
+              }
+            ],
+            "elaborated_requirement": "<think>**Designing LM317 Circuit**\n**Developing LM317 Design Details**\n**Adding Component Specifics**\n**Refining Voltage Setting**\n**Finalizing Design Details**\n**Designing LM317 Circuit**\n**Developing LM317 Design Details**\n**Adding Component Specifics**\n**Refining Voltage Setting**\n**Finalizing Design Details**\n**Integrating Input/Output Peripherals**\n**Specifying Protective Components**\n</think>\nThis design is a DC adjustable regulated power supply module based on the classic LM317 linear regulator IC. The overall architecture is divided into four main functional modules: input filtering, core regulation and voltage adjustment, safety protection, and output indication, making it highly suitable for development on the KiCad 8 platform using standard basic component libraries. On the power input side, the circuit introduces external unregulated DC voltage through a standard DC power jack or screw terminal block, followed by an input filtering network composed of a large aluminum electrolytic capacitor and a 0.1μF multilayer ceramic capacitor, used to absorb low-frequency voltage ripple and filter high-frequency interference noise, ensuring the regulator chip receives a clean input supply. The core regulation section uses the versatile and mature LM317 three-terminal regulator, paired with a feedback divider network consisting of high-precision metal film resistors and a 3296W series multi-turn precision potentiometer; the metal film resistor sets the basic reference current, while the precision potentiometer allows the user to smoothly and continuously adjust the target output voltage to accommodate different load requirements. To enhance circuit reliability and surge protection, the system incorporates a protection mechanism based on classic 1N4007 or 1N4148 diodes: one diode is connected in reverse across the regulator's input and output to prevent the stored energy in the output-side large capacitor from back-feeding and damaging the chip during unexpected input power loss or short circuit; if a bypass capacitor is added at the adjustment pin to further reduce ripple, another diode is configured across the adjustment pin and output to provide a safe discharge path. On the output side, the circuit again uses a parallel combination of aluminum electrolytic capacitors and ceramic capacitors to improve transient response characteristics and stabilize the output voltage, while also paralleling a power indicator network consisting of a standard SMD or through-hole LED with its corresponding current-limiting resistor to intuitively display the current output status. The final regulated DC power is delivered to the external load through standard terminal blocks or pin headers. The entire design abandons complex specialized chips and uses only the most readily available basic RLC components, discrete semiconductors, and general-purpose regulator ICs, ensuring design versatility, manufacturability, and long-term operational stability.",
+            "circuit_type": "power_supply"
+          }
+        },
+        {
+          "test_id": "test_8",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.9221136669317881,
+          "plan": {
+            "circuit_name": "LED_Constant_Current_20mA",
+            "components": [
+              {
+                "uid": "Q1",
+                "search_query": "2N3904",
+                "parameters": {
+                  "value": "2N3904"
+                }
+              },
+              {
+                "uid": "LED1",
+                "search_query": "LED",
+                "parameters": {
+                  "value": "LED"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "3k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "2k"
+                }
+              },
+              {
+                "uid": "R3",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "65"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100nF"
+                }
+              }
+            ],
+            "elaborated_requirement": "Design an LED constant current driver circuit with a drive current of 20 mA",
+            "circuit_type": "led_constant_current"
+          }
+        },
+        {
+          "test_id": "test_9",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.9456587846462543,
+          "plan": {
+            "circuit_name": "Sallen_Key_1kHz_LPF",
+            "components": [
+              {
+                "uid": "U1",
+                "search_query": "LM2904",
+                "parameters": {
+                  "value": "LM2904"
+                }
+              },
+              {
+                "uid": "J_in",
+                "search_query": "Connector",
+                "parameters": {
+                  "value": "PinHeader_1x02"
+                }
+              },
+              {
+                "uid": "J_out",
+                "search_query": "Connector",
+                "parameters": {
+                  "value": "PinHeader_1x02"
+                }
+              },
+              {
+                "uid": "J_pwr",
+                "search_query": "Connector",
+                "parameters": {
+                  "value": "PinHeader_1x02"
+                }
+              },
+              {
+                "uid": "R_in",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "100"
+                }
+              },
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "R2",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "10k"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "15nF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "15nF"
+                }
+              },
+              {
+                "uid": "R_out",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "50"
+                }
+              },
+              {
+                "uid": "D1",
+                "search_query": "1N4148",
+                "parameters": {
+                  "value": "1N4148"
+                }
+              },
+              {
+                "uid": "C3",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "C4",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100nF"
+                }
+              }
+            ],
+            "elaborated_requirement": "<think>**Exploring Sallen-Key Design**\n**Finalizing Sallen-Key Design**\n**Refining Sallen-Key Components**\n**Designing Sallen-Key Circuit**\n**Designing Sallen-Key Filter**\n**Refining Sallen-Key Design**\n</think>\nThis design aims to create a high-reliability second-order Sallen-Key active low-pass filter with a cutoff frequency precisely set to 1 kHz on the KiCad 8 platform. The core active device of the circuit is the classic and versatile dual operational amplifier LM2904, which has native support in the standard component library, and its bandwidth and slew rate fully meet the analog signal conditioning requirements for the 1 kHz frequency band.\n\nIn the critical filtering network section, to ensure the accuracy of the 1 kHz cutoff frequency and good temperature stability, the frequency-setting resistors are all selected with 1% tolerance metal film resistors, while the core capacitors that determine the filtering characteristics are strictly selected from C0G or NP0 dielectric ceramic capacitors to avoid the effects of voltage bias and temperature drift on the frequency response curve.\n\nIn terms of input/output peripheral and interface planning, the test signal is introduced through standard 2.54 mm pin headers or SMA RF connectors. The input is first configured with a small-value series resistor as basic current-limiting protection, after which the signal enters the Sallen-Key RC network for high-frequency component filtering. The LM2904 op-amp primarily performs signal buffering and impedance transformation functions, using its high input impedance to avoid loading effects on the preceding filter network while providing very low output impedance to drive subsequent stages. At the op-amp output, a 50-ohm isolation resistor is placed in series to the output pin header, specifically intended to isolate unknown external capacitive loads and prevent high-frequency self-oscillation of the op-amp.\n\nAdditionally, the power input peripheral side also uses standard connectors, with a 1N4148 diode in series to implement basic power reverse-polarity protection. At the LM2904 power network nodes, a 10 μF general-purpose aluminum electrolytic capacitor is placed in parallel for low-frequency bulk energy storage, along with a 0.1 μF X7R dielectric SMD ceramic capacitor for high-frequency decoupling. These bypass components are placed close to the op-amp to absorb switching noise on the power rails, ensuring the purity of the op-amp output signal and the overall system stability.",
+            "circuit_type": "filter"
+          }
+        },
+        {
+          "test_id": "test_10",
+          "success": true,
+          "fpr": 1,
+          "rhr": 1.0,
+          "recall": 0.6,
+          "json_quality": 0.6666666666666667,
+          "retrieval_quality": 0.75,
+          "plan": {
+            "circuit_name": "5V_Zener_Regulator",
+            "components": [
+              {
+                "uid": "R1",
+                "search_query": "Resistor",
+                "parameters": {
+                  "value": "330"
+                }
+              },
+              {
+                "uid": "D1",
+                "search_query": "1N4733A",
+                "parameters": {
+                  "value": "5.1V"
+                }
+              },
+              {
+                "uid": "C1",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "10uF"
+                }
+              },
+              {
+                "uid": "C2",
+                "search_query": "Capacitor",
+                "parameters": {
+                  "value": "100nF"
+                }
+              }
+            ],
+            "elaborated_requirement": "Design a 5V voltage regulator circuit based on a Zener diode",
+            "circuit_type": "zener_regulator"
+          }
+        }
+      ],
+      "averages": {
+        "fpr": 0.8,
+        "rhr": 0.7944444444444445,
+        "recall": 0.4583333333333333,
+        "json_quality": 0.5333333333333334,
+        "retrieval_quality": 0.7143023063339079
+      }
+    }
+  ]
+}
