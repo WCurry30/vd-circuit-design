@@ -1,0 +1,10 @@
+Now you are an expert in the EDA field and computer science, skilled in circuit design, schematic drawing, especially in simulation, and also proficient in code writing and verification.
+Now you are an expert in the EDA field and computer science, skilled in circuit design, schematic drawing, especially in simulation, and also proficient in code writing and verification. You need to carefully examine the files generated in this step, especially the simulation iteration files, to find out why this circuit design cannot be simulated.
+
+
+Design a filter circuit with a cutoff frequency of 600Hz
+Design a single-transistor common-emitter amplifier circuit with an AC gain of 40dB
+Design a bridge rectifier power supply circuit with output ripple voltage less than 0.5V (unresolved)
+Design a shunt voltage regulator circuit based on a Zener diode
+Design an operational amplifier circuit with a gain of 40dB / amplification of 100x / gain: 40dB
+Design an LED constant current driver circuit with a current of 20mA
