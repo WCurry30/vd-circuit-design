@@ -1,0 +1,430 @@
+[
+  {
+    "id": "test_1",
+    "user_requirement": "Please design a MicroModem-compatible shield circuit proposed by LY2EN. The core control board must use the Arduino Nano Every. The circuit requires a 5-pin single-row connector (1x5 Header/Connector) for external communication or peripheral connections. For signal processing, include a basic filter capacitor to filter out high-frequency noise, and a current-limiting resistor paired with a light-emitting diode (LED) for status indication. Additionally, use an N-channel MOSFET (specified model 2N7000) as a low-power logic-level switch or signal isolator. All components must share a standard global ground network (GND).",
+    "golden_components": [
+      "Conn_01x05",
+      "C",
+      "LED",
+      "R",
+      "Arduino_Nano_Every",
+      "2N7000",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_2",
+    "user_requirement": "Please design a basic input expansion circuit for my 'Hackpad' macropad project. The core microcontroller must be the XIAO-RP2040-DIP development board. For human-machine interaction, configure 4 tactile push switches (Push Switch) to trigger basic functions. To provide visual feedback for key states, integrate one addressable smart RGB LED (specified model: SK6812). For power distribution, all components must be uniformly driven by a standard +5V power network and share a global ground network (GND).",
+    "golden_components": [
+      "SK6812",
+      "XIAO-RP2040-DIP",
+      "SW_Push",
+      "+5V",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_3",
+    "user_requirement": "Please help me plan a DAC and headphone amplifier combo circuit specifically designed for electrostatic headphones. For external interfaces, we need to place a USB 2.0 compliant Type-C receptacle to handle data and initial power input. Clock accuracy for the digital audio section is critical — remember to include a 4-pin passive crystal oscillator with a ground pin. Since driving electrostatic headphones requires extremely high bias voltage, I've decided to directly use the LT3757EMSE high-efficiency controller for the boost converter in this part of the power topology. As for the core analog driver stage, to ensure absolute audio quality, I plan to use the OPA1622 high-fidelity audio op-amp. Finally, for auxiliary muting or control logic, just add a conventional NPN transistor (standard BEC pinout) as a signal switch.",
+    "golden_components": [
+      "OPA1622",
+      "USB_C_Receptacle_USB2.0",
+      "Crystal_GND24",
+      "Q_NPN_BEC",
+      "LT3757EMSE"
+    ]
+  },
+  {
+    "id": "test_4",
+    "user_requirement": "Please design a core sensor daughterboard for my SlimeVR open-source tracker project. To achieve the highest-precision motion capture, this board must use the BNO08X series 9-axis sensor chip. The board needs to communicate with the main control board and provide physical support through a 6-pin single-row header with mounting pins (1x6 Header with Mounting Pins). For power handling, uniformly use the standard +3V3 network and GND network, and configure the necessary filter capacitors and I2C pull-up resistors for the sensor chip. To facilitate future address configuration, reserve a set of default-open 2-pad solder jumpers (Open Solder Jumper) on the circuit, and bring out several independent test points (Test Point) on critical signal lines for convenient oscilloscope debugging and packet capture.",
+    "golden_components": [
+      "TestPoint",
+      "Conn_01x06_MountingPin",
+      "C",
+      "R",
+      "SolderJumper_2_Open",
+      "BNO08X",
+      "+3V3",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_5",
+    "user_requirement": "Please help me plan a DAC and headphone amplifier combo circuit specifically designed for electrostatic headphones. For external interfaces, we need to place a USB 2.0 compliant Type-C receptacle to handle data and initial power input. Clock accuracy for the digital audio section is critical — remember to include a 4-pin passive crystal oscillator with a ground pin. Since driving electrostatic headphones requires extremely high bias voltage, I've decided to directly use the LT3757EMSE high-efficiency controller for the boost converter in this part of the power topology. As for the core analog driver stage, to ensure absolute audio quality, I plan to use the OPA1622 high-fidelity audio op-amp. Finally, for auxiliary muting or control logic, just add a conventional NPN transistor (standard BEC pinout) as a signal switch.",
+    "golden_components": [
+      "Conn_01x02_Pin",
+      "Conn_01x03_Pin",
+      "Conn_01x06_Pin",
+      "LED",
+      "R",
+      "WeMos_D1_mini",
+      "BSS138",
+      "+24V",
+      "+3.3V",
+      "+5V",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_6",
+    "user_requirement": "Please use the TPS63030DSK high-efficiency buck-boost converter as the core power chip. To ensure power supply ripple meets the requirements of high-quality audio systems, you must configure sufficient input and output filter capacitors and select an appropriate energy storage inductor according to the chip datasheet. Meanwhile, the circuit must include a feedback voltage divider resistor network to set the target voltage. Finally, please equip the input and output ends with a 3-pin single-row connector (1x3 Connector) for convenient power distribution and ground connection with other high-power modules on the main board (such as Wi-Fi and audio power amplifiers).",
+    "golden_components": [
+      "Conn_01x03",
+      "C",
+      "L",
+      "R",
+      "TPS63030DSK"
+    ]
+  },
+  {
+    "id": "test_7",
+    "user_requirement": "Please design the core main board for my desktop timer. The main controller must use the MDBT50Q-1MV2 Bluetooth module and be equipped with a passive crystal oscillator (Crystal). For power and interface, a Micro-USB (USB_B_Micro) connector is needed to bring in VBUS power, and establish VCC and GND global networks on the board. The circuit must include necessary filter capacitors (C), inductors (L), and matching resistors (R). Finally, for production and debugging, be sure to integrate the TC2050-IDC programming interface and reserve test points (TestPoint) on signal lines.",
+    "golden_components": [
+      "TestPoint",
+      "USB_B_Micro",
+      "C",
+      "Crystal",
+      "L",
+      "R",
+      "MDBT50Q-1MV2",
+      "TC2050-IDC",
+      "GND",
+      "VBUS",
+      "VCC"
+    ]
+  },
+  {
+    "id": "test_8",
+    "user_requirement": "Please design the RF subsystem for my long-range IoT telemetry node. The core communication must use the RFM95W-915S2 LoRa module supporting the 915MHz band. To ensure antenna impedance matching, strictly use a coaxial connector (Conn_Coaxial) at the interface. For power configuration, connect the module uniformly to the VDD power rail and global ground (GND), and be sure to place small-value decoupling capacitors (C_Small) near the power pins to filter high-frequency noise and ensure stability during RF transmission.",
+    "golden_components": [
+      "Conn_Coaxial",
+      "C_Small",
+      "RFM95W-915S2",
+      "GND",
+      "VDD"
+    ]
+  },
+  {
+    "id": "test_9",
+    "user_requirement": "Please design the minimum system control board for my WLED party lighthouse project. The core Wi-Fi module must be the ESP-12F. For power, the module needs to connect to the standard 3V3 power rail and share the global ground (GND). To ensure stable startup and operation of the main controller, be sure to configure basic filter capacitors (C) at the power input, and configure necessary pull-up or pull-down resistors (R) on critical control pins.",
+    "golden_components": [
+      "3V3",
+      "C",
+      "GND",
+      "R",
+      "ESP-12F"
+    ]
+  },
+  {
+    "id": "test_10",
+    "user_requirement": "Please design the RS-485 differential communication subcircuit for my open-source pick-and-place machine feeder. The core transceiver must use the MAX3078E chip with high noise immunity. For power, the chip must connect to the standard +3.3V power rail and share the system ground (GND). To ensure the transmission quality and stability of differential signals on the bus, be sure to configure appropriate small-size termination matching and bias resistors (R_Small) on the A and B data lines.",
+    "golden_components": [
+      "R_Small",
+      "MAX3078E",
+      "+3.3V",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_11",
+    "user_requirement": "Please design the FRU information storage subcircuit for my RF input FMC expansion board. The core must use the AT24CS01-SSHM I2C EEPROM with a unique serial number. To facilitate external bus access or hardware address configuration, reserve a 2-pin single-row connector (Conn_01x02). The system must uniformly connect to the global ground (GND), and configure necessary US-standard small-size pull-up resistors (R_Small_US) and small-value decoupling capacitors (C_Small) for the circuit. Finally, place test points (TestPoint) on critical signal lines for convenient production debugging.",
+    "golden_components": [
+      "TestPoint",
+      "Conn_01x02",
+      "C_Small",
+      "R_Small_US",
+      "AT24CS01-SSHM",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_12",
+    "user_requirement": "Please plan a Bluetooth minimum system for my PCB design course project. The core microcontroller must be the nRF54L05_1. To ensure system clock accuracy, configure a 32MHz 2016-package crystal oscillator (XTAL_2016_32MHz_1). The power network must uniformly connect to the VDD power rail and global ground (GND), with a ferrite bead (FerriteBead) placed in series on the power input path for high-frequency filtering. Additionally, the circuit must include conventional matching inductors (L) and resistors (R). To distinguish between decoupling and RF matching capacitors for different functions, in addition to regular capacitors (C), specifically list three capacitor nodes with designated numbers (please strictly name them C_1, C_2, C_3).",
+    "golden_components": [
+      "C_1",
+      "C_2",
+      "C_3",
+      "C",
+      "FerriteBead",
+      "L",
+      "R",
+      "XTAL_2016_32MHz_1",
+      "nRF54L05_1",
+      "GND",
+      "VDD"
+    ]
+  },
+  {
+    "id": "test_13",
+    "user_requirement": "Please design an RS-485 isolated or communication expansion interface for my control system. The core transceiver must be the MAX3485. To implement automatic UART transmit/receive direction control, include an SS8050 NPN transistor and a matching 1N4148W switching diode. The power network uniformly uses +3.3V and GND. To meet high-current or thermal dissipation requirements, all basic passive components must use the 1206 SMD package, including decoupling capacitors (C_1206) and current-limiting matching resistors (R_1206). For external interfaces, provide three connectors of different specifications: a 2-pin single-row header (Conn_01x02) possibly for termination resistor jumpers, a 5-pin single-row header (Conn_01x05) for signal input, and a 4-pin JST socket (JST_04) for connecting external RS-485 bus devices.",
+    "golden_components": [
+      "Conn_01x02",
+      "Conn_01x05",
+      "MAX3485",
+      "C_1206",
+      "1N4148W",
+      "R_1206",
+      "JST_04",
+      "SS8050",
+      "+3.3V",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_14",
+    "user_requirement": "Please design a heater control and current monitoring subcircuit. The core power switch must use an N-channel MOSFET with standard GDS pin arrangement (Q_NMOS_GDS) to control the load heater (Heater). To monitor heating current in real time, connect an ACS712_module current sensing module in series in the loop. The power network must include +12V for the heater, +5V for the sensor, and global ground (GND). For external interfaces, configure a 2-pin screw terminal (Screw_Terminal_01x02) for high-current power input, and a 2-pin single-row header (Conn_01x02) and a 3-pin single-row header (Conn_01x03) for control and sensing signal connections. Finally, configure necessary small-value decoupling capacitors (C_Small) and US-standard resistors (R_US) for the circuit to properly condition drive and measurement signals.",
+    "golden_components": [
+      "Screw_Terminal_01x02",
+      "Conn_01x02",
+      "Conn_01x03",
+      "C_Small",
+      "Heater",
+      "Q_NMOS_GDS",
+      "R_US",
+      "ACS712_module",
+      "+12V",
+      "+5V",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_15",
+    "user_requirement": "Please design the hardware architecture for my IoT health monitoring system. To implement Wi-Fi connectivity and data processing, the core control board must use the ESP32-DEVKITC-32D development board. For physiological feature acquisition, configure a pulse/heart rate sensor module (please specify the Pulse Sensor model SEN-11574) and an analog temperature sensor (please specify the TO-92 packaged LM35-LP) to measure body temperature. These sensors will connect directly to the main board's GPIO and ADC pins.",
+    "golden_components": [
+      "ESP32-DEVKITC-32D",
+      "SEN-11574",
+      "LM35-LP"
+    ]
+  },
+  {
+    "id": "test_16",
+    "user_requirement": "Please design a dual DC motor driver subcircuit for my machine learning robot project. The core driver chip must be the efficient TB6612FNG. To facilitate connecting an external battery for motor power, configure a 2-pin single-row connector (Conn_01x02) at the power input. The circuit must include necessary bypass and filter capacitors (C) to absorb noise generated during motor operation. Finally, the power network must uniformly connect to global ground (GND), and to ensure the schematic passes EDA software electrical rules check (ERC), be sure to place a power flag (PWR_FLAG) on the motor power input node.",
+    "golden_components": [
+      "Conn_01x02",
+      "C",
+      "TB6612FNG",
+      "GND",
+      "PWR_FLAG"
+    ]
+  },
+  {
+    "id": "test_17",
+    "user_requirement": "Please help me design a small macropad circuit with full-color backlight. The core controller must be the XIAO-RP2040-DIP. The key matrix must use standard tactile switches or mechanical switches (SW_Push), with an anti-ghosting diode (D) connected in series for each key. Each key needs a surface-mount SK6812MINI addressable RGB LED underneath to provide independent backlight. For the power network, the LEDs and main controller must uniformly connect to the standard +5V power rail and share the global ground (GND).",
+    "golden_components": [
+      "D",
+      "SK6812MINI",
+      "SW_Push",
+      "+5V",
+      "GND",
+      "XIAO-RP2040-DIP"
+    ]
+  },
+  {
+    "id": "test_18",
+    "user_requirement": "Please design the signal processing and indication subcircuit for my MicroModem shield. The control board must be the Arduino_Nano_Every. To drive the radio equipment's PTT (Push-To-Talk) or other control signals, use a 2N7000 N-channel MOSFET. For interfaces, provide a 5-pin single-row header (Conn_01x05) as the main signal connection port. To provide operating status feedback, include an indicator LED in the circuit, and configure matching current-limiting and voltage-divider resistors (R) for it and other logic signals. Finally, configure the necessary filter capacitors (C) and ensure all modules are uniformly connected to the global ground (GND).",
+    "golden_components": [
+      "Conn_01x05",
+      "C",
+      "LED",
+      "R",
+      "Arduino_Nano_Every",
+      "2N7000",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_19",
+    "user_requirement": "Please design the core circuit for my USB MicroSD card reader project. The main control chip must be the highly integrated GL823K controller. For physical connection with the computer host and memory card, configure a standard USB_A male connector and a Micro_SD_Card slot. The power network must include +5V power from USB, +3.3V from the chip's internal LDO output, and global ground (please mark as Earth in this project). To provide data transfer status feedback, include an indicator LED and its current-limiting resistor (R), and configure necessary decoupling capacitors (C) on power lines to ensure data read/write stability.",
+    "golden_components": [
+      "Micro_SD_Card",
+      "USB_A",
+      "C",
+      "LED",
+      "R",
+      "GL823K",
+      "+3.3V",
+      "+5V",
+      "Earth"
+    ]
+  },
+  {
+    "id": "test_20",
+    "user_requirement": "Please design the core circuit for my Wiimote USB adapter project. To achieve optimal compatibility with Wii remotes, the core Bluetooth module must be the J27H002 salvaged from original console hardware. For power, configure a standard USB_A male connector and a USB 2.0 compliant Type-C receptacle (USB_C_Receptacle_USB2.0) to bring in VBUS power (+5V). Since the Bluetooth module requires 3.3V, use the LM1117-3.3 linear regulator to step down and generate the +3V3 network, with all modules sharing the ground (GND). To protect the USB port, place a fuse (Fuse) in series on the VBUS input. Additionally, include a tactile push button (SW_Push) for Bluetooth pairing (Sync), a status indicator LED with matching resistor (R), and necessary small decoupling capacitors (C_Small). For mechanical design, reserve fixed mounting holes (MountingHole) and configure a 2-pin header (Conn_01x02_Male) for additional power or signal jumper testing.",
+    "golden_components": [
+      "Conn_01x02_Male",
+      "USB_A",
+      "USB_C_Receptacle_USB2.0",
+      "C_Small",
+      "Fuse",
+      "LED",
+      "R",
+      "J27H002",
+      "MountingHole",
+      "LM1117-3.3",
+      "SW_Push",
+      "+3V3",
+      "+5V",
+      "GND",
+      "VBUS"
+    ]
+  },
+  {
+    "id": "test_21",
+    "user_requirement": "Please design the core circuit for my PWM generator project. The core timer chip must be the NE555DR in SOIC-8 package. To allow manual adjustment of the output duty cycle, configure a rotary potentiometer (R_Potentiometer) in the circuit, paired with two 1N4148WT switching diodes to control the charge and discharge paths. To increase drive capability or invert the signal, use a PNP transistor. For interfaces and human-machine interaction, configure a battery or power connector (model 1061), a single-pole double-throw switch (SW_SPDT) for power control or mode switching, and an LED for operating status indication. To ensure timing accuracy, equip the circuit with necessary timing and decoupling capacitors (C), and reserve test points (TestPoint) on output or critical signal lines for subsequent measurement.",
+    "golden_components": [
+      "TestPoint",
+      "1061",
+      "NE555DR",
+      "C",
+      "LED",
+      "R_Potentiometer",
+      "1N4148WT",
+      "PNP",
+      "SW_SPDT"
+    ]
+  },
+  {
+    "id": "test_22",
+    "user_requirement": "Please design a basic USB communication and sensing interface circuit for my entry-level hardware project. The core USB-to-UART bridge chip must be the Holtek HT42B534-2. To ensure stable operation of the chip and USB bus, configure necessary non-polarized decoupling capacitors (C) and polarized capacitors (C_Polarized) on power and signal lines, together with matching resistors (R). The circuit must include a specific component or module (AM90). For external connections, provide a 3-pin header (Conn_01x03) and a 4-pin header (Conn_01x04) for serial signal output or other peripheral expansion. Finally, ensure all components are uniformly connected to the system's global ground (GND).",
+    "golden_components": [
+      "Conn_01x03",
+      "Conn_01x04",
+      "C",
+      "C_Polarized",
+      "R",
+      "AM90",
+      "HT42B534-2",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_23",
+    "user_requirement": "Please design the main control and communication conversion circuit for my barn temperature monitoring system. The core controller must be the WeMos_D1_mini. To reliably communicate with a long-distance 1-Wire temperature sensor array, configure an I2C-to-1-Wire bridge chip or module (specify model AK-DS2482). For power, configure a standard DC barrel jack (Barrel_Jack) to bring in external power, and reserve a buck converter module interface (BuckHeader). Use screw terminals for external sensor and signal interfaces, including a 2-pin (Screw_Terminal_01x02) and a 5-pin (Screw_Terminal_01x05). For circuit protection and stability, add a reverse-polarity protection 1N4007 diode at the power input, and configure necessary polarized devices/capacitors (CP-Device) with matching resistors (R). Finally, the entire system must share ground (GND), and please add a power flag (PWR_FLAG) on the schematic to pass the software's electrical rules check.",
+    "golden_components": [
+      "Barrel_Jack",
+      "Screw_Terminal_01x02",
+      "Screw_Terminal_01x05",
+      "R",
+      "1N4007",
+      "AK-DS2482",
+      "BuckHeader",
+      "WeMos_D1_mini",
+      "CP-Device",
+      "GND",
+      "PWR_FLAG"
+    ]
+  },
+  {
+    "id": "test_24",
+    "user_requirement": "Please draw the power supply schematic for the Neumann N194A/V. The mains input uses an IEC_60320_C14_Receptacle, in series with a Fuse and SW_SPST_LED. The AC power is stepped down through Transformer_1P_1S, rectified via D_Bridge_+-AA and D, filtered by C_Polarized and C_Polarized_Small, then regulated by LM7812_TO220 to output +12V. The ground network must strictly distinguish Earth, GNDPWR, and 0. Finally, configure the following test and wiring terminals in the circuit: ordinary Conn_01x01_Pin and Conn_01x01_Socket, along with numbered pins (Conn_01x01_Pin_1, Conn_01x01_Pin_2, Conn_01x01_Pin_3) and sockets (Conn_01x01_Socket_1, Conn_01x01_Socket_2, Conn_01x01_Socket_3, Conn_01x01_Socket_4).",
+    "golden_components": [
+      "Conn_01x01_Pin_1",
+      "Conn_01x01_Pin_2",
+      "Conn_01x01_Pin_3",
+      "Conn_01x01_Socket_1",
+      "Conn_01x01_Socket_2",
+      "Conn_01x01_Socket_3",
+      "Conn_01x01_Socket_4",
+      "Conn_01x01_Pin",
+      "Conn_01x01_Socket",
+      "IEC_60320_C14_Receptacle",
+      "C_Polarized",
+      "C_Polarized_Small",
+      "D",
+      "D_Bridge_+-AA",
+      "Fuse",
+      "Transformer_1P_1S",
+      "LM7812_TO220",
+      "0",
+      "SW_SPST_LED",
+      "+12V",
+      "Earth",
+      "GNDPWR"
+    ]
+  },
+  {
+    "id": "test_25",
+    "user_requirement": "Please design the core circuit for my retro computer mouse adapter project. The core microcontroller must be the ATtiny1604-SS in SOIC package. To connect modern or PS/2-compatible mice, configure a standard USB Type-A female connector (please strictly name it USB_A-Connector). For the output, use a standard 9-pin D-Sub female connector (DB9_Female) to connect to the retro computer's serial port. The power network must include +5V power and global ground (GND), with necessary small-value decoupling capacitors (C_Small). On the schematic, be sure to place a power flag (PWR_FLAG) to satisfy the design software's check requirements, and reserve a single-pin connector (Conn_01x01) for any needed test point or jumper connection.",
+    "golden_components": [
+      "DB9_Female",
+      "Conn_01x01",
+      "C_Small",
+      "ATtiny1604-SS",
+      "USB_A-Connector",
+      "+5V",
+      "GND",
+      "PWR_FLAG"
+    ]
+  },
+  {
+    "id": "test_26",
+    "user_requirement": "Please design a basic NPN transistor driver subcircuit for my microcontroller project, used to control an inductive load. The core switching device must be the general-purpose NPN transistor PN2222A. To protect the transistor from reverse voltage spikes generated when the inductive load is de-energized, be sure to place a flyback diode (1N4007) in reverse parallel across the load. The control signal must connect to the transistor base through a current-limiting resistor (R). For the power network, the control logic uses +3V3 power and shares the global ground (GND). Finally, configure a 2-pin header (Conn_01x02_Pin) as the load connection point, and a 3-pin header (Conn_01x03_Pin) as the power and control signal input interface.",
+    "golden_components": [
+      "Conn_01x02_Pin",
+      "Conn_01x03_Pin",
+      "R",
+      "1N4007",
+      "PN2222A",
+      "+3V3",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_27",
+    "user_requirement": "Please design the core driver circuit for my electric valve control project. The main control board must be the high-performance Teensy4.1, powered or communicating through its onboard USB_B_Micro interface. To drive the high-power ball valve actuator (please substitute with a standard DC motor symbol Motor_DC in the circuit), configure an L298N dual H-bridge driver module or chip. The power system needs to provide +12V motor power for the driver stage, +5V for the main control logic, and share the system ground (GND). Finally, on the L298N's logic enable pin or 5V regulator enable position, configure a default-shorted micro jumper cap (please strictly name it Jumper_2_Small_Bridged) for convenient hardware configuration.",
+    "golden_components": [
+      "USB_B_Micro",
+      "L298N",
+      "Jumper_2_Small_Bridged",
+      "Motor_DC",
+      "+12V",
+      "+5V",
+      "GND",
+      "Teensy4.1"
+    ]
+  },
+  {
+    "id": "test_28",
+    "user_requirement": "Please design the sensor subcircuit for my automation control project. The core motion detection must use the LSM6DS3 6-axis inertial measurement unit. The circuit also needs a DS1602 module to handle specific timing or peripheral functions. The power network must uniformly use the +3V3 power rail and share the global ground (GND). To ensure signal stability and proper chip operation, configure small-size pull-up/pull-down resistors (R_Small) on critical I2C/SPI communication buses or control pins, and place small-value decoupling capacitors (C_Small) near power pins for high-frequency filtering.",
+    "golden_components": [
+      "C_Small",
+      "R_Small",
+      "LSM6DS3",
+      "DS1602",
+      "+3V3",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_29",
+    "user_requirement": "Please design the core control circuit for my piezoelectric sensor triggered LED strip project. The core timer must be the low-power TLC555xD. To drive the high-current LED strip, configure a DMG1012T N-channel MOSFET at the timer output. For the power input, use a DC barrel jack with mounting pins (Barrel_Jack_MountingPin), and step down the voltage through an L78L33_SOT89 linear regulator in SOT-89 package. To conveniently adjust the LED on-time and trigger sensitivity, configure a rotary potentiometer (R_Potentiometer) in the circuit, paired with necessary fixed resistors (R) and capacitors (C). For external connections, configure two 2-pin headers (Conn_01x02_Pin) for connecting the piezoelectric sensor and the LED strip load respectively. Finally, add a status indicator LED, share the global ground (GND) across the system, and reserve a single-pin connector (Conn_01x01) as a test point.",
+    "golden_components": [
+      "Barrel_Jack_MountingPin",
+      "Conn_01x02_Pin",
+      "Conn_01x01",
+      "C",
+      "LED",
+      "R",
+      "R_Potentiometer",
+      "L78L33_SOT89",
+      "TLC555xD",
+      "DMG1012T",
+      "GND"
+    ]
+  },
+  {
+    "id": "test_30",
+    "user_requirement": "Please design the multi-stage step-down power subsystem for my VESC FOC compatible motor driver project. To handle the high-voltage battery input, the first stage step-down must use the LM5164DDA synchronous buck regulator. The second stage step-down must use the TPS54202DDC to generate an intermediate voltage, and finally use the AMS1117-3.3 low-dropout linear regulator to generate the 3.3V network for logic control. Please pair these core chips with necessary passive components, including conventional power inductors (L), small-size inductors (L_Small), small-value capacitors (C_Small), and small-size resistors (R_Small). The system must uniformly connect to global ground (GND), and add power flags (PWR_FLAG) at critical power input nodes to pass the design software's rules check.",
+    "golden_components": [
+      "C_Small",
+      "L",
+      "L_Small",
+      "R_Small",
+      "AMS1117-3.3",
+      "LM5164DDA",
+      "TPS54202DDC",
+      "GND",
+      "PWR_FLAG"
+    ]
+  }
+]

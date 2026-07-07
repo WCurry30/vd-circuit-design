@@ -1,0 +1,157 @@
+[
+  {
+    "id": "test_1",
+    "user_requirement": "I need a low-pass filter to filter out high-frequency noise, with a cutoff frequency around 600Hz. The idea is to use a Sallen-Key topology for better filtering performance. Any common bipolar op-amp will do, such as the ubiquitous LM2904. Add a DC-blocking capacitor at the input and a few decoupling capacitors at the output to ensure stable operation. All grounds can be tied together.",
+    "golden_components": [
+      "LM2904",
+      "R",
+      "C",
+      "GND"
+    ],
+    "targets": {
+      "metric": "cutoff_freq_hz",
+      "value": 600,
+      "tolerance": 0.5
+    }
+  },
+  {
+    "id": "test_2",
+    "user_requirement": "Help me build a 1000Hz low-pass filter for audio signal processing. I plan to use an op-amp to build a simple first-order filter — the LM358 should be sufficient. Use resistors around 10kΩ and a 0.1μF capacitor, which should cover up to 1kHz. Single-supply 5V power is fine; remember to add coupling capacitors for DC blocking.",
+    "golden_components": [
+      "LM358",
+      "R",
+      "C",
+      "GND"
+    ],
+    "targets": {
+      "metric": "cutoff_freq_hz",
+      "value": 1000,
+      "tolerance": 0.5
+    }
+  },
+  {
+    "id": "test_3",
+    "user_requirement": "I want to build a common-emitter amplifier circuit with a voltage gain of about 40dB, used to amplify microphone signals. The core uses an NPN transistor — the 2N3904 is very common. Use the classic voltage-divider bias configuration; the base bias resistors and collector load resistor determine the gain. Both input and output need DC-blocking capacitors, and add a bypass capacitor at the emitter to boost gain. Supply 12V, with a unified ground.",
+    "golden_components": [
+      "2N3904",
+      "R",
+      "C",
+      "GND"
+    ],
+    "targets": {
+      "metric": "max_gain_db",
+      "value": 40,
+      "tolerance": 0.3
+    }
+  },
+  {
+    "id": "test_4",
+    "user_requirement": "I need a 30dB gain amplifier to amplify weak sensor signals. Use an NPN transistor for common-emitter amplification — the 2N3904 or similar will work. This time use emitter degeneration (series resistor) to set the gain without a bypass capacitor, which will provide better stability. Add coupling capacitors at both input and output. 9V supply.",
+    "golden_components": [
+      "2N3904",
+      "R",
+      "C",
+      "GND"
+    ],
+    "targets": {
+      "metric": "max_gain_db",
+      "value": 30,
+      "tolerance": 0.3
+    }
+  },
+  {
+    "id": "test_5",
+    "user_requirement": "Help me design a regulated power supply. Input is around 15V, and I want a stable DC output voltage. I plan to use a Zener diode scheme with a transistor buffer to enhance drive capability. Use the 1N4733A (5.1V) Zener and a 2N3904 transistor. Add filter capacitors at both input and output to minimize ripple. Tie all grounds together.",
+    "golden_components": [
+      "1N4007",
+      "1N4733A",
+      "R",
+      "2N3904",
+      "C",
+      "GND"
+    ],
+    "targets": {
+      "metric": "v_out_avg_v",
+      "value": 5.1,
+      "tolerance": 0.2
+    }
+  },
+  {
+    "id": "test_6",
+    "user_requirement": "Simply make a 5V reference supply — no need for high current, just enough to provide a reference for digital circuits. Use the most basic Zener scheme: one 1N4733A Zener diode plus a current-limiting resistor is sufficient. Input 12V; choose the resistor so the Zener operating current is between 5-10mA. Add a capacitor at the output for filtering.",
+    "golden_components": [
+      "1N4733A",
+      "R",
+      "C",
+      "GND"
+    ],
+    "targets": {
+      "metric": "v_out_avg_v",
+      "value": 5.0,
+      "tolerance": 0.2
+    }
+  },
+  {
+    "id": "test_7",
+    "user_requirement": "I need to build an inverting amplifier circuit with 40dB gain, used to amplify thermocouple output signals. The core uses an op-amp — the LM2904 is fine. Input resistor 1kΩ, feedback resistor 100kΩ, giving a gain of -100x. Add a matching resistor at the inverting input to reduce bias current error. Use capacitive coupling at both input and output. ±12V supply.",
+    "golden_components": [
+      "LM2904",
+      "R",
+      "C",
+      "GND"
+    ],
+    "targets": {
+      "metric": "midband_gain_db",
+      "value": 40,
+      "tolerance": 0.3
+    }
+  },
+  {
+    "id": "test_8",
+    "user_requirement": "Help me build a 20dB non-inverting amplifier to buffer signals. Use the LM2904 op-amp in a non-inverting topology for high input impedance. Use 10kΩ and 100kΩ resistors to set a gain of 10x, which is exactly 20dB. Add a small series resistor at the output to prevent accidental shorts. Likewise add coupling capacitors at input and output. ±5V supply is sufficient.",
+    "golden_components": [
+      "LM2904",
+      "R",
+      "C",
+      "GND"
+    ],
+    "targets": {
+      "metric": "midband_gain_db",
+      "value": 20,
+      "tolerance": 0.3
+    }
+  },
+  {
+    "id": "test_9",
+    "user_requirement": "Design an LED constant-current driver with current controlled at around 20mA. Use the LM2904 op-amp as the control core, plus a power MOSFET or transistor to drive the LED. Use a sense resistor of several tens of ohms; constant current is maintained through op-amp negative feedback. The LED branch supply can be higher, such as 12V or 24V. The entire circuit must be grounded.",
+    "golden_components": [
+      "LM2904",
+      "2N3904",
+      "LED",
+      "R",
+      "C",
+      "GND"
+    ],
+    "targets": {
+      "metric": "led_current_ma",
+      "value": 20,
+      "tolerance": 0.3
+    }
+  },
+  {
+    "id": "test_10",
+    "user_requirement": "Make another LED driver, this time with lower current — 10mA is enough for an indicator light. A simple transistor-plus-resistor scheme will do; no need for anything complex. Use a small-signal transistor 2N3904 with a base resistor and LED current-limiting resistor, keeping the collector current around 10mA. 5V supply is sufficient.",
+    "golden_components": [
+      "2N3904",
+      "LED",
+      "R",
+      "C",
+      "GND"
+    ],
+    "targets": {
+      "metric": "led_current_ma",
+      "value": 10,
+      "tolerance": 0.3
+    }
+  }
+]
