@@ -1,0 +1,1 @@
+"""Core EDA generation framework."""
