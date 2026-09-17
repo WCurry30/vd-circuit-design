@@ -1,0 +1,9 @@
+* Two-BJT LED current sink, approximately 6 mA at 9 V and 12 V.
+VDD VCC 0 9
+RB VCC B 10k
+Q1 OUT B SENSE 2N2222
+Q2 B SENSE 0 2N2222
+RSENSE SENSE 0 100
+DLED VCC LED_C LED
+VLOAD LED_C OUT 0
+.end

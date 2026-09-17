@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": {
+        "nodes": {
+          "input": "VCC",
+          "output": "OUT",
+          "load_element": "VLOAD"
+        },
+        "target": {
+          "metric": "load_current_a",
+          "value": 0.02,
+          "tolerance": 0.3
+        },
+        "condition": {}
+      },
+      "result": {
+        "status": "success",
+        "failure_stage": null,
+        "metric": "load_current_a",
+        "target": 0.02,
+        "tolerance": 0.3,
+        "measured": 0.0200814961,
+        "passed": true,
+        "submitted_deck_sha256": "339a1720103f89e07f0d8bb4f4d19503672e23444b519734e601bc20ce9ba7ef",
+        "evaluated_deck_sha256": "a9c17e2f814373c38f0e2b0aeb1ca0789dcd4cd122e1e3c29aa97ea80eab6ba8",
+        "artifacts": {
+          "submitted_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_037/negative/fixed_models.cir",
+          "evaluated_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_037/negative/conditions/condition_01/evaluated.cir",
+          "node_manifest": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_037/negative/conditions/condition_01/node_manifest.json",
+          "simulator_log": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_037/negative/conditions/condition_01/ngspice.log",
+          "stdout": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_037/negative/conditions/condition_01/ngspice.stdout",
+          "stderr": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_037/negative/conditions/condition_01/ngspice.stderr",
+          "numeric_trace": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_037/negative/conditions/condition_01/numeric_trace.txt"
+        },
+        "detail": null
+      }
+    }
+  ],
+  "submitted_deck_sha256": "339a1720103f89e07f0d8bb4f4d19503672e23444b519734e601bc20ce9ba7ef"
+}

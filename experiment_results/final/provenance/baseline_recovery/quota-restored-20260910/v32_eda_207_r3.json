@@ -1,0 +1,16 @@
+{
+  "model": "v32",
+  "task": "eda_207",
+  "repeat": 3,
+  "arms": [
+    "full",
+    "direct",
+    "analogcoder",
+    "spicepilot"
+  ],
+  "pid": 2216751,
+  "status": "completed",
+  "started_unix": 1789015964.939563,
+  "returncode": 0,
+  "finished_unix": 1789016185.9042346
+}

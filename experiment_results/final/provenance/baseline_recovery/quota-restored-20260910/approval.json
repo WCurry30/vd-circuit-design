@@ -1,0 +1,744 @@
+{
+  "epoch": "quota-restored-20260910",
+  "authority": "User confirmed both provider accounts replenished; resume the original exact requests only.",
+  "frozen_manifest_sha256": "b0ca03e2383b01e601994b9cbdaf4f39518ab9968cf982bcc604a7aba3619925",
+  "created_unix": 1789015132.9441884,
+  "wrapper_sha256": "c22cd611b3bdbb416dc44e406c04f6d8fcd4062b3ab531631f85802e7ebba92e",
+  "incomplete_requests": {
+    "units/v32/eda_204/1/analogcoder/calls/call_01/request.json": "f72b4e5e93fa633bdad86dd98c3c72fa12eb828fc884d60dc2ca3936997be68a",
+    "units/v32/eda_037/2/analogcoder/calls/call_02/request.json": "adac5c572e10d16f4e4cb6613e6772b7bfd3c5b9e61fd855e12b1d874576b937",
+    "units/v32/eda_008/2/planning_calls/call_04/request.json": "64f18cba5cdeaa6ebd52f8fc0413ebeb2ec42ef791973c1835fbf2307f9fa423",
+    "units/qwen36/eda_008/2/analogcoder/calls/call_01/request.json": "79857427a3719ce1918c5fe7a4160c2b5d5d731711da92f338fe000d159c7918",
+    "units/v32/eda_016/2/planning_calls/call_02/request.json": "614be3fc969f82e70d32c0e622528cd2094df0135d60401374660f75eb51d605",
+    "units/qwen36/eda_016/2/planning_calls/call_03/request.json": "50975b2ad2f7f8144532dbfc378497a32f27bf5e462fe90c43aad24aa42aa0fe",
+    "units/v32/eda_204/2/planning_calls/call_01/request.json": "9cd23ae08a66d21133d30ee4a12c58271c968b50ab7cd6ab1c723223aa32160c",
+    "units/qwen36/eda_204/2/planning_calls/call_01/request.json": "3bda3ab5de57c48c8d4e8cc5428050cfd087ccad56bfc51f890b6a8eeb5ca5c4",
+    "units/v32/eda_006/2/planning_calls/call_01/request.json": "bd070e46297589fe7feb3451a338cd4efaf149fa55c918f934937414e39a5df0",
+    "units/qwen36/eda_006/2/planning_calls/call_01/request.json": "063748283d70661ed004227dfa94cfb272383a57faff3a09a8cbed1fc4b094a6",
+    "units/v32/eda_208/3/planning_calls/call_01/request.json": "89141e894941282f85c1feb4d7d478548ef0243faea9bfe301947eec61e48be0",
+    "units/qwen36/eda_208/3/planning_calls/call_01/request.json": "3c10292d606f102889d1c5a92f091aba671b2ed34bb6becff3770e84262a605e",
+    "units/v32/eda_009/3/planning_calls/call_01/request.json": "5ab419522c24dfe5e64bd7f9dc92b7fb1588ce2b4fbe4c81ef29667e1dba0d26",
+    "units/qwen36/eda_009/3/planning_calls/call_01/request.json": "9f16f1d94d572c0e8b3084a263957fb1f306b7f412cbb204701bb1fd7120d765",
+    "units/v32/eda_201/3/planning_calls/call_01/request.json": "fb5093311f75405b94c11b0314832e68384a5ecc275c9371ce08db0c1348c4d7",
+    "units/qwen36/eda_201/3/planning_calls/call_01/request.json": "f7e94634cb509af90fd25655b7ef206a85ed9e23a3ff43ae7cca6560e1eb84cc",
+    "units/v32/eda_037/3/planning_calls/call_01/request.json": "35320bf1a1be3dc9621a749344c7c52e73c68fad617f50eec31f16cab64a25a5",
+    "units/qwen36/eda_037/3/planning_calls/call_01/request.json": "4aef632a326ee3e2bd91eec7c98bea19a89788d42e5ab9ea5d69312427b84123",
+    "units/v32/eda_206/3/planning_calls/call_01/request.json": "5e7f831c9cc005cd29ea42efa166718f97788b57da4247369e2c8f9273516699",
+    "units/qwen36/eda_206/3/planning_calls/call_01/request.json": "e334b397dac37d345ae25238a1984d47891eb0a34a36ae66cec0b6021380eef3",
+    "units/v32/eda_006/3/planning_calls/call_01/request.json": "b15991ddbd0edc41e09133626e7734351d6a4c51bc35610a4483d1fa8bcd8faf",
+    "units/qwen36/eda_006/3/planning_calls/call_01/request.json": "3db0a486a65b963cc9b5ec3afd007c0aba7b11507659cfb9476a3da92628bdb3",
+    "units/v32/eda_207/3/planning_calls/call_01/request.json": "9910ec87f71d4a5726993da52fd80fd9f5fe24088147b7def7e046b4335ed836",
+    "units/qwen36/eda_207/3/planning_calls/call_01/request.json": "5b7dda755a016f64a84c1e9b898b3245fa0658a8345774d2e4562672541445fe",
+    "units/v32/eda_007/3/planning_calls/call_01/request.json": "b14a9c61751c4bc07be58d0a192c3f793670298f65b74d136e28aff07bbed8a7",
+    "units/qwen36/eda_007/3/planning_calls/call_01/request.json": "0fbb50fa15c6e2da8c199a53e6340ec62486f101734d1005c17e2dcadfa6b8c8",
+    "units/v32/eda_027/3/planning_calls/call_01/request.json": "9c015419ebb2f22b547fec180d919af29247e41a9ecc3499ccd4d601b2d74405",
+    "units/qwen36/eda_027/3/planning_calls/call_01/request.json": "511e93a17bb0ab929555f8518f8d2b7c68aaacf41257c76c08b4ee5f7cedc2c6",
+    "units/gpt4o/eda_210/3/spicepilot/calls/call_02/request.json": "a8dd3245aa8768ca6bb9659180b54d3aba60e64755fdde25ca89beb86e3c21e2",
+    "units/v32/eda_210/3/planning_calls/call_01/request.json": "a5d39d77b181be1626487618d76213082bcabec8adb13470cbb7d6172eafc134",
+    "units/qwen36/eda_210/3/planning_calls/call_01/request.json": "0ac8e180130752de87c97e638da3af9263dd31771e62f8358ece744738cc7c83",
+    "units/gpt4o/eda_205/3/full/calls/call_02/request.json": "3dc015e45bd7900e0d9bd1a3ed25f19ad3a9d07589b10648bb3e6fc6faa79317",
+    "units/v32/eda_205/3/planning_calls/call_01/request.json": "1efadd4458eaf388342bd0a63f8523b7ab76ea108d52b9aefc8bfe941cf467b9",
+    "units/qwen36/eda_205/3/planning_calls/call_01/request.json": "c4a251ec4a5160dff14d3196e3e0dc792e86c504947a293dc953117c35660aab",
+    "units/gpt4o/eda_204/3/analogcoder/calls/call_01/request.json": "6b7bfd53b66fa952a147a9b83a963c4385bafde048bdb5e7990282213fb5dd09",
+    "units/v32/eda_204/3/planning_calls/call_01/request.json": "ea1e57edfe87c85ff8847d1e51341405a464055e6b1444157dfd8c4dd71fba29",
+    "units/qwen36/eda_204/3/planning_calls/call_01/request.json": "af6687c41f37d4ae2c385e682733e517f22b9a65241e05c9c1e5f4d8cf2d84c2",
+    "units/gpt4o/eda_005/3/spicepilot/calls/call_02/request.json": "315151373ef8fa58b1917ab5c89c8881c68f294da34d02f018cb3b7bc66b7c66",
+    "units/v32/eda_005/3/planning_calls/call_01/request.json": "1bc75c2df8282bd51559ca6d6131dbeb8bbb6cf797523fdaf82a554680ee4a75",
+    "units/qwen36/eda_005/3/planning_calls/call_01/request.json": "a552bd1e581328ec663d712a94a703cff632247461d4813db4670dd206a7136a",
+    "units/gpt4o/eda_010/3/spicepilot/calls/call_03/request.json": "74cb6c6fa48dd0018b8bfa7d0df83f0d2123e9ec6639fa68700b27a283455bd6",
+    "units/v32/eda_010/3/planning_calls/call_01/request.json": "ea673f603d6381ec2d6f41c43eea47b1ef21f222c1ebeb31bf294f28d03164f5",
+    "units/qwen36/eda_010/3/planning_calls/call_01/request.json": "074d996e156c9360fa6b466db70ee54be57b356e64797a04d74b700f9294ec6a",
+    "units/gpt4o/eda_209/3/spicepilot/calls/call_01/request.json": "d33eb41a82b626900ceb65adc260e82798907bbfdadb85fc2487823fbc4b17ad",
+    "units/v32/eda_209/3/planning_calls/call_01/request.json": "4469aa7f5531bcb37f454ee1947ba981d33ec8779c70759677abb95b6aaf5932",
+    "units/qwen36/eda_209/3/planning_calls/call_01/request.json": "de54eb15740ea63e9bcaffe6246f84e064a4bf4e057029cce70c582adcf1008f",
+    "units/gpt4o/eda_203/3/planning_calls/call_01/request.json": "abc00b2acccdf936e3bee42a8461d9f71ae6bbc643f20ded0316fc92e5aefefa",
+    "units/v32/eda_203/3/planning_calls/call_01/request.json": "f4c2b66279c8af69c97d5648e2952dcc60dc270bd6ef8843e3d8a9441c25d44e",
+    "units/qwen36/eda_203/3/planning_calls/call_01/request.json": "11b5fd65edd578ada0881687ab16ad38735b2fb9f72d84b792ab059df8d6b5cb",
+    "units/gpt4o/eda_202/3/planning_calls/call_01/request.json": "9dcdcee14871a63cdfd01f6424a272d982842e1e69acb84bf41560624dc04f69",
+    "units/v32/eda_202/3/planning_calls/call_01/request.json": "bb824e48c445f8e95ed9ea5d65a1aedc99c6112e57085f2c8335b9405eae04ce",
+    "units/qwen36/eda_202/3/planning_calls/call_01/request.json": "f857b4b072750118c22fb11d8176f39a25672ee07eb60d68b0a5b0fa28fe2be0",
+    "units/gpt4o/eda_024/3/planning_calls/call_01/request.json": "6bbef7112e93807b06c10ac7379e9af448bcbd1c9d051b19919f87461ebaa877",
+    "units/v32/eda_024/3/planning_calls/call_01/request.json": "6e2018b9e7e3e4d6719823197a1658595423dc1cb6900dcdab57ac2ba23eceb6",
+    "units/qwen36/eda_024/3/planning_calls/call_01/request.json": "45079ef5ac13a81cb4fa6b624714cca3df0d7d804978944583e88df493accedb",
+    "units/gpt4o/eda_016/3/planning_calls/call_01/request.json": "3d95061514e1960731d27ab085364344ec877aa9675bc123959ee50fa915a82c",
+    "units/v32/eda_016/3/planning_calls/call_01/request.json": "a2ff1a5252fb24126689ea144d66705d5055a61b431b09dbf9cf3905a5e33bf8",
+    "units/qwen36/eda_016/3/planning_calls/call_01/request.json": "541791dda236be82e9f57e09cd56bd3e832b3c0300faf8c19084549d1275473d",
+    "units/gpt4o/eda_008/3/planning_calls/call_01/request.json": "a1c5b07cab36685f1885bc00ccfa5a9f95c6220eae25ccc0929d53465ac66b4b",
+    "units/v32/eda_008/3/planning_calls/call_01/request.json": "f1ddbc01a536562c60d9d533d5bb81798042ab45df6252aa6d9cfa9d3be882f2",
+    "units/qwen36/eda_008/3/planning_calls/call_01/request.json": "d32e353e50a6eec741e408d92924776d2f3307716355bd6cd8c43e4d9dbb38ab"
+  },
+  "jobs": [
+    {
+      "model": "v32",
+      "task": "eda_204",
+      "repeat": 1,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "v32",
+      "task": "eda_037",
+      "repeat": 2,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "v32",
+      "task": "eda_008",
+      "repeat": 2,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_008",
+      "repeat": 2,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "v32",
+      "task": "eda_016",
+      "repeat": 2,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_016",
+      "repeat": 2,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "v32",
+      "task": "eda_204",
+      "repeat": 2,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_204",
+      "repeat": 2,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "v32",
+      "task": "eda_006",
+      "repeat": 2,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_006",
+      "repeat": 2,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "v32",
+      "task": "eda_208",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_208",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "v32",
+      "task": "eda_009",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_009",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "v32",
+      "task": "eda_201",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_201",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "v32",
+      "task": "eda_037",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_037",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "v32",
+      "task": "eda_206",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_206",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "v32",
+      "task": "eda_006",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_006",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "v32",
+      "task": "eda_207",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_207",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "v32",
+      "task": "eda_007",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_007",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "v32",
+      "task": "eda_027",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_027",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "gpt4o",
+      "task": "eda_210",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "v32",
+      "task": "eda_210",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_210",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "gpt4o",
+      "task": "eda_205",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "v32",
+      "task": "eda_205",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_205",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "gpt4o",
+      "task": "eda_204",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "v32",
+      "task": "eda_204",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_204",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "gpt4o",
+      "task": "eda_005",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "v32",
+      "task": "eda_005",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_005",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "gpt4o",
+      "task": "eda_010",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "v32",
+      "task": "eda_010",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_010",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "gpt4o",
+      "task": "eda_209",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "v32",
+      "task": "eda_209",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_209",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "gpt4o",
+      "task": "eda_203",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "v32",
+      "task": "eda_203",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_203",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "gpt4o",
+      "task": "eda_202",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "v32",
+      "task": "eda_202",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_202",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "gpt4o",
+      "task": "eda_024",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "v32",
+      "task": "eda_024",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_024",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "gpt4o",
+      "task": "eda_016",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "v32",
+      "task": "eda_016",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_016",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "gpt4o",
+      "task": "eda_008",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "v32",
+      "task": "eda_008",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_008",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    }
+  ],
+  "policy": "Reuse exact completed responses; preserve all original transport failures. Only missing responses get new transport attempts. No prompt/evaluator/seed or outcome change."
+}

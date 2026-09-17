@@ -1,0 +1,31 @@
+{
+  "status": "measured",
+  "diagnostics": [
+    "Q1 DC: Vc=6.9173 V, Vb=1.43373 V, Ve=0.767015 V, Vce=6.15029 V.",
+    "Q2 DC: Vc=6.9173 V, Vb=1.43373 V, Ve=0.767015 V, Vce=6.15029 V."
+  ],
+  "condition": {
+    "dc_sources": {
+      "VDD": 12
+    },
+    "resistances": {
+      "RLOAD": 10000
+    }
+  },
+  "devices": [
+    {
+      "device": "Q1",
+      "vc": 6.9173048,
+      "vb": 1.43372583,
+      "ve": 0.767015141,
+      "vce": 6.150289659
+    },
+    {
+      "device": "Q2",
+      "vc": 6.9173048,
+      "vb": 1.43372583,
+      "ve": 0.767015141,
+      "vce": 6.150289659
+    }
+  ]
+}

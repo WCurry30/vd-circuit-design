@@ -1,0 +1,138 @@
+{
+  "ablation_spice": {
+    "purpose": "Quantify the contribution of each framework module (Expert/Shield/Metric/Iteration) to generating simulatable SPICE",
+    "script": "experiment/simulation_experiment/run_ablation_spice.py",
+    "prompts": [
+      "Design a filter circuit with a cutoff frequency of 600Hz",
+      "Design a single-transistor common-emitter amplifier circuit with an AC gain of 40dB",
+      "Design a shunt regulator circuit based on a Zener diode with 5V output",
+      "Design an LED constant-current driver circuit with 20mA current"
+    ],
+    "groups": {
+      "G0_Ours": "Full system",
+      "G1_No_Expert": "Remove domain expert",
+      "G2_No_Shield": "Remove topology shield (no cleaning of LLM output)",
+      "G3_No_Metric": "Use hard threshold judgment (no LLM judgment call)",
+      "G4_No_Iter": "Disable iteration (single round)"
+    },
+    "metrics": [
+      "success (whether simulation passed)",
+      "iterations_used (convergence rounds)",
+      "fatal_errors (fatal simulation/environment error count)",
+      "csv: ablation_results.csv"
+    ],
+    "method_flow": [
+      "1) Planner generates planning.json",
+      "2) inspect_components -> retrieved.json",
+      "3) netlist_engine.generate_spice -> generate SPICE",
+      "4) spice_engine.evaluate -> run Ngspice and evaluate",
+      "5) If not passed, iterate based on feedback (max 8 rounds, G4 set to 1 round)"
+    ],
+    "key_code_snippets": [
+      {
+        "name": "Core run loop (pseudocode)",
+        "code": "plan = planner.generate_plan(prompt) -> inspect_components(plan) -> for iter in 1..max: spice = netlist_engine.generate_spice(...); passed, feedback = spice_engine.evaluate(...); if passed: break; else continue"
+      },
+      {
+        "name": "NoShieldNetlistEngine (key points)",
+        "code": "Skip expert.clean_spice_code() and global duplicate component name cleaning; feed raw LLM SPICE directly into Ngspice to test topology hallucination effects."
+      }
+    ],
+    "example_result_placeholders": {
+      "task": "Filter 1kHz",
+      "G0_Ours": {"success": "✅", "iterations": 2},
+      "G2_No_Shield": {"success": "❌", "fatal_errors": 3}
+    }
+  },
+
+  "ablation_real": {
+    "purpose": "Ablate the effects of CoT/JSON/PRM/Exact-match in a real planner + retriever framework",
+    "script": "experiment/run_ablation_study_real.py",
+    "test_cases": "See script TEST_CASES (10 test cases, including LED, audio amplifier, LM7805, STC89C52, etc.)",
+    "groups": ["Group_2 (w/o Constraint)", "Group_3 (w/o PRM)", "Group_4 (w/o Exact Match)"],
+    "metrics": ["FPR (Format Pass Rate)", "RHR (Retrieval Hit Rate)", "Recall (component recall rate)", "JSON quality", "Retrieval quality (match_score average)"],
+    "method_flow": [
+      "Repeat NUM_RUNS times for each test_case (script default NUM_RUNS=3)",
+      "Each call to CircuitPlannerFinal.generate_plan (affected by prompt template/CoT)",
+      "Use IntelligentRetriever to search components.search_query and calculate metrics",
+      "Calculate mean and variance by group, output Markdown report and result JSON/MD"
+    ],
+    "key_code_snippets": [
+      {
+        "name": "calculate_all_metrics",
+        "code": "Single retrieval for components, calculate rhr, recall, retrieval_quality to avoid duplicate retrieval. Implemented in script for result statistics."
+      },
+      {
+        "name": "AblationPlanner.generate_plan",
+        "code": "Wraps CircuitPlannerFinal and can toggle use_prm_selection / system_prompt (for ablation)."
+      }
+    ]
+  },
+
+  "model_comparison": {
+    "purpose": "Compare performance of multiple large models on circuit planning tasks (Qwen, DeepSeek, Kimi, GPT, Gemini, GLM, etc.)",
+    "script": "experiment/run_model_comparison.py",
+    "models": "See script MODELS list (includes model_name, API key, base_url)",
+    "test_cases": "Same as ablation_real TEST_CASES",
+    "metrics": ["FPR", "RHR", "Recall", "JSON Quality", "Retrieval Quality"],
+    "method_flow": [
+      "Inject model configuration for each model (modify planner_module.MODEL_NAME/API_KEY/BASE_URL)",
+      "Run several times on TEST_CASES, calculate average metrics and save result.json",
+      "Aggregate and generate summary.md"
+    ],
+    "key_code_snippets": [
+      {
+        "name": "ModelComparisonPlanner (key points)",
+        "code": "Switch models by monkey-patching planner_module global variables, then create CircuitPlannerFinal instance for evaluation."
+      }
+    ]
+  },
+
+  "orchestrator_end2end": {
+    "purpose": "Demonstrate end-to-end workflow: requirement->planning->retrieval->netlist->simulation iteration->JSON->KiCad schematic",
+    "script": "orchestrator.py",
+    "flow_summary": [
+      "1. planner.generate_plan",
+      "2. inspect_components -> retrieved.json",
+      "3. NetlistEngine + Expert -> SPICE",
+      "4. SpiceEngine.evaluate -> judgment and iteration",
+      "5. translate_to_json -> SchematicGenerator generates KiCad files"
+    ],
+    "notes": "MAX_ITERATIONS=8; if passed, call translate_to_json and generate KiCad schematic."
+  },
+
+  "netlist_generator": {
+    "purpose": "Constrain LLM to generate SPICE satisfying topology/template, and auto-clean LLM output",
+    "script": "netlist_generator.py",
+    "key_strategies": [
+      "Provide uid_hint (component UIDs that must be used) and explicit SPICE templates",
+      "First round provides strict template; subsequent rounds only allow parameter adjustment without changing topology",
+      "Post-processing removes prohibited components (e.g. R3, R_feedback), deduplicates decoupling capacitors, etc."
+    ],
+    "example_snippet": "System prompt includes template and prohibited list:\n'Only use R1, R2, C1, C2; do not add R3'; post-processing will remove matching prohibited patterns."
+  },
+
+  "spice_engine_and_critic": {
+    "purpose": "Build Ngspice testbench, inject models, run simulation and parse output; synchronously call LLM judgment or use hard threshold",
+    "scripts": ["core/spice_engine.py", "ngspice_critic.py"],
+    "key_behaviors": [
+      "Dynamically inject models (TIER2 .model, TIER3 .include)",
+      "Select analysis type based on circuit_type (AC/TRAN/MIXED) and write control block",
+      "Read wrdata files and parse x/y data; expert parses into metrics (cutoff_freq, max_gain, output_voltage, ripple, etc.)",
+      "Judgment: call LLM returning JSON {passed, reason, feedback}; G3 can be replaced with hard threshold judgment"
+    ],
+    "control_block_examples": "AC: .control\nac dec 50 f_start f_end\nwrdata out.txt vdb(OUT)\nquit\n.endc",
+    "metric_parsing_notes": "Cutoff frequency calculated by -3dB search (linear interpolation); if beyond simulation range, use upper limit instead."
+  },
+
+  "common_prompts_and_templates": {
+    "llm_netlist_template": "System prompt example: mandatory template + prohibited list (see netlist_generator.py for example), and list uid_hint in user_prompt.",
+    "llm_judge_template": "System prompt example: requires output JSON: {\"passed\": true/false, \"reason\": \"...\", \"feedback\": \"...\"}"
+  },
+
+  "usage_instructions": {
+    "how_to_use_with_gpt": "Use this JSON as context for GPT: for each experiment entry, directly use 'purpose', 'method_flow', 'metrics', 'key_code_snippets' to generate the Methods and Results sections of a paper; fill example_result_placeholders into table placeholders; use the scripts field to locate source code for extracting more code snippets.",
+    "file_location": "experiment/experiment_corpus.json",
+    "notes": "If you need to expand the full function body of a file or add real run results (values from CSV/JSON), please let us know which file to expand or provide the path to the run results."
+  }
+}

@@ -1,0 +1,11 @@
+* AC-coupled non-inverting amplifier, gain 11.
+VIN IN 0 DC 0 AC 1
+VCC VCC 0 12
+VEE VEE 0 -12
+CIN IN NP 10u
+RBIAS NP 0 100k
+RG NM 0 10k
+RF OUT NM 100k
+XU1 NP NM VCC VEE OUT LM2904
+RLOAD OUT 0 100k
+.end

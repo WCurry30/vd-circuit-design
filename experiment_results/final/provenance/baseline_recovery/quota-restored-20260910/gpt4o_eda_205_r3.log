@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/recover_formal_units.py", line 168, in <module>
+    main()
+  File "/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/recover_formal_units.py", line 109, in main
+    worker(base, approval_path, rest)
+  File "/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/recover_formal_units.py", line 96, in worker
+    runpy.run_path(sys.argv[0], run_name='__main__')
+  File "/usr/lib/python3.10/runpy.py", line 289, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/usr/lib/python3.10/runpy.py", line 96, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/development/unified_runner.py", line 234, in <module>
+    main()
+  File "/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/development/unified_runner.py", line 195, in main
+    code = engine.generate_spice(plan, expert, iteration=attempt, previous_spice=previous,
+  File "/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/.runtime/project/framework/core/netlist_engine.py", line 156, in generate_spice
+    response = self.client.chat.completions.create(**kwargs)
+  File "/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/recover_formal_units.py", line 56, in cached
+    raise alignment_runner.ProviderInterruption(ledger.error)
+alignment_runner.ProviderInterruption: request changed during transport recovery

@@ -1,0 +1,54 @@
+{
+  "passed": false,
+  "structure": {
+    "zener_reference_output_path": false
+  },
+  "numerical": {
+    "passed": false,
+    "checks": [
+      {
+        "check": {
+          "nodes": {
+            "input": "VCC",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "dc_voltage_v",
+            "value": 5.1,
+            "tolerance": 0.15
+          },
+          "condition": {}
+        },
+        "result": {
+          "status": "success",
+          "failure_stage": null,
+          "metric": "dc_voltage_v",
+          "target": 5.1,
+          "tolerance": 0.15,
+          "measured": 0.449294081,
+          "passed": false,
+          "submitted_deck_sha256": "ebd80030b70808f6152866f52dd38c0ff430a89ee1cc06d2a86914979874bccd",
+          "evaluated_deck_sha256": "16f6421bbbc1e96ce65e1b6799be128fc344400be8fb5b15077f35a3f1150b18",
+          "artifacts": {
+            "submitted_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_016/negative/fixed_models.cir",
+            "evaluated_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_016/negative/conditions/condition_01/evaluated.cir",
+            "node_manifest": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_016/negative/conditions/condition_01/node_manifest.json",
+            "simulator_log": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_016/negative/conditions/condition_01/ngspice.log",
+            "stdout": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_016/negative/conditions/condition_01/ngspice.stdout",
+            "stderr": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_016/negative/conditions/condition_01/ngspice.stderr",
+            "numeric_trace": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_016/negative/conditions/condition_01/numeric_trace.txt"
+          },
+          "detail": "measured=0.44929408, target=5.1, relative tolerance=0.15; acceptance condition: abs(measured-target) <= tolerance*abs(target)"
+        }
+      }
+    ],
+    "submitted_deck_sha256": "ebd80030b70808f6152866f52dd38c0ff430a89ee1cc06d2a86914979874bccd"
+  },
+  "operating_point": [],
+  "topology_diagnostics": [
+    "DZ Zener actual terminals: anode=OUT, cathode=0. SPICE diode order is anode then cathode.",
+    "This Zener has its cathode grounded. A positive shunt reference requires reverse bias: anode at ground and cathode at the fed reference node. Check polarity before changing resistor values."
+  ],
+  "submitted_deck_sha256": "42456f4282921a8ca9a52396bb4727e89d6ef207060f6045fa04e1b1415e7ef7",
+  "fixed_model_deck_sha256": "ebd80030b70808f6152866f52dd38c0ff430a89ee1cc06d2a86914979874bccd"
+}

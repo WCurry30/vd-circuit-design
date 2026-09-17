@@ -1,0 +1,16 @@
+{
+  "status": "measured",
+  "diagnostics": [
+    "Q1 DC: Vc=7.23916 V, Vb=1.03497 V, Ve=0.370109 V, Vce=6.86905 V."
+  ],
+  "condition": {},
+  "devices": [
+    {
+      "device": "Q1",
+      "vc": 7.23915856,
+      "vb": 1.03496618,
+      "ve": 0.370109014,
+      "vce": 6.869049546
+    }
+  ]
+}

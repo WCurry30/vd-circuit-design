@@ -1,0 +1,7 @@
+This experiment harness derives from the MIT-licensed
+WCurry30/vd-circuit-design project at commit
+e20eb1b09b3fbee35db52a6649af024733d78b4c.
+
+AnalogCoder is fetched from laiYao1/AnalogCoder at commit
+8571fa39ce9bddad8ddcb697f44c08807ab0bbaf. Its upstream license remains
+authoritative. This repository labels the integration as an adapted baseline.

@@ -1,0 +1,7 @@
+* Loaded Zener reference at 9 V and 12 V input.
+VDD VCC 0 9
+RS VCC OUT 220
+DZ 0 OUT 1N4733A
+RLOAD OUT 0 1k
+CB OUT 0 100n
+.end

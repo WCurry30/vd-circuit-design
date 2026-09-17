@@ -1,0 +1,16 @@
+{
+  "local_cleanup": "completed",
+  "server_copy_check": "rsync checksum dry-run matched regular non-secret source files before removal",
+  "regression_tests": {
+    "run": 76,
+    "passed": 75,
+    "skipped": 1,
+    "skip_reason": "archived pilot-v4 response intentionally not retained locally"
+  },
+  "gate": {
+    "positive_passes": 20,
+    "negative_rejections": 20
+  },
+  "core_runtime_files_matched": 13,
+  "paid_calls_this_revision": 0
+}

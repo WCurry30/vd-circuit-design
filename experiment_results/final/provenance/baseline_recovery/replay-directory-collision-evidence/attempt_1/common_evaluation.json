@@ -1,0 +1,16 @@
+{
+  "status": "failed",
+  "failure_stage": "parse",
+  "metric": "cutoff_freq_hz",
+  "target": 500,
+  "tolerance": 0.15,
+  "measured": null,
+  "passed": false,
+  "submitted_deck_sha256": "7cbff0fd69fd038c1944419a8718d85171f27c6502e597a13003b8983f653001",
+  "evaluated_deck_sha256": "d81a9b1835d26c54d1a84a1af7920baccfff559d05df3d80bbc305eae9149c2b",
+  "artifacts": {
+    "submitted_deck": "/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/results/units/gpt4o/eda_205/3/full/attempt_1/submitted.cir",
+    "fixed_model_deck": "/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/results/units/gpt4o/eda_205/3/full/attempt_1/evaluation/fixed_models.cir"
+  },
+  "detail": "[Errno 17] File exists: '/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/results/units/gpt4o/eda_205/3/full/attempt_1/evaluation/opamp_bias_01'"
+}

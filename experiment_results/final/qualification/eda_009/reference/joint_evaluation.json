@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "structure": {
+    "passive_rc": true,
+    "series_R_shunt_C": true
+  },
+  "numerical": {
+    "passed": true,
+    "checks": [
+      {
+        "check": {
+          "nodes": {
+            "input": "IN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "cutoff_freq_hz",
+            "value": 1000,
+            "tolerance": 0.2
+          },
+          "condition": {}
+        },
+        "result": {
+          "status": "success",
+          "failure_stage": null,
+          "metric": "cutoff_freq_hz",
+          "target": 1000.0,
+          "tolerance": 0.2,
+          "measured": 997.5208325119107,
+          "passed": true,
+          "submitted_deck_sha256": "ec2039483fbd5d0c0d09c3ebcc9c0aa511fcd70ae0af90f7d4a52639d73b14db",
+          "evaluated_deck_sha256": "52dc63e928950a739ef9e2882fb474adf7535abfe3053e40aa2aed1504e6e4b4",
+          "artifacts": {
+            "submitted_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_009/reference/fixed_models.cir",
+            "evaluated_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_009/reference/conditions/condition_01/evaluated.cir",
+            "node_manifest": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_009/reference/conditions/condition_01/node_manifest.json",
+            "simulator_log": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_009/reference/conditions/condition_01/ngspice.log",
+            "stdout": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_009/reference/conditions/condition_01/ngspice.stdout",
+            "stderr": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_009/reference/conditions/condition_01/ngspice.stderr",
+            "numeric_trace": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_009/reference/conditions/condition_01/numeric_trace.txt"
+          },
+          "detail": null
+        }
+      }
+    ],
+    "submitted_deck_sha256": "ec2039483fbd5d0c0d09c3ebcc9c0aa511fcd70ae0af90f7d4a52639d73b14db"
+  },
+  "operating_point": [],
+  "topology_diagnostics": [],
+  "submitted_deck_sha256": "8fd2a23ebe032387c187c11a2dbceb4fe6e1ddafc82c23fda9cf2b070b827ad0",
+  "fixed_model_deck_sha256": "ec2039483fbd5d0c0d09c3ebcc9c0aa511fcd70ae0af90f7d4a52639d73b14db"
+}

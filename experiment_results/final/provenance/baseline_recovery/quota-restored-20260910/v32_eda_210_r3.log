@@ -1,0 +1,59 @@
+/home/nengge/ZY/EDA_Document/EDA_Last_Resubmission_Experiments/.runtime/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+🔌 连接 LLM API (https://api.siliconflow.cn/v1)...
+⏳ 正在加载 PRM 评估模型 (BAAI/bge-small-zh-v1.5)...
+✅ PRM 模型加载完成。
+🔌 连接数据库: /home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/.runtime/project/framework/chroma_db...
+⏳ 加载 Embedding 模型...
+
+🧠 任务规划器启动 (deepseek) | 需求: 'Design a constant-current LED sink delivering 6 mA at both 9 V and 12 V supplies. Use two NPN transistors: a pass transistor in the LED branch and a feedback transistor sensing its emitter-resistor voltage and controlling its base.'
+
+💡 正在使用大模型细化用户的自然语言需求 (Query Expansion)...
+   [细化后的设计方案]: 
+   This circuit requires a two‑NPN‑transistor constant‑current sink for an LED load. The topology uses a pass transistor in the LED branch and a feedback...
+
+   🔍 识别电路类型: led_blinker
+   策略: 生成 3 个方案并评估...
+   [尝试 1] 生成中 (temp=0.10)... ✅ 成功! 总分: 0.8877 (语义分: 0.8677, 附加分: 0.02)
+   [尝试 2] 生成中 (temp=0.20)... ✅ 成功! 总分: 0.8712 (语义分: 0.8512, 附加分: 0.02)
+   [尝试 3] 生成中 (temp=0.30)... ✅ 成功! 总分: 0.8890 (语义分: 0.8690, 附加分: 0.02)
+
+🏆 最终优选方案 (来自尝试 3, 得分 0.8890)
+   电路名称: Constant_Current_LED_Sink_6mA
+      🎯 [绝对锁定模块] 命中规则 'transistor' -> 直接提取库元件: 2N2219
+      🎯 [绝对锁定模块] 命中规则 'transistor' -> 直接提取库元件: 2N2219
+      🎯 [绝对锁定模块] 命中规则 'resistor' -> 直接提取库元件: R
+      [调试] 分析: 'LED' -> 命中规则: 强制转为 'Light emitting diode'
+
+      ✅ 功能校验通过 (相似度: 1.00)
+      [调试] 分析: 'VCC' -> 无规则，保持原样
+      🎯 [lib_id精确匹配] 元件名 'VCC' -> 直接命中库元件: 'VCC'
+      [调试] 分析: 'GND' -> 无规则，保持原样
+      🎯 [lib_id精确匹配] 元件名 'GND' -> 直接命中库元件: 'GND'
+   [清洗] 移除 1 行
+   [清洗] 移除 1 行
+   [清洗] 移除 1 行
+{"model": "v32", "task_id": "eda_210", "arm": "full", "passed": false, "generation_calls": 3}
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+{"model": "v32", "task_id": "eda_210", "arm": "analogcoder", "passed": false, "generation_calls": 2}
+{"model": "v32", "task_id": "eda_210", "arm": "direct", "passed": false, "generation_calls": 3}
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+{"model": "v32", "task_id": "eda_210", "arm": "spicepilot", "passed": false, "generation_calls": 3}

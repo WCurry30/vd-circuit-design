@@ -1,0 +1,5 @@
+{"model": "gpt4o", "task_id": "eda_209", "arm": "spicepilot", "passed": false, "generation_calls": 3}
+{"model": "gpt4o", "task_id": "eda_209", "arm": "direct", "passed": false, "generation_calls": 3}
+   [全局护盾] 拦截到 LLM 幻觉：重复元件名 VLOAD，已自动重命名为 VLOAD_DUP10
+{"model": "gpt4o", "task_id": "eda_209", "arm": "full", "passed": false, "generation_calls": 3}
+{"model": "gpt4o", "task_id": "eda_209", "arm": "analogcoder", "passed": false, "generation_calls": 3}

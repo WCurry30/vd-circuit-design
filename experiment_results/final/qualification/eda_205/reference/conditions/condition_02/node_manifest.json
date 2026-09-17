@@ -1,0 +1,7 @@
+{
+  "input": "IN",
+  "output": "OUT",
+  "ground": "0",
+  "load_element": null,
+  "input_negative": "0"
+}

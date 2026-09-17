@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": {
+        "nodes": {
+          "input": "IN",
+          "output": "OUT"
+        },
+        "target": {
+          "metric": "gain_real_v_per_v",
+          "value": -5,
+          "tolerance": 0.1
+        },
+        "condition": {
+          "dc_sources": {
+            "VCC": 5,
+            "VEE": -5
+          },
+          "resistances": {
+            "RLOAD": 2000
+          }
+        }
+      },
+      "result": {
+        "status": "success",
+        "failure_stage": null,
+        "metric": "gain_real_v_per_v",
+        "target": -5.0,
+        "tolerance": 0.1,
+        "measured": -4.99927592,
+        "passed": true,
+        "submitted_deck_sha256": "3dd4e9d69cbf7aad7525cc36b3cb8e3008d826ca9c7987d7c471c24fb00dbf0a",
+        "evaluated_deck_sha256": "6eb20405fdb2f954e3d48bf6b8649cd05c61ddd95bc9dcd80e9491e57bdd131b",
+        "artifacts": {
+          "submitted_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_201/reference/fixed_models.cir",
+          "evaluated_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_201/reference/conditions/condition_01/evaluated.cir",
+          "node_manifest": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_201/reference/conditions/condition_01/node_manifest.json",
+          "simulator_log": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_201/reference/conditions/condition_01/ngspice.log",
+          "stdout": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_201/reference/conditions/condition_01/ngspice.stdout",
+          "stderr": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_201/reference/conditions/condition_01/ngspice.stderr",
+          "numeric_trace": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_201/reference/conditions/condition_01/numeric_trace.txt"
+        },
+        "detail": null
+      }
+    }
+  ],
+  "submitted_deck_sha256": "3dd4e9d69cbf7aad7525cc36b3cb8e3008d826ca9c7987d7c471c24fb00dbf0a"
+}

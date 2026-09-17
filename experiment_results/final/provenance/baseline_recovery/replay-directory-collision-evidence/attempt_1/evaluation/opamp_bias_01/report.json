@@ -1,0 +1,31 @@
+{
+  "status": "measured",
+  "diagnostics": [
+    "X_PART3 DC: positive input (N1)=1.65366e-05 V, negative input (N2)=0.00201657 V, supplies=-12 to 12 V, output (N2)=0.00201657 V. Check input common-mode range and output headroom against these measured voltages; DC bias alone does not verify the AC reference impedance or closed-loop gain.",
+    "X_PART3_2 DC: positive input (N3)=0.00203311 V, negative input (OUT)=0.00403324 V, supplies=-12 to 12 V, output (OUT)=0.00403324 V. Check input common-mode range and output headroom against these measured voltages; DC bias alone does not verify the AC reference impedance or closed-loop gain."
+  ],
+  "condition": {
+    "dc_sources": {
+      "VCC": 12,
+      "VEE": -12
+    }
+  },
+  "devices": [
+    {
+      "device": "X_PART3",
+      "positive_input": 1.6536565e-05,
+      "negative_input": 0.00201657284,
+      "positive_supply": 12.0,
+      "negative_supply": -12.0,
+      "output": 0.00201657284
+    },
+    {
+      "device": "X_PART3_2",
+      "positive_input": 0.00203310943,
+      "negative_input": 0.00403323872,
+      "positive_supply": 12.0,
+      "negative_supply": -12.0,
+      "output": 0.00403323872
+    }
+  ]
+}

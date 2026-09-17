@@ -1,0 +1,67 @@
+[
+  {
+    "path": "framework/__init__.py",
+    "source": "revision/evidence/routing-fix-v1-preflight/source_snapshot/runtime/framework/__init__.py",
+    "sha256": "bae7d636c0710f4c123ac47951511293538e9d3332a18d303e96f31d1cd81bd2"
+  },
+  {
+    "path": "framework/circuit_planner_v.py",
+    "source": "revision/evidence/routing-fix-v1-preflight/source_snapshot/runtime/framework/circuit_planner_v.py",
+    "sha256": "36842dd8f916848f5d6e6c9af05550b877ef3316b2396f59738f7eb6552e46d0"
+  },
+  {
+    "path": "framework/core/netlist_engine.py",
+    "source": "revision/evidence/routing-fix-v1-preflight/source_snapshot/runtime/framework/core/netlist_engine.py",
+    "sha256": "ca8b8ac6616954e0a9f013085bb26c4d598ba7668adfebae8114668f32872456"
+  },
+  {
+    "path": "framework/core/spice_contract.py",
+    "source": "revision/evidence/routing-fix-v1-preflight/source_snapshot/runtime/framework/core/spice_contract.py",
+    "sha256": "dc74a9e1ba7cd0c26b1e465512560f0fe25cf454955a017879674443661a9abf"
+  },
+  {
+    "path": "framework/experts/__init__.py",
+    "source": "revision/evidence/routing-fix-v1-preflight/source_snapshot/runtime/framework/experts/__init__.py",
+    "sha256": "a8ceaf21e65c4026493587d552f4ae0b49808d67edd0bcb7fea1d0e22bc93e4f"
+  },
+  {
+    "path": "framework/experts/base_expert.py",
+    "source": "revision/evidence/routing-fix-v1-preflight/source_snapshot/runtime/framework/experts/base_expert.py",
+    "sha256": "1d3abed8e228508414756115b3364c6b4e2a321412799067bffa3d774d076776"
+  },
+  {
+    "path": "framework/experts/bjt_amplifier_expert.py",
+    "source": "revision/evidence/routing-fix-v1-preflight/source_snapshot/runtime/framework/experts/bjt_amplifier_expert.py",
+    "sha256": "2eb446138110275479405faab0cceff1085925234ebe0e5edbf5494a380bc394"
+  },
+  {
+    "path": "framework/experts/filter_expert.py",
+    "source": "revision/evidence/routing-fix-v1-preflight/source_snapshot/runtime/framework/experts/filter_expert.py",
+    "sha256": "07c9345bd167f56fb14f05dc7093f828119ca1500c3adb9a21ddba020ddf6f3e"
+  },
+  {
+    "path": "framework/experts/led_constant_current_expert.py",
+    "source": "revision/evidence/routing-fix-v1-preflight/source_snapshot/runtime/framework/experts/led_constant_current_expert.py",
+    "sha256": "bb046777a032e2e7e73db929094e1e652f4717fdb11896e9176677ace735d73d"
+  },
+  {
+    "path": "framework/experts/opamp_amplifier_expert.py",
+    "source": "revision/evidence/routing-fix-v1-preflight/source_snapshot/runtime/framework/experts/opamp_amplifier_expert.py",
+    "sha256": "7c1471186b663d44c1d42329d9649a9795d3a4a3cfd484698b376a9cf76037fc"
+  },
+  {
+    "path": "framework/experts/zener_regulator_expert.py",
+    "source": "revision/evidence/routing-fix-v1-preflight/source_snapshot/runtime/framework/experts/zener_regulator_expert.py",
+    "sha256": "9665026d7dd267c90afef0b1d9a3fbaa8534d03c3c2e7f7ef93ab1970d12cb1c"
+  },
+  {
+    "path": "framework/retriever_final_merged.py",
+    "source": "revision/evidence/routing-fix-v1-preflight/source_snapshot/runtime/framework/retriever_final_merged.py",
+    "sha256": "0b27ea9ed110688efac0d984bdc2c76219a113c6d291bb5fb38300f18f10dcf7"
+  },
+  {
+    "path": "framework/spice_contract.py",
+    "source": "revision/evidence/routing-fix-v1-preflight/source_snapshot/runtime/framework/spice_contract.py",
+    "sha256": "dc74a9e1ba7cd0c26b1e465512560f0fe25cf454955a017879674443661a9abf"
+  }
+]

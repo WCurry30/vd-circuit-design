@@ -1,0 +1,17 @@
+{
+  "status": "measured",
+  "diagnostics": [
+    "XU1 DC: positive input (REF)=0.20005 V, negative input (SENSE)=0.201936 V, supplies=0 to 5 V, output (GATE)=0.927803 V. Check input common-mode range and output headroom against these measured voltages; DC bias alone does not verify the AC reference impedance or closed-loop gain."
+  ],
+  "condition": {},
+  "devices": [
+    {
+      "device": "XU1",
+      "positive_input": 0.200049789,
+      "negative_input": 0.201935834,
+      "positive_supply": 5.0,
+      "negative_supply": 0.0,
+      "output": 0.927803497
+    }
+  ]
+}

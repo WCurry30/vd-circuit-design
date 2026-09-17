@@ -1,0 +1,9 @@
+* Inverting op-amp amplifier, gain -10.
+VIN IN 0 DC 0 AC 1
+VCC VCC 0 12
+VEE VEE 0 -12
+RIN NM 0 10k
+RF OUT NM 90k
+XU1 IN NM VCC VEE OUT LM2904
+RLOAD OUT 0 100k
+.end

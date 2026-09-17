@@ -1,0 +1,21 @@
+{
+  "status": "success",
+  "failure_stage": null,
+  "metric": "gain_at_frequency_v_per_v",
+  "target": 1.0,
+  "tolerance": 0.05,
+  "measured": 1.00004668,
+  "passed": true,
+  "submitted_deck_sha256": "90f8d3aaf9ac135516e6dfe71a765e344d0a6ce4d828611fd08f78f7829be30d",
+  "evaluated_deck_sha256": "44e152e9d76602fa844284023f6f0e91e4c258f892a51d9109fd60e0ba3e7ddc",
+  "artifacts": {
+    "submitted_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_206/reference/fixed_models.cir",
+    "evaluated_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_206/reference/conditions/condition_02/evaluated.cir",
+    "node_manifest": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_206/reference/conditions/condition_02/node_manifest.json",
+    "simulator_log": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_206/reference/conditions/condition_02/ngspice.log",
+    "stdout": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_206/reference/conditions/condition_02/ngspice.stdout",
+    "stderr": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_206/reference/conditions/condition_02/ngspice.stderr",
+    "numeric_trace": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_206/reference/conditions/condition_02/numeric_trace.txt"
+  },
+  "detail": null
+}

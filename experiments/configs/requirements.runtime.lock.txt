@@ -1,0 +1,12 @@
+# Direct runtime dependencies pinned for the experiment host. PyTorch is pinned
+# to the CPU wheel so setup cannot silently install a multi-gigabyte CUDA stack.
+--extra-index-url https://download.pytorch.org/whl/cpu
+numpy==1.26.4
+openai==1.66.3
+PySpice==1.5
+chromadb==1.5.9
+sentence-transformers==2.7.0
+torch==2.2.2+cpu
+transformers==4.40.2
+tokenizers==0.19.1
+huggingface-hub==0.23.0

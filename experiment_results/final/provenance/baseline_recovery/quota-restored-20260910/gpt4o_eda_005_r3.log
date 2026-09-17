@@ -1,0 +1,2 @@
+{"model": "gpt4o", "task_id": "eda_005", "arm": "spicepilot", "passed": false, "generation_calls": 3}
+{"model": "gpt4o", "task_id": "eda_005", "arm": "direct", "passed": false, "generation_calls": 3}

@@ -1,0 +1,790 @@
+{
+  "version": "unified20-development-v5",
+  "status": "qualified references; pending pilot and formal freeze",
+  "parent_sha256": "8b438b48149ad316b15ec4c19e86db8b6b8f029221ec7e91da18e28def261e25",
+  "model_hashes": {
+    "LM2904.lib": "6e69154b2d088afc5471b15fd88dbfb02b2d7097b74ef32aeb6072ea839a46ac",
+    "discrete.lib": "7bcf8059fb10f04a4fce129594975425677c979e4d6237a6a17922a1fbf8f48c"
+  },
+  "selection": "first joint numerical and topology acceptance",
+  "cases": [
+    {
+      "id": "eda_005",
+      "user_requirement": "Generate an inverting op-amp amplifier with a gain of -10, built with an input resistor, feedback resistor, grounded non-inverting input, dual supply symbols, and an output connector.",
+      "interface": "Use IN for a signal input, OUT for output and 0 for ground. For AC analysis, use VIN from IN to 0 with DC 0 and AC 1. Use VCC as the positive supply node. When an output load is specified, use RLOAD from OUT to 0. For LED tasks use a zero-volt source VLOAD between the LED cathode and the pass-device drain/collector at OUT. Use the explicitly named supply and load elements in the tests below. Analysis is small-signal AC or DC operating point at nominal 27 C.\nThe shared simulator provides fixed LM2904, 2N2222, LED, 1N4733A and EDA_NMOS models. Do not include, redefine or invent model/subcircuit definitions. Use Xname IN+ IN- V+ V- OUT LM2904 for each op-amp; Qname C B E 2N2222 for NPN transistors; Mname D G S B EDA_NMOS W=10u L=1u for NMOS. EDA_NMOS is a generic Level-1 device (VTO=1, KP=0.1, LAMBDA=0.01). Use Dname ANODE CATHODE LED or 1N4733A for the corresponding diode. Top-level circuit elements may be R, C, L, D, Q, M, X, V and I; behavioral and dependent sources are confined to the supplied models. Library symbol names are physical-component hints; the simulator model names above govern execution.\nAcceptance tests:\n[\n  {\n    \"nodes\": {\n      \"input\": \"IN\",\n      \"output\": \"OUT\"\n    },\n    \"target\": {\n      \"metric\": \"gain_real_v_per_v\",\n      \"value\": -10,\n      \"tolerance\": 0.2\n    },\n    \"condition\": {}\n  }\n]",
+      "checks": [
+        {
+          "nodes": {
+            "input": "IN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "gain_real_v_per_v",
+            "value": -10,
+            "tolerance": 0.2
+          },
+          "condition": {}
+        }
+      ],
+      "topology": "inverter",
+      "targets": {
+        "metric": "gain_real_v_per_v",
+        "value": -10,
+        "tolerance": 0.2
+      },
+      "exposure": "development",
+      "parent_benchmark_id": "eda_005",
+      "reference_sha256": "2edc2a19bbec629135461436b4a64cfb4cb8f9398f92459392d224367855f899"
+    },
+    {
+      "id": "eda_006",
+      "user_requirement": "Create a non-inverting op-amp amplifier with a gain of +11, built with a resistor divider feedback network, AC-coupled input, output connector, and power supply symbols.",
+      "interface": "Use IN for a signal input, OUT for output and 0 for ground. For AC analysis, use VIN from IN to 0 with DC 0 and AC 1. Use VCC as the positive supply node. When an output load is specified, use RLOAD from OUT to 0. For LED tasks use a zero-volt source VLOAD between the LED cathode and the pass-device drain/collector at OUT. Use the explicitly named supply and load elements in the tests below. Analysis is small-signal AC or DC operating point at nominal 27 C.\nThe shared simulator provides fixed LM2904, 2N2222, LED, 1N4733A and EDA_NMOS models. Do not include, redefine or invent model/subcircuit definitions. Use Xname IN+ IN- V+ V- OUT LM2904 for each op-amp; Qname C B E 2N2222 for NPN transistors; Mname D G S B EDA_NMOS W=10u L=1u for NMOS. EDA_NMOS is a generic Level-1 device (VTO=1, KP=0.1, LAMBDA=0.01). Use Dname ANODE CATHODE LED or 1N4733A for the corresponding diode. Top-level circuit elements may be R, C, L, D, Q, M, X, V and I; behavioral and dependent sources are confined to the supplied models. Library symbol names are physical-component hints; the simulator model names above govern execution.\nAcceptance tests:\n[\n  {\n    \"nodes\": {\n      \"input\": \"IN\",\n      \"output\": \"OUT\"\n    },\n    \"target\": {\n      \"metric\": \"gain_real_v_per_v\",\n      \"value\": 11,\n      \"tolerance\": 0.2\n    },\n    \"condition\": {}\n  }\n]",
+      "checks": [
+        {
+          "nodes": {
+            "input": "IN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "gain_real_v_per_v",
+            "value": 11,
+            "tolerance": 0.2
+          },
+          "condition": {}
+        }
+      ],
+      "topology": "noninverting_ac",
+      "targets": {
+        "metric": "gain_real_v_per_v",
+        "value": 11,
+        "tolerance": 0.2
+      },
+      "exposure": "development",
+      "parent_benchmark_id": "eda_006",
+      "reference_sha256": "fb5d037d4ed8e9c19af69f486676bd6ea8a2a13cffaea8cfdce0dc517209ec26"
+    },
+    {
+      "id": "eda_007",
+      "user_requirement": "Design a common-emitter NPN transistor amplifier with a voltage gain of ~-10, built with a collector resistor, emitter resistor, input coupling capacitor, output coupling capacitor, and bias divider.",
+      "interface": "Use IN for a signal input, OUT for output and 0 for ground. For AC analysis, use VIN from IN to 0 with DC 0 and AC 1. Use VCC as the positive supply node. When an output load is specified, use RLOAD from OUT to 0. For LED tasks use a zero-volt source VLOAD between the LED cathode and the pass-device drain/collector at OUT. Use the explicitly named supply and load elements in the tests below. Analysis is small-signal AC or DC operating point at nominal 27 C.\nThe shared simulator provides fixed LM2904, 2N2222, LED, 1N4733A and EDA_NMOS models. Do not include, redefine or invent model/subcircuit definitions. Use Xname IN+ IN- V+ V- OUT LM2904 for each op-amp; Qname C B E 2N2222 for NPN transistors; Mname D G S B EDA_NMOS W=10u L=1u for NMOS. EDA_NMOS is a generic Level-1 device (VTO=1, KP=0.1, LAMBDA=0.01). Use Dname ANODE CATHODE LED or 1N4733A for the corresponding diode. Top-level circuit elements may be R, C, L, D, Q, M, X, V and I; behavioral and dependent sources are confined to the supplied models. Library symbol names are physical-component hints; the simulator model names above govern execution.\nAcceptance tests:\n[\n  {\n    \"nodes\": {\n      \"input\": \"IN\",\n      \"output\": \"OUT\"\n    },\n    \"target\": {\n      \"metric\": \"gain_real_v_per_v\",\n      \"value\": -10,\n      \"tolerance\": 0.3\n    },\n    \"condition\": {}\n  }\n]\nOperating-point acceptance: every top-level NPN transistor must have Vc > Vb > Ve under each declared condition, with a reliably converged DC operating point. Numerical gain alone is insufficient.",
+      "checks": [
+        {
+          "nodes": {
+            "input": "IN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "gain_real_v_per_v",
+            "value": -10,
+            "tolerance": 0.3
+          },
+          "condition": {}
+        }
+      ],
+      "topology": "ce",
+      "targets": {
+        "metric": "gain_real_v_per_v",
+        "value": -10,
+        "tolerance": 0.3
+      },
+      "exposure": "development",
+      "parent_benchmark_id": "eda_007",
+      "reference_sha256": "7443c56b707d888b6217b728e965a1d2d3ffb212d5f51acfa26560408e99095f",
+      "operating_point_requirement": "npn_forward_active_v1"
+    },
+    {
+      "id": "eda_008",
+      "user_requirement": "Build an electret microphone preamplifier with a gain of ~100 using a microphone input, bias resistor, coupling capacitor, op-amp gain stage, and output connector.",
+      "interface": "Use IN for a signal input, OUT for output and 0 for ground. For AC analysis, use VIN from IN to 0 with DC 0 and AC 1. Use VCC as the positive supply node. When an output load is specified, use RLOAD from OUT to 0. For LED tasks use a zero-volt source VLOAD between the LED cathode and the pass-device drain/collector at OUT. Use the explicitly named supply and load elements in the tests below. Analysis is small-signal AC or DC operating point at nominal 27 C.\nThe shared simulator provides fixed LM2904, 2N2222, LED, 1N4733A and EDA_NMOS models. Do not include, redefine or invent model/subcircuit definitions. Use Xname IN+ IN- V+ V- OUT LM2904 for each op-amp; Qname C B E 2N2222 for NPN transistors; Mname D G S B EDA_NMOS W=10u L=1u for NMOS. EDA_NMOS is a generic Level-1 device (VTO=1, KP=0.1, LAMBDA=0.01). Use Dname ANODE CATHODE LED or 1N4733A for the corresponding diode. Top-level circuit elements may be R, C, L, D, Q, M, X, V and I; behavioral and dependent sources are confined to the supplied models. Library symbol names are physical-component hints; the simulator model names above govern execution.\nAcceptance tests:\n[\n  {\n    \"nodes\": {\n      \"input\": \"IN\",\n      \"output\": \"OUT\"\n    },\n    \"target\": {\n      \"metric\": \"gain_real_v_per_v\",\n      \"value\": 100,\n      \"tolerance\": 0.3\n    },\n    \"condition\": {}\n  }\n]",
+      "checks": [
+        {
+          "nodes": {
+            "input": "IN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "gain_real_v_per_v",
+            "value": 100,
+            "tolerance": 0.3
+          },
+          "condition": {}
+        }
+      ],
+      "topology": "mic_preamp",
+      "targets": {
+        "metric": "gain_real_v_per_v",
+        "value": 100,
+        "tolerance": 0.3
+      },
+      "exposure": "development",
+      "parent_benchmark_id": "eda_008",
+      "reference_sha256": "8cfc69fd8154a3f9b5a13d91943a6b60b35249e4e38cc96f60806d4836aa8fce"
+    },
+    {
+      "id": "eda_009",
+      "user_requirement": "Create a passive RC low-pass filter with a ~1 kHz cutoff, built with input and output connectors, one series resistor, one shunt capacitor to ground, and labeled output node.",
+      "interface": "Use IN for a signal input, OUT for output and 0 for ground. For AC analysis, use VIN from IN to 0 with DC 0 and AC 1. Use VCC as the positive supply node. When an output load is specified, use RLOAD from OUT to 0. For LED tasks use a zero-volt source VLOAD between the LED cathode and the pass-device drain/collector at OUT. Use the explicitly named supply and load elements in the tests below. Analysis is small-signal AC or DC operating point at nominal 27 C.\nThe shared simulator provides fixed LM2904, 2N2222, LED, 1N4733A and EDA_NMOS models. Do not include, redefine or invent model/subcircuit definitions. Use Xname IN+ IN- V+ V- OUT LM2904 for each op-amp; Qname C B E 2N2222 for NPN transistors; Mname D G S B EDA_NMOS W=10u L=1u for NMOS. EDA_NMOS is a generic Level-1 device (VTO=1, KP=0.1, LAMBDA=0.01). Use Dname ANODE CATHODE LED or 1N4733A for the corresponding diode. Top-level circuit elements may be R, C, L, D, Q, M, X, V and I; behavioral and dependent sources are confined to the supplied models. Library symbol names are physical-component hints; the simulator model names above govern execution.\nAcceptance tests:\n[\n  {\n    \"nodes\": {\n      \"input\": \"IN\",\n      \"output\": \"OUT\"\n    },\n    \"target\": {\n      \"metric\": \"cutoff_freq_hz\",\n      \"value\": 1000,\n      \"tolerance\": 0.2\n    },\n    \"condition\": {}\n  }\n]",
+      "checks": [
+        {
+          "nodes": {
+            "input": "IN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "cutoff_freq_hz",
+            "value": 1000,
+            "tolerance": 0.2
+          },
+          "condition": {}
+        }
+      ],
+      "topology": "passive_rc",
+      "targets": {
+        "metric": "cutoff_freq_hz",
+        "value": 1000,
+        "tolerance": 0.2
+      },
+      "exposure": "development",
+      "parent_benchmark_id": "eda_009",
+      "reference_sha256": "8fd2a23ebe032387c187c11a2dbceb4fe6e1ddafc82c23fda9cf2b070b827ad0"
+    },
+    {
+      "id": "eda_010",
+      "user_requirement": "Design an active first-order low-pass filter with a ~1 kHz cutoff using an op-amp buffer, resistor-capacitor input network, power symbols, and output connector.",
+      "interface": "Use IN for a signal input, OUT for output and 0 for ground. For AC analysis, use VIN from IN to 0 with DC 0 and AC 1. Use VCC as the positive supply node. When an output load is specified, use RLOAD from OUT to 0. For LED tasks use a zero-volt source VLOAD between the LED cathode and the pass-device drain/collector at OUT. Use the explicitly named supply and load elements in the tests below. Analysis is small-signal AC or DC operating point at nominal 27 C.\nThe shared simulator provides fixed LM2904, 2N2222, LED, 1N4733A and EDA_NMOS models. Do not include, redefine or invent model/subcircuit definitions. Use Xname IN+ IN- V+ V- OUT LM2904 for each op-amp; Qname C B E 2N2222 for NPN transistors; Mname D G S B EDA_NMOS W=10u L=1u for NMOS. EDA_NMOS is a generic Level-1 device (VTO=1, KP=0.1, LAMBDA=0.01). Use Dname ANODE CATHODE LED or 1N4733A for the corresponding diode. Top-level circuit elements may be R, C, L, D, Q, M, X, V and I; behavioral and dependent sources are confined to the supplied models. Library symbol names are physical-component hints; the simulator model names above govern execution.\nAcceptance tests:\n[\n  {\n    \"nodes\": {\n      \"input\": \"IN\",\n      \"output\": \"OUT\"\n    },\n    \"target\": {\n      \"metric\": \"cutoff_freq_hz\",\n      \"value\": 1000,\n      \"tolerance\": 0.2\n    },\n    \"condition\": {}\n  }\n]",
+      "checks": [
+        {
+          "nodes": {
+            "input": "IN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "cutoff_freq_hz",
+            "value": 1000,
+            "tolerance": 0.2
+          },
+          "condition": {}
+        }
+      ],
+      "topology": "buffered_rc",
+      "targets": {
+        "metric": "cutoff_freq_hz",
+        "value": 1000,
+        "tolerance": 0.2
+      },
+      "exposure": "development",
+      "parent_benchmark_id": "eda_010",
+      "reference_sha256": "c993a93d093cfbea08db780506ad1a2f44fc5ecad89641f8f266e68883d325f3"
+    },
+    {
+      "id": "eda_016",
+      "user_requirement": "Create a 5.1 V Zener reference circuit with input resistor, a 5.1 V Zener diode to ground, decoupling capacitor, input connector, and output connector.",
+      "interface": "This is a DC power circuit. Its input connector is the positive supply node VCC; OUT is the regulated output or pass-device drain/collector, and 0 is ground. Do not insert a zero-volt signal source at the power input. Connect the power-input feed to a nonzero DC supply at VCC. Use VCC as the positive supply node. When an output load is specified, use RLOAD from OUT to 0. For LED tasks use a zero-volt source VLOAD between the LED cathode and the pass-device drain/collector at OUT. Use the explicitly named supply and load elements in the tests below. Analysis is small-signal AC or DC operating point at nominal 27 C.\nThe shared simulator provides fixed LM2904, 2N2222, LED, 1N4733A and EDA_NMOS models. Do not include, redefine or invent model/subcircuit definitions. Use Xname IN+ IN- V+ V- OUT LM2904 for each op-amp; Qname C B E 2N2222 for NPN transistors; Mname D G S B EDA_NMOS W=10u L=1u for NMOS. EDA_NMOS is a generic Level-1 device (VTO=1, KP=0.1, LAMBDA=0.01). Use Dname ANODE CATHODE LED or 1N4733A for the corresponding diode. Top-level circuit elements may be R, C, L, D, Q, M, X, V and I; behavioral and dependent sources are confined to the supplied models. Library symbol names are physical-component hints; the simulator model names above govern execution.\nAcceptance tests:\n[\n  {\n    \"nodes\": {\n      \"input\": \"VCC\",\n      \"output\": \"OUT\"\n    },\n    \"target\": {\n      \"metric\": \"dc_voltage_v\",\n      \"value\": 5.1,\n      \"tolerance\": 0.15\n    },\n    \"condition\": {}\n  }\n]",
+      "checks": [
+        {
+          "nodes": {
+            "input": "VCC",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "dc_voltage_v",
+            "value": 5.1,
+            "tolerance": 0.15
+          },
+          "condition": {}
+        }
+      ],
+      "topology": "zener",
+      "targets": {
+        "metric": "dc_voltage_v",
+        "value": 5.1,
+        "tolerance": 0.15
+      },
+      "exposure": "development",
+      "parent_benchmark_id": "eda_016",
+      "reference_sha256": "ee4c331d1000c981410439b772055e36d4f68c10b5596efc13088bc967ac2b61"
+    },
+    {
+      "id": "eda_024",
+      "user_requirement": "Build a single-supply non-inverting op-amp audio preamplifier with a gain of ~11, built with an AC-coupled input, virtual ground bias divider, feedback gain network, output coupling capacitor, and input/output connectors.",
+      "interface": "Use IN for a signal input, OUT for output and 0 for ground. For AC analysis, use VIN from IN to 0 with DC 0 and AC 1. Use VCC as the positive supply node. When an output load is specified, use RLOAD from OUT to 0. For LED tasks use a zero-volt source VLOAD between the LED cathode and the pass-device drain/collector at OUT. Use the explicitly named supply and load elements in the tests below. Analysis is small-signal AC or DC operating point at nominal 27 C.\nThe shared simulator provides fixed LM2904, 2N2222, LED, 1N4733A and EDA_NMOS models. Do not include, redefine or invent model/subcircuit definitions. Use Xname IN+ IN- V+ V- OUT LM2904 for each op-amp; Qname C B E 2N2222 for NPN transistors; Mname D G S B EDA_NMOS W=10u L=1u for NMOS. EDA_NMOS is a generic Level-1 device (VTO=1, KP=0.1, LAMBDA=0.01). Use Dname ANODE CATHODE LED or 1N4733A for the corresponding diode. Top-level circuit elements may be R, C, L, D, Q, M, X, V and I; behavioral and dependent sources are confined to the supplied models. Library symbol names are physical-component hints; the simulator model names above govern execution.\nAcceptance tests:\n[\n  {\n    \"nodes\": {\n      \"input\": \"IN\",\n      \"output\": \"OUT\"\n    },\n    \"target\": {\n      \"metric\": \"gain_real_v_per_v\",\n      \"value\": 11,\n      \"tolerance\": 0.3\n    },\n    \"condition\": {}\n  }\n]",
+      "checks": [
+        {
+          "nodes": {
+            "input": "IN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "gain_real_v_per_v",
+            "value": 11,
+            "tolerance": 0.3
+          },
+          "condition": {}
+        }
+      ],
+      "topology": "single_supply_audio",
+      "targets": {
+        "metric": "gain_real_v_per_v",
+        "value": 11,
+        "tolerance": 0.3
+      },
+      "exposure": "development",
+      "parent_benchmark_id": "eda_024",
+      "reference_sha256": "725d4dd1068e28b71be333ff5895c4a2ae29b0eef192acbb50196e3463e77249"
+    },
+    {
+      "id": "eda_027",
+      "user_requirement": "Generate a 1 kHz active low-pass filter using a single op-amp, input resistor, feedback capacitor, feedback resistor, output connector, supply decoupling, and ground.",
+      "interface": "Use IN for a signal input, OUT for output and 0 for ground. For AC analysis, use VIN from IN to 0 with DC 0 and AC 1. Use VCC as the positive supply node. When an output load is specified, use RLOAD from OUT to 0. For LED tasks use a zero-volt source VLOAD between the LED cathode and the pass-device drain/collector at OUT. Use the explicitly named supply and load elements in the tests below. Analysis is small-signal AC or DC operating point at nominal 27 C.\nThe shared simulator provides fixed LM2904, 2N2222, LED, 1N4733A and EDA_NMOS models. Do not include, redefine or invent model/subcircuit definitions. Use Xname IN+ IN- V+ V- OUT LM2904 for each op-amp; Qname C B E 2N2222 for NPN transistors; Mname D G S B EDA_NMOS W=10u L=1u for NMOS. EDA_NMOS is a generic Level-1 device (VTO=1, KP=0.1, LAMBDA=0.01). Use Dname ANODE CATHODE LED or 1N4733A for the corresponding diode. Top-level circuit elements may be R, C, L, D, Q, M, X, V and I; behavioral and dependent sources are confined to the supplied models. Library symbol names are physical-component hints; the simulator model names above govern execution.\nAcceptance tests:\n[\n  {\n    \"nodes\": {\n      \"input\": \"IN\",\n      \"output\": \"OUT\"\n    },\n    \"target\": {\n      \"metric\": \"cutoff_freq_hz\",\n      \"value\": 1000,\n      \"tolerance\": 0.2\n    },\n    \"condition\": {}\n  }\n]",
+      "checks": [
+        {
+          "nodes": {
+            "input": "IN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "cutoff_freq_hz",
+            "value": 1000,
+            "tolerance": 0.2
+          },
+          "condition": {}
+        }
+      ],
+      "topology": "active_rc",
+      "targets": {
+        "metric": "cutoff_freq_hz",
+        "value": 1000,
+        "tolerance": 0.2
+      },
+      "exposure": "development",
+      "parent_benchmark_id": "eda_027",
+      "reference_sha256": "9727ad3c2c0d6746750e265e3755d9b963492aa0dc22bfbdd2d4fa7afbad8f86"
+    },
+    {
+      "id": "eda_037",
+      "user_requirement": "Design a constant-current LED driver delivering about 20 mA using an op-amp current sense loop, N-channel MOSFET, sense resistor, LED load connector, input power connector, and supply decoupling.",
+      "interface": "This is a DC power circuit. Its input connector is the positive supply node VCC; OUT is the regulated output or pass-device drain/collector, and 0 is ground. Do not insert a zero-volt signal source at the power input. Connect the power-input feed to a nonzero DC supply at VCC. Use VCC as the positive supply node. When an output load is specified, use RLOAD from OUT to 0. For LED tasks use a zero-volt source VLOAD between the LED cathode and the pass-device drain/collector at OUT. Use the explicitly named supply and load elements in the tests below. Analysis is small-signal AC or DC operating point at nominal 27 C.\nThe shared simulator provides fixed LM2904, 2N2222, LED, 1N4733A and EDA_NMOS models. Do not include, redefine or invent model/subcircuit definitions. Use Xname IN+ IN- V+ V- OUT LM2904 for each op-amp; Qname C B E 2N2222 for NPN transistors; Mname D G S B EDA_NMOS W=10u L=1u for NMOS. EDA_NMOS is a generic Level-1 device (VTO=1, KP=0.1, LAMBDA=0.01). Use Dname ANODE CATHODE LED or 1N4733A for the corresponding diode. Top-level circuit elements may be R, C, L, D, Q, M, X, V and I; behavioral and dependent sources are confined to the supplied models. Library symbol names are physical-component hints; the simulator model names above govern execution.\nAcceptance tests:\n[\n  {\n    \"nodes\": {\n      \"input\": \"VCC\",\n      \"output\": \"OUT\",\n      \"load_element\": \"VLOAD\"\n    },\n    \"target\": {\n      \"metric\": \"load_current_a\",\n      \"value\": 0.02,\n      \"tolerance\": 0.3\n    },\n    \"condition\": {}\n  }\n]",
+      "checks": [
+        {
+          "nodes": {
+            "input": "VCC",
+            "output": "OUT",
+            "load_element": "VLOAD"
+          },
+          "target": {
+            "metric": "load_current_a",
+            "value": 0.02,
+            "tolerance": 0.3
+          },
+          "condition": {}
+        }
+      ],
+      "topology": "opamp_nmos_led",
+      "targets": {
+        "metric": "load_current_a",
+        "value": 0.02,
+        "tolerance": 0.3
+      },
+      "exposure": "development",
+      "parent_benchmark_id": "eda_037",
+      "reference_sha256": "27b4ec9f8b325c479fae5370bba27bf4810f2833c5c1816d660db0f968e270b4"
+    },
+    {
+      "id": "eda_201",
+      "user_requirement": "Design a loaded inverting op-amp amplifier with a gain of -5 at 1 kHz, dual 5 V supplies and a 2 kohm output load.",
+      "interface": "Use IN for a signal input, OUT for output and 0 for ground. For AC analysis, use VIN from IN to 0 with DC 0 and AC 1. Use VCC as the positive supply node. When an output load is specified, use RLOAD from OUT to 0. For LED tasks use a zero-volt source VLOAD between the LED cathode and the pass-device drain/collector at OUT. Use the explicitly named supply and load elements in the tests below. Analysis is small-signal AC or DC operating point at nominal 27 C.\nThe shared simulator provides fixed LM2904, 2N2222, LED, 1N4733A and EDA_NMOS models. Do not include, redefine or invent model/subcircuit definitions. Use Xname IN+ IN- V+ V- OUT LM2904 for each op-amp; Qname C B E 2N2222 for NPN transistors; Mname D G S B EDA_NMOS W=10u L=1u for NMOS. EDA_NMOS is a generic Level-1 device (VTO=1, KP=0.1, LAMBDA=0.01). Use Dname ANODE CATHODE LED or 1N4733A for the corresponding diode. Top-level circuit elements may be R, C, L, D, Q, M, X, V and I; behavioral and dependent sources are confined to the supplied models. Library symbol names are physical-component hints; the simulator model names above govern execution.\nAcceptance tests:\n[\n  {\n    \"nodes\": {\n      \"input\": \"IN\",\n      \"output\": \"OUT\"\n    },\n    \"target\": {\n      \"metric\": \"gain_real_v_per_v\",\n      \"value\": -5,\n      \"tolerance\": 0.1\n    },\n    \"condition\": {\n      \"dc_sources\": {\n        \"VCC\": 5,\n        \"VEE\": -5\n      },\n      \"resistances\": {\n        \"RLOAD\": 2000\n      }\n    }\n  }\n]",
+      "checks": [
+        {
+          "nodes": {
+            "input": "IN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "gain_real_v_per_v",
+            "value": -5,
+            "tolerance": 0.1
+          },
+          "condition": {
+            "dc_sources": {
+              "VCC": 5,
+              "VEE": -5
+            },
+            "resistances": {
+              "RLOAD": 2000
+            }
+          }
+        }
+      ],
+      "topology": "loaded_inverter",
+      "targets": {
+        "metric": "gain_real_v_per_v",
+        "value": -5,
+        "tolerance": 0.1
+      },
+      "exposure": "new_task",
+      "parent_benchmark_id": null,
+      "reference_sha256": "00ed8a7c8adaffd3a79e8249452093dd9e0caf9af7a2b0b2f0f265722dab5df7"
+    },
+    {
+      "id": "eda_202",
+      "user_requirement": "Design a four-resistor op-amp difference amplifier with a differential gain of 5 at 1 kHz and dual 12 V supplies. With both inputs driven by the same 1 V AC signal, the output AC magnitude must not exceed 0.01 V.",
+      "interface": "Use INP and INN as the differential input nodes, OUT for output and 0 for ground. Use VIP from INP to 0 and VIN from INN to 0 as the input sources. Use VCC as the positive supply node. When an output load is specified, use RLOAD from OUT to 0. For LED tasks use a zero-volt source VLOAD between the LED cathode and the pass-device drain/collector at OUT. Use the explicitly named supply and load elements in the tests below. Analysis is small-signal AC or DC operating point at nominal 27 C.\nThe shared simulator provides fixed LM2904, 2N2222, LED, 1N4733A and EDA_NMOS models. Do not include, redefine or invent model/subcircuit definitions. Use Xname IN+ IN- V+ V- OUT LM2904 for each op-amp; Qname C B E 2N2222 for NPN transistors; Mname D G S B EDA_NMOS W=10u L=1u for NMOS. EDA_NMOS is a generic Level-1 device (VTO=1, KP=0.1, LAMBDA=0.01). Use Dname ANODE CATHODE LED or 1N4733A for the corresponding diode. Top-level circuit elements may be R, C, L, D, Q, M, X, V and I; behavioral and dependent sources are confined to the supplied models. Library symbol names are physical-component hints; the simulator model names above govern execution.\nAcceptance tests:\n[\n  {\n    \"nodes\": {\n      \"input\": \"INP\",\n      \"input_negative\": \"INN\",\n      \"output\": \"OUT\"\n    },\n    \"target\": {\n      \"metric\": \"gain_real_v_per_v\",\n      \"value\": 5,\n      \"tolerance\": 0.1\n    },\n    \"condition\": {\n      \"dc_sources\": {\n        \"VCC\": 12,\n        \"VEE\": -12\n      },\n      \"ac_sources\": {\n        \"VIP\": [\n          0.5,\n          0\n        ],\n        \"VIN\": [\n          0.5,\n          180\n        ]\n      }\n    }\n  },\n  {\n    \"nodes\": {\n      \"input\": \"INP\",\n      \"input_negative\": \"INN\",\n      \"output\": \"OUT\"\n    },\n    \"target\": {\n      \"metric\": \"output_ac_magnitude_v\",\n      \"value\": 0,\n      \"tolerance\": 0.1,\n      \"minimum\": 0,\n      \"maximum\": 0.01\n    },\n    \"condition\": {\n      \"dc_sources\": {\n        \"VCC\": 12,\n        \"VEE\": -12\n      },\n      \"ac_sources\": {\n        \"VIP\": [\n          1,\n          0\n        ],\n        \"VIN\": [\n          1,\n          0\n        ]\n      }\n    }\n  }\n]",
+      "checks": [
+        {
+          "nodes": {
+            "input": "INP",
+            "input_negative": "INN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "gain_real_v_per_v",
+            "value": 5,
+            "tolerance": 0.1
+          },
+          "condition": {
+            "dc_sources": {
+              "VCC": 12,
+              "VEE": -12
+            },
+            "ac_sources": {
+              "VIP": [
+                0.5,
+                0
+              ],
+              "VIN": [
+                0.5,
+                180
+              ]
+            }
+          }
+        },
+        {
+          "nodes": {
+            "input": "INP",
+            "input_negative": "INN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "output_ac_magnitude_v",
+            "value": 0,
+            "tolerance": 0.1,
+            "minimum": 0,
+            "maximum": 0.01
+          },
+          "condition": {
+            "dc_sources": {
+              "VCC": 12,
+              "VEE": -12
+            },
+            "ac_sources": {
+              "VIP": [
+                1,
+                0
+              ],
+              "VIN": [
+                1,
+                0
+              ]
+            }
+          }
+        }
+      ],
+      "topology": "difference_amplifier",
+      "targets": {
+        "metric": "gain_real_v_per_v",
+        "value": 5,
+        "tolerance": 0.1
+      },
+      "exposure": "new_task",
+      "parent_benchmark_id": null,
+      "reference_sha256": "5f876d59d4bf1a0310b27ab81a762d4cc628f83850d82fb18e3be1423aff6ebd"
+    },
+    {
+      "id": "eda_203",
+      "user_requirement": "Design a common-emitter NPN amplifier with a gain of -5 at 1 kHz, an unbypassed emitter-degeneration resistor, input and output coupling capacitors, a bias divider, a 12 V supply and a 4.7 kohm output load.",
+      "interface": "Use IN for a signal input, OUT for output and 0 for ground. For AC analysis, use VIN from IN to 0 with DC 0 and AC 1. Use VCC as the positive supply node. When an output load is specified, use RLOAD from OUT to 0. For LED tasks use a zero-volt source VLOAD between the LED cathode and the pass-device drain/collector at OUT. Use the explicitly named supply and load elements in the tests below. Analysis is small-signal AC or DC operating point at nominal 27 C.\nThe shared simulator provides fixed LM2904, 2N2222, LED, 1N4733A and EDA_NMOS models. Do not include, redefine or invent model/subcircuit definitions. Use Xname IN+ IN- V+ V- OUT LM2904 for each op-amp; Qname C B E 2N2222 for NPN transistors; Mname D G S B EDA_NMOS W=10u L=1u for NMOS. EDA_NMOS is a generic Level-1 device (VTO=1, KP=0.1, LAMBDA=0.01). Use Dname ANODE CATHODE LED or 1N4733A for the corresponding diode. Top-level circuit elements may be R, C, L, D, Q, M, X, V and I; behavioral and dependent sources are confined to the supplied models. Library symbol names are physical-component hints; the simulator model names above govern execution.\nAcceptance tests:\n[\n  {\n    \"nodes\": {\n      \"input\": \"IN\",\n      \"output\": \"OUT\"\n    },\n    \"target\": {\n      \"metric\": \"gain_real_v_per_v\",\n      \"value\": -5,\n      \"tolerance\": 0.2\n    },\n    \"condition\": {\n      \"dc_sources\": {\n        \"VDD\": 12\n      },\n      \"resistances\": {\n        \"RLOAD\": 4700\n      }\n    }\n  }\n]\nOperating-point acceptance: every top-level NPN transistor must have Vc > Vb > Ve under each declared condition, with a reliably converged DC operating point. Numerical gain alone is insufficient.",
+      "checks": [
+        {
+          "nodes": {
+            "input": "IN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "gain_real_v_per_v",
+            "value": -5,
+            "tolerance": 0.2
+          },
+          "condition": {
+            "dc_sources": {
+              "VDD": 12
+            },
+            "resistances": {
+              "RLOAD": 4700
+            }
+          }
+        }
+      ],
+      "topology": "degenerated_ce",
+      "targets": {
+        "metric": "gain_real_v_per_v",
+        "value": -5,
+        "tolerance": 0.2
+      },
+      "exposure": "new_task",
+      "parent_benchmark_id": null,
+      "reference_sha256": "a1fbaae741c6aa7b1d9c76d6d273d71d0d6fec52f5da030c58ada6e4485729a2",
+      "operating_point_requirement": "npn_forward_active_v1"
+    },
+    {
+      "id": "eda_204",
+      "user_requirement": "Design a two-stage common-emitter NPN amplifier with a total gain of +25 at 1 kHz. Use two capacitively coupled transistor stages, independent bias dividers and emitter resistors, a 12 V supply and a 10 kohm output load.",
+      "interface": "Use IN for a signal input, OUT for output and 0 for ground. For AC analysis, use VIN from IN to 0 with DC 0 and AC 1. Use VCC as the positive supply node. When an output load is specified, use RLOAD from OUT to 0. For LED tasks use a zero-volt source VLOAD between the LED cathode and the pass-device drain/collector at OUT. Use the explicitly named supply and load elements in the tests below. Analysis is small-signal AC or DC operating point at nominal 27 C.\nThe shared simulator provides fixed LM2904, 2N2222, LED, 1N4733A and EDA_NMOS models. Do not include, redefine or invent model/subcircuit definitions. Use Xname IN+ IN- V+ V- OUT LM2904 for each op-amp; Qname C B E 2N2222 for NPN transistors; Mname D G S B EDA_NMOS W=10u L=1u for NMOS. EDA_NMOS is a generic Level-1 device (VTO=1, KP=0.1, LAMBDA=0.01). Use Dname ANODE CATHODE LED or 1N4733A for the corresponding diode. Top-level circuit elements may be R, C, L, D, Q, M, X, V and I; behavioral and dependent sources are confined to the supplied models. Library symbol names are physical-component hints; the simulator model names above govern execution.\nAcceptance tests:\n[\n  {\n    \"nodes\": {\n      \"input\": \"IN\",\n      \"output\": \"OUT\"\n    },\n    \"target\": {\n      \"metric\": \"gain_real_v_per_v\",\n      \"value\": 25,\n      \"tolerance\": 0.2\n    },\n    \"condition\": {\n      \"dc_sources\": {\n        \"VDD\": 12\n      },\n      \"resistances\": {\n        \"RLOAD\": 10000\n      }\n    }\n  }\n]\nOperating-point acceptance: every top-level NPN transistor must have Vc > Vb > Ve under each declared condition, with a reliably converged DC operating point. Numerical gain alone is insufficient.",
+      "checks": [
+        {
+          "nodes": {
+            "input": "IN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "gain_real_v_per_v",
+            "value": 25,
+            "tolerance": 0.2
+          },
+          "condition": {
+            "dc_sources": {
+              "VDD": 12
+            },
+            "resistances": {
+              "RLOAD": 10000
+            }
+          }
+        }
+      ],
+      "topology": "two_ce",
+      "targets": {
+        "metric": "gain_real_v_per_v",
+        "value": 25,
+        "tolerance": 0.2
+      },
+      "exposure": "new_task",
+      "parent_benchmark_id": null,
+      "reference_sha256": "85a04bd166a114f652470e044544645bc641417e7f804d47470d310686dacc5c",
+      "operating_point_requirement": "npn_forward_active_v1"
+    },
+    {
+      "id": "eda_205",
+      "user_requirement": "Design a low-pass filter comprising two sequential RC sections, each followed by an op-amp buffer, with an overall cutoff of 500 Hz and unity passband gain. Use dual 12 V supplies.",
+      "interface": "Use IN for a signal input, OUT for output and 0 for ground. For AC analysis, use VIN from IN to 0 with DC 0 and AC 1. Use VCC as the positive supply node. When an output load is specified, use RLOAD from OUT to 0. For LED tasks use a zero-volt source VLOAD between the LED cathode and the pass-device drain/collector at OUT. Use the explicitly named supply and load elements in the tests below. Analysis is small-signal AC or DC operating point at nominal 27 C.\nThe shared simulator provides fixed LM2904, 2N2222, LED, 1N4733A and EDA_NMOS models. Do not include, redefine or invent model/subcircuit definitions. Use Xname IN+ IN- V+ V- OUT LM2904 for each op-amp; Qname C B E 2N2222 for NPN transistors; Mname D G S B EDA_NMOS W=10u L=1u for NMOS. EDA_NMOS is a generic Level-1 device (VTO=1, KP=0.1, LAMBDA=0.01). Use Dname ANODE CATHODE LED or 1N4733A for the corresponding diode. Top-level circuit elements may be R, C, L, D, Q, M, X, V and I; behavioral and dependent sources are confined to the supplied models. Library symbol names are physical-component hints; the simulator model names above govern execution.\nAcceptance tests:\n[\n  {\n    \"nodes\": {\n      \"input\": \"IN\",\n      \"output\": \"OUT\"\n    },\n    \"target\": {\n      \"metric\": \"cutoff_freq_hz\",\n      \"value\": 500,\n      \"tolerance\": 0.15\n    },\n    \"condition\": {\n      \"dc_sources\": {\n        \"VCC\": 12,\n        \"VEE\": -12\n      }\n    }\n  },\n  {\n    \"nodes\": {\n      \"input\": \"IN\",\n      \"output\": \"OUT\"\n    },\n    \"target\": {\n      \"metric\": \"gain_at_frequency_v_per_v\",\n      \"value\": 1,\n      \"tolerance\": 0.05\n    },\n    \"condition\": {\n      \"frequency_hz\": 10,\n      \"dc_sources\": {\n        \"VCC\": 12,\n        \"VEE\": -12\n      }\n    }\n  }\n]",
+      "checks": [
+        {
+          "nodes": {
+            "input": "IN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "cutoff_freq_hz",
+            "value": 500,
+            "tolerance": 0.15
+          },
+          "condition": {
+            "dc_sources": {
+              "VCC": 12,
+              "VEE": -12
+            }
+          }
+        },
+        {
+          "nodes": {
+            "input": "IN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "gain_at_frequency_v_per_v",
+            "value": 1,
+            "tolerance": 0.05
+          },
+          "condition": {
+            "frequency_hz": 10,
+            "dc_sources": {
+              "VCC": 12,
+              "VEE": -12
+            }
+          }
+        }
+      ],
+      "topology": "two_buffered_rc",
+      "targets": {
+        "metric": "cutoff_freq_hz",
+        "value": 500,
+        "tolerance": 0.15
+      },
+      "exposure": "new_task",
+      "parent_benchmark_id": null,
+      "reference_sha256": "37eea0c9ad1f1d35289ef626068b10b6dcc6f384ee590d034f859d0de7a92a31"
+    },
+    {
+      "id": "eda_206",
+      "user_requirement": "Design a unity-gain Sallen-Key low-pass filter with a Butterworth response and a cutoff of 2000 Hz using dual 12 V supplies. Use one op-amp buffer and the two-resistor, two-capacitor Sallen-Key feedback network.",
+      "interface": "Use IN for a signal input, OUT for output and 0 for ground. For AC analysis, use VIN from IN to 0 with DC 0 and AC 1. Use VCC as the positive supply node. When an output load is specified, use RLOAD from OUT to 0. For LED tasks use a zero-volt source VLOAD between the LED cathode and the pass-device drain/collector at OUT. Use the explicitly named supply and load elements in the tests below. Analysis is small-signal AC or DC operating point at nominal 27 C.\nThe shared simulator provides fixed LM2904, 2N2222, LED, 1N4733A and EDA_NMOS models. Do not include, redefine or invent model/subcircuit definitions. Use Xname IN+ IN- V+ V- OUT LM2904 for each op-amp; Qname C B E 2N2222 for NPN transistors; Mname D G S B EDA_NMOS W=10u L=1u for NMOS. EDA_NMOS is a generic Level-1 device (VTO=1, KP=0.1, LAMBDA=0.01). Use Dname ANODE CATHODE LED or 1N4733A for the corresponding diode. Top-level circuit elements may be R, C, L, D, Q, M, X, V and I; behavioral and dependent sources are confined to the supplied models. Library symbol names are physical-component hints; the simulator model names above govern execution.\nAcceptance tests:\n[\n  {\n    \"nodes\": {\n      \"input\": \"IN\",\n      \"output\": \"OUT\"\n    },\n    \"target\": {\n      \"metric\": \"cutoff_freq_hz\",\n      \"value\": 2000,\n      \"tolerance\": 0.15\n    },\n    \"condition\": {\n      \"dc_sources\": {\n        \"VCC\": 12,\n        \"VEE\": -12\n      }\n    }\n  },\n  {\n    \"nodes\": {\n      \"input\": \"IN\",\n      \"output\": \"OUT\"\n    },\n    \"target\": {\n      \"metric\": \"gain_at_frequency_v_per_v\",\n      \"value\": 1,\n      \"tolerance\": 0.05\n    },\n    \"condition\": {\n      \"frequency_hz\": 10,\n      \"dc_sources\": {\n        \"VCC\": 12,\n        \"VEE\": -12\n      }\n    }\n  },\n  {\n    \"nodes\": {\n      \"input\": \"IN\",\n      \"output\": \"OUT\"\n    },\n    \"target\": {\n      \"metric\": \"gain_at_frequency_v_per_v\",\n      \"value\": 1,\n      \"tolerance\": 0.1,\n      \"minimum\": 0.94,\n      \"maximum\": 1.06\n    },\n    \"condition\": {\n      \"frequency_hz\": 500,\n      \"dc_sources\": {\n        \"VCC\": 12,\n        \"VEE\": -12\n      }\n    }\n  }\n]",
+      "checks": [
+        {
+          "nodes": {
+            "input": "IN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "cutoff_freq_hz",
+            "value": 2000,
+            "tolerance": 0.15
+          },
+          "condition": {
+            "dc_sources": {
+              "VCC": 12,
+              "VEE": -12
+            }
+          }
+        },
+        {
+          "nodes": {
+            "input": "IN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "gain_at_frequency_v_per_v",
+            "value": 1,
+            "tolerance": 0.05
+          },
+          "condition": {
+            "frequency_hz": 10,
+            "dc_sources": {
+              "VCC": 12,
+              "VEE": -12
+            }
+          }
+        },
+        {
+          "nodes": {
+            "input": "IN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "gain_at_frequency_v_per_v",
+            "value": 1,
+            "tolerance": 0.1,
+            "minimum": 0.94,
+            "maximum": 1.06
+          },
+          "condition": {
+            "frequency_hz": 500,
+            "dc_sources": {
+              "VCC": 12,
+              "VEE": -12
+            }
+          }
+        }
+      ],
+      "topology": "sallen_key",
+      "targets": {
+        "metric": "cutoff_freq_hz",
+        "value": 2000,
+        "tolerance": 0.15
+      },
+      "exposure": "new_task",
+      "parent_benchmark_id": null,
+      "reference_sha256": "9d7996c916863aaa270629e096f71c0e233fc01a6b680859be6514c0669f0bba"
+    },
+    {
+      "id": "eda_207",
+      "user_requirement": "Design a loaded 5.1 V Zener reference with a series feed resistor and a 1 kohm output load. The output must meet the voltage target at both 9 V and 12 V input supplies.",
+      "interface": "This is a DC power circuit. Its input connector is the positive supply node VCC; OUT is the regulated output or pass-device drain/collector, and 0 is ground. Do not insert a zero-volt signal source at the power input. Connect the power-input feed to a nonzero DC supply at VCC. Use VCC as the positive supply node. When an output load is specified, use RLOAD from OUT to 0. For LED tasks use a zero-volt source VLOAD between the LED cathode and the pass-device drain/collector at OUT. Use the explicitly named supply and load elements in the tests below. Analysis is small-signal AC or DC operating point at nominal 27 C.\nThe shared simulator provides fixed LM2904, 2N2222, LED, 1N4733A and EDA_NMOS models. Do not include, redefine or invent model/subcircuit definitions. Use Xname IN+ IN- V+ V- OUT LM2904 for each op-amp; Qname C B E 2N2222 for NPN transistors; Mname D G S B EDA_NMOS W=10u L=1u for NMOS. EDA_NMOS is a generic Level-1 device (VTO=1, KP=0.1, LAMBDA=0.01). Use Dname ANODE CATHODE LED or 1N4733A for the corresponding diode. Top-level circuit elements may be R, C, L, D, Q, M, X, V and I; behavioral and dependent sources are confined to the supplied models. Library symbol names are physical-component hints; the simulator model names above govern execution.\nAcceptance tests:\n[\n  {\n    \"nodes\": {\n      \"input\": \"VCC\",\n      \"output\": \"OUT\"\n    },\n    \"target\": {\n      \"metric\": \"dc_voltage_v\",\n      \"value\": 5.1,\n      \"tolerance\": 0.1\n    },\n    \"condition\": {\n      \"dc_sources\": {\n        \"VDD\": 9\n      },\n      \"resistances\": {\n        \"RLOAD\": 1000\n      }\n    }\n  },\n  {\n    \"nodes\": {\n      \"input\": \"VCC\",\n      \"output\": \"OUT\"\n    },\n    \"target\": {\n      \"metric\": \"dc_voltage_v\",\n      \"value\": 5.1,\n      \"tolerance\": 0.1\n    },\n    \"condition\": {\n      \"dc_sources\": {\n        \"VDD\": 12\n      },\n      \"resistances\": {\n        \"RLOAD\": 1000\n      }\n    }\n  }\n]",
+      "checks": [
+        {
+          "nodes": {
+            "input": "VCC",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "dc_voltage_v",
+            "value": 5.1,
+            "tolerance": 0.1
+          },
+          "condition": {
+            "dc_sources": {
+              "VDD": 9
+            },
+            "resistances": {
+              "RLOAD": 1000
+            }
+          }
+        },
+        {
+          "nodes": {
+            "input": "VCC",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "dc_voltage_v",
+            "value": 5.1,
+            "tolerance": 0.1
+          },
+          "condition": {
+            "dc_sources": {
+              "VDD": 12
+            },
+            "resistances": {
+              "RLOAD": 1000
+            }
+          }
+        }
+      ],
+      "topology": "loaded_zener",
+      "targets": {
+        "metric": "dc_voltage_v",
+        "value": 5.1,
+        "tolerance": 0.1
+      },
+      "exposure": "new_task",
+      "parent_benchmark_id": null,
+      "reference_sha256": "d5d9ef842fc63b2c6179dad50e0612fa2298bc7e4d6a01b5ead44964df8044ca"
+    },
+    {
+      "id": "eda_208",
+      "user_requirement": "Design a 4.4 V regulated output using a 5.1 V Zener reference and an NPN emitter-follower buffer from a 12 V supply. Meet the output target with both 470 ohm and 1 kohm loads.",
+      "interface": "This is a DC power circuit. Its input connector is the positive supply node VCC; OUT is the regulated output or pass-device drain/collector, and 0 is ground. Do not insert a zero-volt signal source at the power input. Connect the power-input feed to a nonzero DC supply at VCC. Use VCC as the positive supply node. When an output load is specified, use RLOAD from OUT to 0. For LED tasks use a zero-volt source VLOAD between the LED cathode and the pass-device drain/collector at OUT. Use the explicitly named supply and load elements in the tests below. Analysis is small-signal AC or DC operating point at nominal 27 C.\nThe shared simulator provides fixed LM2904, 2N2222, LED, 1N4733A and EDA_NMOS models. Do not include, redefine or invent model/subcircuit definitions. Use Xname IN+ IN- V+ V- OUT LM2904 for each op-amp; Qname C B E 2N2222 for NPN transistors; Mname D G S B EDA_NMOS W=10u L=1u for NMOS. EDA_NMOS is a generic Level-1 device (VTO=1, KP=0.1, LAMBDA=0.01). Use Dname ANODE CATHODE LED or 1N4733A for the corresponding diode. Top-level circuit elements may be R, C, L, D, Q, M, X, V and I; behavioral and dependent sources are confined to the supplied models. Library symbol names are physical-component hints; the simulator model names above govern execution.\nAcceptance tests:\n[\n  {\n    \"nodes\": {\n      \"input\": \"VCC\",\n      \"output\": \"OUT\"\n    },\n    \"target\": {\n      \"metric\": \"dc_voltage_v\",\n      \"value\": 4.4,\n      \"tolerance\": 0.1\n    },\n    \"condition\": {\n      \"dc_sources\": {\n        \"VDD\": 12\n      },\n      \"resistances\": {\n        \"RLOAD\": 470\n      }\n    }\n  },\n  {\n    \"nodes\": {\n      \"input\": \"VCC\",\n      \"output\": \"OUT\"\n    },\n    \"target\": {\n      \"metric\": \"dc_voltage_v\",\n      \"value\": 4.4,\n      \"tolerance\": 0.1\n    },\n    \"condition\": {\n      \"dc_sources\": {\n        \"VDD\": 12\n      },\n      \"resistances\": {\n        \"RLOAD\": 1000\n      }\n    }\n  }\n]",
+      "checks": [
+        {
+          "nodes": {
+            "input": "VCC",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "dc_voltage_v",
+            "value": 4.4,
+            "tolerance": 0.1
+          },
+          "condition": {
+            "dc_sources": {
+              "VDD": 12
+            },
+            "resistances": {
+              "RLOAD": 470
+            }
+          }
+        },
+        {
+          "nodes": {
+            "input": "VCC",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "dc_voltage_v",
+            "value": 4.4,
+            "tolerance": 0.1
+          },
+          "condition": {
+            "dc_sources": {
+              "VDD": 12
+            },
+            "resistances": {
+              "RLOAD": 1000
+            }
+          }
+        }
+      ],
+      "topology": "buffered_zener",
+      "targets": {
+        "metric": "dc_voltage_v",
+        "value": 4.4,
+        "tolerance": 0.1
+      },
+      "exposure": "new_task",
+      "parent_benchmark_id": null,
+      "reference_sha256": "2fc9f20498332d232f14d99bd38b217387a94dff6fcf44642ccfd92e21b81dfb"
+    },
+    {
+      "id": "eda_209",
+      "user_requirement": "Design a constant-current LED driver delivering 10 mA from a 5 V supply using an op-amp current-sense loop, an N-channel MOSFET, a sense resistor, a resistor-divider reference and supply decoupling.",
+      "interface": "This is a DC power circuit. Its input connector is the positive supply node VCC; OUT is the regulated output or pass-device drain/collector, and 0 is ground. Do not insert a zero-volt signal source at the power input. Connect the power-input feed to a nonzero DC supply at VCC. Use VCC as the positive supply node. When an output load is specified, use RLOAD from OUT to 0. For LED tasks use a zero-volt source VLOAD between the LED cathode and the pass-device drain/collector at OUT. Use the explicitly named supply and load elements in the tests below. Analysis is small-signal AC or DC operating point at nominal 27 C.\nThe shared simulator provides fixed LM2904, 2N2222, LED, 1N4733A and EDA_NMOS models. Do not include, redefine or invent model/subcircuit definitions. Use Xname IN+ IN- V+ V- OUT LM2904 for each op-amp; Qname C B E 2N2222 for NPN transistors; Mname D G S B EDA_NMOS W=10u L=1u for NMOS. EDA_NMOS is a generic Level-1 device (VTO=1, KP=0.1, LAMBDA=0.01). Use Dname ANODE CATHODE LED or 1N4733A for the corresponding diode. Top-level circuit elements may be R, C, L, D, Q, M, X, V and I; behavioral and dependent sources are confined to the supplied models. Library symbol names are physical-component hints; the simulator model names above govern execution.\nAcceptance tests:\n[\n  {\n    \"nodes\": {\n      \"input\": \"VCC\",\n      \"output\": \"OUT\",\n      \"load_element\": \"VLOAD\"\n    },\n    \"target\": {\n      \"metric\": \"load_current_a\",\n      \"value\": 0.01,\n      \"tolerance\": 0.1\n    },\n    \"condition\": {\n      \"dc_sources\": {\n        \"VDD\": 5\n      }\n    }\n  }\n]\nThe requested resistor-divider reference must have resistive arms to VCC and ground and a DC resistive connection to the positive input of the op-amp controlling the current-sense loop.",
+      "checks": [
+        {
+          "nodes": {
+            "input": "VCC",
+            "output": "OUT",
+            "load_element": "VLOAD"
+          },
+          "target": {
+            "metric": "load_current_a",
+            "value": 0.01,
+            "tolerance": 0.1
+          },
+          "condition": {
+            "dc_sources": {
+              "VDD": 5
+            }
+          }
+        }
+      ],
+      "topology": "opamp_nmos_led",
+      "targets": {
+        "metric": "load_current_a",
+        "value": 0.01,
+        "tolerance": 0.1
+      },
+      "exposure": "new_task",
+      "parent_benchmark_id": null,
+      "reference_sha256": "ebb00ac8cd03dad041db990c8610a56fb046d0f11d5214e18a5ff210b382531b",
+      "reference_divider_required": true
+    },
+    {
+      "id": "eda_210",
+      "user_requirement": "Design a constant-current LED sink delivering 6 mA at both 9 V and 12 V supplies. Use two NPN transistors: a pass transistor in the LED branch and a feedback transistor sensing its emitter-resistor voltage and controlling its base.",
+      "interface": "This is a DC power circuit. Its input connector is the positive supply node VCC; OUT is the regulated output or pass-device drain/collector, and 0 is ground. Do not insert a zero-volt signal source at the power input. Connect the power-input feed to a nonzero DC supply at VCC. Use VCC as the positive supply node. When an output load is specified, use RLOAD from OUT to 0. For LED tasks use a zero-volt source VLOAD between the LED cathode and the pass-device drain/collector at OUT. Use the explicitly named supply and load elements in the tests below. Analysis is small-signal AC or DC operating point at nominal 27 C.\nThe shared simulator provides fixed LM2904, 2N2222, LED, 1N4733A and EDA_NMOS models. Do not include, redefine or invent model/subcircuit definitions. Use Xname IN+ IN- V+ V- OUT LM2904 for each op-amp; Qname C B E 2N2222 for NPN transistors; Mname D G S B EDA_NMOS W=10u L=1u for NMOS. EDA_NMOS is a generic Level-1 device (VTO=1, KP=0.1, LAMBDA=0.01). Use Dname ANODE CATHODE LED or 1N4733A for the corresponding diode. Top-level circuit elements may be R, C, L, D, Q, M, X, V and I; behavioral and dependent sources are confined to the supplied models. Library symbol names are physical-component hints; the simulator model names above govern execution.\nAcceptance tests:\n[\n  {\n    \"nodes\": {\n      \"input\": \"VCC\",\n      \"output\": \"OUT\",\n      \"load_element\": \"VLOAD\"\n    },\n    \"target\": {\n      \"metric\": \"load_current_a\",\n      \"value\": 0.006,\n      \"tolerance\": 0.15\n    },\n    \"condition\": {\n      \"dc_sources\": {\n        \"VDD\": 9\n      }\n    }\n  },\n  {\n    \"nodes\": {\n      \"input\": \"VCC\",\n      \"output\": \"OUT\",\n      \"load_element\": \"VLOAD\"\n    },\n    \"target\": {\n      \"metric\": \"load_current_a\",\n      \"value\": 0.006,\n      \"tolerance\": 0.15\n    },\n    \"condition\": {\n      \"dc_sources\": {\n        \"VDD\": 12\n      }\n    }\n  }\n]",
+      "checks": [
+        {
+          "nodes": {
+            "input": "VCC",
+            "output": "OUT",
+            "load_element": "VLOAD"
+          },
+          "target": {
+            "metric": "load_current_a",
+            "value": 0.006,
+            "tolerance": 0.15
+          },
+          "condition": {
+            "dc_sources": {
+              "VDD": 9
+            }
+          }
+        },
+        {
+          "nodes": {
+            "input": "VCC",
+            "output": "OUT",
+            "load_element": "VLOAD"
+          },
+          "target": {
+            "metric": "load_current_a",
+            "value": 0.006,
+            "tolerance": 0.15
+          },
+          "condition": {
+            "dc_sources": {
+              "VDD": 12
+            }
+          }
+        }
+      ],
+      "topology": "two_bjt_led",
+      "targets": {
+        "metric": "load_current_a",
+        "value": 0.006,
+        "tolerance": 0.15
+      },
+      "exposure": "new_task",
+      "parent_benchmark_id": null,
+      "reference_sha256": "d5a3688e120345bcbc594624f8c1307663031a297be06a8b99202ae79d5a13e0"
+    }
+  ]
+}

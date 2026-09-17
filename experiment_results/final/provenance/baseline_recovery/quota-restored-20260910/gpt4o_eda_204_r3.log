@@ -1,0 +1,6 @@
+{"model": "gpt4o", "task_id": "eda_204", "arm": "analogcoder", "passed": false, "generation_calls": 2}
+{"model": "gpt4o", "task_id": "eda_204", "arm": "direct", "passed": false, "generation_calls": 3}
+   [清洗统计] 移除 7 行无效内容
+   [全局护盾] 拦截到 LLM 幻觉：重复元件名 R_PART3_3，已自动重命名为 R_PART3_3_DUP12
+   [全局护盾] 拦截到 LLM 幻觉：重复元件名 R_PART3_4，已自动重命名为 R_PART3_4_DUP13
+{"model": "gpt4o", "task_id": "eda_204", "arm": "full", "passed": false, "generation_calls": 3}

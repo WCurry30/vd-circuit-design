@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": {
+        "nodes": {
+          "input": "IN",
+          "output": "OUT"
+        },
+        "target": {
+          "metric": "gain_real_v_per_v",
+          "value": -10,
+          "tolerance": 0.3
+        },
+        "condition": {}
+      },
+      "result": {
+        "status": "success",
+        "failure_stage": null,
+        "metric": "gain_real_v_per_v",
+        "target": -10.0,
+        "tolerance": 0.3,
+        "measured": -9.82927752,
+        "passed": true,
+        "submitted_deck_sha256": "cd9feb45a24d33815e5474391a01172027e15e79bc7cfc1f7c6211c9e694dae8",
+        "evaluated_deck_sha256": "991820ca299faf1749d235d17909414040533a817d34302ae6f0c90d364f1185",
+        "artifacts": {
+          "submitted_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_007/reference/fixed_models.cir",
+          "evaluated_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_007/reference/conditions/condition_01/evaluated.cir",
+          "node_manifest": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_007/reference/conditions/condition_01/node_manifest.json",
+          "simulator_log": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_007/reference/conditions/condition_01/ngspice.log",
+          "stdout": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_007/reference/conditions/condition_01/ngspice.stdout",
+          "stderr": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_007/reference/conditions/condition_01/ngspice.stderr",
+          "numeric_trace": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_007/reference/conditions/condition_01/numeric_trace.txt"
+        },
+        "detail": null
+      }
+    }
+  ],
+  "submitted_deck_sha256": "cd9feb45a24d33815e5474391a01172027e15e79bc7cfc1f7c6211c9e694dae8"
+}

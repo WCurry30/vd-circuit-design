@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": {
+        "nodes": {
+          "input": "VCC",
+          "output": "OUT"
+        },
+        "target": {
+          "metric": "dc_voltage_v",
+          "value": 5.1,
+          "tolerance": 0.15
+        },
+        "condition": {}
+      },
+      "result": {
+        "status": "success",
+        "failure_stage": null,
+        "metric": "dc_voltage_v",
+        "target": 5.1,
+        "tolerance": 0.15,
+        "measured": 5.07802652,
+        "passed": true,
+        "submitted_deck_sha256": "ba3a2997926272ccb83a44ef733e956a4c41238f6128a1c7ed684bec5c3aa5ba",
+        "evaluated_deck_sha256": "45e58080b726abdbe71b37cb8433e7d0365bc4def4d11960ccceb2a049b1e63a",
+        "artifacts": {
+          "submitted_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_016/reference/fixed_models.cir",
+          "evaluated_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_016/reference/conditions/condition_01/evaluated.cir",
+          "node_manifest": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_016/reference/conditions/condition_01/node_manifest.json",
+          "simulator_log": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_016/reference/conditions/condition_01/ngspice.log",
+          "stdout": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_016/reference/conditions/condition_01/ngspice.stdout",
+          "stderr": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_016/reference/conditions/condition_01/ngspice.stderr",
+          "numeric_trace": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_016/reference/conditions/condition_01/numeric_trace.txt"
+        },
+        "detail": null
+      }
+    }
+  ],
+  "submitted_deck_sha256": "ba3a2997926272ccb83a44ef733e956a4c41238f6128a1c7ed684bec5c3aa5ba"
+}

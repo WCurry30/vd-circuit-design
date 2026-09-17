@@ -1,0 +1,630 @@
+[
+  {
+    "id": "eda_005",
+    "category": "amplifier",
+    "user_requirement": "Generate an inverting op-amp amplifier with a gain of -10, built with an input resistor, feedback resistor, grounded non-inverting input, dual supply symbols, and an output connector.",
+    "golden_components": [
+      "op_amp",
+      "resistor",
+      "connector",
+      "ground",
+      "power_symbol"
+    ],
+    "required_component_roles": {
+      "gain_core": [
+        "op_amp"
+      ],
+      "feedback": [
+        "resistor"
+      ],
+      "io": [
+        "connector"
+      ]
+    },
+    "expected_connections": [
+      [
+        "resistor.2",
+        "op_amp.IN-"
+      ],
+      [
+        "resistor.1",
+        "op_amp.OUT"
+      ]
+    ],
+    "stress_tags": [
+      "pin_inheritance",
+      "multi_keyword"
+    ],
+    "functional_spec": {
+      "applicable": true,
+      "sim": "ac",
+      "type": "gain",
+      "target": -10,
+      "tolerance": 0.2,
+      "unit": "V/V",
+      "reason": ""
+    },
+    "difficulty": "medium",
+    "circuit_category": "amplifier",
+    "parent_benchmark_id": "eda_005",
+    "expert_family": "opamp_amplifier",
+    "targets": {
+      "metric": "gain_magnitude_v_per_v",
+      "value": 10,
+      "source_value": -10,
+      "tolerance": 0.2,
+      "unit": "V/V"
+    }
+  },
+  {
+    "id": "eda_006",
+    "category": "amplifier",
+    "user_requirement": "Create a non-inverting op-amp amplifier with a gain of +11, built with a resistor divider feedback network, AC-coupled input, output connector, and power supply symbols.",
+    "golden_components": [
+      "op_amp",
+      "resistor",
+      "capacitor",
+      "connector",
+      "ground",
+      "power_symbol"
+    ],
+    "required_component_roles": {
+      "gain_core": [
+        "op_amp"
+      ],
+      "feedback": [
+        "resistor"
+      ],
+      "coupling": [
+        "capacitor"
+      ],
+      "io": [
+        "connector"
+      ]
+    },
+    "expected_connections": [
+      [
+        "op_amp.IN-",
+        "resistor.1"
+      ],
+      [
+        "op_amp.IN+",
+        "capacitor.2"
+      ]
+    ],
+    "stress_tags": [
+      "pin_inheritance",
+      "multi_keyword"
+    ],
+    "functional_spec": {
+      "applicable": true,
+      "sim": "ac",
+      "type": "gain",
+      "target": 11,
+      "tolerance": 0.2,
+      "unit": "V/V",
+      "reason": ""
+    },
+    "difficulty": "medium",
+    "circuit_category": "amplifier",
+    "parent_benchmark_id": "eda_006",
+    "expert_family": "opamp_amplifier",
+    "targets": {
+      "metric": "gain_magnitude_v_per_v",
+      "value": 11,
+      "source_value": 11,
+      "tolerance": 0.2,
+      "unit": "V/V"
+    }
+  },
+  {
+    "id": "eda_007",
+    "category": "amplifier",
+    "user_requirement": "Design a common-emitter NPN transistor amplifier with a voltage gain of ~-10, built with a collector resistor, emitter resistor, input coupling capacitor, output coupling capacitor, and bias divider.",
+    "golden_components": [
+      "transistor",
+      "resistor",
+      "capacitor",
+      "connector",
+      "ground",
+      "power_symbol"
+    ],
+    "required_component_roles": {
+      "active_device": [
+        "transistor"
+      ],
+      "bias": [
+        "resistor"
+      ],
+      "coupling": [
+        "capacitor"
+      ],
+      "io": [
+        "connector"
+      ]
+    },
+    "expected_connections": [
+      [
+        "transistor.2",
+        "resistor.2"
+      ],
+      [
+        "transistor.3",
+        "resistor.1"
+      ]
+    ],
+    "stress_tags": [
+      "multi_keyword"
+    ],
+    "functional_spec": {
+      "applicable": true,
+      "sim": "ac",
+      "type": "gain",
+      "target": -10,
+      "tolerance": 0.3,
+      "unit": "V/V",
+      "reason": ""
+    },
+    "difficulty": "medium",
+    "circuit_category": "amplifier",
+    "parent_benchmark_id": "eda_007",
+    "expert_family": "bjt_amplifier",
+    "targets": {
+      "metric": "gain_magnitude_v_per_v",
+      "value": 10,
+      "source_value": -10,
+      "tolerance": 0.3,
+      "unit": "V/V"
+    }
+  },
+  {
+    "id": "eda_008",
+    "category": "amplifier",
+    "user_requirement": "Build an electret microphone preamplifier with a gain of ~100 using a microphone input, bias resistor, coupling capacitor, op-amp gain stage, and output connector.",
+    "golden_components": [
+      "sensor",
+      "resistor",
+      "capacitor",
+      "op_amp",
+      "connector",
+      "ground",
+      "power_symbol"
+    ],
+    "required_component_roles": {
+      "sensor_input": [
+        "sensor"
+      ],
+      "bias": [
+        "resistor"
+      ],
+      "coupling": [
+        "capacitor"
+      ],
+      "gain": [
+        "op_amp"
+      ]
+    },
+    "expected_connections": [
+      [
+        "sensor.1",
+        "resistor.1"
+      ],
+      [
+        "capacitor.2",
+        "op_amp.IN+"
+      ]
+    ],
+    "stress_tags": [
+      "multi_keyword",
+      "pin_inheritance"
+    ],
+    "functional_spec": {
+      "applicable": true,
+      "sim": "ac",
+      "type": "gain",
+      "target": 100,
+      "tolerance": 0.3,
+      "unit": "V/V",
+      "reason": ""
+    },
+    "difficulty": "hard",
+    "circuit_category": "amplifier",
+    "parent_benchmark_id": "eda_008",
+    "expert_family": "opamp_amplifier",
+    "targets": {
+      "metric": "gain_magnitude_v_per_v",
+      "value": 100,
+      "source_value": 100,
+      "tolerance": 0.3,
+      "unit": "V/V"
+    }
+  },
+  {
+    "id": "eda_009",
+    "category": "filter",
+    "user_requirement": "Create a passive RC low-pass filter with a ~1 kHz cutoff, built with input and output connectors, one series resistor, one shunt capacitor to ground, and labeled output node.",
+    "golden_components": [
+      "connector",
+      "resistor",
+      "capacitor",
+      "ground"
+    ],
+    "required_component_roles": {
+      "io": [
+        "connector"
+      ],
+      "filter_network": [
+        "resistor",
+        "capacitor"
+      ],
+      "reference": [
+        "ground"
+      ]
+    },
+    "expected_connections": [
+      [
+        "resistor.2",
+        "capacitor.1"
+      ],
+      [
+        "capacitor.2",
+        "ground.1"
+      ]
+    ],
+    "stress_tags": [
+      "basic_generation"
+    ],
+    "functional_spec": {
+      "applicable": true,
+      "sim": "ac",
+      "type": "cutoff_freq",
+      "target": 1000,
+      "tolerance": 0.2,
+      "unit": "Hz",
+      "reason": ""
+    },
+    "difficulty": "easy",
+    "circuit_category": "filter",
+    "parent_benchmark_id": "eda_009",
+    "expert_family": "filter",
+    "targets": {
+      "metric": "cutoff_freq_hz",
+      "value": 1000,
+      "source_value": 1000,
+      "tolerance": 0.2,
+      "unit": "Hz"
+    }
+  },
+  {
+    "id": "eda_010",
+    "category": "filter",
+    "user_requirement": "Design an active first-order low-pass filter with a ~1 kHz cutoff using an op-amp buffer, resistor-capacitor input network, power symbols, and output connector.",
+    "golden_components": [
+      "op_amp",
+      "resistor",
+      "capacitor",
+      "connector",
+      "ground",
+      "power_symbol"
+    ],
+    "required_component_roles": {
+      "active_buffer": [
+        "op_amp"
+      ],
+      "filter_network": [
+        "resistor",
+        "capacitor"
+      ],
+      "io": [
+        "connector"
+      ]
+    },
+    "expected_connections": [
+      [
+        "resistor.2",
+        "capacitor.1"
+      ],
+      [
+        "capacitor.1",
+        "op_amp.IN+"
+      ]
+    ],
+    "stress_tags": [
+      "pin_inheritance",
+      "multi_keyword"
+    ],
+    "functional_spec": {
+      "applicable": true,
+      "sim": "ac",
+      "type": "cutoff_freq",
+      "target": 1000,
+      "tolerance": 0.2,
+      "unit": "Hz",
+      "reason": ""
+    },
+    "difficulty": "medium",
+    "circuit_category": "filter",
+    "parent_benchmark_id": "eda_010",
+    "expert_family": "filter",
+    "targets": {
+      "metric": "cutoff_freq_hz",
+      "value": 1000,
+      "source_value": 1000,
+      "tolerance": 0.2,
+      "unit": "Hz"
+    }
+  },
+  {
+    "id": "eda_016",
+    "category": "power_driver",
+    "user_requirement": "Create a 5.1 V Zener reference circuit with input resistor, a 5.1 V Zener diode to ground, decoupling capacitor, input connector, and output connector.",
+    "golden_components": [
+      "resistor",
+      "diode",
+      "capacitor",
+      "connector",
+      "ground",
+      "power_symbol"
+    ],
+    "required_component_roles": {
+      "reference": [
+        "diode",
+        "resistor"
+      ],
+      "stabilization": [
+        "capacitor"
+      ],
+      "io": [
+        "connector"
+      ]
+    },
+    "expected_connections": [
+      [
+        "resistor.2",
+        "diode.1"
+      ],
+      [
+        "diode.2",
+        "ground.1"
+      ]
+    ],
+    "stress_tags": [
+      "multi_keyword",
+      "power_safeguard"
+    ],
+    "functional_spec": {
+      "applicable": true,
+      "sim": "dc",
+      "type": "dc_voltage",
+      "target": 5.1,
+      "tolerance": 0.15,
+      "unit": "V",
+      "reason": "Zener reference; regulated output equals the zener breakdown (BZX84C5V1=5.1V)."
+    },
+    "difficulty": "easy",
+    "circuit_category": "power",
+    "parent_benchmark_id": "eda_016",
+    "expert_family": "zener_regulator",
+    "targets": {
+      "metric": "dc_voltage_v",
+      "value": 5.1,
+      "source_value": 5.1,
+      "tolerance": 0.15,
+      "unit": "V"
+    }
+  },
+  {
+    "id": "eda_024",
+    "category": "amplifier",
+    "user_requirement": "Build a single-supply non-inverting op-amp audio preamplifier with a gain of ~11, built with an AC-coupled input, virtual ground bias divider, feedback gain network, output coupling capacitor, and input/output connectors.",
+    "golden_components": [
+      "op_amp",
+      "resistor",
+      "capacitor",
+      "connector",
+      "ground",
+      "power_symbol"
+    ],
+    "required_component_roles": {
+      "gain_core": [
+        "op_amp"
+      ],
+      "bias": [
+        "resistor",
+        "capacitor"
+      ],
+      "feedback": [
+        "resistor"
+      ],
+      "coupling": [
+        "capacitor"
+      ],
+      "io": [
+        "connector"
+      ]
+    },
+    "expected_connections": [
+      [
+        "capacitor.2",
+        "op_amp.IN+"
+      ],
+      [
+        "resistor.1",
+        "op_amp.IN-"
+      ],
+      [
+        "capacitor.1",
+        "op_amp.OUT"
+      ]
+    ],
+    "stress_tags": [
+      "pin_inheritance",
+      "multi_keyword",
+      "connector_mapping"
+    ],
+    "functional_spec": {
+      "applicable": true,
+      "sim": "ac",
+      "type": "gain",
+      "target": 11,
+      "tolerance": 0.3,
+      "unit": "V/V",
+      "reason": ""
+    },
+    "difficulty": "hard",
+    "circuit_category": "amplifier",
+    "parent_benchmark_id": "eda_024",
+    "expert_family": "opamp_amplifier",
+    "targets": {
+      "metric": "gain_magnitude_v_per_v",
+      "value": 11,
+      "source_value": 11,
+      "tolerance": 0.3,
+      "unit": "V/V"
+    }
+  },
+  {
+    "id": "eda_027",
+    "category": "filter",
+    "user_requirement": "Generate a 1 kHz active low-pass filter using a single op-amp, input resistor, feedback capacitor, feedback resistor, output connector, supply decoupling, and ground.",
+    "golden_components": [
+      "op_amp",
+      "resistor",
+      "capacitor",
+      "connector",
+      "ground",
+      "power_symbol"
+    ],
+    "required_component_roles": {
+      "active_filter": [
+        "op_amp"
+      ],
+      "filter_network": [
+        "resistor",
+        "capacitor"
+      ],
+      "io": [
+        "connector"
+      ],
+      "decoupling": [
+        "capacitor"
+      ]
+    },
+    "expected_connections": [
+      [
+        "resistor.2",
+        "op_amp.IN-"
+      ],
+      [
+        "capacitor.1",
+        "op_amp.OUT"
+      ],
+      [
+        "op_amp.OUT",
+        "connector.1"
+      ]
+    ],
+    "stress_tags": [
+      "pin_inheritance",
+      "multi_keyword",
+      "power_safeguard"
+    ],
+    "functional_spec": {
+      "applicable": true,
+      "sim": "ac",
+      "type": "cutoff_freq",
+      "target": 1000,
+      "tolerance": 0.2,
+      "unit": "Hz",
+      "reason": ""
+    },
+    "difficulty": "easy",
+    "circuit_category": "filter",
+    "parent_benchmark_id": "eda_027",
+    "expert_family": "filter",
+    "targets": {
+      "metric": "cutoff_freq_hz",
+      "value": 1000,
+      "source_value": 1000,
+      "tolerance": 0.2,
+      "unit": "Hz"
+    }
+  },
+  {
+    "id": "eda_037",
+    "category": "power_driver",
+    "user_requirement": "Design a constant-current LED driver delivering about 20 mA using an op-amp current sense loop, N-channel MOSFET, sense resistor, LED load connector, input power connector, and supply decoupling.",
+    "golden_components": [
+      "op_amp",
+      "mosfet",
+      "resistor",
+      "led",
+      "connector",
+      "capacitor",
+      "ground",
+      "power_symbol"
+    ],
+    "required_component_roles": {
+      "control_loop": [
+        "op_amp"
+      ],
+      "switch": [
+        "mosfet"
+      ],
+      "current_sense": [
+        "resistor"
+      ],
+      "load": [
+        "led",
+        "connector"
+      ],
+      "supply": [
+        "connector",
+        "capacitor"
+      ]
+    },
+    "expected_connections": [
+      [
+        "op_amp.OUT",
+        "mosfet.1"
+      ],
+      [
+        "mosfet.3",
+        "resistor.1"
+      ],
+      [
+        "resistor.1",
+        "op_amp.IN-"
+      ],
+      [
+        "connector.1",
+        "mosfet.2"
+      ]
+    ],
+    "stress_tags": [
+      "pin_inheritance",
+      "multi_keyword",
+      "erc_risk"
+    ],
+    "functional_spec": {
+      "applicable": true,
+      "sim": "current",
+      "type": "load_current",
+      "target": 0.02,
+      "tolerance": 0.3,
+      "unit": "A",
+      "reason": "Constant-current driver; the op-amp/sense loop should hold the LED load current at ~20 mA (I=Vref/Rsense). A representative LED load is attached for simulation since the real load is an external connector."
+    },
+    "difficulty": "hard",
+    "circuit_category": "mixed",
+    "parent_benchmark_id": "eda_037",
+    "expert_family": "led_constant_current",
+    "targets": {
+      "metric": "load_current_a",
+      "value": 0.02,
+      "source_value": 0.02,
+      "tolerance": 0.3,
+      "unit": "A"
+    }
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": {
+        "nodes": {
+          "input": "IN",
+          "output": "OUT"
+        },
+        "target": {
+          "metric": "gain_real_v_per_v",
+          "value": 100,
+          "tolerance": 0.3
+        },
+        "condition": {}
+      },
+      "result": {
+        "status": "success",
+        "failure_stage": null,
+        "metric": "gain_real_v_per_v",
+        "target": 100.0,
+        "tolerance": 0.3,
+        "measured": 98.3016778,
+        "passed": true,
+        "submitted_deck_sha256": "c5904bf5f4a23c5dc6b2472e445775b033e48517c448a7b94edab106ad6141ee",
+        "evaluated_deck_sha256": "0534543d794204a6e9c4d373a081a4905eee5c755aee5f424d3a295d334d31b4",
+        "artifacts": {
+          "submitted_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_008/negative/fixed_models.cir",
+          "evaluated_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_008/negative/conditions/condition_01/evaluated.cir",
+          "node_manifest": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_008/negative/conditions/condition_01/node_manifest.json",
+          "simulator_log": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_008/negative/conditions/condition_01/ngspice.log",
+          "stdout": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_008/negative/conditions/condition_01/ngspice.stdout",
+          "stderr": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_008/negative/conditions/condition_01/ngspice.stderr",
+          "numeric_trace": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_008/negative/conditions/condition_01/numeric_trace.txt"
+        },
+        "detail": null
+      }
+    }
+  ],
+  "submitted_deck_sha256": "c5904bf5f4a23c5dc6b2472e445775b033e48517c448a7b94edab106ad6141ee"
+}

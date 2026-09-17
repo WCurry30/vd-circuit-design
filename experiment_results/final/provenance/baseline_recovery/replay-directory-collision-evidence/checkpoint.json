@@ -1,0 +1,142 @@
+{
+  "model": "gpt4o",
+  "task_id": "eda_205",
+  "repeat": 3,
+  "arm": "full",
+  "pilot": false,
+  "protocol_sha256": "f6879bd9d32da5024ca943ff496c9a458c6202bfcbb5b4b6a893587bdff56080",
+  "provider_sha256": "089756654db292ae8401cbca330a997f067078854c0dde628121624bd5690e8b",
+  "preparation_sha256": "beefc2eefa5d6b43b22e97db8be3fc28650099447fbaa3f5465b60176b97f86f",
+  "attempts": [
+    {
+      "attempt": 1,
+      "deck": "attempt_1/submitted.cir",
+      "evaluation": {
+        "status": "failed",
+        "failure_stage": "parse",
+        "metric": "cutoff_freq_hz",
+        "target": 500,
+        "tolerance": 0.15,
+        "measured": null,
+        "passed": false,
+        "submitted_deck_sha256": "7cbff0fd69fd038c1944419a8718d85171f27c6502e597a13003b8983f653001",
+        "evaluated_deck_sha256": "d81a9b1835d26c54d1a84a1af7920baccfff559d05df3d80bbc305eae9149c2b",
+        "artifacts": {
+          "submitted_deck": "/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/results/units/gpt4o/eda_205/3/full/attempt_1/submitted.cir",
+          "fixed_model_deck": "/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/results/units/gpt4o/eda_205/3/full/attempt_1/evaluation/fixed_models.cir"
+        },
+        "detail": "[Errno 17] File exists: '/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/results/units/gpt4o/eda_205/3/full/attempt_1/evaluation/opamp_bias_01'"
+      }
+    }
+  ],
+  "passed": false,
+  "planning_usage": [
+    {
+      "completion_tokens": 208,
+      "prompt_tokens": 186,
+      "total_tokens": 394,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 8,
+        "engine_ttft_ms": 37,
+        "engine_ttlt_ms": 1702,
+        "pre_inference_ms": 76,
+        "service_tbt_ms": 8,
+        "service_ttft_ms": 156,
+        "service_ttlt_ms": 1817,
+        "user_visible_ttft_ms": 81
+      },
+      "response_model_id": "gpt-4o-2024-08-06"
+    },
+    {
+      "completion_tokens": 175,
+      "prompt_tokens": 677,
+      "total_tokens": 852,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 5,
+        "engine_ttft_ms": 98,
+        "engine_ttlt_ms": 906,
+        "pre_inference_ms": 64,
+        "service_tbt_ms": 5,
+        "service_ttft_ms": 264,
+        "service_ttlt_ms": 1061,
+        "user_visible_ttft_ms": 200
+      },
+      "response_model_id": "gpt-4o-2024-08-06"
+    },
+    {
+      "completion_tokens": 175,
+      "prompt_tokens": 677,
+      "total_tokens": 852,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 14,
+        "engine_ttft_ms": 106,
+        "engine_ttlt_ms": 2598,
+        "pre_inference_ms": 84,
+        "service_tbt_ms": 14,
+        "service_ttft_ms": 447,
+        "service_ttlt_ms": 2922,
+        "user_visible_ttft_ms": 363
+      },
+      "response_model_id": "gpt-4o-2024-08-06"
+    },
+    {
+      "completion_tokens": 174,
+      "prompt_tokens": 677,
+      "total_tokens": 851,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 5,
+        "engine_ttft_ms": 30,
+        "engine_ttlt_ms": 856,
+        "pre_inference_ms": 69,
+        "service_tbt_ms": 5,
+        "service_ttft_ms": 198,
+        "service_ttlt_ms": 1020,
+        "user_visible_ttft_ms": 129
+      },
+      "response_model_id": "gpt-4o-2024-08-06"
+    }
+  ],
+  "formal_manifest_sha256": "b0ca03e2383b01e601994b9cbdaf4f39518ab9968cf982bcc604a7aba3619925",
+  "public_case_sha256": "6773ec2272056f243896204e66d4fb064df72f4895fe2cd075511332591fe3ec",
+  "exposure": "new_task"
+}

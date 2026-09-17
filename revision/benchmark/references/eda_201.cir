@@ -1,0 +1,9 @@
+* Loaded inverting amplifier: -5 at 1 kHz, 2 kohm load, dual 5 V.
+VIN IN 0 DC 0 AC 1
+VCC VCC 0 5
+VEE VEE 0 -5
+RIN IN NM 10k
+RF OUT NM 50k
+XU1 0 NM VCC VEE OUT LM2904
+RLOAD OUT 0 2k
+.end

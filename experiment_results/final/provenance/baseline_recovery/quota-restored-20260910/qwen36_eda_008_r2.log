@@ -1,0 +1,4 @@
+{"model": "qwen36", "task_id": "eda_008", "arm": "analogcoder", "passed": true, "generation_calls": 1}
+{"model": "qwen36", "task_id": "eda_008", "arm": "direct", "passed": false, "generation_calls": 3}
+{"model": "qwen36", "task_id": "eda_008", "arm": "full", "passed": false, "generation_calls": 3}
+{"model": "qwen36", "task_id": "eda_008", "arm": "spicepilot", "passed": false, "generation_calls": 3}

@@ -1,0 +1,76 @@
+{
+  "passed": false,
+  "structure": {
+    "unbypassed_ce_signal_path": false
+  },
+  "numerical": {
+    "passed": true,
+    "checks": [
+      {
+        "check": {
+          "nodes": {
+            "input": "IN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "gain_real_v_per_v",
+            "value": -10,
+            "tolerance": 0.3
+          },
+          "condition": {}
+        },
+        "result": {
+          "status": "success",
+          "failure_stage": null,
+          "metric": "gain_real_v_per_v",
+          "target": -10.0,
+          "tolerance": 0.3,
+          "measured": -9.82746289,
+          "passed": true,
+          "submitted_deck_sha256": "60b424df9f7e1bc46c1fec7eb8e27df15a181adb0afc957a33208f08a46e486f",
+          "evaluated_deck_sha256": "af740be02b96217af7514b8dfd47bcdba4e0cf9e805fc720e974c99a2bc40c48",
+          "artifacts": {
+            "submitted_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_007/negative/fixed_models.cir",
+            "evaluated_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_007/negative/conditions/condition_01/evaluated.cir",
+            "node_manifest": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_007/negative/conditions/condition_01/node_manifest.json",
+            "simulator_log": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_007/negative/conditions/condition_01/ngspice.log",
+            "stdout": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_007/negative/conditions/condition_01/ngspice.stdout",
+            "stderr": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_007/negative/conditions/condition_01/ngspice.stderr",
+            "numeric_trace": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_007/negative/conditions/condition_01/numeric_trace.txt"
+          },
+          "detail": null
+        }
+      }
+    ],
+    "submitted_deck_sha256": "60b424df9f7e1bc46c1fec7eb8e27df15a181adb0afc957a33208f08a46e486f"
+  },
+  "operating_point": [
+    {
+      "condition": 1,
+      "passed": true,
+      "report": {
+        "status": "measured",
+        "diagnostics": [
+          "Q1 DC: Vc=5.94048 V, Vb=1.03456 V, Ve=0.369489 V, Vce=5.57099 V."
+        ],
+        "condition": {},
+        "devices": [
+          {
+            "device": "Q1",
+            "vc": 5.94048337,
+            "vb": 1.03455528,
+            "ve": 0.36948933,
+            "vce": 5.5709940399999995
+          }
+        ]
+      }
+    }
+  ],
+  "topology_diagnostics": [
+    "Q1 terminals: collector=C, base=B, emitter=E.",
+    "Check the AC-coupled input/base and collector/output paths and the emitter DC return; retain the requested stage count.",
+    "condition 1: Q1 DC: Vc=5.94048 V, Vb=1.03456 V, Ve=0.369489 V, Vce=5.57099 V."
+  ],
+  "submitted_deck_sha256": "d01b4da5dc76922faaa85aa40fcc1145375960648e475ba8b00fc5c0d3ccb01d",
+  "fixed_model_deck_sha256": "60b424df9f7e1bc46c1fec7eb8e27df15a181adb0afc957a33208f08a46e486f"
+}

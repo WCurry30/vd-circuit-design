@@ -1,0 +1,16 @@
+{
+  "model": "gpt4o",
+  "task": "eda_202",
+  "repeat": 3,
+  "arms": [
+    "full",
+    "direct",
+    "analogcoder",
+    "spicepilot"
+  ],
+  "pid": 2234713,
+  "status": "completed",
+  "started_unix": 1789016779.2824357,
+  "returncode": 0,
+  "finished_unix": 1789016823.5826893
+}

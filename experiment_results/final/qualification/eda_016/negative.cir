@@ -1,0 +1,7 @@
+* Zener voltage reference, 5.1 V nominal.
+VDD VCC 0 12
+RS VCC OUT 330
+DZ OUT 0 1N4733A
+CB OUT 0 100n
+RLOAD OUT 0 100k
+.end

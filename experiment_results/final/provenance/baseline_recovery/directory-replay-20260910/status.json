@@ -1,0 +1,25 @@
+{
+  "pid": 2259280,
+  "status": "completed",
+  "started_unix": 1789018253.9743004,
+  "units": 1,
+  "finished_unix": 1789018265.3569622,
+  "results": [
+    {
+      "model": "gpt4o",
+      "task": "eda_205",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2259286,
+      "status": "completed",
+      "started_unix": 1789018253.9747696,
+      "returncode": 0,
+      "finished_unix": 1789018265.3562572
+    }
+  ]
+}

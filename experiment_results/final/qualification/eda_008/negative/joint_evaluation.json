@@ -1,0 +1,58 @@
+{
+  "passed": false,
+  "structure": {
+    "device_opamp": true,
+    "input_coupling": true,
+    "noninverting_feedback": true,
+    "microphone_bias": false
+  },
+  "numerical": {
+    "passed": true,
+    "checks": [
+      {
+        "check": {
+          "nodes": {
+            "input": "IN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "gain_real_v_per_v",
+            "value": 100,
+            "tolerance": 0.3
+          },
+          "condition": {}
+        },
+        "result": {
+          "status": "success",
+          "failure_stage": null,
+          "metric": "gain_real_v_per_v",
+          "target": 100.0,
+          "tolerance": 0.3,
+          "measured": 98.3016778,
+          "passed": true,
+          "submitted_deck_sha256": "c5904bf5f4a23c5dc6b2472e445775b033e48517c448a7b94edab106ad6141ee",
+          "evaluated_deck_sha256": "0534543d794204a6e9c4d373a081a4905eee5c755aee5f424d3a295d334d31b4",
+          "artifacts": {
+            "submitted_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_008/negative/fixed_models.cir",
+            "evaluated_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_008/negative/conditions/condition_01/evaluated.cir",
+            "node_manifest": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_008/negative/conditions/condition_01/node_manifest.json",
+            "simulator_log": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_008/negative/conditions/condition_01/ngspice.log",
+            "stdout": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_008/negative/conditions/condition_01/ngspice.stdout",
+            "stderr": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_008/negative/conditions/condition_01/ngspice.stderr",
+            "numeric_trace": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_008/negative/conditions/condition_01/numeric_trace.txt"
+          },
+          "detail": null
+        }
+      }
+    ],
+    "submitted_deck_sha256": "c5904bf5f4a23c5dc6b2472e445775b033e48517c448a7b94edab106ad6141ee"
+  },
+  "operating_point": [],
+  "topology_diagnostics": [
+    "XU1 op-amp terminals: positive_input=NP, negative_input=NM, positive_supply=VCC, negative_supply=VEE, output=OUT.",
+    "Trace the input coupling capacitor to the positive input and its resistive DC bias path. Check that feedback returns to the negative input of this same amplifier and that the evaluated OUT is the requested output node.",
+    "condition 1: XU1 DC: positive input (NP)=0.00519396 V, negative input (NM)=0.00718709 V, supplies=-12 to 12 V, output (OUT)=0.714951 V. Check input common-mode range and output headroom against these measured voltages; DC bias alone does not verify the AC reference impedance or closed-loop gain."
+  ],
+  "submitted_deck_sha256": "ece27573fd57e0aaaeab0ac2b017327fb0bf299fa6e9d90205e5cafb2ff32477",
+  "fixed_model_deck_sha256": "c5904bf5f4a23c5dc6b2472e445775b033e48517c448a7b94edab106ad6141ee"
+}

@@ -1,0 +1,8 @@
+* Zener reference with emitter-follower buffer, two output loads.
+VDD VCC 0 12
+RS VCC B 1k
+DZ 0 B 1N4733A
+Q1 VCC B OUT 2N2222
+RLOAD OUT 0 470
+CB B 0 100n
+.end

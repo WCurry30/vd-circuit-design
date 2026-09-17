@@ -1,0 +1,6 @@
+{"model": "v32", "task_id": "eda_037", "arm": "analogcoder", "passed": true, "generation_calls": 3}
+   [清洗] 移除 1 行
+   [全局护盾] 拦截到 LLM 幻觉：重复元件名 X_PART1，已自动重命名为 X_PART1_DUP9
+   [清洗] 移除 1 行
+{"model": "v32", "task_id": "eda_037", "arm": "full", "passed": true, "generation_calls": 3}
+{"model": "v32", "task_id": "eda_037", "arm": "direct", "passed": false, "generation_calls": 3}

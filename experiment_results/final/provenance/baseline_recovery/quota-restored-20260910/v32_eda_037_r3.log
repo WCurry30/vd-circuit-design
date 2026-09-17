@@ -1,0 +1,64 @@
+/home/nengge/ZY/EDA_Document/EDA_Last_Resubmission_Experiments/.runtime/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+🔌 连接 LLM API (https://api.siliconflow.cn/v1)...
+⏳ 正在加载 PRM 评估模型 (BAAI/bge-small-zh-v1.5)...
+✅ PRM 模型加载完成。
+🔌 连接数据库: /home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/.runtime/project/framework/chroma_db...
+⏳ 加载 Embedding 模型...
+
+🧠 任务规划器启动 (deepseek) | 需求: 'Design a constant-current LED driver delivering about 20 mA using an op-amp current sense loop, N-channel MOSFET, sense resistor, LED load connector, input power connector, and supply decoupling.'
+
+💡 正在使用大模型细化用户的自然语言需求 (Query Expansion)...
+   [细化后的设计方案]: 
+   This circuit requires a constant-current LED driver targeting 20 mA output. The topology uses an operational amplifier in a current-sense feedback loo...
+
+   🔍 识别电路类型: opamp_amplifier
+   策略: 生成 3 个方案并评估...
+   [尝试 1] 生成中 (temp=0.10)... ✅ 成功! 总分: 1.0897 (语义分: 0.8997, 附加分: 0.19)
+   [尝试 2] 生成中 (temp=0.20)... ✅ 成功! 总分: 1.0823 (语义分: 0.8923, 附加分: 0.19)
+   [尝试 3] 生成中 (temp=0.30)...huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+ ✅ 成功! 总分: 1.0924 (语义分: 0.9024, 附加分: 0.19)
+
+🏆 最终优选方案 (来自尝试 3, 得分 1.0924)
+   电路名称: Constant_Current_LED_Driver_20mA
+      🎯 [绝对锁定模块] 命中规则 'lm2904' -> 直接提取库元件: LM2904
+      🎯 [绝对锁定模块] 命中规则 'mosfet' -> 直接提取库元件: GS66502B
+      🎯 [绝对锁定模块] 命中规则 'resistor' -> 直接提取库元件: R
+      🎯 [绝对锁定模块] 命中规则 'resistor' -> 直接提取库元件: R
+      🎯 [绝对锁定模块] 命中规则 'resistor' -> 直接提取库元件: R
+      🎯 [绝对锁定模块] 命中规则 'capacitor' -> 直接提取库元件: C
+      🎯 [绝对锁定模块] 命中规则 'dc power jack' -> 直接提取库元件: Barrel_Jack
+      🎯 [绝对锁定模块] 命中规则 'connector' -> 直接提取库元件: Conn_01x01
+      [调试] 分析: 'VCC' -> 无规则，保持原样
+      🎯 [lib_id精确匹配] 元件名 'VCC' -> 直接命中库元件: 'VCC'
+      [调试] 分析: 'GND' -> 无规则，保持原样
+      🎯 [lib_id精确匹配] 元件名 'GND' -> 直接命中库元件: 'GND'
+{"model": "v32", "task_id": "eda_037", "arm": "spicepilot", "passed": false, "generation_calls": 3}
+   [清洗] 移除 1 行
+   [全局护盾] 拦截到 LLM 幻觉：重复元件名 X_PART1，已自动重命名为 X_PART1_DUP11
+{"model": "v32", "task_id": "eda_037", "arm": "full", "passed": true, "generation_calls": 2}
+{"model": "v32", "task_id": "eda_037", "arm": "direct", "passed": true, "generation_calls": 2}
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+{"model": "v32", "task_id": "eda_037", "arm": "analogcoder", "passed": false, "generation_calls": 3}

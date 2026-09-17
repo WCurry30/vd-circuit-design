@@ -1,0 +1,122 @@
+[
+  {
+    "model": "gpt55",
+    "response_model": "gpt-5.5",
+    "arm": "full",
+    "stratum": "all",
+    "n": 50,
+    "component_recall": 0.7215995670995672,
+    "retrieval_hit_rate": 0.9782459044223748,
+    "format_parse": 1.0
+  },
+  {
+    "model": "gpt55",
+    "response_model": "gpt-5.5",
+    "arm": "full",
+    "stratum": "board29",
+    "n": 30,
+    "component_recall": 0.5926659451659453,
+    "retrieval_hit_rate": 0.9753172481113658,
+    "format_parse": 1.0
+  },
+  {
+    "model": "gpt55",
+    "response_model": "gpt-5.5",
+    "arm": "full",
+    "stratum": "electrical20",
+    "n": 20,
+    "component_recall": 0.915,
+    "retrieval_hit_rate": 0.982638888888889,
+    "format_parse": 1.0
+  },
+  {
+    "model": "gpt55",
+    "response_model": "gpt-5.5",
+    "arm": "no_elaboration",
+    "stratum": "all",
+    "n": 50,
+    "component_recall": 0.7234430014430017,
+    "retrieval_hit_rate": 0.9808360624882364,
+    "format_parse": 1.0
+  },
+  {
+    "model": "gpt55",
+    "response_model": "gpt-5.5",
+    "arm": "no_elaboration",
+    "stratum": "board29",
+    "n": 30,
+    "component_recall": 0.5957383357383359,
+    "retrieval_hit_rate": 0.9769886755756321,
+    "format_parse": 1.0
+  },
+  {
+    "model": "gpt55",
+    "response_model": "gpt-5.5",
+    "arm": "no_elaboration",
+    "stratum": "electrical20",
+    "n": 20,
+    "component_recall": 0.915,
+    "retrieval_hit_rate": 0.9866071428571429,
+    "format_parse": 1.0
+  },
+  {
+    "model": "gpt55",
+    "response_model": "gpt-5.5",
+    "arm": "no_rank",
+    "stratum": "all",
+    "n": 50,
+    "component_recall": 0.733316738816739,
+    "retrieval_hit_rate": 0.9749570070452422,
+    "format_parse": 1.0
+  },
+  {
+    "model": "gpt55",
+    "response_model": "gpt-5.5",
+    "arm": "no_rank",
+    "stratum": "board29",
+    "n": 30,
+    "component_recall": 0.6121945646945649,
+    "retrieval_hit_rate": 0.9765024191494779,
+    "format_parse": 1.0
+  },
+  {
+    "model": "gpt55",
+    "response_model": "gpt-5.5",
+    "arm": "no_rank",
+    "stratum": "electrical20",
+    "n": 20,
+    "component_recall": 0.915,
+    "retrieval_hit_rate": 0.9726388888888889,
+    "format_parse": 1.0
+  },
+  {
+    "model": "gpt55",
+    "response_model": "gpt-5.5",
+    "arm": "no_exact_match",
+    "stratum": "all",
+    "n": 50,
+    "component_recall": 0.4555209235209235,
+    "retrieval_hit_rate": 0.7735285606521153,
+    "format_parse": 1.0
+  },
+  {
+    "model": "gpt55",
+    "response_model": "gpt-5.5",
+    "arm": "no_exact_match",
+    "stratum": "board29",
+    "n": 30,
+    "component_recall": 0.4142015392015391,
+    "retrieval_hit_rate": 0.8479907690300267,
+    "format_parse": 1.0
+  },
+  {
+    "model": "gpt55",
+    "response_model": "gpt-5.5",
+    "arm": "no_exact_match",
+    "stratum": "electrical20",
+    "n": 20,
+    "component_recall": 0.5175,
+    "retrieval_hit_rate": 0.6618352480852481,
+    "format_parse": 1.0
+  }
+]

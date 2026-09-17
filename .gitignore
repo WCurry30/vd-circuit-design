@@ -1,0 +1,28 @@
+.env
+.env.*
+!.env.example
+.runtime/
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.pytest_cache/
+pilot_results/
+*.checkpoint.json
+gpt55-codex-v1-work/
+qwen38-v1-work/
+
+# Retain only compact, paper-facing experiment summaries.
+experiment_results/case_studies/
+experiment_results/component_studies/
+experiment_results/final/component_records/
+experiment_results/final/records/
+
+# Invalid downloaded HTML artifact; not a SPICE model.
+framework/spice_models/NE555D.lib
+
+# Retain only compact, paper-facing experiment summaries.
+experiment_results/case_studies/
+experiment_results/component_studies/
+experiment_results/final/component_records/
+experiment_results/final/records/

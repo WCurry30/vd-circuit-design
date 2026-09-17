@@ -1,0 +1,10 @@
+Method: SPICEPilot Prompt adapter
+Repository: https://github.com/ACADLab/SPICEPilot.git
+Pinned commit: 14bf412b95824bcc6248bcee0167951f0d5e173f
+Paper: https://arxiv.org/abs/2410.20553
+License: MIT
+
+The runtime uses the upstream Pilot_prompt.md verbatim, followed by the shared
+IN/OUT interface and task requirement. Generated PySpice is executed in the
+common no-network sandbox and its raw deck is scored by the frozen evaluator.
+This is an adapted prompt-method comparison, not an unmodified official runner.

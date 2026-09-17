@@ -1,0 +1,985 @@
+{
+  "pid": 2198932,
+  "status": "needs_audit",
+  "started_unix": 1789015132.94453,
+  "units": 61,
+  "finished_unix": 1789017375.4681683,
+  "results": [
+    {
+      "model": "v32",
+      "task": "eda_204",
+      "repeat": 1,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2198942,
+      "status": "completed",
+      "started_unix": 1789015132.9454558,
+      "returncode": 0,
+      "finished_unix": 1789015652.562229
+    },
+    {
+      "model": "v32",
+      "task": "eda_037",
+      "repeat": 2,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2198946,
+      "status": "completed",
+      "started_unix": 1789015132.9466102,
+      "returncode": 0,
+      "finished_unix": 1789015457.0647974
+    },
+    {
+      "model": "v32",
+      "task": "eda_008",
+      "repeat": 2,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2198945,
+      "status": "completed",
+      "started_unix": 1789015132.946457,
+      "returncode": 0,
+      "finished_unix": 1789015381.2698832
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_008",
+      "repeat": 2,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2198949,
+      "status": "completed",
+      "started_unix": 1789015132.9474757,
+      "returncode": 0,
+      "finished_unix": 1789015397.4285543
+    },
+    {
+      "model": "v32",
+      "task": "eda_016",
+      "repeat": 2,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2198947,
+      "status": "completed",
+      "started_unix": 1789015132.947016,
+      "returncode": 0,
+      "finished_unix": 1789015417.0155597
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_016",
+      "repeat": 2,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2198948,
+      "status": "completed",
+      "started_unix": 1789015132.947301,
+      "returncode": 0,
+      "finished_unix": 1789015363.1658044
+    },
+    {
+      "model": "v32",
+      "task": "eda_204",
+      "repeat": 2,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2203069,
+      "status": "completed",
+      "started_unix": 1789015363.166406,
+      "returncode": 0,
+      "finished_unix": 1789015755.299741
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_204",
+      "repeat": 2,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2203433,
+      "status": "completed",
+      "started_unix": 1789015381.2705228,
+      "returncode": 0,
+      "finished_unix": 1789015856.5222077
+    },
+    {
+      "model": "v32",
+      "task": "eda_006",
+      "repeat": 2,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2203770,
+      "status": "completed",
+      "started_unix": 1789015397.42941,
+      "returncode": 0,
+      "finished_unix": 1789015579.115709
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_006",
+      "repeat": 2,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2204109,
+      "status": "completed",
+      "started_unix": 1789015417.0183227,
+      "returncode": 0,
+      "finished_unix": 1789015536.0315542
+    },
+    {
+      "model": "v32",
+      "task": "eda_208",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2204858,
+      "status": "completed",
+      "started_unix": 1789015457.0653987,
+      "returncode": 0,
+      "finished_unix": 1789015705.4159002
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_208",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2206381,
+      "status": "completed",
+      "started_unix": 1789015536.0321264,
+      "returncode": 0,
+      "finished_unix": 1789015718.5274408
+    },
+    {
+      "model": "v32",
+      "task": "eda_009",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2207320,
+      "status": "completed",
+      "started_unix": 1789015579.1163354,
+      "returncode": 0,
+      "finished_unix": 1789015700.8124664
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_009",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2208636,
+      "status": "completed",
+      "started_unix": 1789015652.564231,
+      "returncode": 0,
+      "finished_unix": 1789015699.8858109
+    },
+    {
+      "model": "v32",
+      "task": "eda_201",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2210896,
+      "status": "completed",
+      "started_unix": 1789015699.8866684,
+      "returncode": 0,
+      "finished_unix": 1789015964.9389038
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_201",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2211083,
+      "status": "completed",
+      "started_unix": 1789015700.8131807,
+      "returncode": 0,
+      "finished_unix": 1789015816.0633547
+    },
+    {
+      "model": "v32",
+      "task": "eda_037",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2211594,
+      "status": "completed",
+      "started_unix": 1789015705.4165492,
+      "returncode": 0,
+      "finished_unix": 1789016072.223646
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_037",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2211855,
+      "status": "completed",
+      "started_unix": 1789015718.5281777,
+      "returncode": 0,
+      "finished_unix": 1789015949.5161216
+    },
+    {
+      "model": "v32",
+      "task": "eda_206",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2212659,
+      "status": "completed",
+      "started_unix": 1789015755.3004386,
+      "returncode": 0,
+      "finished_unix": 1789016015.274718
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_206",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2213861,
+      "status": "completed",
+      "started_unix": 1789015816.0640569,
+      "returncode": 0,
+      "finished_unix": 1789015970.217555
+    },
+    {
+      "model": "v32",
+      "task": "eda_006",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2214771,
+      "status": "completed",
+      "started_unix": 1789015856.522929,
+      "returncode": 0,
+      "finished_unix": 1789016107.730657
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_006",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2216413,
+      "status": "completed",
+      "started_unix": 1789015949.5168705,
+      "returncode": 0,
+      "finished_unix": 1789016052.0929027
+    },
+    {
+      "model": "v32",
+      "task": "eda_207",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2216751,
+      "status": "completed",
+      "started_unix": 1789015964.939563,
+      "returncode": 0,
+      "finished_unix": 1789016185.9042346
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_207",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2216871,
+      "status": "completed",
+      "started_unix": 1789015970.2182822,
+      "returncode": 0,
+      "finished_unix": 1789016121.6177208
+    },
+    {
+      "model": "v32",
+      "task": "eda_007",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2217756,
+      "status": "completed",
+      "started_unix": 1789016015.2753882,
+      "returncode": 0,
+      "finished_unix": 1789016392.7526257
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_007",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2218511,
+      "status": "completed",
+      "started_unix": 1789016052.0935528,
+      "returncode": 0,
+      "finished_unix": 1789016296.2737138
+    },
+    {
+      "model": "v32",
+      "task": "eda_027",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2218974,
+      "status": "completed",
+      "started_unix": 1789016072.2243476,
+      "returncode": 0,
+      "finished_unix": 1789016329.27329
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_027",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2219806,
+      "status": "completed",
+      "started_unix": 1789016107.7313135,
+      "returncode": 0,
+      "finished_unix": 1789016206.740872
+    },
+    {
+      "model": "gpt4o",
+      "task": "eda_210",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2220127,
+      "status": "completed",
+      "started_unix": 1789016121.6184084,
+      "returncode": 0,
+      "finished_unix": 1789016135.507397
+    },
+    {
+      "model": "v32",
+      "task": "eda_210",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2220474,
+      "status": "completed",
+      "started_unix": 1789016135.5080664,
+      "returncode": 0,
+      "finished_unix": 1789016636.3810213
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_210",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2221419,
+      "status": "completed",
+      "started_unix": 1789016185.9050324,
+      "returncode": 0,
+      "finished_unix": 1789016328.083357
+    },
+    {
+      "model": "gpt4o",
+      "task": "eda_205",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2221836,
+      "status": "interrupted",
+      "started_unix": 1789016206.7416642,
+      "returncode": 1,
+      "finished_unix": 1789016209.008248
+    },
+    {
+      "model": "v32",
+      "task": "eda_205",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2221877,
+      "status": "completed",
+      "started_unix": 1789016209.0089111,
+      "returncode": 0,
+      "finished_unix": 1789016568.1748457
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_205",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2223500,
+      "status": "completed",
+      "started_unix": 1789016296.2744246,
+      "returncode": 0,
+      "finished_unix": 1789016422.095784
+    },
+    {
+      "model": "gpt4o",
+      "task": "eda_204",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2224161,
+      "status": "completed",
+      "started_unix": 1789016328.0840259,
+      "returncode": 0,
+      "finished_unix": 1789016357.5953321
+    },
+    {
+      "model": "v32",
+      "task": "eda_204",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2224190,
+      "status": "completed",
+      "started_unix": 1789016329.2740605,
+      "returncode": 0,
+      "finished_unix": 1789016932.6504767
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_204",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2224752,
+      "status": "completed",
+      "started_unix": 1789016357.5960414,
+      "returncode": 0,
+      "finished_unix": 1789016603.762877
+    },
+    {
+      "model": "gpt4o",
+      "task": "eda_005",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2225542,
+      "status": "completed",
+      "started_unix": 1789016392.7533221,
+      "returncode": 0,
+      "finished_unix": 1789016409.3995695
+    },
+    {
+      "model": "v32",
+      "task": "eda_005",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2225941,
+      "status": "completed",
+      "started_unix": 1789016409.4001582,
+      "returncode": 0,
+      "finished_unix": 1789016608.2638495
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_005",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2226200,
+      "status": "completed",
+      "started_unix": 1789016422.0963664,
+      "returncode": 0,
+      "finished_unix": 1789016512.3239985
+    },
+    {
+      "model": "gpt4o",
+      "task": "eda_010",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2227852,
+      "status": "completed",
+      "started_unix": 1789016512.3261507,
+      "returncode": 0,
+      "finished_unix": 1789016530.9360614
+    },
+    {
+      "model": "v32",
+      "task": "eda_010",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2228312,
+      "status": "completed",
+      "started_unix": 1789016530.936839,
+      "returncode": 0,
+      "finished_unix": 1789016779.2811577
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_010",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2229050,
+      "status": "completed",
+      "started_unix": 1789016568.1767125,
+      "returncode": 0,
+      "finished_unix": 1789016615.093544
+    },
+    {
+      "model": "gpt4o",
+      "task": "eda_209",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2230718,
+      "status": "completed",
+      "started_unix": 1789016603.7636101,
+      "returncode": 0,
+      "finished_unix": 1789016651.8675601
+    },
+    {
+      "model": "v32",
+      "task": "eda_209",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2230867,
+      "status": "completed",
+      "started_unix": 1789016608.2649364,
+      "returncode": 0,
+      "finished_unix": 1789017057.4045043
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_209",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2231039,
+      "status": "completed",
+      "started_unix": 1789016615.0942435,
+      "returncode": 0,
+      "finished_unix": 1789016804.5317323
+    },
+    {
+      "model": "gpt4o",
+      "task": "eda_203",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2231517,
+      "status": "completed",
+      "started_unix": 1789016636.3816972,
+      "returncode": 0,
+      "finished_unix": 1789016690.452561
+    },
+    {
+      "model": "v32",
+      "task": "eda_203",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2231966,
+      "status": "completed",
+      "started_unix": 1789016651.8682742,
+      "returncode": 0,
+      "finished_unix": 1789017080.539258
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_203",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2232879,
+      "status": "completed",
+      "started_unix": 1789016690.4533675,
+      "returncode": 0,
+      "finished_unix": 1789017003.8967686
+    },
+    {
+      "model": "gpt4o",
+      "task": "eda_202",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2234713,
+      "status": "completed",
+      "started_unix": 1789016779.2824357,
+      "returncode": 0,
+      "finished_unix": 1789016823.5826893
+    },
+    {
+      "model": "v32",
+      "task": "eda_202",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2235318,
+      "status": "completed",
+      "started_unix": 1789016804.5322995,
+      "returncode": 0,
+      "finished_unix": 1789017144.2646172
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_202",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2235752,
+      "status": "completed",
+      "started_unix": 1789016823.5833325,
+      "returncode": 0,
+      "finished_unix": 1789017037.1573544
+    },
+    {
+      "model": "gpt4o",
+      "task": "eda_024",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2237500,
+      "status": "completed",
+      "started_unix": 1789016932.6531487,
+      "returncode": 0,
+      "finished_unix": 1789016984.7387128
+    },
+    {
+      "model": "v32",
+      "task": "eda_024",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2238513,
+      "status": "completed",
+      "started_unix": 1789016984.73953,
+      "returncode": 0,
+      "finished_unix": 1789017261.8696122
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_024",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2238885,
+      "status": "completed",
+      "started_unix": 1789017003.8988063,
+      "returncode": 0,
+      "finished_unix": 1789017144.413435
+    },
+    {
+      "model": "gpt4o",
+      "task": "eda_016",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2239540,
+      "status": "completed",
+      "started_unix": 1789017037.1584082,
+      "returncode": 0,
+      "finished_unix": 1789017081.8997414
+    },
+    {
+      "model": "v32",
+      "task": "eda_016",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2239987,
+      "status": "completed",
+      "started_unix": 1789017057.4050796,
+      "returncode": 0,
+      "finished_unix": 1789017286.1437209
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_016",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2240527,
+      "status": "completed",
+      "started_unix": 1789017080.5424652,
+      "returncode": 0,
+      "finished_unix": 1789017173.0609407
+    },
+    {
+      "model": "gpt4o",
+      "task": "eda_008",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2240573,
+      "status": "completed",
+      "started_unix": 1789017081.900178,
+      "returncode": 0,
+      "finished_unix": 1789017131.4666934
+    },
+    {
+      "model": "v32",
+      "task": "eda_008",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2241772,
+      "status": "completed",
+      "started_unix": 1789017131.468728,
+      "returncode": 0,
+      "finished_unix": 1789017375.4660103
+    },
+    {
+      "model": "qwen36",
+      "task": "eda_008",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ],
+      "pid": 2242144,
+      "status": "completed",
+      "started_unix": 1789017144.2655833,
+      "returncode": 0,
+      "finished_unix": 1789017309.6526203
+    }
+  ]
+}

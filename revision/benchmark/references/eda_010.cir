@@ -1,0 +1,9 @@
+* Buffered RC low-pass, cutoff approximately 1 kHz.
+VIN IN 0 DC 0 AC 1
+VCC VCC 0 12
+VEE VEE 0 -12
+R1 IN NP 15.915k
+C1 NP 0 10n
+XU1 NP OUT VCC VEE OUT LM2904
+RLOAD OUT 0 100k
+.end

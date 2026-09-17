@@ -1,0 +1,67 @@
+[
+  {
+    "source": "routing-fix-v1/source_snapshot/runtime/framework/spice_contract.py",
+    "local": "framework/spice_contract.py",
+    "identical": true
+  },
+  {
+    "source": "routing-fix-v1/source_snapshot/runtime/framework/__init__.py",
+    "local": "framework/__init__.py",
+    "identical": true
+  },
+  {
+    "source": "routing-fix-v1/source_snapshot/runtime/framework/retriever_final_merged.py",
+    "local": "framework/retriever_final_merged.py",
+    "identical": true
+  },
+  {
+    "source": "routing-fix-v1/source_snapshot/runtime/framework/circuit_planner_v.py",
+    "local": "framework/circuit_planner_v.py",
+    "identical": true
+  },
+  {
+    "source": "routing-fix-v1/source_snapshot/runtime/framework/core/spice_contract.py",
+    "local": "framework/core/spice_contract.py",
+    "identical": true
+  },
+  {
+    "source": "routing-fix-v1/source_snapshot/runtime/framework/core/netlist_engine.py",
+    "local": "framework/core/netlist_engine.py",
+    "identical": true
+  },
+  {
+    "source": "routing-fix-v1/source_snapshot/runtime/framework/experts/base_expert.py",
+    "local": "framework/experts/base_expert.py",
+    "identical": true
+  },
+  {
+    "source": "routing-fix-v1/source_snapshot/runtime/framework/experts/led_constant_current_expert.py",
+    "local": "framework/experts/led_constant_current_expert.py",
+    "identical": true
+  },
+  {
+    "source": "routing-fix-v1/source_snapshot/runtime/framework/experts/__init__.py",
+    "local": "framework/experts/__init__.py",
+    "identical": true
+  },
+  {
+    "source": "routing-fix-v1/source_snapshot/runtime/framework/experts/opamp_amplifier_expert.py",
+    "local": "framework/experts/opamp_amplifier_expert.py",
+    "identical": true
+  },
+  {
+    "source": "routing-fix-v1/source_snapshot/runtime/framework/experts/bjt_amplifier_expert.py",
+    "local": "framework/experts/bjt_amplifier_expert.py",
+    "identical": true
+  },
+  {
+    "source": "routing-fix-v1/source_snapshot/runtime/framework/experts/zener_regulator_expert.py",
+    "local": "framework/experts/zener_regulator_expert.py",
+    "identical": true
+  },
+  {
+    "source": "routing-fix-v1/source_snapshot/runtime/framework/experts/filter_expert.py",
+    "local": "framework/experts/filter_expert.py",
+    "identical": true
+  }
+]

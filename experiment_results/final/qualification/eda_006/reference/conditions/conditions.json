@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": {
+        "nodes": {
+          "input": "IN",
+          "output": "OUT"
+        },
+        "target": {
+          "metric": "gain_real_v_per_v",
+          "value": 11,
+          "tolerance": 0.2
+        },
+        "condition": {}
+      },
+      "result": {
+        "status": "success",
+        "failure_stage": null,
+        "metric": "gain_real_v_per_v",
+        "target": 11.0,
+        "tolerance": 0.2,
+        "measured": 10.9973505,
+        "passed": true,
+        "submitted_deck_sha256": "d937013b47b0cd77be70317df2e0928f4359372c191d452844c66c8d5d83ff52",
+        "evaluated_deck_sha256": "25450c5aa8bfcb57bc2b3a06b063d70915fc50dea6ff23c2590e85dfaba9a5a1",
+        "artifacts": {
+          "submitted_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_006/reference/fixed_models.cir",
+          "evaluated_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_006/reference/conditions/condition_01/evaluated.cir",
+          "node_manifest": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_006/reference/conditions/condition_01/node_manifest.json",
+          "simulator_log": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_006/reference/conditions/condition_01/ngspice.log",
+          "stdout": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_006/reference/conditions/condition_01/ngspice.stdout",
+          "stderr": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_006/reference/conditions/condition_01/ngspice.stderr",
+          "numeric_trace": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_006/reference/conditions/condition_01/numeric_trace.txt"
+        },
+        "detail": null
+      }
+    }
+  ],
+  "submitted_deck_sha256": "d937013b47b0cd77be70317df2e0928f4359372c191d452844c66c8d5d83ff52"
+}

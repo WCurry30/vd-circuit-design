@@ -1,0 +1,64 @@
+/home/nengge/ZY/EDA_Document/EDA_Last_Resubmission_Experiments/.runtime/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+🔌 连接 LLM API (https://api.siliconflow.cn/v1)...
+⏳ 正在加载 PRM 评估模型 (BAAI/bge-small-zh-v1.5)...
+✅ PRM 模型加载完成。
+🔌 连接数据库: /home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/.runtime/project/framework/chroma_db...
+⏳ 加载 Embedding 模型...
+
+🧠 任务规划器启动 (deepseek) | 需求: 'Design a 4.4 V regulated output using a 5.1 V Zener reference and an NPN emitter-follower buffer from a 12 V supply. Meet the output target with both 470 ohm and 1 kohm loads.'
+
+💡 正在使用大模型细化用户的自然语言需求 (Query Expansion)...
+   [细化后的设计方案]: 
+   Retrieve components for a two-stage linear voltage regulation circuit. The system requires a 12 V DC supply input and delivers a regulated 4.4 V DC ou...
+
+   🔍 识别电路类型: zener_regulator
+   策略: 生成 3 个方案并评估...
+   [尝试 1] 生成中 (temp=0.10)... ✅ 成功! 总分: 0.8363 (语义分: 0.8163, 附加分: 0.02)
+   [尝试 2] 生成中 (temp=0.20)... ✅ 成功! 总分: 0.8422 (语义分: 0.8222, 附加分: 0.02)
+   [尝试 3] 生成中 (temp=0.30)...huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+ ✅ 成功! 总分: 0.8417 (语义分: 0.8217, 附加分: 0.02)
+
+🏆 最终优选方案 (来自尝试 2, 得分 0.8422)
+   电路名称: 4.4V Zener NPN Emitter Follower Regulator
+      [调试] 分析: 'VCC' -> 无规则，保持原样
+      🎯 [lib_id精确匹配] 元件名 'VCC' -> 直接命中库元件: 'VCC'
+      [调试] 分析: 'GND' -> 无规则，保持原样
+      🎯 [lib_id精确匹配] 元件名 'GND' -> 直接命中库元件: 'GND'
+      [调试] 分析: 'Zener Diode 5.1V' -> 命中规则: 属于稳压二极管，使用虚拟器件 '1N4733A'
+      🔧 [虚拟稳压二极管] 创建 1N4733A (5.1V) 虚拟器件
+      🎯 [绝对锁定模块] 命中规则 'resistor' -> 直接提取库元件: R
+      [调试] 分析: 'NPN BJT' -> 命中规则: 强制转为 '2N2219'
+
+      ⚠️ 功能校验未通过!
+      - 预期需求: 'NPN BJT'
+      - 实际捞取: '74LS00' (描述: )
+      🎯 [绝对锁定模块] 命中规则 'resistor' -> 直接提取库元件: R
+      🎯 [绝对锁定模块] 命中规则 'resistor' -> 直接提取库元件: R
+{"model": "qwen36", "task_id": "eda_208", "arm": "spicepilot", "passed": false, "generation_calls": 3}
+{"model": "qwen36", "task_id": "eda_208", "arm": "direct", "passed": false, "generation_calls": 3}
+{"model": "qwen36", "task_id": "eda_208", "arm": "full", "passed": false, "generation_calls": 3}
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+{"model": "qwen36", "task_id": "eda_208", "arm": "analogcoder", "passed": false, "generation_calls": 3}

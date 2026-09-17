@@ -1,0 +1,7 @@
+* Fixed compact models for reference qualification, version 1.
+* 2N2222, LED, and 1N4733A copied from the project's existing SpiceEngine.
+* EDA_NMOS is an explicitly generic Level-1 device, not a manufacturer model.
+.model 2N2222 NPN(Is=14.34f Xti=3 Eg=1.11 Vaf=128.2 Bf=255.9 Ne=1.307 Ise=14.34f Ikf=.2847 Xtb=1.5 Br=6.092 Nc=2 Isc=0 Ikr=0 Rc=1 Cjc=7.306p Mjc=.3416 Vjc=.75 Fc=.5 Cje=22.01p Mje=.377 Vje=.75 Tr=46.91n Tf=411.1p Itf=.6 Vtf=1.7 Xtf=3 Rb=10)
+.model LED D(Is=1e-20 N=2 Eg=2.2 Cjo=50p M=.5)
+.model 1N4733A D(Is=1n N=1 BV=5.1 IBV=49m Cjo=550p)
+.model EDA_NMOS NMOS(LEVEL=1 VTO=1 KP=0.1 LAMBDA=0.01)

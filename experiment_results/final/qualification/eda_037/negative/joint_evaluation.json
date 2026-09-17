@@ -1,0 +1,57 @@
+{
+  "passed": false,
+  "structure": {
+    "opamp_nmos_sense_loop": false
+  },
+  "numerical": {
+    "passed": true,
+    "checks": [
+      {
+        "check": {
+          "nodes": {
+            "input": "VCC",
+            "output": "OUT",
+            "load_element": "VLOAD"
+          },
+          "target": {
+            "metric": "load_current_a",
+            "value": 0.02,
+            "tolerance": 0.3
+          },
+          "condition": {}
+        },
+        "result": {
+          "status": "success",
+          "failure_stage": null,
+          "metric": "load_current_a",
+          "target": 0.02,
+          "tolerance": 0.3,
+          "measured": 0.0200814961,
+          "passed": true,
+          "submitted_deck_sha256": "339a1720103f89e07f0d8bb4f4d19503672e23444b519734e601bc20ce9ba7ef",
+          "evaluated_deck_sha256": "a9c17e2f814373c38f0e2b0aeb1ca0789dcd4cd122e1e3c29aa97ea80eab6ba8",
+          "artifacts": {
+            "submitted_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_037/negative/fixed_models.cir",
+            "evaluated_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_037/negative/conditions/condition_01/evaluated.cir",
+            "node_manifest": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_037/negative/conditions/condition_01/node_manifest.json",
+            "simulator_log": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_037/negative/conditions/condition_01/ngspice.log",
+            "stdout": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_037/negative/conditions/condition_01/ngspice.stdout",
+            "stderr": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_037/negative/conditions/condition_01/ngspice.stderr",
+            "numeric_trace": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_037/negative/conditions/condition_01/numeric_trace.txt"
+          },
+          "detail": null
+        }
+      }
+    ],
+    "submitted_deck_sha256": "339a1720103f89e07f0d8bb4f4d19503672e23444b519734e601bc20ce9ba7ef"
+  },
+  "operating_point": [],
+  "topology_diagnostics": [
+    "VLOAD actual terminals: positive=LED_C, negative=OUT.",
+    "DLED LED actual terminals: anode=VCC, cathode=LED_C.",
+    "Check the source/emitter-to-ground sense resistor and negative feedback from its upper node. Component names do not create node connections.",
+    "condition 1: XU1 DC: positive input (REF)=0.20005 V, negative input (SENSE)=0.201936 V, supplies=0 to 5 V, output (GATE)=0.927803 V. Check input common-mode range and output headroom against these measured voltages; DC bias alone does not verify the AC reference impedance or closed-loop gain."
+  ],
+  "submitted_deck_sha256": "7b2ee9eff8db230d76f1b8bd901984c6c1cf5a36a539fbe19fdebe15e87cda1e",
+  "fixed_model_deck_sha256": "339a1720103f89e07f0d8bb4f4d19503672e23444b519734e601bc20ce9ba7ef"
+}

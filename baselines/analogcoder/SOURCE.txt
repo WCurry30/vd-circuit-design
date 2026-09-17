@@ -1,0 +1,5 @@
+Source: https://github.com/laiyao1/AnalogCoder
+Branch: main
+Retrieved: 2026-08-20
+Role: official AnalogCoder implementation and benchmark assets for E3.
+The repository is included as source code; no algorithmic changes are made here.

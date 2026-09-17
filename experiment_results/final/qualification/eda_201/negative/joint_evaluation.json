@@ -1,0 +1,66 @@
+{
+  "passed": false,
+  "structure": {
+    "inverting_feedback": false,
+    "output_load": true,
+    "condition_1_opamp_dual_rail_connections": true,
+    "condition_1_load_connections": true,
+    "condition_1_VCC_connections": true,
+    "condition_1_VEE_connections": true
+  },
+  "numerical": {
+    "passed": false,
+    "checks": [
+      {
+        "check": {
+          "nodes": {
+            "input": "IN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "gain_real_v_per_v",
+            "value": -5,
+            "tolerance": 0.1
+          },
+          "condition": {
+            "dc_sources": {
+              "VCC": 5,
+              "VEE": -5
+            },
+            "resistances": {
+              "RLOAD": 2000
+            }
+          }
+        },
+        "result": {
+          "status": "success",
+          "failure_stage": null,
+          "metric": "gain_real_v_per_v",
+          "target": -5.0,
+          "tolerance": 0.1,
+          "measured": 4.9997392,
+          "passed": false,
+          "submitted_deck_sha256": "a75d63206d0755f1889b9780ea90b2c7a735805bfc1152cd6f7142915454d860",
+          "evaluated_deck_sha256": "eb217a08c08e1e0912e549624ad8e2659690f12500b3b79b86a5128e46ba560b",
+          "artifacts": {
+            "submitted_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_201/negative/fixed_models.cir",
+            "evaluated_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_201/negative/conditions/condition_01/evaluated.cir",
+            "node_manifest": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_201/negative/conditions/condition_01/node_manifest.json",
+            "simulator_log": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_201/negative/conditions/condition_01/ngspice.log",
+            "stdout": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_201/negative/conditions/condition_01/ngspice.stdout",
+            "stderr": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_201/negative/conditions/condition_01/ngspice.stderr",
+            "numeric_trace": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_201/negative/conditions/condition_01/numeric_trace.txt"
+          },
+          "detail": "measured=4.9997392, target=-5, relative tolerance=0.1; acceptance condition: abs(measured-target) <= tolerance*abs(target)"
+        }
+      }
+    ],
+    "submitted_deck_sha256": "a75d63206d0755f1889b9780ea90b2c7a735805bfc1152cd6f7142915454d860"
+  },
+  "operating_point": [],
+  "topology_diagnostics": [
+    "condition 1: XU1 DC: positive input (IN)=0 V, negative input (NM)=0.00199995 V, supplies=-5 to 5 V, output (OUT)=0.00848138 V. Check input common-mode range and output headroom against these measured voltages; DC bias alone does not verify the AC reference impedance or closed-loop gain."
+  ],
+  "submitted_deck_sha256": "71ed9cd092d9aa7a861f97ad12b569d6e7f0f084c759b7c35d6c65313eef7245",
+  "fixed_model_deck_sha256": "a75d63206d0755f1889b9780ea90b2c7a735805bfc1152cd6f7142915454d860"
+}

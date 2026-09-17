@@ -1,0 +1,2 @@
+{"model": "gpt4o", "task_id": "eda_205", "arm": "full", "passed": false, "generation_calls": 3}
+{"model": "gpt4o", "task_id": "eda_205", "arm": "analogcoder", "passed": false, "generation_calls": 1}

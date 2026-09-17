@@ -1,0 +1,12 @@
+* Four-resistor difference amplifier, differential gain 5.
+VIP INP 0 DC 0 AC .5
+VIN INN 0 DC 0 AC .5 180
+VCC VCC 0 12
+VEE VEE 0 -12
+R1 INN NM 10k
+R2 OUT NM 50k
+R3 INP NP 10k
+R4 NP 0 100k
+XU1 NP NM VCC VEE OUT LM2904
+RLOAD OUT 0 20k
+.end

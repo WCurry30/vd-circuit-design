@@ -1,0 +1,122 @@
+[
+  {
+    "model": "qwen38",
+    "response_model": "Qwen/Qwen3.8-27B",
+    "arm": "full",
+    "stratum": "all",
+    "n": 50,
+    "component_recall": 0.6937626262626263,
+    "retrieval_hit_rate": 0.9772073482073482,
+    "format_parse": 1.0
+  },
+  {
+    "model": "qwen38",
+    "response_model": "Qwen/Qwen3.8-27B",
+    "arm": "full",
+    "stratum": "board29",
+    "n": 30,
+    "component_recall": 0.5462710437710437,
+    "retrieval_hit_rate": 0.962012247012247,
+    "format_parse": 1.0
+  },
+  {
+    "model": "qwen38",
+    "response_model": "Qwen/Qwen3.8-27B",
+    "arm": "full",
+    "stratum": "electrical20",
+    "n": 20,
+    "component_recall": 0.915,
+    "retrieval_hit_rate": 1.0,
+    "format_parse": 1.0
+  },
+  {
+    "model": "qwen38",
+    "response_model": "Qwen/Qwen3.8-27B",
+    "arm": "no_elaboration",
+    "stratum": "all",
+    "n": 50,
+    "component_recall": 0.6961803751803752,
+    "retrieval_hit_rate": 0.9789033939916294,
+    "format_parse": 1.0
+  },
+  {
+    "model": "qwen38",
+    "response_model": "Qwen/Qwen3.8-27B",
+    "arm": "no_elaboration",
+    "stratum": "board29",
+    "n": 30,
+    "component_recall": 0.5503006253006253,
+    "retrieval_hit_rate": 0.9648389899860489,
+    "format_parse": 1.0
+  },
+  {
+    "model": "qwen38",
+    "response_model": "Qwen/Qwen3.8-27B",
+    "arm": "no_elaboration",
+    "stratum": "electrical20",
+    "n": 20,
+    "component_recall": 0.915,
+    "retrieval_hit_rate": 1.0,
+    "format_parse": 1.0
+  },
+  {
+    "model": "qwen38",
+    "response_model": "Qwen/Qwen3.8-27B",
+    "arm": "no_rank",
+    "stratum": "all",
+    "n": 50,
+    "component_recall": 0.6691565656565658,
+    "retrieval_hit_rate": 0.9548781414663767,
+    "format_parse": 0.98
+  },
+  {
+    "model": "qwen38",
+    "response_model": "Qwen/Qwen3.8-27B",
+    "arm": "no_rank",
+    "stratum": "board29",
+    "n": 30,
+    "component_recall": 0.5052609427609427,
+    "retrieval_hit_rate": 0.9247969024439613,
+    "format_parse": 0.9666666666666667
+  },
+  {
+    "model": "qwen38",
+    "response_model": "Qwen/Qwen3.8-27B",
+    "arm": "no_rank",
+    "stratum": "electrical20",
+    "n": 20,
+    "component_recall": 0.915,
+    "retrieval_hit_rate": 1.0,
+    "format_parse": 1.0
+  },
+  {
+    "model": "qwen38",
+    "response_model": "Qwen/Qwen3.8-27B",
+    "arm": "no_exact_match",
+    "stratum": "all",
+    "n": 50,
+    "component_recall": 0.4612077922077922,
+    "retrieval_hit_rate": 0.7736737266001971,
+    "format_parse": 1.0
+  },
+  {
+    "model": "qwen38",
+    "response_model": "Qwen/Qwen3.8-27B",
+    "arm": "no_exact_match",
+    "stratum": "board29",
+    "n": 30,
+    "component_recall": 0.42367965367965366,
+    "retrieval_hit_rate": 0.8036198714139889,
+    "format_parse": 1.0
+  },
+  {
+    "model": "qwen38",
+    "response_model": "Qwen/Qwen3.8-27B",
+    "arm": "no_exact_match",
+    "stratum": "electrical20",
+    "n": 20,
+    "component_recall": 0.5175,
+    "retrieval_hit_rate": 0.7287545093795095,
+    "format_parse": 1.0
+  }
+]

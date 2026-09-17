@@ -1,0 +1,41 @@
+{
+  "passed": false,
+  "checks": [
+    {
+      "check": {
+        "nodes": {
+          "input": "IN",
+          "output": "OUT"
+        },
+        "target": {
+          "metric": "cutoff_freq_hz",
+          "value": 1000,
+          "tolerance": 0.2
+        },
+        "condition": {}
+      },
+      "result": {
+        "status": "success",
+        "failure_stage": null,
+        "metric": "cutoff_freq_hz",
+        "target": 1000.0,
+        "tolerance": 0.2,
+        "measured": 138121.572440724,
+        "passed": false,
+        "submitted_deck_sha256": "668a541e96db291c469fc043ad2f4da338f2945cdab9c747e781f16806ccc00f",
+        "evaluated_deck_sha256": "735b4d75ecb55b980a606fe3e6ae0c638499a3e6cab3c88a9e2a03d91eec0384",
+        "artifacts": {
+          "submitted_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_027/negative/fixed_models.cir",
+          "evaluated_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_027/negative/conditions/condition_01/evaluated.cir",
+          "node_manifest": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_027/negative/conditions/condition_01/node_manifest.json",
+          "simulator_log": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_027/negative/conditions/condition_01/ngspice.log",
+          "stdout": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_027/negative/conditions/condition_01/ngspice.stdout",
+          "stderr": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_027/negative/conditions/condition_01/ngspice.stderr",
+          "numeric_trace": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_027/negative/conditions/condition_01/numeric_trace.txt"
+        },
+        "detail": "measured=138121.57, target=1000, relative tolerance=0.2; acceptance condition: abs(measured-target) <= tolerance*abs(target)"
+      }
+    }
+  ],
+  "submitted_deck_sha256": "668a541e96db291c469fc043ad2f4da338f2945cdab9c747e781f16806ccc00f"
+}

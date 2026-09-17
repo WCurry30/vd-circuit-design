@@ -1,0 +1,3 @@
+{"model": "gpt4o", "task_id": "eda_010", "arm": "spicepilot", "passed": false, "generation_calls": 3}
+{"model": "gpt4o", "task_id": "eda_010", "arm": "analogcoder", "passed": false, "generation_calls": 1}
+{"model": "gpt4o", "task_id": "eda_010", "arm": "direct", "passed": false, "generation_calls": 3}

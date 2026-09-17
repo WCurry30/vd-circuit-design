@@ -1,0 +1,106 @@
+{
+  "passed": false,
+  "structure": {
+    "two_sequential_buffered_rc_sections": true,
+    "condition_1_opamp_dual_rail_connections": true,
+    "condition_1_VCC_connections": true,
+    "condition_1_VEE_connections": true,
+    "condition_2_opamp_dual_rail_connections": true,
+    "condition_2_VCC_connections": true,
+    "condition_2_VEE_connections": true
+  },
+  "numerical": {
+    "passed": false,
+    "checks": [
+      {
+        "check": {
+          "nodes": {
+            "input": "IN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "cutoff_freq_hz",
+            "value": 500,
+            "tolerance": 0.15
+          },
+          "condition": {
+            "dc_sources": {
+              "VCC": 12,
+              "VEE": -12
+            }
+          }
+        },
+        "result": {
+          "status": "success",
+          "failure_stage": null,
+          "metric": "cutoff_freq_hz",
+          "target": 500.0,
+          "tolerance": 0.15,
+          "measured": 320.9269249410476,
+          "passed": false,
+          "submitted_deck_sha256": "d81a9b1835d26c54d1a84a1af7920baccfff559d05df3d80bbc305eae9149c2b",
+          "evaluated_deck_sha256": "43a5ca299c93d426ecd88a53c09865b52d9751edb970fe197e6b395d9b1d85bd",
+          "artifacts": {
+            "submitted_deck": "/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/results/units/gpt4o/eda_205/3/full/attempt_1/evaluation/fixed_models.cir",
+            "evaluated_deck": "/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/results/units/gpt4o/eda_205/3/full/attempt_1/evaluation/conditions/condition_01/evaluated.cir",
+            "node_manifest": "/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/results/units/gpt4o/eda_205/3/full/attempt_1/evaluation/conditions/condition_01/node_manifest.json",
+            "simulator_log": "/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/results/units/gpt4o/eda_205/3/full/attempt_1/evaluation/conditions/condition_01/ngspice.log",
+            "stdout": "/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/results/units/gpt4o/eda_205/3/full/attempt_1/evaluation/conditions/condition_01/ngspice.stdout",
+            "stderr": "/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/results/units/gpt4o/eda_205/3/full/attempt_1/evaluation/conditions/condition_01/ngspice.stderr",
+            "numeric_trace": "/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/results/units/gpt4o/eda_205/3/full/attempt_1/evaluation/conditions/condition_01/numeric_trace.txt"
+          },
+          "detail": "measured=320.92692, target=500, relative tolerance=0.15; acceptance condition: abs(measured-target) <= tolerance*abs(target)"
+        }
+      },
+      {
+        "check": {
+          "nodes": {
+            "input": "IN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "gain_at_frequency_v_per_v",
+            "value": 1,
+            "tolerance": 0.05
+          },
+          "condition": {
+            "frequency_hz": 10,
+            "dc_sources": {
+              "VCC": 12,
+              "VEE": -12
+            }
+          }
+        },
+        "result": {
+          "status": "success",
+          "failure_stage": null,
+          "metric": "gain_at_frequency_v_per_v",
+          "target": 1.0,
+          "tolerance": 0.05,
+          "measured": 0.999692892,
+          "passed": true,
+          "submitted_deck_sha256": "d81a9b1835d26c54d1a84a1af7920baccfff559d05df3d80bbc305eae9149c2b",
+          "evaluated_deck_sha256": "cc23be68c93384dcaaf2ba466fe81a0480e01af7d019c25e8c44204d5ea1280c",
+          "artifacts": {
+            "submitted_deck": "/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/results/units/gpt4o/eda_205/3/full/attempt_1/evaluation/fixed_models.cir",
+            "evaluated_deck": "/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/results/units/gpt4o/eda_205/3/full/attempt_1/evaluation/conditions/condition_02/evaluated.cir",
+            "node_manifest": "/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/results/units/gpt4o/eda_205/3/full/attempt_1/evaluation/conditions/condition_02/node_manifest.json",
+            "simulator_log": "/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/results/units/gpt4o/eda_205/3/full/attempt_1/evaluation/conditions/condition_02/ngspice.log",
+            "stdout": "/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/results/units/gpt4o/eda_205/3/full/attempt_1/evaluation/conditions/condition_02/ngspice.stdout",
+            "stderr": "/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/results/units/gpt4o/eda_205/3/full/attempt_1/evaluation/conditions/condition_02/ngspice.stderr",
+            "numeric_trace": "/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/results/units/gpt4o/eda_205/3/full/attempt_1/evaluation/conditions/condition_02/numeric_trace.txt"
+          },
+          "detail": null
+        }
+      }
+    ],
+    "submitted_deck_sha256": "d81a9b1835d26c54d1a84a1af7920baccfff559d05df3d80bbc305eae9149c2b"
+  },
+  "operating_point": [],
+  "topology_diagnostics": [
+    "condition 1: X_PART3 DC: positive input (N1)=1.65366e-05 V, negative input (N2)=0.00201657 V, supplies=-12 to 12 V, output (N2)=0.00201657 V. Check input common-mode range and output headroom against these measured voltages; DC bias alone does not verify the AC reference impedance or closed-loop gain.",
+    "condition 1: X_PART3_2 DC: positive input (N3)=0.00203311 V, negative input (OUT)=0.00403324 V, supplies=-12 to 12 V, output (OUT)=0.00403324 V. Check input common-mode range and output headroom against these measured voltages; DC bias alone does not verify the AC reference impedance or closed-loop gain."
+  ],
+  "submitted_deck_sha256": "7cbff0fd69fd038c1944419a8718d85171f27c6502e597a13003b8983f653001",
+  "fixed_model_deck_sha256": "d81a9b1835d26c54d1a84a1af7920baccfff559d05df3d80bbc305eae9149c2b"
+}

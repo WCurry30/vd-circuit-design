@@ -1,0 +1,69 @@
+/home/nengge/ZY/EDA_Document/EDA_Last_Resubmission_Experiments/.runtime/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+🔌 连接 LLM API (https://api.siliconflow.cn/v1)...
+⏳ 正在加载 PRM 评估模型 (BAAI/bge-small-zh-v1.5)...
+✅ PRM 模型加载完成。
+🔌 连接数据库: /home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/.runtime/project/framework/chroma_db...
+⏳ 加载 Embedding 模型...
+
+🧠 任务规划器启动 (deepseek) | 需求: 'Build an electret microphone preamplifier with a gain of ~100 using a microphone input, bias resistor, coupling capacitor, op-amp gain stage, and output connector.'
+
+💡 正在使用大模型细化用户的自然语言需求 (Query Expansion)...
+   [细化后的设计方案]: 
+   Retrieve components for an electret microphone preamplifier circuit with a target voltage gain of approximately 100. The system requires a microphone ...
+
+   🔍 识别电路类型: opamp_amplifier
+   策略: 生成 3 个方案并评估...
+   [尝试 1] 生成中 (temp=0.10)... ✅ 成功! 总分: 1.0639 (语义分: 0.8439, 附加分: 0.22)
+   [尝试 2] 生成中 (temp=0.20)... ✅ 成功! 总分: 1.0708 (语义分: 0.8508, 附加分: 0.22)
+   [尝试 3] 生成中 (temp=0.30)...huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+ ✅ 成功! 总分: 1.0684 (语义分: 0.8484, 附加分: 0.22)
+
+🏆 最终优选方案 (来自尝试 2, 得分 1.0708)
+   电路名称: Electret Microphone Preamplifier (Gain ~100)
+      [调试] 分析: 'Electret Microphone' -> 无规则，保持原样
+      ℹ️ [lib_id精确匹配] 未找到 'Electret Microphone'，进入向量检索流程...
+
+      ✅ 触发白名单豁免校验 -> 采纳: Microphone
+      🎯 [绝对锁定模块] 命中规则 'resistor' -> 直接提取库元件: R
+      🎯 [绝对锁定模块] 命中规则 'capacitor' -> 直接提取库元件: C
+      🎯 [绝对锁定模块] 命中规则 'lm2904' -> 直接提取库元件: LM2904
+      🎯 [绝对锁定模块] 命中规则 'resistor' -> 直接提取库元件: R
+      🎯 [绝对锁定模块] 命中规则 'resistor' -> 直接提取库元件: R
+      🎯 [绝对锁定模块] 命中规则 'capacitor' -> 直接提取库元件: C
+      🎯 [绝对锁定模块] 命中规则 'connector' -> 直接提取库元件: Conn_01x01
+      [调试] 分析: 'VCC' -> 无规则，保持原样
+      🎯 [lib_id精确匹配] 元件名 'VCC' -> 直接命中库元件: 'VCC'
+      [调试] 分析: 'GND' -> 无规则，保持原样
+      🎯 [lib_id精确匹配] 元件名 'GND' -> 直接命中库元件: 'GND'
+{"model": "qwen36", "task_id": "eda_008", "arm": "spicepilot", "passed": false, "generation_calls": 3}
+{"model": "qwen36", "task_id": "eda_008", "arm": "direct", "passed": false, "generation_calls": 3}
+   [全局护盾] 拦截到 LLM 幻觉：重复元件名 R_PART2，已自动重命名为 R_PART2_DUP5
+   [全局护盾] 拦截到 LLM 幻觉：重复元件名 X_PART4，已自动重命名为 X_PART4_DUP9
+   [全局护盾] 拦截到 LLM 幻觉：重复元件名 R_VG1，已自动重命名为 R_VG1_DUP13
+   [全局护盾] 拦截到 LLM 幻觉：重复元件名 R_VG2，已自动重命名为 R_VG2_DUP14
+   [全局护盾] 拦截到 LLM 幻觉：重复元件名 R_PART2，已自动重命名为 R_PART2_DUP15
+   [全局护盾] 拦截到 LLM 幻觉：重复元件名 VIN，已自动重命名为 VIN_DUP16
+   [全局护盾] 拦截到 LLM 幻觉：重复元件名 C_PART3，已自动重命名为 C_PART3_DUP17
+   [全局护盾] 拦截到 LLM 幻觉：重复元件名 R_BIAS，已自动重命名为 R_BIAS_DUP18
+   [全局护盾] 拦截到 LLM 幻觉：重复元件名 X_PART4，已自动重命名为 X_PART4_DUP19
+   [全局护盾] 拦截到 LLM 幻觉：重复元件名 R_PART5，已自动重命名为 R_PART5_DUP20
+   [全局护盾] 拦截到 LLM 幻觉：重复元件名 R_PART6，已自动重命名为 R_PART6_DUP21
+   [全局护盾] 拦截到 LLM 幻觉：重复元件名 C_PART7，已自动重命名为 C_PART7_DUP22
+{"model": "qwen36", "task_id": "eda_008", "arm": "full", "passed": false, "generation_calls": 3}
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+{"model": "qwen36", "task_id": "eda_008", "arm": "analogcoder", "passed": false, "generation_calls": 1}

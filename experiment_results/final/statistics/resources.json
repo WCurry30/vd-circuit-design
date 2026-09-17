@@ -1,0 +1,24 @@
+{
+  "generation_by_origin": {
+    "new_final_runs": {
+      "trials": 540,
+      "calls": 1161,
+      "known_tokens": 2873217
+    },
+    "reused_baselines": {
+      "trials": 1200,
+      "calls": 2677,
+      "known_tokens": 8592573
+    }
+  },
+  "unique_preparation_responses": 1440,
+  "known_unique_preparation_tokens": 1280913,
+  "response_files_with_unknown_tokens": 0,
+  "requests_without_response": 5,
+  "retained_error_files": 0,
+  "retained_recovery_sidecars": 878,
+  "retained_simulator_logs": 5439,
+  "transport_failure_tokens": null,
+  "historical_total_simulator_invocations": null,
+  "preparation_policy": "Required context usage is distinct from provider spending; copied responses are deduplicated by ID."
+}

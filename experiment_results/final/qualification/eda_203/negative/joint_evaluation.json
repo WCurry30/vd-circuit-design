@@ -1,0 +1,92 @@
+{
+  "passed": false,
+  "structure": {
+    "unbypassed_ce_signal_path": false,
+    "condition_1_load_connections": true,
+    "condition_1_VDD_connections": true
+  },
+  "numerical": {
+    "passed": false,
+    "checks": [
+      {
+        "check": {
+          "nodes": {
+            "input": "IN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "gain_real_v_per_v",
+            "value": -5,
+            "tolerance": 0.2
+          },
+          "condition": {
+            "dc_sources": {
+              "VDD": 12
+            },
+            "resistances": {
+              "RLOAD": 4700
+            }
+          }
+        },
+        "result": {
+          "status": "success",
+          "failure_stage": null,
+          "metric": "gain_real_v_per_v",
+          "target": -5.0,
+          "tolerance": 0.2,
+          "measured": -82.8479616,
+          "passed": false,
+          "submitted_deck_sha256": "7442210cb0ce6879128d6b7da921fad8c57cd7c3220415fff1db301369c8b42c",
+          "evaluated_deck_sha256": "ed8ecd737448040d6b246e4fe75f9438ed8f0f466ae7b010566444ca74dc0dd3",
+          "artifacts": {
+            "submitted_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_203/negative/fixed_models.cir",
+            "evaluated_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_203/negative/conditions/condition_01/evaluated.cir",
+            "node_manifest": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_203/negative/conditions/condition_01/node_manifest.json",
+            "simulator_log": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_203/negative/conditions/condition_01/ngspice.log",
+            "stdout": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_203/negative/conditions/condition_01/ngspice.stdout",
+            "stderr": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_203/negative/conditions/condition_01/ngspice.stderr",
+            "numeric_trace": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_203/negative/conditions/condition_01/numeric_trace.txt"
+          },
+          "detail": "measured=-82.847962, target=-5, relative tolerance=0.2; acceptance condition: abs(measured-target) <= tolerance*abs(target)"
+        }
+      }
+    ],
+    "submitted_deck_sha256": "7442210cb0ce6879128d6b7da921fad8c57cd7c3220415fff1db301369c8b42c"
+  },
+  "operating_point": [
+    {
+      "condition": 1,
+      "passed": true,
+      "report": {
+        "status": "measured",
+        "diagnostics": [
+          "Q1 DC: Vc=8.24631 V, Vb=1.05998 V, Ve=0.412099 V, Vce=7.83421 V."
+        ],
+        "condition": {
+          "dc_sources": {
+            "VDD": 12
+          },
+          "resistances": {
+            "RLOAD": 4700
+          }
+        },
+        "devices": [
+          {
+            "device": "Q1",
+            "vc": 8.24630839,
+            "vb": 1.05998498,
+            "ve": 0.412099147,
+            "vce": 7.834209242999999
+          }
+        ]
+      }
+    }
+  ],
+  "topology_diagnostics": [
+    "Q1 terminals: collector=C, base=B, emitter=E.",
+    "Check the AC-coupled input/base and collector/output paths and the emitter DC return; retain the requested stage count.",
+    "condition 1: Q1 DC: Vc=8.24631 V, Vb=1.05998 V, Ve=0.412099 V, Vce=7.83421 V."
+  ],
+  "submitted_deck_sha256": "f490bb7d35360dc2e6b16936d6217afdf269e1a3699575129cd2f53bf6fb9508",
+  "fixed_model_deck_sha256": "7442210cb0ce6879128d6b7da921fad8c57cd7c3220415fff1db301369c8b42c"
+}

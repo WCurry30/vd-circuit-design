@@ -1,0 +1,19 @@
+{
+  "vd-circuit-design": {
+    "repository": "https://github.com/WCurry30/vd-circuit-design.git",
+    "commit": "e20eb1b09b3fbee35db52a6649af024733d78b4c"
+  },
+  "AnalogCoder": {
+    "repository": "https://github.com/laiyao1/AnalogCoder.git",
+    "commit": "8571fa39ce9bddad8ddcb697f44c08807ab0bbaf"
+  },
+  "AnalogCoder-Pro-candidate": {
+    "repository": "https://github.com/laiyao1/AnalogCoderPro.git",
+    "commit": "05542af46020e5c37d5a7e3ca79da9f24626e1c9",
+    "status": "evaluated but not executed; multimodal admission gate not met"
+  },
+  "SPICEPilot": {
+    "repository": "https://github.com/ACADLab/SPICEPilot.git",
+    "commit": "14bf412b95824bcc6248bcee0167951f0d5e173f"
+  }
+}

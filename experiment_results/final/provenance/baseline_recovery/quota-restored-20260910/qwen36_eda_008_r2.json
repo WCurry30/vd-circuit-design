@@ -1,0 +1,16 @@
+{
+  "model": "qwen36",
+  "task": "eda_008",
+  "repeat": 2,
+  "arms": [
+    "full",
+    "direct",
+    "analogcoder",
+    "spicepilot"
+  ],
+  "pid": 2198949,
+  "status": "completed",
+  "started_unix": 1789015132.9474757,
+  "returncode": 0,
+  "finished_unix": 1789015397.4285543
+}

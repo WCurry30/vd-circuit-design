@@ -1,0 +1,12 @@
+* AC-coupled common-emitter amplifier, gain approximately -10.
+VIN IN 0 DC 0 AC 1
+VDD VCC 0 12
+CIN IN B 10u
+RBIAS1 VCC B 47k
+RBIAS2 B 0 4.7k
+RC VCC C 2.2k
+RE E 0 170
+Q1 C B E 2N2222
+COUT C OUT 10u
+RLOAD OUT 0 10k
+.end

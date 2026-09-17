@@ -1,0 +1,54 @@
+{
+  "passed": false,
+  "structure": {
+    "single_opamp": true,
+    "active_rc_feedback": false
+  },
+  "numerical": {
+    "passed": false,
+    "checks": [
+      {
+        "check": {
+          "nodes": {
+            "input": "IN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "cutoff_freq_hz",
+            "value": 1000,
+            "tolerance": 0.2
+          },
+          "condition": {}
+        },
+        "result": {
+          "status": "success",
+          "failure_stage": null,
+          "metric": "cutoff_freq_hz",
+          "target": 1000.0,
+          "tolerance": 0.2,
+          "measured": 138121.572440724,
+          "passed": false,
+          "submitted_deck_sha256": "668a541e96db291c469fc043ad2f4da338f2945cdab9c747e781f16806ccc00f",
+          "evaluated_deck_sha256": "735b4d75ecb55b980a606fe3e6ae0c638499a3e6cab3c88a9e2a03d91eec0384",
+          "artifacts": {
+            "submitted_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_027/negative/fixed_models.cir",
+            "evaluated_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_027/negative/conditions/condition_01/evaluated.cir",
+            "node_manifest": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_027/negative/conditions/condition_01/node_manifest.json",
+            "simulator_log": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_027/negative/conditions/condition_01/ngspice.log",
+            "stdout": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_027/negative/conditions/condition_01/ngspice.stdout",
+            "stderr": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_027/negative/conditions/condition_01/ngspice.stderr",
+            "numeric_trace": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_027/negative/conditions/condition_01/numeric_trace.txt"
+          },
+          "detail": "measured=138121.57, target=1000, relative tolerance=0.2; acceptance condition: abs(measured-target) <= tolerance*abs(target)"
+        }
+      }
+    ],
+    "submitted_deck_sha256": "668a541e96db291c469fc043ad2f4da338f2945cdab9c747e781f16806ccc00f"
+  },
+  "operating_point": [],
+  "topology_diagnostics": [
+    "condition 1: XU1 DC: positive input (0)=0 V, negative input (NM)=0.00200002 V, supplies=-12 to 12 V, output (OUT)=0.00339602 V. Check input common-mode range and output headroom against these measured voltages; DC bias alone does not verify the AC reference impedance or closed-loop gain."
+  ],
+  "submitted_deck_sha256": "857c342467ca231a88531627bc3a2ceb37af8980046f3988682715c62de6a018",
+  "fixed_model_deck_sha256": "668a541e96db291c469fc043ad2f4da338f2945cdab9c747e781f16806ccc00f"
+}

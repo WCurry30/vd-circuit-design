@@ -1,0 +1,16 @@
+{
+  "release": "routing-fix-final-20260910",
+  "allocation": {
+    "main": 1440,
+    "ablations": 240,
+    "equal_call": 60,
+    "total": 1740
+  },
+  "new_trials": 1020,
+  "reused_baseline_trials": 720,
+  "selection": "Configuration selected after developmental and follow-up evidence; all 20 tasks exposed before final correction. No untouched-test-set claim.",
+  "archive": "nengge-out:/home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/local-finalization-20260910/",
+  "provider_boundary": "V4 requested deepseek-v4-flash; returned deepseek-flash. No supplier-side billing reconciliation obtained.",
+  "baseline_reuse": "Generation adapters, public cases, evaluation, endpoints, budgets and seeds unchanged; runtime correction affects only framework LED expert routing. Baselines retain original protocol and source identity.",
+  "trial_index_sha256": "ef785c3b1f8c3e638e6815e43aa1bc96f65468446b2741fa08756f3fd1918442"
+}

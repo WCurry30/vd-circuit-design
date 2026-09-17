@@ -1,0 +1,51 @@
+/home/nengge/ZY/EDA_Document/EDA_Last_Resubmission_Experiments/.runtime/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+🔌 连接 LLM API (https://api.siliconflow.cn/v1)...
+⏳ 正在加载 PRM 评估模型 (BAAI/bge-small-zh-v1.5)...
+✅ PRM 模型加载完成。
+🔌 连接数据库: /home/nengge/ZY/EDA_Document/EDA_Last_Framework_Repair_20260909/formal-v1-work/.runtime/project/framework/chroma_db...
+⏳ 加载 Embedding 模型...
+
+🧠 任务规划器启动 (deepseek) | 需求: 'Design a unity-gain Sallen-Key low-pass filter with a Butterworth response and a cutoff of 2000 Hz using dual 12 V supplies. Use one op-amp buffer and the two-resistor, two-capacitor Sallen-Key feedback network.'
+
+💡 正在使用大模型细化用户的自然语言需求 (Query Expansion)...
+   [细化后的设计方案]: 
+   Retrieve components for a single-stage unity-gain Sallen-Key low-pass filter designed for a Butterworth response with a cutoff frequency of 2000 Hz. T...
+
+   🔍 识别电路类型: opamp_amplifier
+   策略: 生成 3 个方案并评估...
+   [尝试 1] 生成中 (temp=0.10)... ✅ 成功! 总分: 1.0765 (语义分: 0.8865, 附加分: 0.19)
+   [尝试 2] 生成中 (temp=0.20)... ✅ 成功! 总分: 0.9973 (语义分: 0.8073, 附加分: 0.19)
+   [尝试 3] 生成中 (temp=0.30)...huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+ ✅ 成功! 总分: 1.0237 (语义分: 0.8337, 附加分: 0.19)
+
+🏆 最终优选方案 (来自尝试 1, 得分 1.0765)
+   电路名称: Unity-Gain Sallen-Key Low-Pass Filter (2000 Hz, Dual 12V)
+      🎯 [绝对锁定模块] 命中规则 'lm2904' -> 直接提取库元件: LM2904
+      🎯 [绝对锁定模块] 命中规则 'resistor' -> 直接提取库元件: R
+      🎯 [绝对锁定模块] 命中规则 'resistor' -> 直接提取库元件: R
+      🎯 [绝对锁定模块] 命中规则 'capacitor' -> 直接提取库元件: C
+      🎯 [绝对锁定模块] 命中规则 'capacitor' -> 直接提取库元件: C
+      [调试] 分析: 'VCC' -> 无规则，保持原样
+      🎯 [lib_id精确匹配] 元件名 'VCC' -> 直接命中库元件: 'VCC'
+      [调试] 分析: 'GND' -> 无规则，保持原样
+      🎯 [lib_id精确匹配] 元件名 'GND' -> 直接命中库元件: 'GND'
+{"model": "qwen36", "task_id": "eda_206", "arm": "spicepilot", "passed": false, "generation_calls": 3}
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+{"model": "qwen36", "task_id": "eda_206", "arm": "analogcoder", "passed": false, "generation_calls": 1}
+{"model": "qwen36", "task_id": "eda_206", "arm": "full", "passed": false, "generation_calls": 3}
+{"model": "qwen36", "task_id": "eda_206", "arm": "direct", "passed": false, "generation_calls": 3}

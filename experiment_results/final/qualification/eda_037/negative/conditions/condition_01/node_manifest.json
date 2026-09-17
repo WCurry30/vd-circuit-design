@@ -1,0 +1,7 @@
+{
+  "input": "VCC",
+  "output": "OUT",
+  "ground": "0",
+  "load_element": "VLOAD",
+  "input_negative": "0"
+}

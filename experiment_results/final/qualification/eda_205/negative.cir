@@ -1,0 +1,12 @@
+* Two buffered RC sections, overall -3 dB cutoff approximately 500 Hz.
+VIN IN 0 DC 0 AC 1
+VCC VCC 0 12
+VEE VEE 0 -12
+R1 IN N1 20.49k
+C1 N1 0 10n
+EBUF BUF 0 N1 0 1
+R2 BUF N2 20.49k
+C2 N2 0 10n
+XU2 N2 OUT VCC VEE OUT LM2904
+RLOAD OUT 0 100k
+.end

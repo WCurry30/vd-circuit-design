@@ -1,0 +1,3 @@
+{
+  "reason": "Replaying an existing response reran evaluator into existing opamp_bias_01 directory, causing FileExistsError and changed feedback. Preserve prior artifacts here; rerun identical response in fresh evaluation directories. Request ledger and frozen sources unchanged."
+}

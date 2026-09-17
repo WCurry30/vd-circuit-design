@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": {
+        "nodes": {
+          "input": "VCC",
+          "output": "OUT",
+          "load_element": "VLOAD"
+        },
+        "target": {
+          "metric": "load_current_a",
+          "value": 0.01,
+          "tolerance": 0.1
+        },
+        "condition": {
+          "dc_sources": {
+            "VDD": 5
+          }
+        }
+      },
+      "result": {
+        "status": "success",
+        "failure_stage": null,
+        "metric": "load_current_a",
+        "target": 0.01,
+        "tolerance": 0.1,
+        "measured": 0.0101928121,
+        "passed": true,
+        "submitted_deck_sha256": "bf9c3dfd30243c2b691056d70d2d57854356bbcaac066302f15906983911e798",
+        "evaluated_deck_sha256": "334d208aae7ec60e912fc56dd7324f2005b0225ea95f781b2d18210ac70b00ff",
+        "artifacts": {
+          "submitted_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_209/reference/fixed_models.cir",
+          "evaluated_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_209/reference/conditions/condition_01/evaluated.cir",
+          "node_manifest": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_209/reference/conditions/condition_01/node_manifest.json",
+          "simulator_log": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_209/reference/conditions/condition_01/ngspice.log",
+          "stdout": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_209/reference/conditions/condition_01/ngspice.stdout",
+          "stderr": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_209/reference/conditions/condition_01/ngspice.stderr",
+          "numeric_trace": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_209/reference/conditions/condition_01/numeric_trace.txt"
+        },
+        "detail": null
+      }
+    }
+  ],
+  "submitted_deck_sha256": "bf9c3dfd30243c2b691056d70d2d57854356bbcaac066302f15906983911e798"
+}

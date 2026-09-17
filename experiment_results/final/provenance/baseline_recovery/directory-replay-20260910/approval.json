@@ -1,0 +1,24 @@
+{
+  "epoch": "directory-replay-20260910",
+  "authority": "User confirmed both provider accounts replenished; resume the original exact requests only.",
+  "frozen_manifest_sha256": "b0ca03e2383b01e601994b9cbdaf4f39518ab9968cf982bcc604a7aba3619925",
+  "created_unix": 1789018253.9742002,
+  "wrapper_sha256": "c22cd611b3bdbb416dc44e406c04f6d8fcd4062b3ab531631f85802e7ebba92e",
+  "incomplete_requests": {
+    "units/gpt4o/eda_205/3/full/calls/call_02/request.json": "3dc015e45bd7900e0d9bd1a3ed25f19ad3a9d07589b10648bb3e6fc6faa79317"
+  },
+  "jobs": [
+    {
+      "model": "gpt4o",
+      "task": "eda_205",
+      "repeat": 3,
+      "arms": [
+        "full",
+        "direct",
+        "analogcoder",
+        "spicepilot"
+      ]
+    }
+  ],
+  "policy": "Reuse exact completed responses; preserve all original transport failures. Only missing responses get new transport attempts. No prompt/evaluator/seed or outcome change."
+}

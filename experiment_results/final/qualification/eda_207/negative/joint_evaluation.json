@@ -1,0 +1,96 @@
+{
+  "passed": false,
+  "structure": {
+    "reverse_zener": true,
+    "series_feed": true,
+    "output_load": false,
+    "condition_1_load_connections": false,
+    "condition_1_VDD_connections": true,
+    "condition_2_load_connections": false,
+    "condition_2_VDD_connections": true
+  },
+  "numerical": {
+    "passed": false,
+    "checks": [
+      {
+        "check": {
+          "nodes": {
+            "input": "VCC",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "dc_voltage_v",
+            "value": 5.1,
+            "tolerance": 0.1
+          },
+          "condition": {
+            "dc_sources": {
+              "VDD": 9
+            },
+            "resistances": {
+              "RLOAD": 1000
+            }
+          }
+        },
+        "result": {
+          "status": "failed",
+          "failure_stage": "parse",
+          "metric": "dc_voltage_v",
+          "target": 5.1,
+          "tolerance": 0.1,
+          "measured": null,
+          "passed": false,
+          "submitted_deck_sha256": "aa58a0b469456a0570aa75fd4bf8bea5a05c7e1bd9c9c779e443b0e8c844751e",
+          "evaluated_deck_sha256": null,
+          "artifacts": {
+            "node_manifest": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_207/negative/conditions/condition_01/node_manifest.json"
+          },
+          "detail": "required testbench element absent or wrong type: RLOAD"
+        }
+      },
+      {
+        "check": {
+          "nodes": {
+            "input": "VCC",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "dc_voltage_v",
+            "value": 5.1,
+            "tolerance": 0.1
+          },
+          "condition": {
+            "dc_sources": {
+              "VDD": 12
+            },
+            "resistances": {
+              "RLOAD": 1000
+            }
+          }
+        },
+        "result": {
+          "status": "failed",
+          "failure_stage": "parse",
+          "metric": "dc_voltage_v",
+          "target": 5.1,
+          "tolerance": 0.1,
+          "measured": null,
+          "passed": false,
+          "submitted_deck_sha256": "aa58a0b469456a0570aa75fd4bf8bea5a05c7e1bd9c9c779e443b0e8c844751e",
+          "evaluated_deck_sha256": null,
+          "artifacts": {
+            "node_manifest": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_207/negative/conditions/condition_02/node_manifest.json"
+          },
+          "detail": "required testbench element absent or wrong type: RLOAD"
+        }
+      }
+    ],
+    "submitted_deck_sha256": "aa58a0b469456a0570aa75fd4bf8bea5a05c7e1bd9c9c779e443b0e8c844751e"
+  },
+  "operating_point": [],
+  "topology_diagnostics": [
+    "DZ Zener actual terminals: anode=0, cathode=OUT. SPICE diode order is anode then cathode."
+  ],
+  "submitted_deck_sha256": "a73eb0e19fff76db76d597db0c238f3ec052a364bac3d389fe90969384d30b57",
+  "fixed_model_deck_sha256": "aa58a0b469456a0570aa75fd4bf8bea5a05c7e1bd9c9c779e443b0e8c844751e"
+}

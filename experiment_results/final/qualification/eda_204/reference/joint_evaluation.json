@@ -1,0 +1,99 @@
+{
+  "passed": true,
+  "structure": {
+    "two_coupled_ce_stages": true,
+    "condition_1_load_connections": true,
+    "condition_1_VDD_connections": true
+  },
+  "numerical": {
+    "passed": true,
+    "checks": [
+      {
+        "check": {
+          "nodes": {
+            "input": "IN",
+            "output": "OUT"
+          },
+          "target": {
+            "metric": "gain_real_v_per_v",
+            "value": 25,
+            "tolerance": 0.2
+          },
+          "condition": {
+            "dc_sources": {
+              "VDD": 12
+            },
+            "resistances": {
+              "RLOAD": 10000
+            }
+          }
+        },
+        "result": {
+          "status": "success",
+          "failure_stage": null,
+          "metric": "gain_real_v_per_v",
+          "target": 25.0,
+          "tolerance": 0.2,
+          "measured": 23.8736075,
+          "passed": true,
+          "submitted_deck_sha256": "f79ba592f3b2500288ef932a38a09577f5ac23e1c5165cc52cc8ab87c95f0e4b",
+          "evaluated_deck_sha256": "1aaafc2240c430a3d819a58d0308c57d7cc4719d865dfa85d76dc4e7fadf4b5f",
+          "artifacts": {
+            "submitted_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_204/reference/fixed_models.cir",
+            "evaluated_deck": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_204/reference/conditions/condition_01/evaluated.cir",
+            "node_manifest": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_204/reference/conditions/condition_01/node_manifest.json",
+            "simulator_log": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_204/reference/conditions/condition_01/ngspice.log",
+            "stdout": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_204/reference/conditions/condition_01/ngspice.stdout",
+            "stderr": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_204/reference/conditions/condition_01/ngspice.stderr",
+            "numeric_trace": "/Users/zoe/Desktop/CodeX/EDA_Document/EDA_Last/experiment_results/final/qualification/eda_204/reference/conditions/condition_01/numeric_trace.txt"
+          },
+          "detail": null
+        }
+      }
+    ],
+    "submitted_deck_sha256": "f79ba592f3b2500288ef932a38a09577f5ac23e1c5165cc52cc8ab87c95f0e4b"
+  },
+  "operating_point": [
+    {
+      "condition": 1,
+      "passed": true,
+      "report": {
+        "status": "measured",
+        "diagnostics": [
+          "Q1 DC: Vc=6.9173 V, Vb=1.43373 V, Ve=0.767015 V, Vce=6.15029 V.",
+          "Q2 DC: Vc=6.9173 V, Vb=1.43373 V, Ve=0.767015 V, Vce=6.15029 V."
+        ],
+        "condition": {
+          "dc_sources": {
+            "VDD": 12
+          },
+          "resistances": {
+            "RLOAD": 10000
+          }
+        },
+        "devices": [
+          {
+            "device": "Q1",
+            "vc": 6.9173048,
+            "vb": 1.43372583,
+            "ve": 0.767015141,
+            "vce": 6.150289659
+          },
+          {
+            "device": "Q2",
+            "vc": 6.9173048,
+            "vb": 1.43372583,
+            "ve": 0.767015141,
+            "vce": 6.150289659
+          }
+        ]
+      }
+    }
+  ],
+  "topology_diagnostics": [
+    "condition 1: Q1 DC: Vc=6.9173 V, Vb=1.43373 V, Ve=0.767015 V, Vce=6.15029 V.",
+    "condition 1: Q2 DC: Vc=6.9173 V, Vb=1.43373 V, Ve=0.767015 V, Vce=6.15029 V."
+  ],
+  "submitted_deck_sha256": "85a04bd166a114f652470e044544645bc641417e7f804d47470d310686dacc5c",
+  "fixed_model_deck_sha256": "f79ba592f3b2500288ef932a38a09577f5ac23e1c5165cc52cc8ab87c95f0e4b"
+}

@@ -1,0 +1,11 @@
+* Unity-gain Sallen-Key low-pass, Butterworth, nominal cutoff 2 kHz.
+VIN IN 0 DC 0 AC 1
+VCC VCC 0 12
+VEE VEE 0 -12
+R1 IN N1 5.627k
+R2 N1 NP 5.627k
+C1 N1 OUT 20n
+C2 NP 0 10n
+XU1 NP OUT VCC VEE OUT LM2904
+RLOAD OUT 0 100k
+.end

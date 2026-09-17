@@ -1,0 +1,531 @@
+[
+  {
+    "model": "gpt4o",
+    "arm": "analogcoder",
+    "passed": 4,
+    "trials": 60,
+    "rate": 0.06666666666666667,
+    "task_ci_low": 0.0,
+    "task_ci_high": 0.18333333333333332,
+    "generation_calls": 94,
+    "generation_tokens_known": 291307,
+    "preparation_tokens_per_trial_sum": 0,
+    "numerical_loss_mean": 0.7863274754428657,
+    "failure_stages": {
+      "specification": 26,
+      "evaluation": 3,
+      "parse": 8,
+      "generation": 13,
+      "simulation": 6
+    }
+  },
+  {
+    "model": "gpt4o",
+    "arm": "direct",
+    "passed": 7,
+    "trials": 60,
+    "rate": 0.11666666666666665,
+    "task_ci_low": 0.0,
+    "task_ci_high": 0.25,
+    "generation_calls": 169,
+    "generation_tokens_known": 131356,
+    "preparation_tokens_per_trial_sum": 0,
+    "numerical_loss_mean": 0.7963871017099028,
+    "failure_stages": {
+      "specification": 32,
+      "evaluation": 1,
+      "parse": 17,
+      "simulation": 3
+    }
+  },
+  {
+    "model": "gpt4o",
+    "arm": "full",
+    "passed": 14,
+    "trials": 60,
+    "rate": 0.2333333333333333,
+    "task_ci_low": 0.08333333333333333,
+    "task_ci_high": 0.4,
+    "generation_calls": 152,
+    "generation_tokens_known": 379973,
+    "preparation_tokens_per_trial_sum": 186863,
+    "numerical_loss_mean": 0.6926274793531351,
+    "failure_stages": {
+      "specification": 24,
+      "parse": 16,
+      "simulation": 5,
+      "generation": 1
+    }
+  },
+  {
+    "model": "gpt4o",
+    "arm": "spicepilot",
+    "passed": 3,
+    "trials": 60,
+    "rate": 0.05,
+    "task_ci_low": 0.0,
+    "task_ci_high": 0.15,
+    "generation_calls": 174,
+    "generation_tokens_known": 760026,
+    "preparation_tokens_per_trial_sum": 0,
+    "numerical_loss_mean": 0.8039257333388249,
+    "failure_stages": {
+      "specification": 32,
+      "evaluation": 3,
+      "generation": 19,
+      "parse": 3
+    }
+  },
+  {
+    "model": "gpt55",
+    "arm": "analogcoder",
+    "passed": 29,
+    "trials": 60,
+    "rate": 0.4833333333333333,
+    "task_ci_low": 0.31666666666666665,
+    "task_ci_high": 0.65,
+    "generation_calls": 68,
+    "generation_tokens_known": 241457,
+    "preparation_tokens_per_trial_sum": 0,
+    "numerical_loss_mean": 0.34443016679568056,
+    "failure_stages": {
+      "specification": 26,
+      "simulation": 1,
+      "evaluation": 1,
+      "parse": 2,
+      "generation": 1
+    }
+  },
+  {
+    "model": "gpt55",
+    "arm": "direct",
+    "passed": 28,
+    "trials": 60,
+    "rate": 0.4666666666666667,
+    "task_ci_low": 0.2833333333333333,
+    "task_ci_high": 0.65,
+    "generation_calls": 135,
+    "generation_tokens_known": 156672,
+    "preparation_tokens_per_trial_sum": 0,
+    "numerical_loss_mean": 0.3973501366541177,
+    "failure_stages": {
+      "specification": 31,
+      "simulation": 1
+    }
+  },
+  {
+    "model": "gpt55",
+    "arm": "full",
+    "passed": 40,
+    "trials": 60,
+    "rate": 0.6666666666666667,
+    "task_ci_low": 0.5,
+    "task_ci_high": 0.8166666666666667,
+    "generation_calls": 116,
+    "generation_tokens_known": 320538,
+    "preparation_tokens_per_trial_sum": 299015,
+    "numerical_loss_mean": 0.20622761627592234,
+    "failure_stages": {
+      "specification": 19,
+      "evaluation": 1
+    }
+  },
+  {
+    "model": "gpt55",
+    "arm": "spicepilot",
+    "passed": 30,
+    "trials": 60,
+    "rate": 0.5,
+    "task_ci_low": 0.3,
+    "task_ci_high": 0.7,
+    "generation_calls": 134,
+    "generation_tokens_known": 651334,
+    "preparation_tokens_per_trial_sum": 0,
+    "numerical_loss_mean": 0.4303160200823099,
+    "failure_stages": {
+      "specification": 17,
+      "generation": 7,
+      "parse": 6
+    }
+  },
+  {
+    "model": "qwen36",
+    "arm": "analogcoder",
+    "passed": 9,
+    "trials": 60,
+    "rate": 0.15,
+    "task_ci_low": 0.03333333333333333,
+    "task_ci_high": 0.3,
+    "generation_calls": 109,
+    "generation_tokens_known": 630057,
+    "preparation_tokens_per_trial_sum": 0,
+    "numerical_loss_mean": 0.7695889167576648,
+    "failure_stages": {
+      "specification": 12,
+      "generation": 24,
+      "parse": 13,
+      "simulation": 2
+    }
+  },
+  {
+    "model": "qwen36",
+    "arm": "direct",
+    "passed": 10,
+    "trials": 60,
+    "rate": 0.16666666666666666,
+    "task_ci_low": 0.05,
+    "task_ci_high": 0.3,
+    "generation_calls": 167,
+    "generation_tokens_known": 239873,
+    "preparation_tokens_per_trial_sum": 0,
+    "numerical_loss_mean": 0.7908949835570704,
+    "failure_stages": {
+      "specification": 15,
+      "parse": 25,
+      "simulation": 10
+    }
+  },
+  {
+    "model": "qwen36",
+    "arm": "full",
+    "passed": 19,
+    "trials": 60,
+    "rate": 0.3166666666666666,
+    "task_ci_low": 0.18333333333333332,
+    "task_ci_high": 0.4666666666666666,
+    "generation_calls": 157,
+    "generation_tokens_known": 544917,
+    "preparation_tokens_per_trial_sum": 217602,
+    "numerical_loss_mean": 0.5625541220371132,
+    "failure_stages": {
+      "specification": 27,
+      "evaluation": 1,
+      "parse": 11,
+      "simulation": 2
+    }
+  },
+  {
+    "model": "qwen36",
+    "arm": "spicepilot",
+    "passed": 10,
+    "trials": 60,
+    "rate": 0.16666666666666666,
+    "task_ci_low": 0.03333333333333333,
+    "task_ci_high": 0.31666666666666665,
+    "generation_calls": 168,
+    "generation_tokens_known": 989537,
+    "preparation_tokens_per_trial_sum": 0,
+    "numerical_loss_mean": 0.7975463498264788,
+    "failure_stages": {
+      "generation": 34,
+      "evaluation": 1,
+      "specification": 6,
+      "parse": 9
+    }
+  },
+  {
+    "model": "qwen38",
+    "arm": "analogcoder",
+    "passed": 15,
+    "trials": 60,
+    "rate": 0.24999999999999994,
+    "task_ci_low": 0.13333333333333333,
+    "task_ci_high": 0.38333333333333336,
+    "generation_calls": 131,
+    "generation_tokens_known": 706762,
+    "preparation_tokens_per_trial_sum": 0,
+    "numerical_loss_mean": 0.6053898376705231,
+    "failure_stages": {
+      "specification": 17,
+      "generation": 18,
+      "simulation": 1,
+      "parse": 9
+    }
+  },
+  {
+    "model": "qwen38",
+    "arm": "direct",
+    "passed": 3,
+    "trials": 60,
+    "rate": 0.05,
+    "task_ci_low": 0.0,
+    "task_ci_high": 0.13333333333333333,
+    "generation_calls": 169,
+    "generation_tokens_known": 155016,
+    "preparation_tokens_per_trial_sum": 0,
+    "numerical_loss_mean": 0.9070028145388938,
+    "failure_stages": {
+      "simulation": 13,
+      "parse": 24,
+      "specification": 15,
+      "evaluation": 1,
+      "generation": 4
+    }
+  },
+  {
+    "model": "qwen38",
+    "arm": "full",
+    "passed": 16,
+    "trials": 60,
+    "rate": 0.26666666666666666,
+    "task_ci_low": 0.13333333333333333,
+    "task_ci_high": 0.4,
+    "generation_calls": 160,
+    "generation_tokens_known": 425644,
+    "preparation_tokens_per_trial_sum": 211090,
+    "numerical_loss_mean": 0.6383479014362529,
+    "failure_stages": {
+      "simulation": 16,
+      "parse": 4,
+      "specification": 24
+    }
+  },
+  {
+    "model": "qwen38",
+    "arm": "spicepilot",
+    "passed": 23,
+    "trials": 60,
+    "rate": 0.3833333333333333,
+    "task_ci_low": 0.21666666666666665,
+    "task_ci_high": 0.5666666666666667,
+    "generation_calls": 151,
+    "generation_tokens_known": 873435,
+    "preparation_tokens_per_trial_sum": 0,
+    "numerical_loss_mean": 0.5471429820188336,
+    "failure_stages": {
+      "specification": 10,
+      "generation": 27
+    }
+  },
+  {
+    "model": "v32",
+    "arm": "analogcoder",
+    "passed": 21,
+    "trials": 60,
+    "rate": 0.35,
+    "task_ci_low": 0.18333333333333335,
+    "task_ci_high": 0.5166666666666667,
+    "generation_calls": 77,
+    "generation_tokens_known": 261553,
+    "preparation_tokens_per_trial_sum": 0,
+    "numerical_loss_mean": 0.4925645032452723,
+    "failure_stages": {
+      "specification": 34,
+      "generation": 3,
+      "parse": 2
+    }
+  },
+  {
+    "model": "v32",
+    "arm": "direct",
+    "passed": 11,
+    "trials": 60,
+    "rate": 0.18333333333333332,
+    "task_ci_low": 0.05,
+    "task_ci_high": 0.3333333333333333,
+    "generation_calls": 168,
+    "generation_tokens_known": 136393,
+    "preparation_tokens_per_trial_sum": 0,
+    "numerical_loss_mean": 0.6580576081716711,
+    "failure_stages": {
+      "specification": 23,
+      "parse": 24,
+      "simulation": 1,
+      "evaluation": 1
+    }
+  },
+  {
+    "model": "v32",
+    "arm": "full",
+    "passed": 33,
+    "trials": 60,
+    "rate": 0.55,
+    "task_ci_low": 0.38333333333333336,
+    "task_ci_high": 0.7000000000000002,
+    "generation_calls": 147,
+    "generation_tokens_known": 377997,
+    "preparation_tokens_per_trial_sum": 193945,
+    "numerical_loss_mean": 0.3216495605113351,
+    "failure_stages": {
+      "specification": 16,
+      "parse": 6,
+      "simulation": 4,
+      "evaluation": 1
+    }
+  },
+  {
+    "model": "v32",
+    "arm": "spicepilot",
+    "passed": 20,
+    "trials": 60,
+    "rate": 0.33333333333333337,
+    "task_ci_low": 0.16666666666666669,
+    "task_ci_high": 0.5166666666666666,
+    "generation_calls": 155,
+    "generation_tokens_known": 689121,
+    "preparation_tokens_per_trial_sum": 0,
+    "numerical_loss_mean": 0.5517408138687,
+    "failure_stages": {
+      "specification": 27,
+      "evaluation": 1,
+      "generation": 10,
+      "parse": 2
+    }
+  },
+  {
+    "model": "v4",
+    "arm": "analogcoder",
+    "passed": 22,
+    "trials": 60,
+    "rate": 0.36666666666666664,
+    "task_ci_low": 0.2,
+    "task_ci_high": 0.5333333333333333,
+    "generation_calls": 69,
+    "generation_tokens_known": 192520,
+    "preparation_tokens_per_trial_sum": 0,
+    "numerical_loss_mean": 0.4620239903330787,
+    "failure_stages": {
+      "specification": 32,
+      "parse": 6
+    }
+  },
+  {
+    "model": "v4",
+    "arm": "direct",
+    "passed": 26,
+    "trials": 60,
+    "rate": 0.4333333333333333,
+    "task_ci_low": 0.23333333333333334,
+    "task_ci_high": 0.6333333333333334,
+    "generation_calls": 142,
+    "generation_tokens_known": 117257,
+    "preparation_tokens_per_trial_sum": 0,
+    "numerical_loss_mean": 0.4236699602801541,
+    "failure_stages": {
+      "specification": 24,
+      "parse": 9,
+      "generation": 1
+    }
+  },
+  {
+    "model": "v4",
+    "arm": "equal_call",
+    "passed": 34,
+    "trials": 60,
+    "rate": 0.5666666666666667,
+    "task_ci_low": 0.3999999999999999,
+    "task_ci_high": 0.7333333333333334,
+    "generation_calls": 113,
+    "generation_tokens_known": 258052,
+    "preparation_tokens_per_trial_sum": 172398,
+    "numerical_loss_mean": 0.4076891415380821,
+    "failure_stages": {
+      "parse": 15,
+      "specification": 10,
+      "generation": 1
+    }
+  },
+  {
+    "model": "v4",
+    "arm": "full",
+    "passed": 43,
+    "trials": 60,
+    "rate": 0.7166666666666667,
+    "task_ci_low": 0.5333333333333334,
+    "task_ci_high": 0.8666666666666668,
+    "generation_calls": 113,
+    "generation_tokens_known": 272110,
+    "preparation_tokens_per_trial_sum": 172398,
+    "numerical_loss_mean": 0.2139250479140843,
+    "failure_stages": {
+      "specification": 15,
+      "parse": 2
+    }
+  },
+  {
+    "model": "v4",
+    "arm": "no_cleanup",
+    "passed": 42,
+    "trials": 60,
+    "rate": 0.7,
+    "task_ci_low": 0.5166666666666666,
+    "task_ci_high": 0.8666666666666666,
+    "generation_calls": 117,
+    "generation_tokens_known": 281706,
+    "preparation_tokens_per_trial_sum": 172398,
+    "numerical_loss_mean": 0.20444829797306682,
+    "failure_stages": {
+      "specification": 18
+    }
+  },
+  {
+    "model": "v4",
+    "arm": "no_family_prompts",
+    "passed": 38,
+    "trials": 60,
+    "rate": 0.6333333333333334,
+    "task_ci_low": 0.4833333333333333,
+    "task_ci_high": 0.7666666666666667,
+    "generation_calls": 123,
+    "generation_tokens_known": 252603,
+    "preparation_tokens_per_trial_sum": 172398,
+    "numerical_loss_mean": 0.2690727621539665,
+    "failure_stages": {
+      "specification": 21,
+      "simulation": 1
+    }
+  },
+  {
+    "model": "v4",
+    "arm": "no_grounding",
+    "passed": 38,
+    "trials": 60,
+    "rate": 0.6333333333333332,
+    "task_ci_low": 0.45,
+    "task_ci_high": 0.8,
+    "generation_calls": 123,
+    "generation_tokens_known": 296311,
+    "preparation_tokens_per_trial_sum": 172398,
+    "numerical_loss_mean": 0.2655070435043731,
+    "failure_stages": {
+      "parse": 2,
+      "specification": 20
+    }
+  },
+  {
+    "model": "v4",
+    "arm": "no_preparation",
+    "passed": 38,
+    "trials": 60,
+    "rate": 0.6333333333333332,
+    "task_ci_low": 0.45,
+    "task_ci_high": 0.8,
+    "generation_calls": 116,
+    "generation_tokens_known": 209548,
+    "preparation_tokens_per_trial_sum": 0,
+    "numerical_loss_mean": 0.26832191038884473,
+    "failure_stages": {
+      "specification": 19,
+      "parse": 1,
+      "simulation": 2
+    }
+  },
+  {
+    "model": "v4",
+    "arm": "spicepilot",
+    "passed": 34,
+    "trials": 60,
+    "rate": 0.5666666666666667,
+    "task_ci_low": 0.35,
+    "task_ci_high": 0.7666666666666667,
+    "generation_calls": 121,
+    "generation_tokens_known": 622715,
+    "preparation_tokens_per_trial_sum": 0,
+    "numerical_loss_mean": 0.3644247722941334,
+    "failure_stages": {
+      "specification": 21,
+      "parse": 3,
+      "generation": 2
+    }
+  }
+]
